@@ -7,401 +7,418 @@
 <title>🐾 Lillit Shop — Adopt Me</title>
 
 <style>
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#080808;
-    color:white;
+* {
+    box-sizing: border-box;
 }
 
-/* ВЕРХНЕЕ МЕНЮ */
-
-.top-bar{
-    background:#ff4fa3;
-    padding:14px 10px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
+html {
+    scroll-behavior: smooth;
 }
 
-.top-bar a{
-    color:white;
-    text-decoration:none;
-    font-weight:700;
-    margin:0 9px;
-    font-size:14px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
 }
 
-.top-bar a:hover{
-    color:#111;
+/* =========================
+   ВЕРХНЕЕ МЕНЮ
+========================= */
+
+.top-bar {
+    background: #ff4fa3;
+    padding: 14px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 9px;
+    font-size: 14px;
+}
 
-/* ГЛАВНЫЕ ВКЛАДКИ */
+.top-bar a:hover {
+    color: #111;
+}
 
-.main-categories{
-    position:sticky;
-    top:47px;
-    z-index:90;
-    display:flex;
-    justify-content:center;
-    gap:9px;
-    flex-wrap:wrap;
-    padding:12px 10px;
-    background:#111;
-    border-bottom:2px solid #ff4fa3;
+/* =========================
+   ГЛАВНЫЕ КАТЕГОРИИ
+========================= */
+
+.main-categories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    padding: 12px 10px;
+    background: #111;
+    border-bottom: 1px solid #ff4fa3;
 }
 
 .main-categories button,
-.sub-categories button{
-    border:none;
-    padding:9px 14px;
-    border-radius:20px;
-    background:#ff4fa3;
-    color:white;
-    font-weight:bold;
-    font-size:13px;
-    cursor:pointer;
-    transition:.2s;
+.pet-filters button,
+.clothes-filters button {
+    border: 1px solid #ff4fa3;
+    padding: 9px 14px;
+    border-radius: 20px;
+    background: #171717;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    transition: .2s;
 }
 
 .main-categories button:hover,
-.sub-categories button:hover{
-    background:white;
-    color:#ff4fa3;
-    transform:translateY(-2px);
+.pet-filters button:hover,
+.clothes-filters button:hover {
+    background: #ff4fa3;
+    color: white;
+    transform: translateY(-2px);
 }
 
+/* =========================
+   ФИЛЬТРЫ ПИТОМЦЕВ
+========================= */
 
-/* ДОПОЛНИТЕЛЬНЫЕ ВКЛАДКИ */
-
-.sub-categories{
-    display:flex;
-    justify-content:center;
-    gap:9px;
-    flex-wrap:wrap;
-    padding:12px 10px;
-    background:#111;
-    border-bottom:1px solid #292929;
+.pet-filters,
+.clothes-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    padding: 12px 10px;
+    background: #111;
+    border-bottom: 2px solid #ff4fa3;
 }
 
-.sub-categories.hidden{
-    display:none;
+.hidden {
+    display: none !important;
 }
 
+/* =========================
+   СТРАНИЦА
+========================= */
 
-/* СТРАНИЦА */
-
-.page{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 18px;
+.page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 18px;
 }
 
-.back{
-    display:inline-block;
-    color:#ff65ad;
-    text-decoration:none;
-    font-weight:bold;
-    margin-bottom:20px;
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.page-title{
-    text-align:center;
-    font-size:40px;
-    margin:10px 0;
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
 }
 
-.page-subtitle{
-    text-align:center;
-    color:#ccc;
-    margin-bottom:25px;
+.page-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 35px;
 }
 
+/* =========================
+   УВЕДОМЛЕНИЕ
+========================= */
 
-/* УВЕДОМЛЕНИЕ */
-
-.notice{
-    max-width:700px;
-    margin:0 auto 25px;
-    padding:15px 18px;
-    background:#111;
-    border:1px solid #ff4fa3;
-    border-radius:20px;
-    text-align:center;
-    color:#ff9ac8;
-    font-weight:bold;
-    line-height:1.6;
+.notice {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    padding: 15px 18px;
+    background: #111;
+    border: 1px solid #ff4fa3;
+    border-radius: 20px;
+    text-align: center;
+    color: #ff9ac8;
+    font-weight: bold;
+    line-height: 1.6;
 }
 
+/* =========================
+   ТОВАРЫ
+========================= */
 
-/* ТОВАРЫ */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:22px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
 }
 
-.card{
-    background:#111;
-    border:1px solid #333;
-    border-radius:24px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
+.card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
 }
 
-.card:hover{
-    border-color:#ff4fa3;
+.card:hover {
+    border-color: #ff4fa3;
 }
 
-.card img{
-    width:100%;
-    height:230px;
-    object-fit:contain;
-    background:white;
-    border-radius:18px;
-    margin-bottom:15px;
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 15px;
 }
 
-.card h2{
-    font-size:25px;
-    margin:5px 0 10px;
+.card h2 {
+    font-size: 25px;
+    margin: 5px 0 10px;
 }
 
-.price{
-    font-size:23px;
-    font-weight:800;
-    color:#ff65ad;
+.price {
+    font-size: 23px;
+    font-weight: 800;
+    color: #ff65ad;
 }
 
-.meta{
-    color:#ddd;
-    line-height:1.7;
-    margin:10px 0 18px;
+.meta {
+    color: #ddd;
+    line-height: 1.7;
+    margin: 10px 0 18px;
 }
 
-.category{
-    display:inline-block;
-    padding:7px 12px;
-    border-radius:20px;
-    background:#242424;
-    color:#ff9ac8;
-    font-size:13px;
-    font-weight:bold;
-    margin:4px;
+.category {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #242424;
+    color: #ff9ac8;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 4px;
 }
 
-.buy{
-    border:none;
-    background:#ff4fa3;
-    color:white;
-    padding:13px 30px;
-    border-radius:25px;
-    font-size:16px;
-    font-weight:800;
-    cursor:pointer;
+.buy {
+    border: none;
+    background: #ff4fa3;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
 }
 
-.buy:hover{
-    transform:scale(1.04);
+.buy:hover {
+    transform: scale(1.04);
 }
 
+/* =========================
+   ОДНО БОЛЬШОЕ ПУСТОЕ ОКНО
+========================= */
 
-/* ПУСТАЯ КАТЕГОРИЯ */
-
-.empty-message{
-    display:none;
-    grid-column:1 / -1;
-    text-align:center;
-    padding:65px 20px;
-    background:#111;
-    border:1px solid #333;
-    border-radius:24px;
+.empty-message {
+    width: 100%;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 65px 20px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 24px;
 }
 
-.empty-title{
-    color:#ff65ad;
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:10px;
+.empty-title {
+    color: #ff65ad;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.empty-text{
-    color:#aaa;
-    font-size:15px;
-    line-height:1.6;
+.empty-text {
+    color: #aaa;
+    font-size: 15px;
 }
 
+/* =========================
+   ОДЕЖДА
+========================= */
 
-/* ОДЕЖДА */
-
-.zoom-text{
-    color:#aaa;
-    font-size:13px;
-    margin:-5px 0 15px;
+.zoom-text {
+    color: #aaa;
+    font-size: 13px;
+    margin: -5px 0 15px;
 }
 
+/* =========================
+   ОКНО ПОКУПКИ
+========================= */
 
-/* ОКНО ПОКУПКИ */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:200;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.modal.open{
-    display:flex;
+.modal.open {
+    display: flex;
 }
 
-.modal-box{
-    width:min(420px,100%);
-    background:#111;
-    border:2px solid #ff4fa3;
-    border-radius:25px;
-    padding:28px;
-    text-align:center;
+.modal-box {
+    width: min(420px, 100%);
+    background: #111;
+    border: 2px solid #ff4fa3;
+    border-radius: 25px;
+    padding: 28px;
+    text-align: center;
 }
 
-.modal-box h3{
-    margin-top:0;
-    font-size:25px;
+.modal-box h3 {
+    margin-top: 0;
+    font-size: 25px;
 }
 
-.copy-box{
-    background:#222;
-    border:1px solid #444;
-    border-radius:15px;
-    padding:12px;
-    margin:18px 0;
-    word-break:break-word;
+.copy-box {
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 12px;
+    margin: 18px 0;
+    word-break: break-word;
 }
 
-.copy-name{
-    color:#ff65ad;
-    font-weight:bold;
-    display:block;
-    margin-bottom:10px;
+.copy-name {
+    color: #ff65ad;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.copy-button{
-    border:none;
-    background:white;
-    color:#111;
-    padding:9px 16px;
-    border-radius:18px;
-    font-weight:bold;
-    cursor:pointer;
+.copy-button {
+    border: none;
+    background: white;
+    color: #111;
+    padding: 9px 16px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.modal-link{
-    display:block;
-    background:#ff4fa3;
-    color:white;
-    text-decoration:none;
-    padding:14px;
-    border-radius:24px;
-    margin:12px 0;
-    font-weight:800;
+.modal-link {
+    display: block;
+    background: #ff4fa3;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 24px;
+    margin: 12px 0;
+    font-weight: 800;
 }
 
-.modal-link.secondary{
-    background:white;
-    color:#111;
+.modal-link.secondary {
+    background: white;
+    color: #111;
 }
 
-.close{
-    background:none;
-    border:none;
-    color:#aaa;
-    font-size:15px;
-    margin-top:8px;
-    cursor:pointer;
+.close {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 15px;
+    margin-top: 8px;
+    cursor: pointer;
 }
 
+/* =========================
+   FOOTER
+========================= */
 
-/* FOOTER */
-
-footer{
-    background:#050505;
-    border-top:1px solid #222;
-    padding:35px 18px;
-    text-align:center;
-    color:#ddd;
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 35px 18px;
+    text-align: center;
+    color: #ddd;
 }
 
-footer a{
-    color:#ff65ad;
-    text-decoration:none;
+footer a {
+    color: #ff65ad;
+    text-decoration: none;
 }
 
-.footer-links{
-    margin:15px 0;
-    line-height:2;
+.footer-links {
+    margin: 15px 0;
+    line-height: 2;
 }
 
+/* =========================
+   ТЕЛЕФОН
+========================= */
 
-/* ТЕЛЕФОН */
+@media (max-width: 700px) {
 
-@media(max-width:700px){
-
-    .top-bar a{
-        font-size:12px;
-        margin:0 4px;
+    .top-bar a {
+        font-size: 12px;
+        margin: 0 4px;
     }
 
-    .main-categories{
-        top:43px;
-        gap:6px;
-        padding:10px 7px;
+    .main-categories {
+        gap: 6px;
+        padding: 10px 7px;
     }
 
     .main-categories button,
-    .sub-categories button{
-        padding:8px 10px;
-        font-size:12px;
+    .pet-filters button,
+    .clothes-filters button {
+        padding: 8px 10px;
+        font-size: 12px;
     }
 
-    .page{
-        padding:30px 13px;
+    .page {
+        padding: 30px 13px;
     }
 
-    .page-title{
-        font-size:31px;
+    .page-title {
+        font-size: 31px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .grid {
+        grid-template-columns: 1fr;
     }
 
-    .card{
-        padding:16px;
+    .card {
+        padding: 16px;
     }
 
-    .card img{
-        height:210px;
+    .card img {
+        height: 210px;
     }
 }
 </style>
 </head>
 
-
 <body>
 
-
-<!-- ВЕРХНЕЕ МЕНЮ -->
+<!-- =========================
+     ВЕРХНЕЕ МЕНЮ
+========================= -->
 
 <nav class="top-bar">
 
@@ -413,119 +430,102 @@ footer a{
 
     <a href="index.html#rules">Правила</a>
 
+    <a href="buy.html">Купить</a>
+
 </nav>
 
 
-<!-- ГЛАВНЫЕ ВКЛАДКИ -->
+<!-- =========================
+     ГЛАВНЫЕ ВКЛАДКИ
+========================= -->
 
 <div class="main-categories">
 
-    <button onclick="showMainCategory('all')">
+    <button onclick="showCategory('all')">
         Все
     </button>
 
-    <button onclick="showMainCategory('pets')">
+    <button onclick="showCategory('pets')">
         🐾 Питомцы
     </button>
 
-    <button onclick="showMainCategory('eggs')">
+    <button onclick="showCategory('eggs')">
         🥚 Яйца
     </button>
 
-    <button onclick="showMainCategory('cars')">
+    <button onclick="showCategory('cars')">
         🚗 Машины
     </button>
 
-    <button onclick="showMainCategory('clothes')">
+    <button onclick="showCategory('clothes')">
         👗 Одежда
     </button>
 
 </div>
 
 
-<!-- ВКЛАДКИ ПИТОМЦЕВ -->
+<!-- =========================
+     ФИЛЬТРЫ ПИТОМЦЕВ
+========================= -->
 
-<div class="sub-categories" id="petsCategories">
+<div
+    class="pet-filters"
+    id="petFilters"
+>
 
-    <button onclick="filterProducts('pets')">
+    <button onclick="filterPets('pets')">
         Все
     </button>
 
-    <button onclick="filterProducts('large')">
+    <button onclick="filterPets('large')">
         Крупные
     </button>
 
-    <button onclick="filterProducts('small')">
+    <button onclick="filterPets('small')">
         Мелкие
     </button>
 
-    <button onclick="filterProducts('fly')">
+    <button onclick="filterPets('fly')">
         Fly
     </button>
 
-    <button onclick="filterProducts('ride')">
+    <button onclick="filterPets('ride')">
         Ride
     </button>
 
-    <button onclick="filterProducts('flyride')">
+    <button onclick="filterPets('flyride')">
         Fly Ride
     </button>
 
-    <button onclick="filterProducts('neon')">
+    <button onclick="filterPets('neon')">
         Neon
     </button>
 
-    <button onclick="filterProducts('mega')">
+    <button onclick="filterPets('mega')">
         Mega
     </button>
 
 </div>
 
 
-<!-- ВКЛАДКИ ЯИЦ -->
+<!-- =========================
+     ФИЛЬТРЫ ОДЕЖДЫ
+========================= -->
 
 <div
-    class="sub-categories hidden"
-    id="eggsCategories"
+    class="clothes-filters hidden"
+    id="clothesFilters"
 >
 
-    <button onclick="filterProducts('oldEggs')">
-        Old
+    <button onclick="filterClothes('clothes')">
+        Вся одежда
     </button>
 
-    <button onclick="filterProducts('currentEggs')">
-        Обычные
-    </button>
-
-</div>
-
-
-<!-- ВКЛАДКИ МАШИН -->
-
-<div
-    class="sub-categories hidden"
-    id="carsCategories"
->
-
-    <button onclick="filterProducts('cars')">
-        Все машины
-    </button>
-
-</div>
-
-
-<!-- ВКЛАДКИ ОДЕЖДЫ -->
-
-<div
-    class="sub-categories hidden"
-    id="clothesCategories"
->
-
-    <button onclick="filterProducts('largeClothes')">
+    <button onclick="filterClothes('largeClothes')">
         Крупная
     </button>
 
-    <button onclick="filterProducts('smallClothes')">
+    <button onclick="filterClothes('smallClothes')">
         Мелкая
     </button>
 
@@ -552,19 +552,18 @@ footer a{
     </p>
 
 
-    <!-- УВЕДОМЛЕНИЕ ДЛЯ ОДЕЖДЫ -->
+    <!-- УВЕДОМЛЕНИЕ ОБ ОДЕЖДЕ -->
 
     <div
-        class="notice"
+        class="notice hidden"
         id="clothesNotice"
-        style="display:none;"
     >
 
-        💗 Минимальная сумма покупки — 25 грн
+        💗 Покупка от 25 грн
 
         <br>
 
-        💬 За точной ценой одежды пишите в ЛС
+        💬 За точной ценой пишите в ЛС
 
     </div>
 
@@ -575,15 +574,15 @@ footer a{
     >
 
 
-        <!-- ========================= -->
-        <!-- ПИТОМЦЫ -->
-        <!-- ========================= -->
+        <!-- ==================================================
+             ПИТОМЦЫ
+        ================================================== -->
 
 
         <!-- AFRICAN WILD DOG -->
 
         <article
-            class="card product"
+            class="card product pet-product"
             data-categories="pets large flyride"
         >
 
@@ -631,7 +630,7 @@ footer a{
         <!-- TREE KANGAROO -->
 
         <article
-            class="card product"
+            class="card product pet-product"
             data-categories="pets large neon ride"
         >
 
@@ -680,98 +679,12 @@ footer a{
         </article>
 
 
-        <!-- ========================= -->
-        <!-- ЯЙЦА -->
-        <!-- ========================= -->
-
-
-        <!-- OLD ЯЙЦА -->
+        <!-- ==================================================
+             TINY WINGS — КРУПНАЯ ОДЕЖДА
+        ================================================== -->
 
         <article
-            class="card product"
-            data-categories="eggs oldEggs"
-        >
-
-            <div
-                class="empty-message"
-                style="display:block;"
-            >
-
-                <div class="empty-title">
-                    🖤 Пока ничего нет
-                </div>
-
-                <div class="empty-text">
-                    Ожидайте, скоро появятся товары ✨
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- ОБЫЧНЫЕ ЯЙЦА -->
-
-        <article
-            class="card product"
-            data-categories="eggs currentEggs"
-        >
-
-            <div
-                class="empty-message"
-                style="display:block;"
-            >
-
-                <div class="empty-title">
-                    🖤 Пока ничего нет
-                </div>
-
-                <div class="empty-text">
-                    Ожидайте, скоро появятся товары ✨
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- ========================= -->
-        <!-- МАШИНЫ -->
-        <!-- ========================= -->
-
-
-        <article
-            class="card product"
-            data-categories="cars"
-        >
-
-            <div
-                class="empty-message"
-                style="display:block;"
-            >
-
-                <div class="empty-title">
-                    🖤 Пока ничего нет
-                </div>
-
-                <div class="empty-text">
-                    Ожидайте, скоро появятся товары ✨
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- ========================= -->
-        <!-- ОДЕЖДА -->
-        <!-- ========================= -->
-
-
-        <!-- TINY WINGS -->
-
-        <article
-            class="card product"
+            class="card product clothes-product"
             data-categories="clothes largeClothes"
         >
 
@@ -812,10 +725,12 @@ footer a{
         </article>
 
 
-        <!-- МЕЛКАЯ ОДЕЖДА -->
+        <!-- ==================================================
+             МЕЛКАЯ ОДЕЖДА
+        ================================================== -->
 
         <article
-            class="card product"
+            class="card product clothes-product"
             data-categories="clothes smallClothes"
         >
 
@@ -864,10 +779,13 @@ footer a{
         </article>
 
 
-        <!-- ОБЩЕЕ ПУСТОЕ СООБЩЕНИЕ -->
+        <!-- ==================================================
+             ОДНО ПУСТОЕ ОКНО
+             ИСПОЛЬЗУЕТСЯ И ДЛЯ ЯИЦ, И ДЛЯ МАШИН
+        ================================================== -->
 
         <div
-            class="empty-message"
+            class="empty-message hidden"
             id="emptyMessage"
         >
 
@@ -881,13 +799,14 @@ footer a{
 
         </div>
 
-
     </div>
 
 </main>
 
 
-<!-- ОКНО ПОКУПКИ -->
+<!-- =========================
+     ОКНО ПОКУПКИ
+========================= -->
 
 <div
     class="modal"
@@ -921,10 +840,8 @@ footer a{
         </div>
 
         <p style="color:#bbb;font-size:14px;">
-
             Скопируйте название товара
             и отправьте его в чат 💗
-
         </p>
 
 
@@ -958,7 +875,9 @@ footer a{
 </div>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1009,9 +928,11 @@ footer a{
 let currentProduct = "";
 
 
-/* ПОКУПКА */
+/* =========================
+   ПОКУПКА
+========================= */
 
-function openBuy(name){
+function openBuy(name) {
 
     currentProduct = name;
 
@@ -1023,7 +944,7 @@ function openBuy(name){
 }
 
 
-function closeBuy(){
+function closeBuy() {
 
     document
         .getElementById("buyModal")
@@ -1031,20 +952,20 @@ function closeBuy(){
 }
 
 
-function copyProduct(){
+function copyProduct() {
 
-    if(!currentProduct){
+    if (!currentProduct) {
         return;
     }
 
     navigator.clipboard
         .writeText(currentProduct)
-        .then(function(){
+        .then(function() {
 
             alert("Название товара скопировано 💗");
 
         })
-        .catch(function(){
+        .catch(function() {
 
             alert(
                 "Скопируй название вручную: "
@@ -1055,186 +976,248 @@ function copyProduct(){
 }
 
 
-/* ЗАКРЫТИЕ ОКНА */
+/* КЛИК ВНЕ ОКНА */
 
 document
     .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event){
+    .addEventListener("click", function(event) {
 
-            if(event.target === this){
-                closeBuy();
-            }
-
-        }
-    );
-
-
-/* ПОКАЗ ОСНОВНЫХ КАТЕГОРИЙ */
-
-function showMainCategory(category){
-
-    document
-        .getElementById("petsCategories")
-        .classList.add("hidden");
-
-    document
-        .getElementById("eggsCategories")
-        .classList.add("hidden");
-
-    document
-        .getElementById("carsCategories")
-        .classList.add("hidden");
-
-    document
-        .getElementById("clothesCategories")
-        .classList.add("hidden");
-
-
-    if(category === "pets"){
-
-        document
-            .getElementById("petsCategories")
-            .classList.remove("hidden");
-
-        filterProducts("pets");
-
-    }
-
-    else if(category === "eggs"){
-
-        document
-            .getElementById("eggsCategories")
-            .classList.remove("hidden");
-
-        filterProducts("eggs");
-
-    }
-
-    else if(category === "cars"){
-
-        document
-            .getElementById("carsCategories")
-            .classList.remove("hidden");
-
-        filterProducts("cars");
-
-    }
-
-    else if(category === "clothes"){
-
-        document
-            .getElementById("clothesCategories")
-            .classList.remove("hidden");
-
-        filterProducts("clothes");
-
-    }
-
-    else{
-
-        filterProducts("all");
-
-    }
-
-}
-
-
-/* ФИЛЬТР */
-
-function filterProducts(category){
-
-    const products =
-        document.querySelectorAll(".product");
-
-    const emptyMessage =
-        document.getElementById("emptyMessage");
-
-    const notice =
-        document.getElementById("clothesNotice");
-
-    let found = false;
-
-
-    products.forEach(function(product){
-
-        const categories =
-            product.dataset.categories.split(" ");
-
-
-        if(
-            category === "all" ||
-            categories.includes(category)
-        ){
-
-            product.style.display = "";
-
-            found = true;
-
-        }
-
-        else{
-
-            product.style.display = "none";
-
+        if (event.target === this) {
+            closeBuy();
         }
 
     });
 
 
-    if(
-        category === "clothes" ||
-        category === "largeClothes" ||
-        category === "smallClothes"
-    ){
+/* =========================
+   СКРЫВАЕМ ВСЁ
+========================= */
 
-        notice.style.display = "block";
+function hideAllProducts() {
 
+    document
+        .querySelectorAll(".pet-product")
+        .forEach(function(item) {
+            item.style.display = "none";
+        });
+
+    document
+        .querySelectorAll(".clothes-product")
+        .forEach(function(item) {
+            item.style.display = "none";
+        });
+
+    document
+        .getElementById("emptyMessage")
+        .classList.add("hidden");
+
+    document
+        .getElementById("clothesNotice")
+        .classList.add("hidden");
+}
+
+
+/* =========================
+   ГЛАВНЫЕ КАТЕГОРИИ
+========================= */
+
+function showCategory(category) {
+
+    hideAllProducts();
+
+    document
+        .getElementById("petFilters")
+        .classList.add("hidden");
+
+    document
+        .getElementById("clothesFilters")
+        .classList.add("hidden");
+
+
+    /* ВСЕ */
+
+    if (category === "all") {
+
+        document
+            .getElementById("petFilters")
+            .classList.remove("hidden");
+
+        document
+            .querySelectorAll(".pet-product")
+            .forEach(function(item) {
+                item.style.display = "";
+            });
+
+        return;
     }
 
-    else{
 
-        notice.style.display = "none";
+    /* ПИТОМЦЫ */
 
+    if (category === "pets") {
+
+        document
+            .getElementById("petFilters")
+            .classList.remove("hidden");
+
+        filterPets("pets");
+
+        return;
     }
 
 
-    /*
-       Если категория пустая,
-       показываем одно большое
-       прямоугольное окошко.
-    */
+    /* ЯЙЦА */
 
-    if(
-        category === "cars" ||
-        category === "eggs" ||
-        category === "oldEggs" ||
-        category === "currentEggs"
-    ){
+    if (category === "eggs") {
 
-        emptyMessage.style.display = "block";
+        /*
+           ВАЖНО:
+           здесь создаётся РОВНО ОДНО
+           длинное пустое окошко.
+        */
 
+        document
+            .getElementById("emptyMessage")
+            .classList.remove("hidden");
+
+        return;
     }
 
-    else if(found){
 
-        emptyMessage.style.display = "none";
+    /* МАШИНЫ */
 
+    if (category === "cars") {
+
+        /*
+           Здесь ТОЖЕ только ОДНО
+           длинное пустое окошко.
+        */
+
+        document
+            .getElementById("emptyMessage")
+            .classList.remove("hidden");
+
+        return;
     }
 
-    else{
 
-        emptyMessage.style.display = "block";
+    /* ОДЕЖДА */
+
+    if (category === "clothes") {
+
+        document
+            .getElementById("clothesFilters")
+            .classList.remove("hidden");
+
+        document
+            .getElementById("clothesNotice")
+            .classList.remove("hidden");
+
+        document
+            .querySelectorAll(".clothes-product")
+            .forEach(function(item) {
+                item.style.display = "";
+            });
+
+        return;
+    }
+
+}
+
+
+/* =========================
+   ФИЛЬТРЫ ПИТОМЦЕВ
+========================= */
+
+function filterPets(category) {
+
+    hideAllProducts();
+
+    document
+        .getElementById("petFilters")
+        .classList.remove("hidden");
+
+
+    let found = false;
+
+
+    document
+        .querySelectorAll(".pet-product")
+        .forEach(function(product) {
+
+            const categories =
+                product.dataset.categories.split(" ");
+
+
+            if (
+                category === "pets" ||
+                categories.includes(category)
+            ) {
+
+                product.style.display = "";
+
+                found = true;
+
+            }
+
+        });
+
+
+    if (!found) {
+
+        document
+            .getElementById("emptyMessage")
+            .classList.remove("hidden");
 
     }
 
 }
 
 
-/* ПРИ ОТКРЫТИИ */
+/* =========================
+   ФИЛЬТРЫ ОДЕЖДЫ
+========================= */
 
-showMainCategory("all");
+function filterClothes(category) {
+
+    hideAllProducts();
+
+    document
+        .getElementById("clothesFilters")
+        .classList.remove("hidden");
+
+    document
+        .getElementById("clothesNotice")
+        .classList.remove("hidden");
+
+
+    document
+        .querySelectorAll(".clothes-product")
+        .forEach(function(product) {
+
+            const categories =
+                product.dataset.categories.split(" ");
+
+
+            if (
+                category === "clothes" ||
+                categories.includes(category)
+            ) {
+
+                product.style.display = "";
+
+            }
+
+        });
+
+}
+
+
+/* =========================
+   ПРИ ОТКРЫТИИ
+========================= */
+
+showCategory("all");
 
 </script>
 
