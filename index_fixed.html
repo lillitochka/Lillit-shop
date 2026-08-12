@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐈 Lillit Shop 🐾</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
+.top-bar{background:#ff4fa3;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:20}
+.top-bar a{color:#fff;text-decoration:none;font-weight:700;margin:0 9px;font-size:14px}
+.top-bar a:hover{color:#111}
+.page{max-width:1100px;margin:auto;padding:45px 18px}
+.page-title{text-align:center;font-size:40px;margin:10px 0 10px}
+.page-subtitle{text-align:center;color:#ccc;margin:0 auto 35px;line-height:1.5}
+.back{display:inline-block;color:#ff65ad;text-decoration:none;font-weight:700;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:#111;border:1px solid #333;border-radius:24px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.card:hover{border-color:#ff4fa3}
+.card img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:18px;margin-bottom:15px}
+.card h2{font-size:25px;margin:5px 0 10px}
+.price{font-size:23px;font-weight:800;color:#ff65ad}
+.meta{color:#ddd;line-height:1.6;margin:10px 0 18px}
+.buy{display:inline-block;border:0;background:#ff4fa3;color:#fff;padding:13px 30px;border-radius:25px;font-size:16px;font-weight:800;cursor:pointer}
+.buy:hover{transform:scale(1.04)}
+.category{display:inline-block;padding:7px 12px;border-radius:20px;background:#242424;color:#ff9ac8;font-size:13px;font-weight:700;margin-bottom:10px}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
+.game-card{display:block;background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:40px 25px;text-align:center;text-decoration:none;color:#fff}
+.game-card h2{font-size:30px;margin:0 0 10px}
+.game-card p{color:#ccc;line-height:1.5}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(420px,100%);background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:28px;text-align:center}
+.modal-box h3{margin-top:0;font-size:25px}
+.modal-link{display:block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px;border-radius:24px;margin:12px 0;font-weight:800}
+.modal-link.secondary{background:#fff;color:#111}
+.close{background:none;border:0;color:#aaa;font-size:15px;margin-top:8px;cursor:pointer}
+footer{background:#050505;border-top:1px solid #222;padding:35px 18px;text-align:center;color:#ddd}
+footer a{color:#ff65ad;text-decoration:none}
+.footer-links{margin:15px 0;line-height:2}
+@media(max-width:700px){
+ .top-bar a{font-size:12px;margin:0 4px}
+ .page{padding:30px 13px}
+ .page-title{font-size:31px}
+ .grid,.game-grid{grid-template-columns:1fr}
+ .card img{height:210px}
+ .card{padding:16px}
+}
+</style>
+
+<style>
+@media(max-width:700px){
+#order > div > div[style*="grid-template-columns"]{
+    grid-template-columns:1fr !important;
+}
+}
+</style>
+
+</head>
+<body>
+<nav class="top-bar">
+<a href="index.html">Главная</a>
+<a href="catalog.html">Каталог</a>
+<a href="proofs.html">Пруфы</a>
+<a href="index.html#rules">Правила</a>
+<a href="#order">🐾 На заказ</a>
+<a href="buy.html">Купить</a>
+</nav>
+
+<section style="min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:55px 18px;background:radial-gradient(circle at top,#321326,#080808 60%)">
+<h1 style="font-size:42px;margin:0 0 20px">Добро пожаловать! 🌸</h1>
+<div style="font-size:48px;font-weight:800">🐈 Lillit Shop 🐾</div>
+<p style="font-size:20px;color:#ddd">Товары для Adopt Me и MM2</p>
+<div style="background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:18px 25px;margin-top:10px">
+<div style="font-size:27px;font-weight:800;color:#ff65ad">💎 300 пруфов</div>
+<div style="color:#ccc;margin-top:7px">Подтверждённые успешные сделки</div>
+</div>
+<p style="color:#ddd">💗 Безопасные сделки</p>
+<a href="catalog.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:15px 38px;border-radius:30px;font-weight:800;margin-top:12px">🛍️ ОТКРЫТЬ КАТАЛОГ</a>
+</section>
+<section style="background:#fff;color:#111;text-align:center;padding:60px 20px">
+<h2 style="font-size:32px">✨ Lillit Shop</h2>
+<p style="font-size:18px">Здесь ты найдёшь товары по Adopt Me и MM2 💗</p>
+<a href="proofs.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px 30px;border-radius:28px;font-weight:800">💎 ПОСМОТРЕТЬ ВСЕ ПРУФЫ</a>
+</section>
+<section id="rules" style="background:#ff4fa3;padding:60px 20px;text-align:center">
+<h2>📋 Правила</h2>
+<div style="max-width:700px;margin:auto;background:#111;color:#fff;border-radius:25px;padding:25px;line-height:1.6">
+<p>💳 Оплата только в гривнах.</p>
+<p>⚠️ Перед оплатой обязательно проверяйте реквизиты.</p>
+<p>💗 Все спорные моменты лучше решить до оплаты.</p>
+<p>🤝 По необходимости используем проверенных гарантов.</p>
+</div>
+</section>
+
+
+<section id="order" style="background:#080808;padding:60px 20px;">
+<div style="max-width:900px;margin:auto;background:#111;border:2px solid #ff4fa3;border-radius:28px;padding:30px;color:#fff;box-shadow:0 8px 30px rgba(0,0,0,.3)">
+<h2 style="text-align:center;font-size:32px;color:#ff65ad;margin-top:0">🐾 Пэты и годли на заказ</h2>
+
+<p style="text-align:center;color:#ddd;line-height:1.6;font-size:17px">
+Не нашли нужный товар в каталоге? Вы можете заказать его у меня 💗
+</p>
+
+<h3 style="color:#ff65ad">💗 Как проходит заказ?</h3>
+
+<div style="background:#181818;border-radius:18px;padding:18px;line-height:1.7;color:#ddd">
+<p>📸 Вы отправляете мне <strong>название товара или его фотографию</strong>.</p>
+<p>💰 Я называю вам цену.</p>
+<p>💳 Если вас устраивает цена — <strong>оплата производится вперёд</strong>.</p>
+<p>🔎 После оплаты я начинаю поиск товара.</p>
+<p>⏳ Обычно поиск занимает <strong>5–30 минут</strong>. Иногда выдача может немного задержаться — пожалуйста, подождите несколько минут.</p>
+<p>🎁 Если товар найден — я выдаю его вам.</p>
+<p>💸 Если вдруг товар не найден — <strong>оплата возвращается обратно</strong>. Я тщательно всё перепроверяю заранее, поэтому такого происходить не должно.</p>
+</div>
+
+<div style="margin-top:20px;background:#181818;border:1px solid #ff4fa3;border-radius:18px;padding:18px;color:#ddd;line-height:1.7">
+⚠️ Товар на заказ может стоить <strong style="color:#ff65ad">немного дороже</strong>, чем товар из обычного каталога.
+</div>
+
+<h3 style="color:#ff65ad;margin-top:28px">🔎 Что можно заказать?</h3>
+
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+<div style="background:#181818;border-radius:16px;padding:14px">🐾 Крупных питомцев</div>
+<div style="background:#181818;border-radius:16px;padding:14px">✨ Популярных и редких годли</div>
+<div style="background:#181818;border-radius:16px;padding:14px">💎 Экзотических питомцев</div>
+<div style="background:#181818;border-radius:16px;padding:14px">🌸 Разные редкие товары</div>
+</div>
+
+<p style="color:#ddd;line-height:1.6;margin-top:18px">
+Можно попросить найти даже очень редкий товар — <strong style="color:#ff65ad">я всё равно попробую.</strong>
+</p>
+
+<div style="background:#181818;border:1px solid #ff4fa3;border-radius:18px;padding:18px;color:#ddd;line-height:1.7">
+🚫 Обычные ножи и пистолеты не ищу.<br>
+🚫 Также не ищу <strong style="color:#ff65ad">мелких без зелек и харда</strong>.
+</div>
+
+<div style="margin-top:25px;background:#181818;border-radius:18px;padding:20px;text-align:center;color:#ddd;line-height:1.7">
+💗 После получения товара, пожалуйста, <strong style="color:#ff65ad">оставьте мне отзыв в Telegram в чате.</strong>
+</div>
+
+<a href="https://t.me/lil1ta0" target="_blank" style="display:block;width:max-content;margin:25px auto 0;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px 30px;border-radius:28px;font-weight:800">
+💬 Написать в Telegram
+</a>
+</div>
+</section>
+
+<footer>
+<div>🐈 <strong>Lillit Shop</strong> 🐾</div>
+<div class="footer-links">
+<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a> ·
+<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a> ·
+<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
+</div>
+<div>Adopt Me • MM2</div>
+</footer>
+</body>
+</html>
