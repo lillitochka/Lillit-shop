@@ -7,7 +7,6 @@
 
 <style>
 *{box-sizing:border-box}
-
 html{scroll-behavior:smooth}
 
 body{
@@ -16,8 +15,6 @@ body{
     background:#080808;
     color:white;
 }
-
-/* ===== ВЕРХНЕЕ МЕНЮ ===== */
 
 .top-bar{
     background:#ff4fa3;
@@ -36,109 +33,38 @@ body{
     font-size:14px;
 }
 
-.top-bar a:hover{
-    color:#111;
-}
+.top-bar a:hover{color:#111}
 
-/* ===== КАТЕГОРИИ ТОВАРОВ ===== */
-
-.shop-types{
+.categories{
+    position:sticky;
+    top:47px;
+    z-index:90;
     display:flex;
     justify-content:center;
-    gap:10px;
+    gap:9px;
     flex-wrap:wrap;
-    padding:16px 10px;
+    padding:12px 10px;
     background:#111;
     border-bottom:2px solid #ff4fa3;
 }
 
-.shop-types button{
+.categories button{
     border:none;
-    padding:11px 18px;
-    border-radius:24px;
+    padding:9px 13px;
+    border-radius:20px;
     background:#ff4fa3;
     color:white;
     font-weight:bold;
+    font-size:13px;
     cursor:pointer;
     transition:.2s;
 }
 
-.shop-types button:hover{
+.categories button:hover{
     background:white;
     color:#ff4fa3;
     transform:translateY(-2px);
 }
-
-.shop-types button.active{
-    background:white;
-    color:#ff4fa3;
-}
-
-/* ===== КАТЕГОРИИ ПИТОМЦЕВ ===== */
-
-.pet-categories{
-    display:none;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-    padding:13px 10px;
-    background:#181818;
-    border-bottom:1px solid #333;
-}
-
-.pet-categories.show{
-    display:flex;
-}
-
-.pet-categories button{
-    border:1px solid #ff4fa3;
-    padding:8px 13px;
-    border-radius:20px;
-    background:#242424;
-    color:#ff9ac8;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.pet-categories button:hover,
-.pet-categories button.active{
-    background:#ff4fa3;
-    color:white;
-}
-
-/* ===== КАТЕГОРИИ ОДЕЖДЫ ===== */
-
-.clothes-categories{
-    display:none;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-    padding:13px 10px;
-    background:#181818;
-    border-bottom:1px solid #333;
-}
-
-.clothes-categories.show{
-    display:flex;
-}
-
-.clothes-categories button{
-    border:1px solid #ff4fa3;
-    padding:8px 15px;
-    border-radius:20px;
-    background:#242424;
-    color:#ff9ac8;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.clothes-categories button:hover,
-.clothes-categories button.active{
-    background:#ff4fa3;
-    color:white;
-}
-
-/* ===== СТРАНИЦА ===== */
 
 .page{
     max-width:1100px;
@@ -166,8 +92,6 @@ body{
     margin-bottom:35px;
 }
 
-/* ===== ТОВАРЫ ===== */
-
 .grid{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -183,9 +107,7 @@ body{
     box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
 
-.card:hover{
-    border-color:#ff4fa3;
-}
+.card:hover{border-color:#ff4fa3}
 
 .card img{
     width:100%;
@@ -233,14 +155,9 @@ body{
     font-size:16px;
     font-weight:800;
     cursor:pointer;
-    transition:.2s;
 }
 
-.buy:hover{
-    transform:scale(1.04);
-}
-
-/* ===== ПУСТАЯ КАТЕГОРИЯ ===== */
+.buy:hover{transform:scale(1.04)}
 
 .empty-message{
     display:none;
@@ -264,90 +181,51 @@ body{
     font-size:15px;
 }
 
-/* ===== ИНСТРУКЦИЯ ===== */
+/* КАК КУПИТЬ */
 
-.info-section{
-    margin-top:55px;
+.buy-info{
     background:#111;
-    border:1px solid #333;
+    border:2px solid #ff4fa3;
     border-radius:25px;
     padding:30px 22px;
+    margin:45px auto 10px;
+    max-width:800px;
 }
 
-.info-section h2{
+.buy-info h2{
     text-align:center;
     color:#ff65ad;
     margin-top:0;
-    font-size:28px;
 }
 
-.steps{
-    display:grid;
-    gap:13px;
-    max-width:700px;
-    margin:25px auto 0;
-}
-
-.step{
+.buy-step{
     background:#181818;
-    border:1px solid #292929;
     border-radius:18px;
     padding:16px;
-}
-
-.step strong{
-    color:#ff65ad;
-}
-
-/* ===== КНОПКА ХОЧУ КУПИТЬ ===== */
-
-.want-button{
-    display:block;
-    width:max-content;
-    max-width:100%;
-    margin:25px auto 0;
-    padding:14px 28px;
-    border-radius:25px;
-    background:#ff4fa3;
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-/* ===== НОВИНКИ ===== */
-
-.news{
-    margin-top:25px;
-    text-align:center;
+    margin:12px 0;
     color:#ddd;
+    line-height:1.5;
 }
 
-.news span{
-    color:#ff65ad;
-    font-weight:bold;
-}
+.buy-step strong{color:#ff9ac8}
 
-/* ===== ОКНО ПОКУПКИ ===== */
+/* ОКНО ПОКУПКИ */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.78);
-    z-index:300;
+    background:rgba(0,0,0,.75);
+    z-index:200;
     align-items:center;
     justify-content:center;
     padding:20px;
 }
 
-.modal.open{
-    display:flex;
-}
+.modal.open{display:flex}
 
 .modal-box{
-    width:min(430px,100%);
-    max-height:90vh;
-    overflow:auto;
+    width:min(420px,100%);
     background:#111;
     border:2px solid #ff4fa3;
     border-radius:25px;
@@ -364,23 +242,23 @@ body{
     background:#222;
     border:1px solid #444;
     border-radius:15px;
-    padding:14px;
+    padding:12px;
     margin:18px 0;
+    word-break:break-word;
 }
 
 .copy-name{
     color:#ff65ad;
     font-weight:bold;
     display:block;
-    margin-bottom:12px;
-    word-break:break-word;
+    margin-bottom:10px;
 }
 
 .copy-button{
     border:none;
     background:white;
     color:#111;
-    padding:10px 17px;
+    padding:9px 16px;
     border-radius:18px;
     font-weight:bold;
     cursor:pointer;
@@ -411,15 +289,12 @@ body{
     cursor:pointer;
 }
 
-/* ===== FOOTER ===== */
-
 footer{
     background:#050505;
     border-top:1px solid #222;
     padding:35px 18px;
     text-align:center;
     color:#ddd;
-    margin-top:45px;
 }
 
 footer a{
@@ -432,13 +307,22 @@ footer a{
     line-height:2;
 }
 
-/* ===== АДАПТИВ ===== */
-
 @media(max-width:700px){
 
     .top-bar a{
         font-size:12px;
         margin:0 4px;
+    }
+
+    .categories{
+        top:43px;
+        gap:6px;
+        padding:10px 7px;
+    }
+
+    .categories button{
+        padding:8px 10px;
+        font-size:12px;
     }
 
     .page{
@@ -460,435 +344,237 @@ footer a{
     .card img{
         height:210px;
     }
-
-    .shop-types button{
-        padding:9px 13px;
-        font-size:12px;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== ВЕРХНЕЕ МЕНЮ ===== -->
-
 <nav class="top-bar">
     <a href="index.html">Главная</a>
     <a href="catalog.html">Каталог</a>
     <a href="proofs.html">Пруфы</a>
     <a href="index.html#rules">Правила</a>
+    <a href="#how-to-buy">Как купить?</a>
 </nav>
 
+<div class="categories">
 
-<!-- ===== ОСНОВНЫЕ РАЗДЕЛЫ ADOPT ME ===== -->
-
-<div class="shop-types">
-
-    <button class="active" onclick="showType('pets',this)">
-        🐾 Питомцы
-    </button>
-
-    <button onclick="showType('eggs',this)">
-        🥚 Яйца
-    </button>
-
-    <button onclick="showType('cars',this)">
-        🚗 Машины
-    </button>
-
-    <button onclick="showType('clothes',this)">
-        👗 Одежда
-    </button>
+    <button onclick="filterProducts('all')">Все</button>
+    <button onclick="filterProducts('large')">Крупные</button>
+    <button onclick="filterProducts('small')">Мелкие</button>
+    <button onclick="filterProducts('fly')">Fly</button>
+    <button onclick="filterProducts('ride')">Ride</button>
+    <button onclick="filterProducts('flyride')">Fly Ride</button>
+    <button onclick="filterProducts('neon')">Neon</button>
+    <button onclick="filterProducts('mega')">Mega</button>
 
 </div>
-
-
-<!-- ===== КАТЕГОРИИ ПИТОМЦЕВ ===== -->
-
-<div class="pet-categories show" id="petCategories">
-
-    <button onclick="filterPets('all',this)" class="active">
-        Все
-    </button>
-
-    <button onclick="filterPets('large',this)">
-        Крупные
-    </button>
-
-    <button onclick="filterPets('small',this)">
-        Мелкие
-    </button>
-
-    <button onclick="filterPets('fly',this)">
-        Fly
-    </button>
-
-    <button onclick="filterPets('ride',this)">
-        Ride
-    </button>
-
-    <button onclick="filterPets('flyride',this)">
-        Fly Ride
-    </button>
-
-    <button onclick="filterPets('neon',this)">
-        Neon
-    </button>
-
-    <button onclick="filterPets('mega',this)">
-        Mega
-    </button>
-
-</div>
-
-
-<!-- ===== КАТЕГОРИИ ОДЕЖДЫ ===== -->
-
-<div class="clothes-categories" id="clothesCategories">
-
-    <button onclick="filterClothes('all',this)" class="active">
-        Все
-    </button>
-
-    <button onclick="filterClothes('large',this)">
-        Крупная
-    </button>
-
-    <button onclick="filterClothes('small',this)">
-        Мелкая
-    </button>
-
-</div>
-
 
 <main class="page">
 
-    <a class="back" href="catalog.html">
-        ← Назад в каталог
-    </a>
+<a class="back" href="catalog.html">← Назад в каталог</a>
 
-    <h1 class="page-title">
-        🐾 Adopt Me
-    </h1>
+<h1 class="page-title">🐾 Adopt Me</h1>
 
-    <p class="page-subtitle" id="subtitle">
-        Питомцы • Яйца • Машины • Одежда 💗
-    </p>
+<p class="page-subtitle">
+    Питомцы • Яйца • Машины • Одежда 💗
+</p>
 
+<div class="grid" id="productGrid">
 
-    <!-- ===== ТОВАРЫ ===== -->
+    <!-- AFRICAN WILD DOG -->
 
-    <div class="grid" id="productGrid">
+    <article class="card product" data-categories="large flyride">
 
-
-        <!-- AFRICAN WILD DOG -->
-
-        <article
-            class="card product pet-product"
-            data-categories="large flyride"
+        <img
+            src="african-wild-dog.jpeg"
+            alt="African Wild Dog"
         >
 
-            <img
-                src="african-wild-dog.jpeg"
-                alt="African Wild Dog"
-            >
+        <span class="category">Крупные питомцы</span>
+        <span class="category">Fly Ride</span>
 
-            <span class="category">
-                Крупные питомцы
-            </span>
+        <h2>African Wild Dog</h2>
 
-            <span class="category">
-                Fly Ride
-            </span>
+        <div class="price">1700 грн</div>
 
-            <h2>
-                African Wild Dog
-            </h2>
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 Adopt Me
+        </div>
 
-            <div class="price">
-                1700 грн
-            </div>
+        <button class="buy"
+            onclick="openBuy('African Wild Dog')">
+            КУПИТЬ
+        </button>
 
-            <div class="meta">
-                📦 В наличии: 1<br>
-                🎮 Adopt Me
-            </div>
-
-            <button
-                class="buy"
-                onclick="openBuy('African Wild Dog')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
+    </article>
 
 
-        <!-- TREE KANGAROO -->
+    <!-- TREE KANGAROO -->
 
-        <article
-            class="card product pet-product"
-            data-categories="large neon ride"
+    <article class="card product" data-categories="large neon ride">
+
+        <img
+            src="tree-kangaroo.jpeg"
+            alt="Tree Kangaroo"
         >
 
-            <img
-                src="tree-kangaroo.jpeg"
-                alt="Tree Kangaroo"
-            >
+        <span class="category">Крупные питомцы</span>
+        <span class="category">Neon</span>
+        <span class="category">Ride</span>
 
-            <span class="category">
-                Крупные питомцы
-            </span>
+        <h2>Tree Kangaroo</h2>
 
-            <span class="category">
-                Neon
-            </span>
+        <div class="price">150 грн</div>
 
-            <span class="category">
-                Ride
-            </span>
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 Adopt Me
+        </div>
 
-            <h2>
-                Tree Kangaroo
-            </h2>
+        <button class="buy"
+            onclick="openBuy('Tree Kangaroo')">
+            КУПИТЬ
+        </button>
 
-            <div class="price">
-                150 грн
-            </div>
-
-            <div class="meta">
-                📦 В наличии: 1<br>
-                🎮 Adopt Me
-            </div>
-
-            <button
-                class="buy"
-                onclick="openBuy('Tree Kangaroo')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
+    </article>
 
 
-        <!-- TINY WINGS -->
+    <!-- TINY WINGS -->
 
-        <article
-            class="card product clothes-product"
-            data-clothes="small"
-            style="display:none"
-        >
+    <article class="card product" data-categories="large">
 
-            <div
-                style="
-                height:230px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                background:white;
-                border-radius:18px;
-                margin-bottom:15px;
-                color:#999;
-                font-weight:bold;
-                "
-            >
-                👗 Фото добавим позже
-            </div>
+        <div style="
+            height:230px;
+            background:white;
+            border-radius:18px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#aaa;
+            font-weight:bold;
+        ">
+            👗 Tiny Wings
+        </div>
 
-            <span class="category">
-                Мелкая одежда
-            </span>
+        <span class="category">Крупная одежда</span>
 
-            <h2>
-                Tiny Wings
-            </h2>
+        <h2>Tiny Wings</h2>
 
-            <div class="price">
-                170 грн
-            </div>
+        <div class="price">170 грн</div>
 
-            <div class="meta">
-                📦 В наличии: 1<br>
-                🎮 Adopt Me
-            </div>
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 Adopt Me
+        </div>
 
-            <button
-                class="buy"
-                onclick="openBuy('Tiny Wings')"
-            >
-                КУПИТЬ
-            </button>
+        <button class="buy"
+            onclick="openBuy('Tiny Wings')">
+            КУПИТЬ
+        </button>
 
-        </article>
+    </article>
 
 
-        <!-- ПУСТАЯ КАТЕГОРИЯ -->
+    <!-- EMPTY -->
 
-        <div
-            class="empty-message"
-            id="emptyMessage"
-        >
+    <div class="empty-message" id="emptyMessage">
 
-            <div class="empty-title">
-                🖤 Пока ничего нет
-            </div>
+        <div class="empty-title">
+            🖤 Пока ничего нет
+        </div>
 
-            <div class="empty-text">
-                Скоро здесь появятся товары ✨
-            </div>
-
+        <div class="empty-text">
+            Скоро здесь появятся товары ✨
         </div>
 
     </div>
 
-
-    <!-- ===== КАК КУПИТЬ ===== -->
-
-    <section class="info-section" id="how-to-buy">
-
-        <h2>
-            🛒 Как купить?
-        </h2>
-
-        <div class="steps">
-
-            <div class="step">
-                <strong>1.</strong>
-                Выбери игру и нужный раздел 💗
-            </div>
-
-            <div class="step">
-                <strong>2.</strong>
-                Найди понравившийся товар.
-            </div>
-
-            <div class="step">
-                <strong>3.</strong>
-                Нажми кнопку <strong>«КУПИТЬ»</strong>.
-            </div>
-
-            <div class="step">
-                <strong>4.</strong>
-                Скопируй название товара 📋
-            </div>
-
-            <div class="step">
-                <strong>5.</strong>
-                Отправь название мне в ЛС или через спам-бот 💬
-            </div>
-
-            <div class="step">
-                <strong>6.</strong>
-                Договоримся о покупке и передаче товара ✨
-            </div>
-
-        </div>
-
-        <p class="news">
-            💳 Оплата производится <span>только в гривнах</span>.
-        </p>
-
-        <p class="news">
-            🛡️ Перед сделкой обязательно проверяй реквизиты и пруфы.
-        </p>
-
-        <a
-            class="want-button"
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
-            💗 ХОЧУ КУПИТЬ
-        </a>
-
-    </section>
+</div>
 
 
-    <!-- ===== НОВИНКИ ===== -->
+<!-- КАК КУПИТЬ -->
 
-    <section class="info-section">
+<section class="buy-info" id="how-to-buy">
 
-        <h2>
-            🔔 Новинки
-        </h2>
+    <h2>🛒 Как купить?</h2>
 
-        <p class="news">
-            Новые товары будут появляться здесь ✨
-        </p>
+    <div class="buy-step">
+        <strong>1. Выбери товар 💗</strong><br>
+        Открой каталог и найди нужный предмет.
+    </div>
 
-        <p class="news">
-            Следи за обновлениями в
-            <a
-                href="https://t.me/lillitsho"
-                target="_blank"
-                style="color:#ff65ad;text-decoration:none;font-weight:bold;"
-            >
-                Telegram-канале
-            </a>
-            💗
-        </p>
+    <div class="buy-step">
+        <strong>2. Нажми «КУПИТЬ» 🛍️</strong><br>
+        Откроется окошко со способом связи.
+    </div>
 
-    </section>
+    <div class="buy-step">
+        <strong>3. Скопируй название 📋</strong><br>
+        Нажми «Скопировать» и вставь название товара в наш чат.
+    </div>
+
+    <div class="buy-step">
+        <strong>4. Напиши мне 💬</strong><br>
+        Можно написать в ЛС или воспользоваться спам-ботом.
+    </div>
+
+    <div class="buy-step">
+        <strong>5. Оплата 💳</strong><br>
+        Оплата производится только в гривнах.
+    </div>
+
+    <div class="buy-step">
+        <strong>6. Сделка ✨</strong><br>
+        После подтверждения оплаты проводим сделку и передаём товар.
+    </div>
+
+</section>
 
 </main>
 
 
-<!-- ===== ОКНО ПОКУПКИ ===== -->
+<!-- ОКНО ПОКУПКИ -->
 
 <div class="modal" id="buyModal">
 
     <div class="modal-box">
 
-        <h3>
-            💗 Как связаться?
-        </h3>
+        <h3>💗 Как связаться?</h3>
 
-        <p>
-            Вы хотите купить:
-        </p>
+        <p>Вы хотите купить:</p>
 
         <div class="copy-box">
 
-            <span
-                class="copy-name"
-                id="buyText"
-            ></span>
+            <span class="copy-name" id="buyText"></span>
 
-            <button
-                class="copy-button"
-                onclick="copyProduct()"
-            >
+            <button class="copy-button" onclick="copyProduct()">
                 📋 СКОПИРОВАТЬ
             </button>
 
         </div>
 
-        <p style="color:#bbb;font-size:14px;line-height:1.5;">
-            Можете скопировать название и вставить
-            его в чат, чтобы я быстрее поняла,
-            какой товар вы хотите купить 💗
+        <p style="color:#bbb;font-size:14px;">
+            Скопируй название и вставь его в чат,
+            чтобы я быстрее поняла, какой товар
+            ты хочешь купить 💗
         </p>
 
-        <a
-            class="modal-link"
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a class="modal-link"
+           href="https://t.me/lil1ta0spambot"
+           target="_blank">
             🤖 SPAM BOT
         </a>
 
-        <a
-            class="modal-link secondary"
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a class="modal-link secondary"
+           href="https://t.me/lil1ta0"
+           target="_blank">
             💬 ЛС
         </a>
 
-        <button
-            class="close"
-            onclick="closeBuy()"
-        >
+        <button class="close" onclick="closeBuy()">
             Закрыть
         </button>
 
@@ -897,52 +583,31 @@ footer a{
 </div>
 
 
-<!-- ===== FOOTER ===== -->
-
 <footer>
 
-    <div>
-        🐈 <strong>Lillit Shop</strong> 🐾
-    </div>
+    <div>🐈 <strong>Lillit Shop</strong> 🐾</div>
 
     <div class="footer-links">
 
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
+        <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
 
-        ·
-
-        <a href="proofs.html">
-            ⭐ Пруфы
-        </a>
-
     </div>
 
-    <div>
-        Adopt Me • MM2
-    </div>
+    <div>Adopt Me • MM2</div>
 
 </footer>
 
@@ -952,7 +617,7 @@ footer a{
 let currentProduct = "";
 
 
-/* ===== ПОКУПКА ===== */
+/* ПОКУПКА */
 
 function openBuy(name){
 
@@ -960,40 +625,35 @@ function openBuy(name){
 
     document.getElementById("buyText").textContent = name;
 
-    document
-        .getElementById("buyModal")
-        .classList.add("open");
+    document.getElementById("buyModal").classList.add("open");
 }
 
 
 function closeBuy(){
 
-    document
-        .getElementById("buyModal")
-        .classList.remove("open");
+    document.getElementById("buyModal").classList.remove("open");
 }
 
 
+/* КОПИРОВАНИЕ */
+
 function copyProduct(){
 
-    if(!currentProduct){
-        return;
-    }
+    if(!currentProduct) return;
 
     if(navigator.clipboard){
 
-        navigator.clipboard
-            .writeText(currentProduct)
-            .then(function(){
+        navigator.clipboard.writeText(currentProduct)
+        .then(function(){
 
-                alert("Название товара скопировано 💗");
+            alert("Название товара скопировано 💗");
 
-            })
-            .catch(function(){
+        })
+        .catch(function(){
 
-                alert("Скопируй название вручную: " + currentProduct);
+            alert("Скопируй название вручную: " + currentProduct);
 
-            });
+        });
 
     }else{
 
@@ -1003,114 +663,29 @@ function copyProduct(){
 }
 
 
-/* Закрытие при нажатии за пределами окна */
+/* ЗАКРЫТИЕ ПО ФОНУ */
 
-document
-    .getElementById("buyModal")
-    .addEventListener("click",function(event){
+document.getElementById("buyModal").addEventListener(
+    "click",
+    function(event){
 
         if(event.target === this){
             closeBuy();
         }
 
-    });
+    }
+);
 
 
-/* ===== ВЫБОР ОСНОВНОГО РАЗДЕЛА ===== */
+/* ФИЛЬТРЫ */
 
-function showType(type,button){
-
-    const petCategories =
-        document.getElementById("petCategories");
-
-    const clothesCategories =
-        document.getElementById("clothesCategories");
+function filterProducts(category){
 
     const products =
         document.querySelectorAll(".product");
 
-    document
-        .querySelectorAll(".shop-types button")
-        .forEach(function(btn){
-            btn.classList.remove("active");
-        });
-
-    button.classList.add("active");
-
-    petCategories.classList.remove("show");
-    clothesCategories.classList.remove("show");
-
-    products.forEach(function(product){
-        product.style.display = "none";
-    });
-
-    document.getElementById("emptyMessage").style.display = "none";
-
-
-    if(type === "pets"){
-
-        petCategories.classList.add("show");
-
-        document.getElementById("subtitle").textContent =
-            "Питомцы • Крупные • Мелкие • Fly • Ride • Fly Ride • Neon • Mega 🐾";
-
-        filterPets("all");
-
-    }
-
-
-    if(type === "clothes"){
-
-        clothesCategories.classList.add("show");
-
-        document.getElementById("subtitle").textContent =
-            "Одежда • Крупная • Мелкая 👗";
-
-        filterClothes("all");
-
-    }
-
-
-    if(type === "eggs"){
-
-        document.getElementById("subtitle").textContent =
-            "Яйца • Old • Доступные в игре 🥚";
-
-        showEmpty();
-
-    }
-
-
-    if(type === "cars"){
-
-        document.getElementById("subtitle").textContent =
-            "Машины 🚗";
-
-        showEmpty();
-
-    }
-
-}
-
-
-/* ===== ПИТОМЦЫ ===== */
-
-function filterPets(category,clickedButton){
-
-    if(clickedButton){
-
-        document
-            .querySelectorAll(".pet-categories button")
-            .forEach(function(btn){
-                btn.classList.remove("active");
-            });
-
-        clickedButton.classList.add("active");
-
-    }
-
-    const products =
-        document.querySelectorAll(".pet-product");
+    const emptyMessage =
+        document.getElementById("emptyMessage");
 
     let found = false;
 
@@ -1125,6 +700,7 @@ function filterPets(category,clickedButton){
         ){
 
             product.style.display = "";
+
             found = true;
 
         }else{
@@ -1135,98 +711,12 @@ function filterPets(category,clickedButton){
 
     });
 
-    document
-        .querySelectorAll(".clothes-product")
-        .forEach(function(product){
-            product.style.display = "none";
-        });
-
-    document.getElementById("emptyMessage").style.display =
+    emptyMessage.style.display =
         found ? "none" : "block";
 }
 
 
-/* ===== ОДЕЖДА ===== */
-
-function filterClothes(category,clickedButton){
-
-    if(clickedButton){
-
-        document
-            .querySelectorAll(".clothes-categories button")
-            .forEach(function(btn){
-                btn.classList.remove("active");
-            });
-
-        clickedButton.classList.add("active");
-
-    }
-
-    const products =
-        document.querySelectorAll(".clothes-product");
-
-    let found = false;
-
-    products.forEach(function(product){
-
-        const productCategory =
-            product.dataset.clothes;
-
-        if(
-            category === "all" ||
-            productCategory === category
-        ){
-
-            product.style.display = "";
-            found = true;
-
-        }else{
-
-            product.style.display = "none";
-
-        }
-
-    });
-
-    document
-        .querySelectorAll(".pet-product")
-        .forEach(function(product){
-            product.style.display = "none";
-        });
-
-    document.getElementById("emptyMessage").style.display =
-        found ? "none" : "block";
-}
-
-
-/* ===== ПУСТАЯ КАТЕГОРИЯ ===== */
-
-function showEmpty(){
-
-    document
-        .querySelectorAll(".product")
-        .forEach(function(product){
-            product.style.display = "none";
-        });
-
-    document.getElementById("emptyMessage").style.display = "block";
-}
-
-
-/* ===== ESC ДЛЯ ЗАКРЫТИЯ ===== */
-
-document.addEventListener("keydown",function(event){
-
-    if(event.key === "Escape"){
-        closeBuy();
-    }
-
-});
-
-
-/* ===== СТАРТ ===== */
-
-filterPets("all");
+filterProducts("all");
 
 </script>
 
