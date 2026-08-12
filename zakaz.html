@@ -1,1 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Пэты и годли на заказ — Lillit Shop</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+/* ВЕРХНЕЕ МЕНЮ */
+
+.top-bar {
+    background: #ff4fa3;
+    padding: 14px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 8px;
+    font-size: 14px;
+}
+
+.top-bar a:hover {
+    color: #111;
+}
+
+/* СТРАНИЦА */
+
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 45px 18px 60px;
+}
+
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.title {
+    text-align: center;
+    font-size: 38px;
+    margin: 5px 0 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+/* ОСНОВНОЕ ОКНО */
+
+.order-box {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section:last-child {
+    margin-bottom: 0;
+}
+
+.section h2 {
+    color: #ff65ad;
+    font-size: 23px;
+    margin: 0 0 15px;
+}
+
+.section p {
+    color: #ddd;
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+/* ШАГИ */
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step {
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 18px;
+    padding: 15px 17px;
+    color: #ddd;
+    line-height: 1.55;
+}
+
+.step strong {
+    color: #ff9ac8;
+}
+
+/* ЧТО МОЖНО ЗАКАЗАТЬ */
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.item {
+    background: #181818;
+    border: 1px solid #292929;
+    border-radius: 16px;
+    padding: 13px;
+    color: #ddd;
+}
+
+.warning {
+    background: #181818;
+    border: 1px solid #ff4fa3;
+    border-radius: 20px;
+    padding: 18px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+.warning strong {
+    color: #ff65ad;
+}
+
+/* ФИНАЛ */
+
+.review {
+    text-align: center;
+    background: #181818;
+    border-radius: 20px;
+    padding: 20px;
+    color: #ddd;
+    line-height: 1.7;
+}
+
+.review strong {
+    color: #ff65ad;
+}
+
+/* TELEGRAM */
+
+.telegram-button {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 14px 28px;
+    background: #ff4fa3;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 800;
+}
+
+.telegram-button:hover {
+    background: white;
+    color: #ff4fa3;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 35px 18px;
+    text-align: center;
+    color: #aaa;
+}
+
+footer strong {
+    color: white;
+}
+
+.footer-links {
+    margin-top: 15px;
+    line-height: 2;
+}
+
+.footer-links a {
+    color: #ff65ad;
+    text-decoration: none;
+}
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 650px) {
+
+    .top-bar a {
+        font-size: 12px;
+        margin: 0 4px;
+    }
+
+    .page {
+        padding: 30px 13px 50px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .order-box {
+        padding: 20px 16px;
+        border-radius: 22px;
+    }
+
+    .items {
+        grid-template-columns: 1fr;
+    }
+
+    .section h2 {
+        font-size: 21px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ВЕРХНЕЕ МЕНЮ -->
+
+<nav class="top-bar">
+
+    <a href="index.html">
+        Главная
+    </a>
+
+    <a href="catalog.html">
+        Каталог
+    </a>
+
+    <a href="proofs.html">
+        Пруфы
+    </a>
+
+    <a href="index.html#rules">
+        Правила
+    </a>
+
+    <a href="buy.html">
+        Купить
+    </a>
+
+    <a href="zakaz.html">
+        🐾 На заказ
+    </a>
+
+</nav>
+
+
+<main class="page">
+
+    <a
+        href="index.html"
+        class="back"
+    >
+        ← Назад
+    </a>
+
+
+    <h1 class="title">
+        🐾 Пэты и годли на заказ
+    </h1>
+
+    <p class="subtitle">
+        Не нашли нужный товар в каталоге? Вы можете заказать его у меня 💗
+    </p>
+
+
+    <div class="order-box">
+
+
+        <!-- КАК ПРОХОДИТ ЗАКАЗ -->
+
+        <section class="section">
+
+            <h2>
+                💗 Как проходит заказ?
+            </h2>
+
+            <div class="steps">
+
+                <div class="step">
+                    <strong>1.</strong>
+                    Вы отправляете мне <strong>название товара или его фотографию</strong>.
+                </div>
+
+                <div class="step">
+                    <strong>2.</strong>
+                    Я называю вам цену.
+                </div>
+
+                <div class="step">
+                    <strong>3.</strong>
+                    Если вас устраивает цена —
+                    <strong>оплата производится вперёд</strong>.
+                </div>
+
+                <div class="step">
+                    <strong>4.</strong>
+                    После оплаты я начинаю поиск товара.
+                </div>
+
+                <div class="step">
+                    <strong>5.</strong>
+                    🔎 Обычно поиск занимает
+                    <strong>5–30 минут</strong>.
+                    Иногда выдача может немного задержаться —
+                    пожалуйста, подождите несколько минут.
+                </div>
+
+                <div class="step">
+                    <strong>6.</strong>
+                    🎁 Если товар найден — я выдаю его вам.
+                </div>
+
+                <div class="step">
+                    <strong>7.</strong>
+                    💸 Если вдруг товар не найден —
+                    <strong>оплата возвращается обратно</strong>.
+                    Я тщательно проверяю наличие заранее, поэтому такого происходить не должно.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ЦЕНА -->
+
+        <section class="section">
+
+            <div class="warning">
+
+                ⚠️ Товар на заказ может стоить
+                <strong>немного дороже</strong>,
+                чем товар из обычного каталога.
+
+            </div>
+
+        </section>
+
+
+        <!-- ЧТО МОЖНО ЗАКАЗАТЬ -->
+
+        <section class="section">
+
+            <h2>
+                🔎 Что можно заказать?
+            </h2>
+
+            <div class="items">
+
+                <div class="item">
+                    🐾 Крупных питомцев
+                </div>
+
+                <div class="item">
+                    ✨ Популярных и редких годли
+                </div>
+
+                <div class="item">
+                    💎 Экзотических питомцев
+                </div>
+
+                <div class="item">
+                    🌸 Разные редкие товары
+                </div>
+
+            </div>
+
+            <p style="margin-top:18px;">
+                Можно попросить найти даже очень редкий товар —
+                <strong style="color:#ff65ad;">
+                    я всё равно попробую.
+                </strong>
+            </p>
+
+        </section>
+
+
+        <!-- ЧТО НЕ ИЩУ -->
+
+        <section class="section">
+
+            <div class="warning">
+
+                🚫 Обычные ножи и пистолеты не ищу.
+
+                <br>
+
+                🚫 Также не ищу
+                <strong>
+                    мелких без зелек и харда
+                </strong>.
+
+            </div>
+
+        </section>
+
+
+        <!-- ПОСЛЕ ЗАКАЗА -->
+
+        <section class="section">
+
+            <h2>
+                💕 После заказа
+            </h2>
+
+            <div class="review">
+
+                После получения товара,
+                пожалуйста,
+                <strong>
+                    оставьте мне отзыв в Telegram в чате.
+                </strong>
+
+                🥹💗
+
+            </div>
+
+        </section>
+
+
+        <!-- TELEGRAM -->
+
+        <a
+            class="telegram-button"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 Написать в Telegram
+        </a>
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        🐈 <strong>Lillit Shop</strong> 🐾
+    </div>
+
+    <div class="footer-links">
+
+        <a
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 Telegram
+        </a>
+
+        ·
+
+        <a
+            href="index.html"
+        >
+            🏠 Главная
+        </a>
+
+        ·
+
+        <a
+            href="catalog.html"
+        >
+            🛍 Каталог
+        </a>
+
+    </div>
+
+    <div>
+        Adopt Me • MM2
+    </div>
+
+</footer>
+
+</body>
+</html>
