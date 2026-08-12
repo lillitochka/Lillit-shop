@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>🐾 Lillit Shop — Adopt Me</title>
 
 <style>
@@ -30,7 +29,7 @@ body {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 100;
 }
 
 .top-bar a {
@@ -50,7 +49,7 @@ body {
 .categories {
     position: sticky;
     top: 47px;
-    z-index: 15;
+    z-index: 90;
     display: flex;
     justify-content: center;
     gap: 9px;
@@ -60,14 +59,22 @@ body {
     border-bottom: 2px solid #ff4fa3;
 }
 
-.categories a {
+.categories button {
+    border: none;
     padding: 9px 13px;
     border-radius: 20px;
     background: #ff4fa3;
     color: white;
-    text-decoration: none;
     font-weight: bold;
     font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.categories button:hover {
+    background: white;
+    color: #ff4fa3;
+    transform: translateY(-2px);
 }
 
 /* СТРАНИЦА */
@@ -171,6 +178,30 @@ body {
     transform: scale(1.04);
 }
 
+/* ПУСТАЯ КАТЕГОРИЯ */
+
+.empty-message {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 65px 20px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 24px;
+}
+
+.empty-message .empty-title {
+    color: #ff65ad;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.empty-message .empty-text {
+    color: #aaa;
+    font-size: 15px;
+}
+
 /* ОКНО ПОКУПКИ */
 
 .modal {
@@ -178,7 +209,7 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,.75);
-    z-index: 100;
+    z-index: 200;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -288,7 +319,7 @@ footer a {
         padding: 10px 7px;
     }
 
-    .categories a {
+    .categories button {
         padding: 8px 10px;
         font-size: 12px;
     }
@@ -327,16 +358,42 @@ footer a {
     <a href="index.html#rules">Правила</a>
 </nav>
 
-<!-- КАТЕГОРИИ ADOPT ME -->
+<!-- КАТЕГОРИИ -->
 
 <div class="categories">
-    <a href="#large">Крупные</a>
-    <a href="#small">Мелкие</a>
-    <a href="#fly">Fly</a>
-    <a href="#ride">Ride</a>
-    <a href="#flyride">Fly Ride</a>
-    <a href="#neon">Neon</a>
-    <a href="#mega">Mega</a>
+
+    <button onclick="filterProducts('all')">
+        Все
+    </button>
+
+    <button onclick="filterProducts('large')">
+        Крупные
+    </button>
+
+    <button onclick="filterProducts('small')">
+        Мелкие
+    </button>
+
+    <button onclick="filterProducts('fly')">
+        Fly
+    </button>
+
+    <button onclick="filterProducts('ride')">
+        Ride
+    </button>
+
+    <button onclick="filterProducts('flyride')">
+        Fly Ride
+    </button>
+
+    <button onclick="filterProducts('neon')">
+        Neon
+    </button>
+
+    <button onclick="filterProducts('mega')">
+        Mega
+    </button>
+
 </div>
 
 <main class="page">
@@ -353,11 +410,14 @@ footer a {
         Питомцы • Яйца • Машины • Одежда 💗
     </p>
 
-    <div class="grid">
+    <div class="grid" id="productGrid">
 
         <!-- AFRICAN WILD DOG -->
 
-        <article class="card" id="large">
+        <article
+            class="card product"
+            data-categories="large flyride"
+        >
 
             <img
                 src="African-wild-dog.webp"
@@ -368,7 +428,7 @@ footer a {
                 Крупные питомцы
             </span>
 
-            <span class="category" id="flyride">
+            <span class="category">
                 Fly Ride
             </span>
 
@@ -397,7 +457,10 @@ footer a {
 
         <!-- TREE KANGAROO -->
 
-        <article class="card" id="neon">
+        <article
+            class="card product"
+            data-categories="large neon ride"
+        >
 
             <img
                 src="tree-kangaroo.webp"
@@ -412,7 +475,7 @@ footer a {
                 Neon
             </span>
 
-            <span class="category" id="ride">
+            <span class="category">
                 Ride
             </span>
 
@@ -437,6 +500,24 @@ footer a {
             </button>
 
         </article>
+
+
+        <!-- НЕТ ТОВАРОВ -->
+
+        <div
+            class="empty-message"
+            id="emptyMessage"
+        >
+
+            <div class="empty-title">
+                🖤 Пока ничего нет
+            </div>
+
+            <div class="empty-text">
+                Скоро здесь появятся товары ✨
+            </div>
+
+        </div>
 
     </div>
 
@@ -555,28 +636,51 @@ footer a {
 
 let currentProduct = "";
 
+
+/* ПОКУПКА */
+
 function openBuy(name) {
 
     currentProduct = name;
 
     document.getElementById("buyText").textContent = name;
 
-    document.getElementById("buyModal").classList.add("open");
+    document
+        .getElementById("buyModal")
+        .classList.add("open");
 }
+
 
 function closeBuy() {
 
-    document.getElementById("buyModal").classList.remove("open");
-
+    document
+        .getElementById("buyModal")
+        .classList.remove("open");
 }
+
 
 function copyProduct() {
 
-    navigator.clipboard.writeText(currentProduct);
+    if (!currentProduct) {
+        return;
+    }
 
-    alert("Название товара скопировано 💗");
+    navigator.clipboard
+        .writeText(currentProduct)
+        .then(function() {
 
+            alert("Название товара скопировано 💗");
+
+        })
+        .catch(function() {
+
+            alert("Скопируй название вручную: " + currentProduct);
+
+        });
 }
+
+
+/* ЗАКРЫТИЕ ПО КЛИКУ ВНЕ ОКНА */
 
 document
     .getElementById("buyModal")
@@ -587,6 +691,59 @@ document
         }
 
     });
+
+
+/* ФИЛЬТРЫ */
+
+function filterProducts(category) {
+
+    const products =
+        document.querySelectorAll(".product");
+
+    const emptyMessage =
+        document.getElementById("emptyMessage");
+
+    let found = false;
+
+    products.forEach(function(product) {
+
+        const categories =
+            product.dataset.categories.split(" ");
+
+        if (
+            category === "all" ||
+            categories.includes(category)
+        ) {
+
+            product.style.display = "";
+
+            found = true;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+
+    if (found) {
+
+        emptyMessage.style.display = "none";
+
+    } else {
+
+        emptyMessage.style.display = "block";
+
+    }
+
+}
+
+
+/* ПРИ ОТКРЫТИИ СТРАНИЦЫ */
+
+filterProducts("all");
 
 </script>
 
