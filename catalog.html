@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🛍️ Каталог — Lillit Shop</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        .top-bar {
+            background: #ff4fa3;
+            padding: 14px 15px;
+            text-align: center;
+        }
+
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 15px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: radial-gradient(circle at top, #321326, #080808 60%);
+        }
+
+        .logo {
+            font-size: 45px;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 20px 0 10px;
+        }
+
+        .subtitle {
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .catalog {
+            background: white;
+            color: #111;
+            padding: 60px 20px;
+            min-height: 500px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: #080808;
+            color: white;
+            border: 2px solid #ff4fa3;
+            border-radius: 25px;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .card h2 {
+            color: #ff65ad;
+            font-size: 28px;
+        }
+
+        .card p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 28px;
+            background: #ff4fa3;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #050505;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: #ff65ad;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .top-bar a {
+                font-size: 12px;
+                margin: 0 4px;
+            }
+
+            .logo {
+                font-size: 34px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .catalog {
+                padding: 45px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="top-bar">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="proofs.html">Пруфы</a>
+        <a href="index.html#rules">Правила</a>
+    </nav>
+
+    <header class="header">
+
+        <div class="logo">
+            🐈 Lillit Shop 🐾
+        </div>
+
+        <h1>🛍️ Каталог</h1>
+
+        <div class="subtitle">
+            Товары для Adopt Me и MM2 💗
+        </div>
+
+    </header>
+
+    <section class="catalog">
+
+        <div class="container">
+
+            <div class="cards">
+
+                <div class="card">
+                    <h2>🐾 Adopt Me</h2>
+
+                    <p>
+                        Питомцы • Яйца • Машины • Одежда
+                    </p>
+
+                    <a class="button" href="#">
+                        СМОТРЕТЬ ТОВАРЫ
+                    </a>
+                </div>
+
+                <div class="card">
+                    <h2>🔪 MM2</h2>
+
+                    <p>
+                        Коммонки • Ножи • Пистолеты • Сеты
+                    </p>
+
+                    <a class="button" href="#">
+                        СМОТРЕТЬ ТОВАРЫ
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+</section>
+
+    <footer>
+
+        🐈 Lillit Shop 🐾
+
+        <p>
+            <a href="https://t.me/lil1ta0" target="_blank">
+                💬 Telegram
+            </a>
+        </p>
+
+        <p>© Lillit Shop</p>
+
+    </footer>
+
+</body>
+</html>
