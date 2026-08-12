@@ -3,96 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lillit Shop</title>
+
+    <title>🐈 Lillit Shop 🐾</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #fff0f7;
-            color: #5a3048;
+            background: #080808;
+            color: white;
+        }
+
+        /* ВЕРХНЕЕ МЕНЮ */
+
+        .top-bar {
+            background: #ff4fa3;
+            padding: 14px 12px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .header {
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            font-size: 15px;
+        }
+
+        .top-bar a:hover {
+            color: #111;
+        }
+
+        /* ГЛАВНЫЙ ЭКРАН */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 60px 20px;
-            background: linear-gradient(135deg, #ffb6d9, #ffd9ec);
+            background:
+                radial-gradient(
+                    circle at top,
+                    #321326,
+                    #080808 60%
+                );
         }
 
-        h1 {
+        .welcome {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 22px;
+        }
+
+        .logo {
             font-size: 48px;
-            margin: 0;
+            font-weight: 800;
+            margin-bottom: 15px;
         }
 
         .subtitle {
             font-size: 20px;
-            margin-top: 10px;
+            color: #eeeeee;
+            margin-bottom: 28px;
         }
 
-        .buttons {
-            margin-top: 35px;
-        }
+        /* ПРУФЫ СВЕРХУ */
 
-        button {
-            border: none;
-            padding: 16px 30px;
-            margin: 8px;
+        .proof-box {
+            width: 100%;
+            max-width: 420px;
+            background: #111111;
+            border: 2px solid #ff4fa3;
             border-radius: 25px;
-            background: white;
-            color: #d85b9a;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 20px;
+            box-shadow: 0 0 25px rgba(255, 79, 163, 0.15);
         }
 
-        button:hover {
+        .proof-count {
+            color: #ff65ad;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .proof-small {
+            margin-top: 8px;
+            color: #dddddd;
+            font-size: 15px;
+        }
+
+        .safe {
+            margin-top: 18px;
+            font-size: 17px;
+        }
+
+        .small-text {
+            margin-top: 18px;
+            color: #cccccc;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        /* КНОПКИ */
+
+        .button {
+            display: inline-block;
+            margin-top: 28px;
+            padding: 15px 38px;
+            background: #ff4fa3;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
             transform: scale(1.05);
         }
 
+        /* ПРИВЕТСТВИЕ */
+
         .about {
-            padding: 40px 20px;
+            background: white;
+            color: #111111;
+            padding: 65px 20px;
+            text-align: center;
         }
 
         .about h2 {
-            font-size: 30px;
+            font-size: 34px;
+            margin: 0 0 15px;
         }
-    </style>
-</head>
 
-<body>
+        .about p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    <div class="header">
-        <h1>🎀 Lillit Shop 🎀</h1>
-        <div class="subtitle">Adopt Me • MM2</div>
+        /* ПРЕИМУЩЕСТВА */
 
-        <div class="buttons">
-            <button>🐾 Adopt Me</button>
-            <button>🔪 MM2</button>
-            <button>💗 Отзывы</button>
-        </div>
-    </div>
+        .advantages {
+            background: #ff4fa3;
+            color: white;
+            padding: 65px 20px;
+            text-align: center;
+        }
 
-    <div class="about">
-        <h2>Добро пожаловать! 🌸</h2>
-        <p>Здесь ты найдёшь товары по Adopt Me и MM2.</p>
-        <p>✨ 300 пруфов</p>
-    </div>
+        .advantages h2 {
+            font-size: 32px;
+            margin-bottom: 35px;
+        }
 
-</body>
-</html>.advantage strong {
+        .advantages-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .advantage {
+            background: #111111;
+            padding: 25px 15px;
+            border-radius: 20px;
+            line-height: 1.5;
+        }
+
+        .advantage strong {
             display: block;
-            font-size: 23px;
+            font-size: 22px;
+            color: #ff65ad;
             margin-bottom: 8px;
         }
 
-        /* НИЗ СТРАНИЦЫ */
+        /* ПРАВИЛА */
+
+        .rules {
+            background: white;
+            color: #111111;
+            padding: 65px 20px;
+            text-align: center;
+        }
+
+        .rules h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .rules-box {
+            max-width: 700px;
+            margin: auto;
+            background: #080808;
+            color: white;
+            border: 2px solid #ff4fa3;
+            border-radius: 25px;
+            padding: 30px 25px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
 
         footer {
-            background: #080808;
+            background: #050505;
             color: white;
             text-align: center;
             padding: 45px 20px;
+        }
+
+        footer .logo {
+            font-size: 35px;
         }
 
         footer a {
@@ -109,29 +243,74 @@
             color: white;
         }
 
-        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        /* ТЕЛЕФОН */
 
         @media (max-width: 700px) {
 
+            .top-bar {
+                padding: 12px 7px;
+            }
+
             .top-bar a {
                 font-size: 12px;
-                margin: 0 5px;
+                margin: 0 4px;
+            }
+
+            .hero {
+                min-height: 600px;
+                padding: 55px 16px;
+            }
+
+            .welcome {
+                font-size: 31px;
+                line-height: 1.2;
             }
 
             .logo {
-                font-size: 36px;
+                font-size: 35px;
+                line-height: 1.2;
             }
 
             .subtitle {
                 font-size: 17px;
             }
 
-            .game-container {
-                grid-template-columns: 1fr;
+            .proof-count {
+                font-size: 22px;
+            }
+
+            .proof-box {
+                max-width: 350px;
+                padding: 18px 12px;
+            }
+
+            .button {
+                width: 90%;
+                max-width: 320px;
+                padding: 14px 20px;
+            }
+
+            .about h2,
+            .advantages h2,
+            .rules h2 {
+                font-size: 27px;
             }
 
             .advantages-container {
                 grid-template-columns: 1fr;
+            }
+
+            .rules-box {
+                padding: 25px 17px;
+            }
+
+            footer .logo {
+                font-size: 30px;
+            }
+
+            footer .footer-menu a {
+                display: inline-block;
+                margin: 6px;
             }
         }
     </style>
@@ -142,17 +321,33 @@
     <!-- ВЕРХНЕЕ МЕНЮ -->
 
     <nav class="top-bar">
-        <a href="#">Главная</a>
-        <a href="#games">Adopt Me</a>
-        <a href="#games">MM2</a>
-        <a href="#proofs">Пруфы</a>
-        <a href="#rules">Правила</a>
+
+        <a href="index.html">
+            Главная
+        </a>
+
+        <a href="catalog.html">
+            Каталог
+        </a>
+
+        <a href="proofs.html">
+            Пруфы
+        </a>
+
+        <a href="#rules">
+            Правила
+        </a>
+
     </nav>
 
 
     <!-- ГЛАВНЫЙ ЭКРАН -->
 
     <section class="hero">
+
+        <div class="welcome">
+            Добро пожаловать! 🌸
+        </div>
 
         <div class="logo">
             🐈 Lillit Shop 🐾
@@ -162,9 +357,21 @@
             Товары для Adopt Me и MM2
         </div>
 
-        <div class="proof-count">
-            300+ подтверждённых успешных сделок
+
+        <!-- 300 ПРУФОВ -->
+
+        <div class="proof-box">
+
+            <div class="proof-count">
+                💎 300 пруфов
+            </div>
+
+            <div class="proof-small">
+                Подтверждённые успешные сделки
+            </div>
+
         </div>
+
 
         <div class="safe">
             💗 Безопасные сделки
@@ -174,49 +381,29 @@
             Красивые товары • Быстрые сделки • Только гривны
         </div>
 
-        <a class="catalog-button" href="#games">
-            КАТАЛОГ
+
+        <a class="button" href="catalog.html">
+            🛍️ ОТКРЫТЬ КАТАЛОГ
         </a>
 
     </section>
 
 
-    <!-- ADOPT ME + MM2 -->
+    <!-- О LILLIT SHOP -->
 
-    <section class="games" id="games">
+    <section class="about">
 
-        <h2 class="section-title">
-            🎀 Каталог
+        <h2>
+            ✨ Lillit Shop
         </h2>
 
-        <div class="game-container">
+        <p>
+            Здесь ты найдёшь товары по Adopt Me и MM2 💗
+        </p>
 
-            <a class="game-card" href="#">
-                <h3>🐾 ADOPT ME</h3>
-
-                <p>
-                    Питомцы • Яйца • Машины • Одежда
-                </p>
-
-                <span class="go">
-                    ПЕРЕЙТИ →
-                </span>
-            </a>
-
-
-            <a class="game-card" href="#">
-                <h3>🔪 MM2</h3>
-
-                <p>
-                    Коммонки • Ножи • Пистолеты • Сеты
-                </p>
-
-                <span class="go">
-                    ПЕРЕЙТИ →
-                </span>
-            </a>
-
-        </div>
+        <a class="button" href="proofs.html">
+            💎 ПОСМОТРЕТЬ ВСЕ ПРУФЫ
+        </a>
 
     </section>
 
@@ -225,14 +412,14 @@
 
     <section class="advantages">
 
-        <h2 class="section-title">
+        <h2>
             🖤 Почему выбирают Lillit Shop?
         </h2>
 
         <div class="advantages-container">
 
             <div class="advantage">
-                <strong>💗 300+</strong>
+                <strong>💗 300</strong>
                 подтверждённых сделок
             </div>
 
@@ -266,240 +453,44 @@
     </section>
 
 
-    <!-- ПРУФЫ -->
-
-    <section id="proofs" class="games">
-
-        <h2 class="section-title">
-            💎 Пруфы
-        </h2>
-
-        <p>
-            Более 300 подтверждённых успешных сделок ✨
-        </p>
-
-        <p>
-            Перейдите в мой Telegram-канал и в поиске напишите
-
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🐈 Lillit Shop 🐾</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #080808;
-            color: white;
-        }
-
-        /* РОЗОВОЕ ВЕРХНЕЕ МЕНЮ */
-
-        .top-bar {
-            background: #ff4fa3;
-            padding: 12px 20px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 12px;
-            font-size: 15px;
-        }
-
-        .top-bar a:hover {
-            color: #111;
-        }
-
-        /* ГЛАВНЫЙ ЭКРАН */
-
-        .hero {
-            min-height: 650px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 50px 20px;
-            background:
-                radial-gradient(circle at top, #321326, #080808 55%);
-        }
-
-        .logo {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #ffffff;
-            margin-bottom: 25px;
-        }
-
-        .proof-count {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff65ad;
-        }
-
-        .safe {
-            margin-top: 10px;
-            font-size: 17px;
-        }
-
-        .small-text {
-            margin-top: 18px;
-            color: #dddddd;
-            font-size: 15px;
-        }
-
-        .catalog-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 16px 45px;
-            background: #ff4fa3;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .catalog-button:hover {
-            transform: scale(1.06);
-        }
-
-        /* КАТЕГОРИИ ИГР */
-
-        .games {
-            background: #ffffff;
-            color: #111;
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 34px;
-            margin-bottom: 35px;
-        }
-
-        .game-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .game-card {
-            background: #080808;
-            color: white;
-            padding: 45px 25px;
-            border-radius: 25px;
-            border: 2px solid #ff4fa3;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-
-        .game-card:hover {
-            transform: translateY(-6px);
-        }
-
-        .game-card h3 {
-            font-size: 28px;
-            margin: 0 0 12px;
-        }
-
-        .game-card p {
-            color: #dddddd;
-            line-height: 1.6;
-        }
-
-        .go {
-            display: inline-block;
-            margin-top: 15px;
-            background: #ff4fa3;
-            color: white;
-            padding: 11px 25px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        /* ПОЧЕМУ LILLIT SHOP */
-
-        .advantages {
-            background: #ff4fa3;
-            color: white;
-            padding: 65px 20px;
-            text-align: center;
-        }
-
-        .advantages-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .advantage {
-            background: #111111;
-            padding: 25px 15px;
-            border-radius: 20px;
-        }
-
-<strong>#пруфы</strong>, чтобы посмотреть отзывы и подтверждения сделок.
-        </p>
-
-        <a class="catalog-button"
-           href="https://t.me/lil1ta0"
-           target="_blank">
-            💬 ПЕРЕЙТИ В TELEGRAM
-        </a>
-
-    </section>
-
-
     <!-- ПРАВИЛА -->
 
-    <section id="rules" class="advantages">
+    <section class="rules" id="rules">
 
-        <h2 class="section-title">
+        <h2>
             📋 Правила
         </h2>
 
-        <div class="advantage">
+        <div class="rules-box">
 
-            <p>💳 Оплата только в гривнах.</p>
+            <p>
+                💳 Оплата только в гривнах.
+            </p>
 
-            <p>🚫 После оплаты возврата нет, если проблема возникла не по моей вине.</p>
+            <p>
+                🚫 После оплаты возврата нет,
+                если проблема возникла не по моей вине.
+            </p>
 
-            <p>⚠️ Перед оплатой обязательно проверяйте реквизиты.</p>
+            <p>
+                ⚠️ Перед оплатой обязательно
+                проверяйте реквизиты.
+            </p>
 
-            <p>💗 Если проблема произошла по моей вине — деньги возвращаются.</p>
+            <p>
+                💗 Если проблема произошла по моей вине —
+                деньги возвращаются.
+            </p>
 
-            <p>💬 Просьба вести себя адекватно в чате и не спамить.</p>
+            <p>
+                💬 Просьба вести себя адекватно
+                в чате и не спамить.
+            </p>
 
-            <p>🤝 Все спорные моменты лучше решить до оплаты.</p>
+            <p>
+                🤝 Все спорные моменты лучше
+                решить до оплаты.
+            </p>
 
         </div>
 
@@ -519,17 +510,35 @@
         </div>
 
         <div class="footer-menu">
-            <a href="#">Главная</a>
-            <a href="#games">Adopt Me</a>
-            <a href="#games">MM2</a>
-            <a href="#proofs">Пруфы</a>
-            <a href="#rules">Правила</a>
+
+            <a href="index.html">
+                Главная
+            </a>
+
+            <a href="catalog.html">
+                Каталог
+            </a>
+
+            <a href="proofs.html">
+                Пруфы
+            </a>
+
+            <a href="#rules">
+                Правила
+            </a>
+
         </div>
 
         <div>
-            💬 <a href="https://t.me/lil1ta0" target="_blank">
+
+            💬
+
+            <a
+                href="https://t.me/lil1ta0"
+                target="_blank">
                 Telegram
             </a>
+
         </div>
 
         <p>
@@ -539,4 +548,4 @@
     </footer>
 
 </body>
-    </html>
+</html>
