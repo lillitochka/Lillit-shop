@@ -22,54 +22,48 @@ body {
     color: white;
 }
 
+/* ВЕРХНЕЕ МЕНЮ */
+
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 20;
 }
 
 .top-bar a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 700;
     margin: 0 9px;
     font-size: 14px;
 }
 
-.top-bar a:hover {
-    color: #111;
-}
+/* КАТЕГОРИИ */
 
 .categories {
-    position: sticky;
-    top: 47px;
-    z-index: 90;
     display: flex;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
-    padding: 12px 10px;
+    padding: 14px 12px;
     background: #111;
     border-bottom: 2px solid #ff4fa3;
 }
 
 .categories a {
+    padding: 10px 17px;
+    border-radius: 22px;
     background: #ff4fa3;
     color: white;
     text-decoration: none;
-    padding: 9px 14px;
-    border-radius: 20px;
-    font-size: 13px;
     font-weight: bold;
+    font-size: 14px;
 }
 
-.categories a:hover {
-    background: white;
-    color: #ff4fa3;
-}
+/* СТРАНИЦА */
 
 .page {
     max-width: 1100px;
@@ -94,8 +88,10 @@ body {
     color: #ff65ad;
     text-decoration: none;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
+
+/* ТОВАРЫ */
 
 .grid {
     display: grid;
@@ -109,11 +105,6 @@ body {
     border-radius: 24px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,.25);
-}
-
-.card:hover {
-    border-color: #ff4fa3;
 }
 
 .card img {
@@ -153,9 +144,10 @@ body {
     margin-bottom: 10px;
 }
 
+/* КНОПКА */
+
 .buy {
-    display: inline-block;
-    border: 0;
+    border: none;
     background: #ff4fa3;
     color: white;
     padding: 13px 30px;
@@ -165,25 +157,14 @@ body {
     cursor: pointer;
 }
 
-.buy:hover {
-    transform: scale(1.04);
-}
-
-.section {
-    margin-top: 55px;
-    text-align: center;
-}
-
-.section h2 {
-    color: #ff65ad;
-}
+/* ОКНО ПОКУПКИ */
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,.8);
-    z-index: 200;
+    background: rgba(0,0,0,0.75);
+    z-index: 999;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -203,8 +184,34 @@ body {
 }
 
 .modal-box h3 {
-    font-size: 24px;
     margin-top: 0;
+    font-size: 25px;
+}
+
+.item-name {
+    background: #222;
+    border: 1px solid #ff4fa3;
+    border-radius: 15px;
+    padding: 13px;
+    margin: 15px 0 10px;
+    font-weight: bold;
+    color: #ff9ac8;
+}
+
+.copy-button {
+    border: none;
+    background: white;
+    color: #111;
+    padding: 12px 25px;
+    border-radius: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.copy-status {
+    color: #ff65ad;
+    font-weight: bold;
+    min-height: 20px;
 }
 
 .modal-link {
@@ -215,7 +222,7 @@ body {
     padding: 14px;
     border-radius: 24px;
     margin: 12px 0;
-    font-weight: bold;
+    font-weight: 800;
 }
 
 .modal-link.secondary {
@@ -225,11 +232,14 @@ body {
 
 .close {
     background: none;
-    border: 0;
+    border: none;
     color: #aaa;
-    cursor: pointer;
+    font-size: 15px;
     margin-top: 8px;
+    cursor: pointer;
 }
+
+/* НИЗ */
 
 footer {
     background: #050505;
@@ -249,22 +259,13 @@ footer a {
     line-height: 2;
 }
 
+/* ТЕЛЕФОН */
+
 @media (max-width: 700px) {
 
     .top-bar a {
         font-size: 12px;
         margin: 0 4px;
-    }
-
-    .categories {
-        top: 43px;
-        gap: 6px;
-        padding: 10px 8px;
-    }
-
-    .categories a {
-        padding: 8px 10px;
-        font-size: 12px;
     }
 
     .page {
@@ -277,10 +278,6 @@ footer a {
 
     .grid {
         grid-template-columns: 1fr;
-    }
-
-    .card {
-        padding: 16px;
     }
 
     .card img {
@@ -308,226 +305,147 @@ footer a {
 
 <main class="page">
 
-    <a class="back" href="catalog.html">
-        ← Назад в каталог
-    </a>
+<a class="back" href="catalog.html">
+    ← Назад в каталог
+</a>
 
-    <h1 class="page-title">
-        🔪 MM2
-    </h1>
+<h1 class="page-title">🔪 MM2</h1>
 
-    <p class="page-subtitle">
-        Пистолеты • Ножи • Коммонки • Сеты 🖤
-    </p>
+<p class="page-subtitle">
+    Пистолеты • Ножи • Коммонки • Сеты 🖤
+</p>
 
-    <section id="pistols" class="section">
+<div class="grid">
 
-        <h2>🔫 Пистолеты</h2>
+    <article class="card" id="pistols">
 
-        <div class="grid">
+        <img src="shark.webp" alt="Shark">
 
-            <article class="card">
+        <span class="category">
+            Пистолеты
+        </span>
 
-                <img src="shark.webp" alt="Shark">
+        <h2>Shark</h2>
 
-                <span class="category">
-                    Пистолеты
-                </span>
-
-                <h2>Shark</h2>
-
-                <div class="price">
-                    25 грн
-                </div>
-
-                <div class="meta">
-                    🎮 MM2<br>
-                    📦 В наличии: 1
-                </div>
-
-                <button class="buy" onclick="openBuy('Shark')">
-                    💗 КУПИТЬ
-                </button>
-
-            </article>
-
-
-            <article class="card">
-
-                <img src="darkbringer.webp" alt="Darkbringer">
-
-                <span class="category">
-                    Пистолеты
-                </span>
-
-                <h2>Darkbringer</h2>
-
-                <div class="price">
-                    45 грн
-                </div>
-
-                <div class="meta">
-                    🎮 MM2<br>
-                    📦 В наличии: 1
-                </div>
-
-                <button class="buy" onclick="openBuy('Darkbringer')">
-                    💗 КУПИТЬ
-                </button>
-
-            </article>
-
+        <div class="price">
+            25 грн
         </div>
 
-    </section>
-
-
-    <section id="knives" class="section">
-
-        <h2>🔪 Ножи</h2>
-
-        <div class="grid">
-
-            <article class="card">
-
-                <img src="heartblade.webp" alt="Heartblade">
-
-                <span class="category">
-                    Ножи
-                </span>
-
-                <h2>Heartblade</h2>
-
-                <div class="price">
-                    75 грн
-                </div>
-
-                <div class="meta">
-                    🎮 MM2<br>
-                    📦 В наличии: 1
-                </div>
-
-                <button class="buy" onclick="openBuy('Heartblade')">
-                    💗 КУПИТЬ
-                </button>
-
-            </article>
-
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 MM2
         </div>
 
-    </section>
+        <button class="buy" onclick="openBuy('Shark')">
+            КУПИТЬ
+        </button>
+
+    </article>
 
 
-    <section id="commons" class="section">
+    <article class="card">
 
-        <h2>✨ Коммонки</h2>
+        <img src="darkbringer.webp" alt="Darkbringer">
 
-        <p>Пока товаров нет 💗</p>
+        <span class="category">
+            Пистолеты
+        </span>
 
-    </section>
+        <h2>Darkbringer</h2>
+
+        <div class="price">
+            45 грн
+        </div>
+
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 MM2
+        </div>
+
+        <button class="buy" onclick="openBuy('Darkbringer')">
+            КУПИТЬ
+        </button>
+
+    </article>
 
 
-    <section id="sets" class="section">
+    <article class="card" id="knives">
 
-        <h2>🎀 Сеты</h2>
+        <img src="heartblade.webp" alt="Heartblade">
 
-        <p>Пока товаров нет 💗</p>
+        <span class="category">
+            Ножи
+        </span>
 
-    </section>
+        <h2>Heartblade</h2>
+
+        <div class="price">
+            75 грн
+        </div>
+
+        <div class="meta">
+            📦 В наличии: 1<br>
+            🎮 MM2
+        </div>
+
+        <button class="buy" onclick="openBuy('Heartblade')">
+            КУПИТЬ
+        </button>
+
+    </article>
+
+</div>
 
 </main>
 
 
-<div class="modal-box">
-    <h3>💗 Как связаться?</h3>
+<!-- ОКНО ПОКУПКИ -->
 
-    <p id="buyText">Вы хотите купить:</p>
+<div class="modal" id="buyModal">
 
-    <div id="itemName"
-         style="background:#222;
-                border:1px solid #ff4fa3;
-                border-radius:15px;
-                padding:13px;
-                margin:15px 0 10px;
-                font-weight:800;
-                color:#ff9ac8;">
+    <div class="modal-box">
+
+        <h3>
+            💗 Как связаться?
+        </h3>
+
+        <p>
+            Вы хотите купить:
+        </p>
+
+        <div class="item-name" id="itemName"></div>
+
+        <button class="copy-button" onclick="copyItemName()">
+            📋 СКОПИРОВАТЬ
+        </button>
+
+        <p class="copy-status" id="copyStatus"></p>
+
+        <p style="color:#aaa;font-size:14px;line-height:1.5;">
+            Скопируйте название и отправьте его в чат,
+            чтобы я быстрее поняла, что вы хотите купить 💕
+        </p>
+
+        <a class="modal-link"
+           href="https://t.me/lil1ta0spambot"
+           target="_blank">
+            🤖 SPAM BOT
+        </a>
+
+        <a class="modal-link secondary"
+           href="https://t.me/lil1ta0"
+           target="_blank">
+            💬 ЛС
+        </a>
+
+        <button class="close" onclick="closeBuy()">
+            Закрыть
+        </button>
+
     </div>
 
-    <button class="buy"
-            onclick="copyItemName()">
-        📋 СКОПИРОВАТЬ
-    </button>
-
-    <p id="copyStatus"
-       style="color:#ff65ad;font-weight:bold;min-height:20px;">
-    </p>
-
-    <p style="color:#aaa;font-size:14px;line-height:1.5;">
-        Скопируйте название и отправьте его в наш чат,
-        чтобы я быстрее поняла, что вы хотите купить 💕
-    </p>
-
-    <a class="modal-link"
-       href="https://t.me/lil1ta0spambot"
-       target="_blank">
-        🤖 SPAM BOT
-    </a>
-
-    <a class="modal-link secondary"
-       href="https://t.me/lil1ta0"
-       target="_blank">
-        💬 ЛС
-    </a>
-
-    <button class="close" onclick="closeBuy()">
-        Закрыть
-    </button>
-</div>
 </div>
 
-
-<script>
-let currentItemName = "";
-
-function openBuy(name) {
-    currentItemName = name;
-
-    document.getElementById("buyText").textContent =
-        "Вы хотите купить:";
-
-    document.getElementById("itemName").textContent =
-        name;
-
-    document.getElementById("copyStatus").textContent =
-        "";
-
-    document.getElementById("buyModal").classList.add("open");
-}
-
-function copyItemName() {
-    navigator.clipboard.writeText(currentItemName).then(function() {
-
-        document.getElementById("copyStatus").textContent =
-            "✅ Скопировано!";
-
-    }).catch(function() {
-
-        document.getElementById("copyStatus").textContent =
-            "❌ Не получилось скопировать";
-
-    });
-}
-
-function closeBuy() {
-    document.getElementById("buyModal").classList.remove("open");
-}
-
-document.getElementById("buyModal").addEventListener("click", function(e) {
-    if (e.target === this) {
-        closeBuy();
-    }
-});
-</script>
 
 <footer>
 
@@ -540,11 +458,15 @@ document.getElementById("buyModal").addEventListener("click", function(e) {
         <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
+
         ·
+
         <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
+
         ·
+
         <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
@@ -556,6 +478,50 @@ document.getElementById("buyModal").addEventListener("click", function(e) {
     </div>
 
 </footer>
+
+
+<script>
+
+let currentItemName = "";
+
+function openBuy(name) {
+
+    currentItemName = name;
+
+    document.getElementById("itemName").textContent = name;
+
+    document.getElementById("copyStatus").textContent = "";
+
+    document.getElementById("buyModal").classList.add("open");
+}
+
+
+function copyItemName() {
+
+    navigator.clipboard.writeText(currentItemName);
+
+    document.getElementById("copyStatus").textContent =
+        "✅ Скопировано!";
+
+}
+
+
+function closeBuy() {
+
+    document.getElementById("buyModal").classList.remove("open");
+
+}
+
+
+document.getElementById("buyModal").addEventListener("click", function(event) {
+
+    if (event.target === this) {
+        closeBuy();
+    }
+
+});
+
+</script>
 
 </body>
 </html>
