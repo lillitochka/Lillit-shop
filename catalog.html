@@ -1,214 +1,88 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🛍️ Каталог — Lillit Shop</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #080808;
-            color: white;
-        }
-
-        .top-bar {
-            background: #ff4fa3;
-            padding: 14px 15px;
-            text-align: center;
-        }
-
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            font-size: 15px;
-        }
-
-        .header {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: radial-gradient(circle at top, #321326, #080808 60%);
-        }
-
-        .logo {
-            font-size: 45px;
-            font-weight: 800;
-        }
-
-        h1 {
-            font-size: 38px;
-            margin: 20px 0 10px;
-        }
-
-        .subtitle {
-            color: #ddd;
-            font-size: 18px;
-        }
-
-        .catalog {
-            background: white;
-            color: #111;
-            padding: 60px 20px;
-            min-height: 500px;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: #080808;
-            color: white;
-            border: 2px solid #ff4fa3;
-            border-radius: 25px;
-            padding: 40px 25px;
-            text-align: center;
-        }
-
-        .card h2 {
-            color: #ff65ad;
-            font-size: 28px;
-        }
-
-        .card p {
-            color: #ddd;
-            line-height: 1.6;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 13px 28px;
-            background: #ff4fa3;
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-        }
-
-        footer {
-            background: #050505;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        footer a {
-            color: #ff65ad;
-            text-decoration: none;
-        }
-
-        @media (max-width: 700px) {
-            .top-bar a {
-                font-size: 12px;
-                margin: 0 4px;
-            }
-
-            .logo {
-                font-size: 34px;
-            }
-
-            h1 {
-                font-size: 30px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .catalog {
-                padding: 45px 15px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛍️ Lillit Shop — Каталог</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
+.top-bar{background:#ff4fa3;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:20}
+.top-bar a{color:#fff;text-decoration:none;font-weight:700;margin:0 9px;font-size:14px}
+.top-bar a:hover{color:#111}
+.page{max-width:1100px;margin:auto;padding:45px 18px}
+.page-title{text-align:center;font-size:40px;margin:10px 0 10px}
+.page-subtitle{text-align:center;color:#ccc;margin:0 auto 35px;line-height:1.5}
+.back{display:inline-block;color:#ff65ad;text-decoration:none;font-weight:700;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:#111;border:1px solid #333;border-radius:24px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.card:hover{border-color:#ff4fa3}
+.card img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:18px;margin-bottom:15px}
+.card h2{font-size:25px;margin:5px 0 10px}
+.price{font-size:23px;font-weight:800;color:#ff65ad}
+.meta{color:#ddd;line-height:1.6;margin:10px 0 18px}
+.buy{display:inline-block;border:0;background:#ff4fa3;color:#fff;padding:13px 30px;border-radius:25px;font-size:16px;font-weight:800;cursor:pointer}
+.buy:hover{transform:scale(1.04)}
+.category{display:inline-block;padding:7px 12px;border-radius:20px;background:#242424;color:#ff9ac8;font-size:13px;font-weight:700;margin-bottom:10px}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
+.game-card{display:block;background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:40px 25px;text-align:center;text-decoration:none;color:#fff}
+.game-card h2{font-size:30px;margin:0 0 10px}
+.game-card p{color:#ccc;line-height:1.5}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(420px,100%);background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:28px;text-align:center}
+.modal-box h3{margin-top:0;font-size:25px}
+.modal-link{display:block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px;border-radius:24px;margin:12px 0;font-weight:800}
+.modal-link.secondary{background:#fff;color:#111}
+.close{background:none;border:0;color:#aaa;font-size:15px;margin-top:8px;cursor:pointer}
+footer{background:#050505;border-top:1px solid #222;padding:35px 18px;text-align:center;color:#ddd}
+footer a{color:#ff65ad;text-decoration:none}
+.footer-links{margin:15px 0;line-height:2}
+@media(max-width:700px){
+ .top-bar a{font-size:12px;margin:0 4px}
+ .page{padding:30px 13px}
+ .page-title{font-size:31px}
+ .grid,.game-grid{grid-template-columns:1fr}
+ .card img{height:210px}
+ .card{padding:16px}
+}
+</style>
 </head>
-
 <body>
+<nav class="top-bar">
+<a href="index.html">Главная</a>
+<a href="catalog.html">Каталог</a>
+<a href="proofs.html">Пруфы</a>
+<a href="index.html#rules">Правила</a>
+</nav>
 
-    <nav class="top-bar">
-        <a href="index.html">Главная</a>
-        <a href="catalog.html">Каталог</a>
-        <a href="proofs.html">Пруфы</a>
-        <a href="index.html#rules">Правила</a>
-    </nav>
+<main class="page">
+<a class="back" href="index.html">← На главную</a>
+<h1 class="page-title">🛍️ Каталог</h1>
+<p class="page-subtitle">Выбери игру, чтобы посмотреть товары 💗</p>
+<div class="game-grid">
+<a class="game-card" href="adopt-me.html">
+<h2>🐾 ADOPT ME</h2>
+<p>Питомцы и другие товары</p>
+<strong>ОТКРЫТЬ КАТАЛОГ →</strong>
+</a>
+<a class="game-card" href="mm2.html">
+<h2>🔪 MM2</h2>
+<p>Пистолеты и ножи</p>
+<strong>ОТКРЫТЬ КАТАЛОГ →</strong>
+</a>
+</div>
+</main>
 
-    <header class="header">
-
-        <div class="logo">
-            🐈 Lillit Shop 🐾
-        </div>
-
-        <h1>🛍️ Каталог</h1>
-
-        <div class="subtitle">
-            Товары для Adopt Me и MM2 💗
-        </div>
-
-    </header>
-
-    <section class="catalog">
-
-        <div class="container">
-
-            <div class="cards">
-
-                <div class="card">
-                    <h2>🐾 Adopt Me</h2>
-
-                    <p>
-                        Питомцы • Яйца • Машины • Одежда
-                    </p>
-
-                    <a class="button" href="#">
-                        СМОТРЕТЬ ТОВАРЫ
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h2>🔪 MM2</h2>
-
-                    <p>
-                        Коммонки • Ножи • Пистолеты • Сеты
-                    </p>
-
-                    <a class="button" href="#">
-                        СМОТРЕТЬ ТОВАРЫ
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-
-</section>
-
-    <footer>
-
-        🐈 Lillit Shop 🐾
-
-        <p>
-            <a href="https://t.me/lil1ta0" target="_blank">
-                💬 Telegram
-            </a>
-        </p>
-
-        <p>© Lillit Shop</p>
-
-    </footer>
-
+<footer>
+<div>🐈 <strong>Lillit Shop</strong> 🐾</div>
+<div class="footer-links">
+<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a> ·
+<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a> ·
+<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
+</div>
+<div>Adopt Me • MM2</div>
+</footer>
 </body>
 </html>

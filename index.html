@@ -1,551 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🐈 Lillit Shop 🐾</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #080808;
-            color: white;
-        }
-
-        /* ВЕРХНЕЕ МЕНЮ */
-
-        .top-bar {
-            background: #ff4fa3;
-            padding: 14px 12px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .top-bar a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
-            font-size: 15px;
-        }
-
-        .top-bar a:hover {
-            color: #111;
-        }
-
-        /* ГЛАВНЫЙ ЭКРАН */
-
-        .hero {
-            min-height: 650px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-            background:
-                radial-gradient(
-                    circle at top,
-                    #321326,
-                    #080808 60%
-                );
-        }
-
-        .welcome {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 22px;
-        }
-
-        .logo {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-
-        .subtitle {
-            font-size: 20px;
-            color: #eeeeee;
-            margin-bottom: 28px;
-        }
-
-        /* ПРУФЫ СВЕРХУ */
-
-        .proof-box {
-            width: 100%;
-            max-width: 420px;
-            background: #111111;
-            border: 2px solid #ff4fa3;
-            border-radius: 25px;
-            padding: 20px;
-            box-shadow: 0 0 25px rgba(255, 79, 163, 0.15);
-        }
-
-        .proof-count {
-            color: #ff65ad;
-            font-size: 27px;
-            font-weight: bold;
-        }
-
-        .proof-small {
-            margin-top: 8px;
-            color: #dddddd;
-            font-size: 15px;
-        }
-
-        .safe {
-            margin-top: 18px;
-            font-size: 17px;
-        }
-
-        .small-text {
-            margin-top: 18px;
-            color: #cccccc;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-
-        /* КНОПКИ */
-
-        .button {
-            display: inline-block;
-            margin-top: 28px;
-            padding: 15px 38px;
-            background: #ff4fa3;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 17px;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            transform: scale(1.05);
-        }
-
-        /* ПРИВЕТСТВИЕ */
-
-        .about {
-            background: white;
-            color: #111111;
-            padding: 65px 20px;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 34px;
-            margin: 0 0 15px;
-        }
-
-        .about p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        /* ПРЕИМУЩЕСТВА */
-
-        .advantages {
-            background: #ff4fa3;
-            color: white;
-            padding: 65px 20px;
-            text-align: center;
-        }
-
-        .advantages h2 {
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
-
-        .advantages-container {
-            max-width: 1000px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-        }
-
-        .advantage {
-            background: #111111;
-            padding: 25px 15px;
-            border-radius: 20px;
-            line-height: 1.5;
-        }
-
-        .advantage strong {
-            display: block;
-            font-size: 22px;
-            color: #ff65ad;
-            margin-bottom: 8px;
-        }
-
-        /* ПРАВИЛА */
-
-        .rules {
-            background: white;
-            color: #111111;
-            padding: 65px 20px;
-            text-align: center;
-        }
-
-        .rules h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-
-        .rules-box {
-            max-width: 700px;
-            margin: auto;
-            background: #080808;
-            color: white;
-            border: 2px solid #ff4fa3;
-            border-radius: 25px;
-            padding: 30px 25px;
-            line-height: 1.6;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #050505;
-            color: white;
-            text-align: center;
-            padding: 45px 20px;
-        }
-
-        footer .logo {
-            font-size: 35px;
-        }
-
-        footer a {
-            color: #ff65ad;
-            text-decoration: none;
-        }
-
-        .footer-menu {
-            margin: 20px 0;
-        }
-
-        .footer-menu a {
-            margin: 0 8px;
-            color: white;
-        }
-
-        /* ТЕЛЕФОН */
-
-        @media (max-width: 700px) {
-
-            .top-bar {
-                padding: 12px 7px;
-            }
-
-            .top-bar a {
-                font-size: 12px;
-                margin: 0 4px;
-            }
-
-            .hero {
-                min-height: 600px;
-                padding: 55px 16px;
-            }
-
-            .welcome {
-                font-size: 31px;
-                line-height: 1.2;
-            }
-
-            .logo {
-                font-size: 35px;
-                line-height: 1.2;
-            }
-
-            .subtitle {
-                font-size: 17px;
-            }
-
-            .proof-count {
-                font-size: 22px;
-            }
-
-            .proof-box {
-                max-width: 350px;
-                padding: 18px 12px;
-            }
-
-            .button {
-                width: 90%;
-                max-width: 320px;
-                padding: 14px 20px;
-            }
-
-            .about h2,
-            .advantages h2,
-            .rules h2 {
-                font-size: 27px;
-            }
-
-            .advantages-container {
-                grid-template-columns: 1fr;
-            }
-
-            .rules-box {
-                padding: 25px 17px;
-            }
-
-            footer .logo {
-                font-size: 30px;
-            }
-
-            footer .footer-menu a {
-                display: inline-block;
-                margin: 6px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🐈 Lillit Shop 🐾</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
+.top-bar{background:#ff4fa3;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:20}
+.top-bar a{color:#fff;text-decoration:none;font-weight:700;margin:0 9px;font-size:14px}
+.top-bar a:hover{color:#111}
+.page{max-width:1100px;margin:auto;padding:45px 18px}
+.page-title{text-align:center;font-size:40px;margin:10px 0 10px}
+.page-subtitle{text-align:center;color:#ccc;margin:0 auto 35px;line-height:1.5}
+.back{display:inline-block;color:#ff65ad;text-decoration:none;font-weight:700;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:#111;border:1px solid #333;border-radius:24px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.card:hover{border-color:#ff4fa3}
+.card img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:18px;margin-bottom:15px}
+.card h2{font-size:25px;margin:5px 0 10px}
+.price{font-size:23px;font-weight:800;color:#ff65ad}
+.meta{color:#ddd;line-height:1.6;margin:10px 0 18px}
+.buy{display:inline-block;border:0;background:#ff4fa3;color:#fff;padding:13px 30px;border-radius:25px;font-size:16px;font-weight:800;cursor:pointer}
+.buy:hover{transform:scale(1.04)}
+.category{display:inline-block;padding:7px 12px;border-radius:20px;background:#242424;color:#ff9ac8;font-size:13px;font-weight:700;margin-bottom:10px}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
+.game-card{display:block;background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:40px 25px;text-align:center;text-decoration:none;color:#fff}
+.game-card h2{font-size:30px;margin:0 0 10px}
+.game-card p{color:#ccc;line-height:1.5}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(420px,100%);background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:28px;text-align:center}
+.modal-box h3{margin-top:0;font-size:25px}
+.modal-link{display:block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px;border-radius:24px;margin:12px 0;font-weight:800}
+.modal-link.secondary{background:#fff;color:#111}
+.close{background:none;border:0;color:#aaa;font-size:15px;margin-top:8px;cursor:pointer}
+footer{background:#050505;border-top:1px solid #222;padding:35px 18px;text-align:center;color:#ddd}
+footer a{color:#ff65ad;text-decoration:none}
+.footer-links{margin:15px 0;line-height:2}
+@media(max-width:700px){
+ .top-bar a{font-size:12px;margin:0 4px}
+ .page{padding:30px 13px}
+ .page-title{font-size:31px}
+ .grid,.game-grid{grid-template-columns:1fr}
+ .card img{height:210px}
+ .card{padding:16px}
+}
+</style>
 </head>
-
 <body>
-
-    <!-- ВЕРХНЕЕ МЕНЮ -->
-
-    <nav class="top-bar">
-
-        <a href="index.html">
-            Главная
-        </a>
-
-        <a href="catalog.html">
-            Каталог
-        </a>
-
-        <a href="proofs.html">
-            Пруфы
-        </a>
-
-        <a href="#rules">
-            Правила
-        </a>
-
-    </nav>
-
-
-    <!-- ГЛАВНЫЙ ЭКРАН -->
-
-    <section class="hero">
-
-        <div class="welcome">
-            Добро пожаловать! 🌸
-        </div>
-
-        <div class="logo">
-            🐈 Lillit Shop 🐾
-        </div>
-
-        <div class="subtitle">
-            Товары для Adopt Me и MM2
-        </div>
-
-
-        <!-- 300 ПРУФОВ -->
-
-        <div class="proof-box">
-
-            <div class="proof-count">
-                💎 300 пруфов
-            </div>
-
-            <div class="proof-small">
-                Подтверждённые успешные сделки
-            </div>
-
-        </div>
-
-
-        <div class="safe">
-            💗 Безопасные сделки
-        </div>
-
-        <div class="small-text">
-            Красивые товары • Быстрые сделки • Только гривны
-        </div>
-
-
-        <a class="button" href="catalog.html">
-            🛍️ ОТКРЫТЬ КАТАЛОГ
-        </a>
-
-    </section>
-
-
-    <!-- О LILLIT SHOP -->
-
-    <section class="about">
-
-        <h2>
-            ✨ Lillit Shop
-        </h2>
-
-        <p>
-            Здесь ты найдёшь товары по Adopt Me и MM2 💗
-        </p>
-
-        <a class="button" href="proofs.html">
-            💎 ПОСМОТРЕТЬ ВСЕ ПРУФЫ
-        </a>
-
-    </section>
-
-
-    <!-- ПРЕИМУЩЕСТВА -->
-
-    <section class="advantages">
-
-        <h2>
-            🖤 Почему выбирают Lillit Shop?
-        </h2>
-
-        <div class="advantages-container">
-
-            <div class="advantage">
-                <strong>💗 300</strong>
-                подтверждённых сделок
-            </div>
-
-            <div class="advantage">
-                <strong>💰 Только гривны</strong>
-                удобная оплата
-            </div>
-
-            <div class="advantage">
-                <strong>🤝 Безопасные сделки</strong>
-                честный подход
-            </div>
-
-            <div class="advantage">
-                <strong>⚡ Быстрая выдача</strong>
-                без лишнего ожидания
-            </div>
-
-            <div class="advantage">
-                <strong>💬 Всегда на связи</strong>
-                можно написать по вопросам
-            </div>
-
-            <div class="advantage">
-                <strong>🛡️ Проверенные гаранты</strong>
-                при необходимости
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ПРАВИЛА -->
-
-    <section class="rules" id="rules">
-
-        <h2>
-            📋 Правила
-        </h2>
-
-        <div class="rules-box">
-
-            <p>
-                💳 Оплата только в гривнах.
-            </p>
-
-            <p>
-                🚫 После оплаты возврата нет,
-                если проблема возникла не по моей вине.
-            </p>
-
-            <p>
-                ⚠️ Перед оплатой обязательно
-                проверяйте реквизиты.
-            </p>
-
-            <p>
-                💗 Если проблема произошла по моей вине —
-                деньги возвращаются.
-            </p>
-
-            <p>
-                💬 Просьба вести себя адекватно
-                в чате и не спамить.
-            </p>
-
-            <p>
-                🤝 Все спорные моменты лучше
-                решить до оплаты.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <div class="logo">
-            🐈 Lillit Shop 🐾
-        </div>
-
-        <div>
-            Adopt Me • MM2
-        </div>
-
-        <div class="footer-menu">
-
-            <a href="index.html">
-                Главная
-            </a>
-
-            <a href="catalog.html">
-                Каталог
-            </a>
-
-            <a href="proofs.html">
-                Пруфы
-            </a>
-
-            <a href="#rules">
-                Правила
-            </a>
-
-        </div>
-
-        <div>
-
-            💬
-
-            <a
-                href="https://t.me/lil1ta0"
-                target="_blank">
-                Telegram
-            </a>
-
-        </div>
-
-        <p>
-            © Lillit Shop
-        </p>
-
-    </footer>
-
+<nav class="top-bar">
+<a href="index.html">Главная</a>
+<a href="catalog.html">Каталог</a>
+<a href="proofs.html">Пруфы</a>
+<a href="index.html#rules">Правила</a>
+</nav>
+
+<section style="min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:55px 18px;background:radial-gradient(circle at top,#321326,#080808 60%)">
+<h1 style="font-size:42px;margin:0 0 20px">Добро пожаловать! 🌸</h1>
+<div style="font-size:48px;font-weight:800">🐈 Lillit Shop 🐾</div>
+<p style="font-size:20px;color:#ddd">Товары для Adopt Me и MM2</p>
+<div style="background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:18px 25px;margin-top:10px">
+<div style="font-size:27px;font-weight:800;color:#ff65ad">💎 300 пруфов</div>
+<div style="color:#ccc;margin-top:7px">Подтверждённые успешные сделки</div>
+</div>
+<p style="color:#ddd">💗 Безопасные сделки</p>
+<a href="catalog.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:15px 38px;border-radius:30px;font-weight:800;margin-top:12px">🛍️ ОТКРЫТЬ КАТАЛОГ</a>
+</section>
+<section style="background:#fff;color:#111;text-align:center;padding:60px 20px">
+<h2 style="font-size:32px">✨ Lillit Shop</h2>
+<p style="font-size:18px">Здесь ты найдёшь товары по Adopt Me и MM2 💗</p>
+<a href="proofs.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px 30px;border-radius:28px;font-weight:800">💎 ПОСМОТРЕТЬ ВСЕ ПРУФЫ</a>
+</section>
+<section id="rules" style="background:#ff4fa3;padding:60px 20px;text-align:center">
+<h2>📋 Правила</h2>
+<div style="max-width:700px;margin:auto;background:#111;color:#fff;border-radius:25px;padding:25px;line-height:1.6">
+<p>💳 Оплата только в гривнах.</p>
+<p>⚠️ Перед оплатой обязательно проверяйте реквизиты.</p>
+<p>💗 Все спорные моменты лучше решить до оплаты.</p>
+<p>🤝 По необходимости используем проверенных гарантов.</p>
+</div>
+</section>
+
+<footer>
+<div>🐈 <strong>Lillit Shop</strong> 🐾</div>
+<div class="footer-links">
+<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a> ·
+<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a> ·
+<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
+</div>
+<div>Adopt Me • MM2</div>
+</footer>
 </body>
 </html>
