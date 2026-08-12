@@ -3,386 +3,349 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>🐾 Lillit Shop — Adopt Me</title>
 
 <style>
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#080808;
+    color:white;
 }
 
-html {
-    scroll-behavior: smooth;
+.top-bar{
+    background:#ff4fa3;
+    padding:14px 10px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+.top-bar a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    margin:0 9px;
+    font-size:14px;
 }
 
-/* ВЕРХНЕЕ МЕНЮ */
+.top-bar a:hover{color:#111}
 
-.top-bar {
-    background: #ff4fa3;
-    padding: 14px 10px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.main-categories,
+.sub-categories{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    flex-wrap:wrap;
+    padding:12px 10px;
+    background:#111;
 }
 
-.top-bar a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    margin: 0 9px;
-    font-size: 14px;
+.main-categories{
+    position:sticky;
+    top:47px;
+    z-index:90;
+    border-bottom:2px solid #ff4fa3;
 }
 
-.top-bar a:hover {
-    color: #111;
+.sub-categories{
+    border-bottom:1px solid #292929;
 }
 
-/* ОСНОВНЫЕ ВКЛАДКИ */
-
-.main-categories {
-    position: sticky;
-    top: 47px;
-    z-index: 90;
-    display: flex;
-    justify-content: center;
-    gap: 9px;
-    flex-wrap: wrap;
-    padding: 12px 10px;
-    background: #111;
-    border-bottom: 2px solid #ff4fa3;
-}
+.sub-categories.hidden{display:none}
 
 .main-categories button,
-.sub-categories button {
-    border: none;
-    padding: 9px 14px;
-    border-radius: 20px;
-    background: #ff4fa3;
-    color: white;
-    font-weight: bold;
-    font-size: 13px;
-    cursor: pointer;
-    transition: .2s;
+.sub-categories button{
+    border:none;
+    padding:9px 14px;
+    border-radius:20px;
+    background:#ff4fa3;
+    color:white;
+    font-weight:bold;
+    font-size:13px;
+    cursor:pointer;
+    transition:.2s;
 }
 
 .main-categories button:hover,
-.sub-categories button:hover {
-    background: white;
-    color: #ff4fa3;
-    transform: translateY(-2px);
+.sub-categories button:hover{
+    background:white;
+    color:#ff4fa3;
+    transform:translateY(-2px);
 }
 
-/* ВЛОЖЕННЫЕ ВКЛАДКИ */
-
-.sub-categories {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    padding: 14px 10px;
-    background: #0d0d0d;
-    border-bottom: 1px solid #292929;
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:40px 18px;
 }
 
-.sub-categories.hidden {
-    display: none;
+.back{
+    display:inline-block;
+    color:#ff65ad;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
-/* СТРАНИЦА */
-
-.page {
-    max-width: 1100px;
-    margin: auto;
-    padding: 40px 18px;
+.page-title{
+    text-align:center;
+    font-size:40px;
+    margin:10px 0;
 }
 
-.back {
-    display: inline-block;
-    color: #ff65ad;
-    text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 20px;
+.page-subtitle{
+    text-align:center;
+    color:#ccc;
+    margin-bottom:20px;
 }
 
-.page-title {
-    text-align: center;
-    font-size: 40px;
-    margin: 10px 0;
+.notice{
+    max-width:700px;
+    margin:0 auto 25px;
+    padding:14px 18px;
+    background:#111;
+    border:1px solid #ff4fa3;
+    border-radius:20px;
+    text-align:center;
+    color:#ff9ac8;
+    font-weight:bold;
+    line-height:1.6;
 }
 
-.page-subtitle {
-    text-align: center;
-    color: #ccc;
-    margin-bottom: 20px;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
 }
 
-/* ИНФОРМАЦИЯ */
-
-.notice {
-    max-width: 700px;
-    margin: 0 auto 25px;
-    padding: 14px 18px;
-    background: #111;
-    border: 1px solid #ff4fa3;
-    border-radius: 20px;
-    text-align: center;
-    color: #ff9ac8;
-    font-weight: bold;
-    line-height: 1.6;
+.card{
+    background:#111;
+    border:1px solid #333;
+    border-radius:24px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
 
-/* ТОВАРЫ */
+.card:hover{border-color:#ff4fa3}
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:contain;
+    background:white;
+    border-radius:18px;
+    margin-bottom:15px;
 }
 
-.card {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 24px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+.card h2{
+    font-size:25px;
+    margin:5px 0 10px;
 }
 
-.card:hover {
-    border-color: #ff4fa3;
+.price{
+    font-size:23px;
+    font-weight:800;
+    color:#ff65ad;
 }
 
-.card img {
-    width: 100%;
-    height: 230px;
-    object-fit: contain;
-    background: white;
-    border-radius: 18px;
-    margin-bottom: 15px;
+.meta{
+    color:#ddd;
+    line-height:1.7;
+    margin:10px 0 18px;
 }
 
-.card h2 {
-    font-size: 25px;
-    margin: 5px 0 10px;
+.category{
+    display:inline-block;
+    padding:7px 12px;
+    border-radius:20px;
+    background:#242424;
+    color:#ff9ac8;
+    font-size:13px;
+    font-weight:bold;
+    margin:4px;
 }
 
-.price {
-    font-size: 23px;
-    font-weight: 800;
-    color: #ff65ad;
+.buy{
+    border:none;
+    background:#ff4fa3;
+    color:white;
+    padding:13px 30px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
 }
 
-.meta {
-    color: #ddd;
-    line-height: 1.7;
-    margin: 10px 0 18px;
+.buy:hover{transform:scale(1.04)}
+
+.zoom-text{
+    color:#aaa;
+    font-size:13px;
+    margin:-5px 0 15px;
 }
 
-.category {
-    display: inline-block;
-    padding: 7px 12px;
-    border-radius: 20px;
-    background: #242424;
-    color: #ff9ac8;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 4px;
+.empty-message{
+    display:none;
+    grid-column:1/-1;
+    text-align:center;
+    padding:65px 20px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:24px;
 }
 
-.buy {
-    border: none;
-    background: #ff4fa3;
-    color: white;
-    padding: 13px 30px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: 800;
-    cursor: pointer;
+.empty-title{
+    color:#ff65ad;
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.buy:hover {
-    transform: scale(1.04);
+.empty-text{
+    color:#aaa;
+    font-size:15px;
 }
 
-.zoom-text {
-    color: #aaa;
-    font-size: 13px;
-    margin: -5px 0 15px;
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    z-index:200;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
-/* ПУСТАЯ КАТЕГОРИЯ */
+.modal.open{display:flex}
 
-.empty-message {
-    display: none;
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 65px 20px;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 24px;
+.modal-box{
+    width:min(420px,100%);
+    background:#111;
+    border:2px solid #ff4fa3;
+    border-radius:25px;
+    padding:28px;
+    text-align:center;
 }
 
-.empty-title {
-    color: #ff65ad;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.modal-box h3{
+    margin-top:0;
+    font-size:25px;
 }
 
-.empty-text {
-    color: #aaa;
-    font-size: 15px;
+.copy-box{
+    background:#222;
+    border:1px solid #444;
+    border-radius:15px;
+    padding:12px;
+    margin:18px 0;
+    word-break:break-word;
 }
 
-/* ОКНО ПОКУПКИ */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.75);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+.copy-name{
+    color:#ff65ad;
+    font-weight:bold;
+    display:block;
+    margin-bottom:10px;
 }
 
-.modal.open {
-    display: flex;
+.copy-button{
+    border:none;
+    background:white;
+    color:#111;
+    padding:9px 16px;
+    border-radius:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.modal-box {
-    width: min(420px, 100%);
-    background: #111;
-    border: 2px solid #ff4fa3;
-    border-radius: 25px;
-    padding: 28px;
-    text-align: center;
+.modal-link{
+    display:block;
+    background:#ff4fa3;
+    color:white;
+    text-decoration:none;
+    padding:14px;
+    border-radius:24px;
+    margin:12px 0;
+    font-weight:800;
 }
 
-.modal-box h3 {
-    margin-top: 0;
-    font-size: 25px;
+.modal-link.secondary{
+    background:white;
+    color:#111;
 }
 
-.copy-box {
-    background: #222;
-    border: 1px solid #444;
-    border-radius: 15px;
-    padding: 12px;
-    margin: 18px 0;
-    word-break: break-word;
+.close{
+    background:none;
+    border:none;
+    color:#aaa;
+    font-size:15px;
+    margin-top:8px;
+    cursor:pointer;
 }
 
-.copy-name {
-    color: #ff65ad;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 10px;
+footer{
+    background:#050505;
+    border-top:1px solid #222;
+    padding:35px 18px;
+    text-align:center;
+    color:#ddd;
 }
 
-.copy-button {
-    border: none;
-    background: white;
-    color: #111;
-    padding: 9px 16px;
-    border-radius: 18px;
-    font-weight: bold;
-    cursor: pointer;
+footer a{
+    color:#ff65ad;
+    text-decoration:none;
 }
 
-.modal-link {
-    display: block;
-    background: #ff4fa3;
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 24px;
-    margin: 12px 0;
-    font-weight: 800;
+.footer-links{
+    margin:15px 0;
+    line-height:2;
 }
 
-.modal-link.secondary {
-    background: white;
-    color: #111;
-}
+@media(max-width:700px){
 
-.close {
-    background: none;
-    border: none;
-    color: #aaa;
-    font-size: 15px;
-    margin-top: 8px;
-    cursor: pointer;
-}
-
-/* FOOTER */
-
-footer {
-    background: #050505;
-    border-top: 1px solid #222;
-    padding: 35px 18px;
-    text-align: center;
-    color: #ddd;
-}
-
-footer a {
-    color: #ff65ad;
-    text-decoration: none;
-}
-
-.footer-links {
-    margin: 15px 0;
-    line-height: 2;
-}
-
-/* ТЕЛЕФОН */
-
-@media (max-width: 700px) {
-
-    .top-bar a {
-        font-size: 12px;
-        margin: 0 4px;
+    .top-bar a{
+        font-size:12px;
+        margin:0 4px;
     }
 
-    .main-categories {
-        top: 43px;
-        gap: 6px;
-        padding: 10px 7px;
+    .main-categories{
+        top:43px;
+        gap:6px;
+        padding:10px 7px;
     }
 
     .main-categories button,
-    .sub-categories button {
-        padding: 8px 10px;
-        font-size: 12px;
+    .sub-categories button{
+        padding:8px 10px;
+        font-size:12px;
     }
 
-    .page {
-        padding: 30px 13px;
+    .page{
+        padding:30px 13px;
     }
 
-    .page-title {
-        font-size: 31px;
+    .page-title{
+        font-size:31px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
+    .grid{
+        grid-template-columns:1fr;
     }
 
-    .card {
-        padding: 16px;
+    .card{
+        padding:16px;
     }
 
-    .card img {
-        height: 210px;
+    .card img{
+        height:210px;
     }
 }
 </style>
@@ -390,16 +353,11 @@ footer a {
 
 <body>
 
-<!-- ВЕРХНЕЕ МЕНЮ -->
-
 <nav class="top-bar">
 
     <a href="index.html">Главная</a>
-
     <a href="catalog.html">Каталог</a>
-
     <a href="proofs.html">Пруфы</a>
-
     <a href="index.html#rules">Правила</a>
 
 </nav>
@@ -432,90 +390,46 @@ footer a {
 </div>
 
 
-<!-- ВКЛАДКИ ПИТОМЦЕВ -->
+<!-- ПИТОМЦЫ -->
 
-<div
-    class="sub-categories"
-    id="petsCategories"
->
+<div class="sub-categories" id="petsCategories">
 
-    <button onclick="filterProducts('pets')">
-        Все питомцы
-    </button>
-
-    <button onclick="filterProducts('large')">
-        Крупные
-    </button>
-
-    <button onclick="filterProducts('small')">
-        Мелкие
-    </button>
-
-    <button onclick="filterProducts('fly')">
-        Fly
-    </button>
-
-    <button onclick="filterProducts('ride')">
-        Ride
-    </button>
-
-    <button onclick="filterProducts('flyride')">
-        Fly Ride
-    </button>
-
-    <button onclick="filterProducts('neon')">
-        Neon
-    </button>
-
-    <button onclick="filterProducts('mega')">
-        Mega
-    </button>
+    <button onclick="filterProducts('pets')">Все питомцы</button>
+    <button onclick="filterProducts('large')">Крупные</button>
+    <button onclick="filterProducts('small')">Мелкие</button>
+    <button onclick="filterProducts('fly')">Fly</button>
+    <button onclick="filterProducts('ride')">Ride</button>
+    <button onclick="filterProducts('flyride')">Fly Ride</button>
+    <button onclick="filterProducts('neon')">Neon</button>
+    <button onclick="filterProducts('mega')">Mega</button>
 
 </div>
 
 
-<!-- ВКЛАДКИ ЯИЦ -->
+<!-- ЯЙЦА -->
 
-<div
-    class="sub-categories hidden"
-    id="eggsCategories"
->
+<div class="sub-categories hidden" id="eggsCategories">
 
-    <button onclick="filterProducts('oldEggs')">
-        Old
-    </button>
-
-    <button onclick="filterProducts('currentEggs')">
-        Обычные
-    </button>
+    <button onclick="filterProducts('oldEggs')">Old</button>
+    <button onclick="filterProducts('currentEggs')">Обычные</button>
 
 </div>
 
 
-<!-- ВКЛАДКИ МАШИН -->
+<!-- МАШИНЫ -->
 
-<div
-    class="sub-categories hidden"
-    id="carsCategories"
->
+<div class="sub-categories hidden" id="carsCategories">
 
     <button onclick="filterProducts('cars')">
         Все машины
     </button>
 
-    <button onclick="filterProducts('cars')">
-        Без категории
-    </button>
-
 </div>
 
 
-<!-- ВКЛАДКИ ОДЕЖДЫ -->
+<!-- ОДЕЖДА -->
 
-<div
-    class="sub-categories hidden"
-    id="clothesCategories"
->
+<div class="sub-categories hidden" id="clothesCategories">
 
     <button onclick="filterProducts('largeClothes')">
         Крупная
@@ -543,13 +457,7 @@ footer a {
     </p>
 
 
-    <!-- ИНФОРМАЦИЯ О МИНИМАЛЬНОЙ ПОКУПКЕ -->
-
-    <div
-        class="notice"
-        id="clothesNotice"
-        style="display:none;"
-    >
+    <div class="notice" id="clothesNotice" style="display:none;">
 
         💗 Минимальная сумма покупки — 25 грн
         <br>
@@ -558,10 +466,7 @@ footer a {
     </div>
 
 
-    <div
-        class="grid"
-        id="productGrid"
-    >
+    <div class="grid" id="productGrid">
 
 
         <!-- AFRICAN WILD DOG -->
@@ -571,10 +476,8 @@ footer a {
             data-categories="pets large flyride"
         >
 
-            <!-- ОСТАВЛЕНО ИМЯ ФАЙЛА ИЗ ТВОЕГО СТАРОГО КОДА -->
-
             <img
-                src="African-wild-dog.webp"
+                src="african-wild-dog.jpeg"
                 alt="African Wild Dog"
             >
 
@@ -616,8 +519,6 @@ footer a {
             data-categories="pets large neon ride"
         >
 
-            <!-- ОСТАВЛЕНО ИМЯ ФАЙЛА ИЗ ТВОЕГО СТАРОГО КОДА -->
-
             <img
                 src="tree-kangaroo.webp"
                 alt="Tree Kangaroo"
@@ -658,7 +559,7 @@ footer a {
         </article>
 
 
-        <!-- ЯЙЦА OLD -->
+        <!-- OLD ЯЙЦА -->
 
         <article
             class="card product"
@@ -751,7 +652,7 @@ footer a {
             </div>
 
             <span class="category">
-                Без категории
+                Машины
             </span>
 
             <h2>
@@ -772,12 +673,6 @@ footer a {
             class="card product"
             data-categories="clothes largeClothes"
         >
-
-            <!--
-            Здесь используется имя файла Tiny Wings.
-            Если твой файл называется иначе,
-            нужно поставить именно его название.
-            -->
 
             <img
                 src="tiny-wings.webp"
@@ -818,11 +713,6 @@ footer a {
             data-categories="clothes smallClothes"
         >
 
-            <!--
-            Здесь должно стоять имя файла
-            с последней фотографией мелкой одежды.
-            -->
-
             <img
                 src="small-clothes.webp"
                 alt="Одежда"
@@ -860,12 +750,9 @@ footer a {
         </article>
 
 
-        <!-- ПУСТАЯ КАТЕГОРИЯ -->
+        <!-- ПУСТО -->
 
-        <div
-            class="empty-message"
-            id="emptyMessage"
-        >
+        <div class="empty-message" id="emptyMessage">
 
             <div class="empty-title">
                 🖤 Пока ничего нет
@@ -884,10 +771,7 @@ footer a {
 
 <!-- ОКНО ПОКУПКИ -->
 
-<div
-    class="modal"
-    id="buyModal"
->
+<div class="modal" id="buyModal">
 
     <div class="modal-box">
 
@@ -959,28 +843,19 @@ footer a {
 
     <div class="footer-links">
 
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
+        <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
 
@@ -1000,7 +875,7 @@ let currentProduct = "";
 
 /* ПОКУПКА */
 
-function openBuy(name) {
+function openBuy(name){
 
     currentProduct = name;
 
@@ -1012,7 +887,7 @@ function openBuy(name) {
 }
 
 
-function closeBuy() {
+function closeBuy(){
 
     document
         .getElementById("buyModal")
@@ -1020,20 +895,20 @@ function closeBuy() {
 }
 
 
-function copyProduct() {
+function copyProduct(){
 
-    if (!currentProduct) {
+    if(!currentProduct){
         return;
     }
 
     navigator.clipboard
         .writeText(currentProduct)
-        .then(function() {
+        .then(function(){
 
             alert("Название товара скопировано 💗");
 
         })
-        .catch(function() {
+        .catch(function(){
 
             alert(
                 "Скопируй название вручную: "
@@ -1044,22 +919,22 @@ function copyProduct() {
 }
 
 
-/* ЗАКРЫТИЕ ОКНА */
+/* КЛИК ВНЕ ОКНА */
 
 document
     .getElementById("buyModal")
-    .addEventListener("click", function(event) {
+    .addEventListener("click",function(event){
 
-        if (event.target === this) {
+        if(event.target === this){
             closeBuy();
         }
 
     });
 
 
-/* ОСНОВНАЯ КАТЕГОРИЯ */
+/* ОСНОВНЫЕ КАТЕГОРИИ */
 
-function showMainCategory(category) {
+function showMainCategory(category){
 
     const petsCategories =
         document.getElementById("petsCategories");
@@ -1079,7 +954,7 @@ function showMainCategory(category) {
     clothesCategories.classList.add("hidden");
 
 
-    if (category === "pets") {
+    if(category === "pets"){
 
         petsCategories.classList.remove("hidden");
 
@@ -1087,7 +962,7 @@ function showMainCategory(category) {
 
     }
 
-    else if (category === "eggs") {
+    else if(category === "eggs"){
 
         eggsCategories.classList.remove("hidden");
 
@@ -1095,7 +970,7 @@ function showMainCategory(category) {
 
     }
 
-    else if (category === "cars") {
+    else if(category === "cars"){
 
         carsCategories.classList.remove("hidden");
 
@@ -1103,7 +978,7 @@ function showMainCategory(category) {
 
     }
 
-    else if (category === "clothes") {
+    else if(category === "clothes"){
 
         clothesCategories.classList.remove("hidden");
 
@@ -1111,7 +986,7 @@ function showMainCategory(category) {
 
     }
 
-    else {
+    else{
 
         filterProducts("all");
 
@@ -1122,7 +997,7 @@ function showMainCategory(category) {
 
 /* ФИЛЬТРЫ */
 
-function filterProducts(category) {
+function filterProducts(category){
 
     const products =
         document.querySelectorAll(".product");
@@ -1136,22 +1011,24 @@ function filterProducts(category) {
     let found = false;
 
 
-    products.forEach(function(product) {
+    products.forEach(function(product){
 
         const categories =
             product.dataset.categories.split(" ");
 
 
-        if (
+        if(
             category === "all" ||
             categories.includes(category)
-        ) {
+        ){
 
             product.style.display = "";
 
             found = true;
 
-        } else {
+        }
+
+        else{
 
             product.style.display = "none";
 
@@ -1160,28 +1037,30 @@ function filterProducts(category) {
     });
 
 
-    /* Минимальная покупка только для одежды */
-
-    if (
+    if(
         category === "clothes" ||
         category === "largeClothes" ||
         category === "smallClothes"
-    ) {
+    ){
 
         notice.style.display = "block";
 
-    } else {
+    }
+
+    else{
 
         notice.style.display = "none";
 
     }
 
 
-    if (found) {
+    if(found){
 
         emptyMessage.style.display = "none";
 
-    } else {
+    }
+
+    else{
 
         emptyMessage.style.display = "block";
 
