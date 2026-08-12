@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>🔪 Lillit Shop — MM2</title>
 
 <style>
@@ -30,7 +29,7 @@ body {
     text-align: center;
     position: sticky;
     top: 0;
-    z-index: 20;
+    z-index: 100;
 }
 
 .top-bar a {
@@ -41,26 +40,41 @@ body {
     font-size: 14px;
 }
 
+.top-bar a:hover {
+    color: #111;
+}
+
 /* КАТЕГОРИИ */
 
 .categories {
+    position: sticky;
+    top: 47px;
+    z-index: 90;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 9px;
     flex-wrap: wrap;
-    padding: 14px 12px;
+    padding: 12px 10px;
     background: #111;
     border-bottom: 2px solid #ff4fa3;
 }
 
-.categories a {
-    padding: 10px 17px;
-    border-radius: 22px;
+.categories button {
+    border: none;
+    padding: 9px 15px;
+    border-radius: 20px;
     background: #ff4fa3;
     color: white;
-    text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.categories button:hover {
+    background: white;
+    color: #ff4fa3;
+    transform: translateY(-2px);
 }
 
 /* СТРАНИЦА */
@@ -68,7 +82,15 @@ body {
 .page {
     max-width: 1100px;
     margin: auto;
-    padding: 45px 18px;
+    padding: 40px 18px;
+}
+
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .page-title {
@@ -81,14 +103,6 @@ body {
     text-align: center;
     color: #ccc;
     margin-bottom: 35px;
-}
-
-.back {
-    display: inline-block;
-    color: #ff65ad;
-    text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 25px;
 }
 
 /* ТОВАРЫ */
@@ -105,6 +119,11 @@ body {
     border-radius: 24px;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+
+.card:hover {
+    border-color: #ff4fa3;
 }
 
 .card img {
@@ -129,7 +148,7 @@ body {
 
 .meta {
     color: #ddd;
-    line-height: 1.6;
+    line-height: 1.7;
     margin: 10px 0 18px;
 }
 
@@ -141,10 +160,8 @@ body {
     color: #ff9ac8;
     font-size: 13px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 4px;
 }
-
-/* КНОПКА */
 
 .buy {
     border: none;
@@ -157,14 +174,42 @@ body {
     cursor: pointer;
 }
 
+.buy:hover {
+    transform: scale(1.04);
+}
+
+/* ПУСТАЯ КАТЕГОРИЯ */
+
+.empty-message {
+    display: none;
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 65px 20px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 24px;
+}
+
+.empty-title {
+    color: #ff65ad;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.empty-text {
+    color: #aaa;
+    font-size: 15px;
+}
+
 /* ОКНО ПОКУПКИ */
 
 .modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.75);
-    z-index: 999;
+    background: rgba(0,0,0,.75);
+    z-index: 200;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -188,30 +233,30 @@ body {
     font-size: 25px;
 }
 
-.item-name {
+.copy-box {
     background: #222;
-    border: 1px solid #ff4fa3;
+    border: 1px solid #444;
     border-radius: 15px;
-    padding: 13px;
-    margin: 15px 0 10px;
+    padding: 12px;
+    margin: 18px 0;
+    word-break: break-word;
+}
+
+.copy-name {
+    color: #ff65ad;
     font-weight: bold;
-    color: #ff9ac8;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .copy-button {
     border: none;
     background: white;
     color: #111;
-    padding: 12px 25px;
-    border-radius: 22px;
+    padding: 9px 16px;
+    border-radius: 18px;
     font-weight: bold;
     cursor: pointer;
-}
-
-.copy-status {
-    color: #ff65ad;
-    font-weight: bold;
-    min-height: 20px;
 }
 
 .modal-link {
@@ -239,7 +284,7 @@ body {
     cursor: pointer;
 }
 
-/* НИЗ */
+/* FOOTER */
 
 footer {
     background: #050505;
@@ -268,6 +313,17 @@ footer a {
         margin: 0 4px;
     }
 
+    .categories {
+        top: 43px;
+        gap: 6px;
+        padding: 10px 7px;
+    }
+
+    .categories button {
+        padding: 8px 11px;
+        font-size: 12px;
+    }
+
     .page {
         padding: 30px 13px;
     }
@@ -280,6 +336,10 @@ footer a {
         grid-template-columns: 1fr;
     }
 
+    .card {
+        padding: 16px;
+    }
+
     .card img {
         height: 210px;
     }
@@ -289,6 +349,8 @@ footer a {
 
 <body>
 
+<!-- ВЕРХНЕЕ МЕНЮ -->
+
 <nav class="top-bar">
     <a href="index.html">Главная</a>
     <a href="catalog.html">Каталог</a>
@@ -296,105 +358,185 @@ footer a {
     <a href="index.html#rules">Правила</a>
 </nav>
 
+<!-- КАТЕГОРИИ MM2 -->
+
 <div class="categories">
-    <a href="#pistols">Пистолеты</a>
-    <a href="#knives">Ножи</a>
-    <a href="#commons">Коммонки</a>
-    <a href="#sets">Сеты</a>
+
+    <button onclick="filterProducts('all')">
+        Все
+    </button>
+
+    <button onclick="filterProducts('pistols')">
+        Пистолеты
+    </button>
+
+    <button onclick="filterProducts('knives')">
+        Ножи
+    </button>
+
+    <button onclick="filterProducts('commons')">
+        Коммонки
+    </button>
+
+    <button onclick="filterProducts('sets')">
+        Сеты
+    </button>
+
 </div>
+
 
 <main class="page">
 
-<a class="back" href="catalog.html">
-    ← Назад в каталог
-</a>
+    <a class="back" href="catalog.html">
+        ← Назад в каталог
+    </a>
 
-<h1 class="page-title">🔪 MM2</h1>
+    <h1 class="page-title">
+        🔪 MM2
+    </h1>
 
-<p class="page-subtitle">
-    Пистолеты • Ножи • Коммонки • Сеты 🖤
-</p>
+    <p class="page-subtitle">
+        Пистолеты • Ножи • Коммонки • Сеты 🖤
+    </p>
 
-<div class="grid">
 
-    <article class="card" id="pistols">
+    <div class="grid" id="productGrid">
 
-        <img src="shark.webp" alt="Shark">
+        <!-- SHARK -->
 
-        <span class="category">
-            Пистолеты
-        </span>
+        <article
+            class="card product"
+            data-categories="pistols"
+        >
 
-        <h2>Shark</h2>
+            <img
+                src="shark.webp"
+                alt="Shark"
+            >
 
-        <div class="price">
-            25 грн
+            <span class="category">
+                Пистолеты
+            </span>
+
+            <h2>
+                Shark
+            </h2>
+
+            <div class="price">
+                25 грн
+            </div>
+
+            <div class="meta">
+                📦 В наличии: 1<br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy"
+                onclick="openBuy('Shark')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- DARKBRINGER -->
+
+        <article
+            class="card product"
+            data-categories="pistols"
+        >
+
+            <img
+                src="darkbringer.webp"
+                alt="Darkbringer"
+            >
+
+            <span class="category">
+                Пистолеты
+            </span>
+
+            <h2>
+                Darkbringer
+            </h2>
+
+            <div class="price">
+                45 грн
+            </div>
+
+            <div class="meta">
+                📦 В наличии: 1<br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy"
+                onclick="openBuy('Darkbringer')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- HEARTBLADE -->
+
+        <article
+            class="card product"
+            data-categories="knives"
+        >
+
+            <img
+                src="heartblade.webp"
+                alt="Heartblade"
+            >
+
+            <span class="category">
+                Ножи
+            </span>
+
+            <h2>
+                Heartblade
+            </h2>
+
+            <div class="price">
+                75 грн
+            </div>
+
+            <div class="meta">
+                📦 В наличии: 1<br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy"
+                onclick="openBuy('Heartblade')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- ПУСТАЯ КАТЕГОРИЯ -->
+
+        <div
+            class="empty-message"
+            id="emptyMessage"
+        >
+
+            <div class="empty-title">
+                🖤 Пока ничего нет
+            </div>
+
+            <div class="empty-text">
+                Скоро здесь появятся товары ✨
+            </div>
+
         </div>
 
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 MM2
-        </div>
-
-        <button class="buy" onclick="openBuy('Shark')">
-            КУПИТЬ
-        </button>
-
-    </article>
-
-
-    <article class="card">
-
-        <img src="darkbringer.webp" alt="Darkbringer">
-
-        <span class="category">
-            Пистолеты
-        </span>
-
-        <h2>Darkbringer</h2>
-
-        <div class="price">
-            45 грн
-        </div>
-
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 MM2
-        </div>
-
-        <button class="buy" onclick="openBuy('Darkbringer')">
-            КУПИТЬ
-        </button>
-
-    </article>
-
-
-    <article class="card" id="knives">
-
-        <img src="heartblade.webp" alt="Heartblade">
-
-        <span class="category">
-            Ножи
-        </span>
-
-        <h2>Heartblade</h2>
-
-        <div class="price">
-            75 грн
-        </div>
-
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 MM2
-        </div>
-
-        <button class="buy" onclick="openBuy('Heartblade')">
-            КУПИТЬ
-        </button>
-
-    </article>
-
-</div>
+    </div>
 
 </main>
 
@@ -413,32 +555,48 @@ footer a {
             Вы хотите купить:
         </p>
 
-        <div class="item-name" id="itemName"></div>
+        <div class="copy-box">
 
-        <button class="copy-button" onclick="copyItemName()">
-            📋 СКОПИРОВАТЬ
-        </button>
+            <span
+                class="copy-name"
+                id="buyText"
+            ></span>
 
-        <p class="copy-status" id="copyStatus"></p>
+            <button
+                class="copy-button"
+                onclick="copyProduct()"
+            >
+                📋 СКОПИРОВАТЬ
+            </button>
 
-        <p style="color:#aaa;font-size:14px;line-height:1.5;">
-            Скопируйте название и отправьте его в чат,
-            чтобы я быстрее поняла, что вы хотите купить 💕
+        </div>
+
+        <p style="color:#bbb;font-size:14px;">
+            Можете скопировать название и
+            вставить его в чат, чтобы я быстрее
+            поняла, какой товар вы хотите купить 💗
         </p>
 
-        <a class="modal-link"
-           href="https://t.me/lil1ta0spambot"
-           target="_blank">
+        <a
+            class="modal-link"
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
             🤖 SPAM BOT
         </a>
 
-        <a class="modal-link secondary"
-           href="https://t.me/lil1ta0"
-           target="_blank">
+        <a
+            class="modal-link secondary"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
             💬 ЛС
         </a>
 
-        <button class="close" onclick="closeBuy()">
+        <button
+            class="close"
+            onclick="closeBuy()"
+        >
             Закрыть
         </button>
 
@@ -446,6 +604,8 @@ footer a {
 
 </div>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -455,19 +615,28 @@ footer a {
 
     <div class="footer-links">
 
-        <a href="https://t.me/lil1ta0" target="_blank">
+        <a
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
             💬 ЛС
         </a>
 
         ·
 
-        <a href="https://t.me/lil1ta0spambot" target="_blank">
+        <a
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a href="https://t.me/lillitsho" target="_blank">
+        <a
+            href="https://t.me/lillitsho"
+            target="_blank"
+        >
             📢 Telegram-канал
         </a>
 
@@ -482,44 +651,119 @@ footer a {
 
 <script>
 
-let currentItemName = "";
+let currentProduct = "";
+
+
+/* ПОКУПКА */
 
 function openBuy(name) {
 
-    currentItemName = name;
+    currentProduct = name;
 
-    document.getElementById("itemName").textContent = name;
+    document.getElementById("buyText").textContent = name;
 
-    document.getElementById("copyStatus").textContent = "";
-
-    document.getElementById("buyModal").classList.add("open");
-}
-
-
-function copyItemName() {
-
-    navigator.clipboard.writeText(currentItemName);
-
-    document.getElementById("copyStatus").textContent =
-        "✅ Скопировано!";
-
+    document
+        .getElementById("buyModal")
+        .classList.add("open");
 }
 
 
 function closeBuy() {
 
-    document.getElementById("buyModal").classList.remove("open");
+    document
+        .getElementById("buyModal")
+        .classList.remove("open");
+}
+
+
+function copyProduct() {
+
+    if (!currentProduct) {
+        return;
+    }
+
+    navigator.clipboard
+        .writeText(currentProduct)
+        .then(function() {
+
+            alert("Название товара скопировано 💗");
+
+        })
+        .catch(function() {
+
+            alert(
+                "Скопируй название вручную: "
+                + currentProduct
+            );
+
+        });
+}
+
+
+/* ЗАКРЫТИЕ ПО КЛИКУ ВНЕ ОКНА */
+
+document
+    .getElementById("buyModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeBuy();
+        }
+
+    });
+
+
+/* ФИЛЬТРЫ MM2 */
+
+function filterProducts(category) {
+
+    const products =
+        document.querySelectorAll(".product");
+
+    const emptyMessage =
+        document.getElementById("emptyMessage");
+
+    let found = false;
+
+    products.forEach(function(product) {
+
+        const categories =
+            product.dataset.categories.split(" ");
+
+        if (
+            category === "all" ||
+            categories.includes(category)
+        ) {
+
+            product.style.display = "";
+
+            found = true;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+
+    if (found) {
+
+        emptyMessage.style.display = "none";
+
+    } else {
+
+        emptyMessage.style.display = "block";
+
+    }
 
 }
 
 
-document.getElementById("buyModal").addEventListener("click", function(event) {
+/* ПРИ ОТКРЫТИИ СТРАНИЦЫ */
 
-    if (event.target === this) {
-        closeBuy();
-    }
-
-});
+filterProducts("all");
 
 </script>
 
