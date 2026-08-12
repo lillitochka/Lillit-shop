@@ -438,56 +438,96 @@ footer a {
 </main>
 
 
-<div class="modal" id="buyModal">
+<div class="modal-box">
+    <h3>💗 Как связаться?</h3>
 
-    <div class="modal-box">
+    <p id="buyText">Вы хотите купить:</p>
 
-        <h3>💗 Как связаться?</h3>
-
-        <p id="buyText">
-            Выбери удобный способ:
-        </p>
-
-        <a class="modal-link"
-           href="https://t.me/lil1ta0spambot"
-           target="_blank">
-            🤖 SPAM BOT
-        </a>
-
-        <a class="modal-link secondary"
-           href="https://t.me/lil1ta0"
-           target="_blank">
-            💬 ЛС
-        </a>
-
-        <button class="close" onclick="closeBuy()">
-            Закрыть
-        </button>
-
+    <div id="itemName"
+         style="background:#222;
+                border:1px solid #ff4fa3;
+                border-radius:15px;
+                padding:13px;
+                margin:15px 0 10px;
+                font-weight:800;
+                color:#ff9ac8;">
     </div>
 
+    <button class="buy"
+            onclick="copyItemName()">
+        📋 СКОПИРОВАТЬ
+    </button>
+
+    <p id="copyStatus"
+       style="color:#ff65ad;font-weight:bold;min-height:20px;">
+    </p>
+
+    <p style="color:#aaa;font-size:14px;line-height:1.5;">
+        Скопируйте название и отправьте его в наш чат,
+        чтобы я быстрее поняла, что вы хотите купить 💕
+    </p>
+
+    <a class="modal-link"
+       href="https://t.me/lil1ta0spambot"
+       target="_blank">
+        🤖 SPAM BOT
+    </a>
+
+    <a class="modal-link secondary"
+       href="https://t.me/lil1ta0"
+       target="_blank">
+        💬 ЛС
+    </a>
+
+    <button class="close" onclick="closeBuy()">
+        Закрыть
+    </button>
+</div>
 </div>
 
 
 <script>
+let currentItemName = "";
+
 function openBuy(name) {
+    currentItemName = name;
+
     document.getElementById("buyText").textContent =
-        "Покупка: " + name + " — выбери способ связи:";
+        "Вы хотите купить:";
+
+    document.getElementById("itemName").textContent =
+        name;
+
+    document.getElementById("copyStatus").textContent =
+        "";
 
     document.getElementById("buyModal").classList.add("open");
+}
+
+function copyItemName() {
+    navigator.clipboard.writeText(currentItemName).then(function() {
+
+        document.getElementById("copyStatus").textContent =
+            "✅ Скопировано!";
+
+    }).catch(function() {
+
+        document.getElementById("copyStatus").textContent =
+            "❌ Не получилось скопировать";
+
+    });
 }
 
 function closeBuy() {
     document.getElementById("buyModal").classList.remove("open");
 }
 
-document.getElementById("buyModal").addEventListener("click", function(event) {
-    if (event.target === this) {
+document.getElementById("buyModal").addEventListener("click", function(e) {
+    if (e.target === this) {
         closeBuy();
     }
 });
 </script>
-
 
 <footer>
 
