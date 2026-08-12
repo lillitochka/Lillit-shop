@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>🐾 Lillit Shop — Adopt Me</title>
 
 <style>
@@ -14,8 +15,10 @@ body{
     margin:0;
     font-family:Arial,sans-serif;
     background:#080808;
-    color:#fff;
+    color:white;
 }
+
+/* ВЕРХНЕЕ МЕНЮ */
 
 .top-bar{
     background:#ff4fa3;
@@ -27,14 +30,19 @@ body{
 }
 
 .top-bar a{
-    color:#fff;
+    color:white;
     text-decoration:none;
     font-weight:700;
     margin:0 9px;
     font-size:14px;
 }
 
-.top-bar a:hover{color:#111}
+.top-bar a:hover{
+    color:#111;
+}
+
+
+/* ГЛАВНЫЕ ВКЛАДКИ */
 
 .main-categories{
     position:sticky;
@@ -49,6 +57,29 @@ body{
     border-bottom:2px solid #ff4fa3;
 }
 
+.main-categories button,
+.sub-categories button{
+    border:none;
+    padding:9px 14px;
+    border-radius:20px;
+    background:#ff4fa3;
+    color:white;
+    font-weight:bold;
+    font-size:13px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.main-categories button:hover,
+.sub-categories button:hover{
+    background:white;
+    color:#ff4fa3;
+    transform:translateY(-2px);
+}
+
+
+/* ДОПОЛНИТЕЛЬНЫЕ ВКЛАДКИ */
+
 .sub-categories{
     display:flex;
     justify-content:center;
@@ -59,27 +90,12 @@ body{
     border-bottom:1px solid #292929;
 }
 
-.sub-categories.hidden{display:none}
-
-.main-categories button,
-.sub-categories button{
-    border:none;
-    padding:9px 14px;
-    border-radius:20px;
-    background:#ff4fa3;
-    color:#fff;
-    font-weight:bold;
-    font-size:13px;
-    cursor:pointer;
-    transition:.2s;
+.sub-categories.hidden{
+    display:none;
 }
 
-.main-categories button:hover,
-.sub-categories button:hover{
-    background:#fff;
-    color:#ff4fa3;
-    transform:translateY(-2px);
-}
+
+/* СТРАНИЦА */
 
 .page{
     max-width:1100px;
@@ -107,6 +123,9 @@ body{
     margin-bottom:25px;
 }
 
+
+/* УВЕДОМЛЕНИЕ */
+
 .notice{
     max-width:700px;
     margin:0 auto 25px;
@@ -119,6 +138,9 @@ body{
     font-weight:bold;
     line-height:1.6;
 }
+
+
+/* ТОВАРЫ */
 
 .grid{
     display:grid;
@@ -135,13 +157,15 @@ body{
     box-shadow:0 8px 30px rgba(0,0,0,.25);
 }
 
-.card:hover{border-color:#ff4fa3}
+.card:hover{
+    border-color:#ff4fa3;
+}
 
 .card img{
     width:100%;
     height:230px;
     object-fit:contain;
-    background:#fff;
+    background:white;
     border-radius:18px;
     margin-bottom:15px;
 }
@@ -177,7 +201,7 @@ body{
 .buy{
     border:none;
     background:#ff4fa3;
-    color:#fff;
+    color:white;
     padding:13px 30px;
     border-radius:25px;
     font-size:16px;
@@ -185,11 +209,16 @@ body{
     cursor:pointer;
 }
 
-.buy:hover{transform:scale(1.04)}
+.buy:hover{
+    transform:scale(1.04);
+}
+
+
+/* ПУСТАЯ КАТЕГОРИЯ */
 
 .empty-message{
     display:none;
-    grid-column:1/-1;
+    grid-column:1 / -1;
     text-align:center;
     padding:65px 20px;
     background:#111;
@@ -210,11 +239,17 @@ body{
     line-height:1.6;
 }
 
+
+/* ОДЕЖДА */
+
 .zoom-text{
     color:#aaa;
     font-size:13px;
     margin:-5px 0 15px;
 }
+
+
+/* ОКНО ПОКУПКИ */
 
 .modal{
     display:none;
@@ -227,7 +262,9 @@ body{
     padding:20px;
 }
 
-.modal.open{display:flex}
+.modal.open{
+    display:flex;
+}
 
 .modal-box{
     width:min(420px,100%);
@@ -261,7 +298,7 @@ body{
 
 .copy-button{
     border:none;
-    background:#fff;
+    background:white;
     color:#111;
     padding:9px 16px;
     border-radius:18px;
@@ -272,7 +309,7 @@ body{
 .modal-link{
     display:block;
     background:#ff4fa3;
-    color:#fff;
+    color:white;
     text-decoration:none;
     padding:14px;
     border-radius:24px;
@@ -281,7 +318,7 @@ body{
 }
 
 .modal-link.secondary{
-    background:#fff;
+    background:white;
     color:#111;
 }
 
@@ -293,6 +330,9 @@ body{
     margin-top:8px;
     cursor:pointer;
 }
+
+
+/* FOOTER */
 
 footer{
     background:#050505;
@@ -311,6 +351,9 @@ footer a{
     margin:15px 0;
     line-height:2;
 }
+
+
+/* ТЕЛЕФОН */
 
 @media(max-width:700px){
 
@@ -354,21 +397,32 @@ footer a{
 </style>
 </head>
 
+
 <body>
 
+
+<!-- ВЕРХНЕЕ МЕНЮ -->
+
 <nav class="top-bar">
+
     <a href="index.html">Главная</a>
+
     <a href="catalog.html">Каталог</a>
+
     <a href="proofs.html">Пруфы</a>
+
     <a href="index.html#rules">Правила</a>
+
 </nav>
 
 
-<!-- ОСНОВНЫЕ ВКЛАДКИ -->
+<!-- ГЛАВНЫЕ ВКЛАДКИ -->
 
 <div class="main-categories">
 
-    <button onclick="showMainCategory('all')">Все</button>
+    <button onclick="showMainCategory('all')">
+        Все
+    </button>
 
     <button onclick="showMainCategory('pets')">
         🐾 Питомцы
@@ -393,21 +447,47 @@ footer a{
 
 <div class="sub-categories" id="petsCategories">
 
-    <button onclick="filterProducts('pets')">Все</button>
-    <button onclick="filterProducts('large')">Крупные</button>
-    <button onclick="filterProducts('small')">Мелкие</button>
-    <button onclick="filterProducts('fly')">Fly</button>
-    <button onclick="filterProducts('ride')">Ride</button>
-    <button onclick="filterProducts('flyride')">Fly Ride</button>
-    <button onclick="filterProducts('neon')">Neon</button>
-    <button onclick="filterProducts('mega')">Mega</button>
+    <button onclick="filterProducts('pets')">
+        Все
+    </button>
+
+    <button onclick="filterProducts('large')">
+        Крупные
+    </button>
+
+    <button onclick="filterProducts('small')">
+        Мелкие
+    </button>
+
+    <button onclick="filterProducts('fly')">
+        Fly
+    </button>
+
+    <button onclick="filterProducts('ride')">
+        Ride
+    </button>
+
+    <button onclick="filterProducts('flyride')">
+        Fly Ride
+    </button>
+
+    <button onclick="filterProducts('neon')">
+        Neon
+    </button>
+
+    <button onclick="filterProducts('mega')">
+        Mega
+    </button>
 
 </div>
 
 
 <!-- ВКЛАДКИ ЯИЦ -->
 
-<div class="sub-categories hidden" id="eggsCategories">
+<div
+    class="sub-categories hidden"
+    id="eggsCategories"
+>
 
     <button onclick="filterProducts('oldEggs')">
         Old
@@ -422,7 +502,10 @@ footer a{
 
 <!-- ВКЛАДКИ МАШИН -->
 
-<div class="sub-categories hidden" id="carsCategories">
+<div
+    class="sub-categories hidden"
+    id="carsCategories"
+>
 
     <button onclick="filterProducts('cars')">
         Все машины
@@ -433,7 +516,10 @@ footer a{
 
 <!-- ВКЛАДКИ ОДЕЖДЫ -->
 
-<div class="sub-categories hidden" id="clothesCategories">
+<div
+    class="sub-categories hidden"
+    id="clothesCategories"
+>
 
     <button onclick="filterProducts('largeClothes')">
         Крупная
@@ -448,29 +534,50 @@ footer a{
 
 <main class="page">
 
-    <a class="back" href="catalog.html">
+    <a
+        class="back"
+        href="catalog.html"
+    >
         ← Назад в каталог
     </a>
+
 
     <h1 class="page-title">
         🐾 Adopt Me
     </h1>
+
 
     <p class="page-subtitle">
         Питомцы • Яйца • Машины • Одежда 💗
     </p>
 
 
-    <div class="notice" id="clothesNotice" style="display:none;">
+    <!-- УВЕДОМЛЕНИЕ ДЛЯ ОДЕЖДЫ -->
+
+    <div
+        class="notice"
+        id="clothesNotice"
+        style="display:none;"
+    >
 
         💗 Минимальная сумма покупки — 25 грн
+
         <br>
+
         💬 За точной ценой одежды пишите в ЛС
 
     </div>
 
 
-    <div class="grid" id="productGrid">
+    <div
+        class="grid"
+        id="productGrid"
+    >
+
+
+        <!-- ========================= -->
+        <!-- ПИТОМЦЫ -->
+        <!-- ========================= -->
 
 
         <!-- AFRICAN WILD DOG -->
@@ -502,8 +609,13 @@ footer a{
             </div>
 
             <div class="meta">
-                📦 В наличии: 1<br>
+
+                📦 В наличии: 1
+
+                <br>
+
                 🎮 Adopt Me
+
             </div>
 
             <button
@@ -549,8 +661,13 @@ footer a{
             </div>
 
             <div class="meta">
-                📦 В наличии: 1<br>
+
+                📦 В наличии: 1
+
+                <br>
+
                 🎮 Adopt Me
+
             </div>
 
             <button
@@ -563,6 +680,11 @@ footer a{
         </article>
 
 
+        <!-- ========================= -->
+        <!-- ЯЙЦА -->
+        <!-- ========================= -->
+
+
         <!-- OLD ЯЙЦА -->
 
         <article
@@ -570,30 +692,19 @@ footer a{
             data-categories="eggs oldEggs"
         >
 
-            <div style="
-                height:230px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:80px;
-                background:#fff;
-                border-radius:18px;
-                margin-bottom:15px;
-            ">
-                🥚
-            </div>
+            <div
+                class="empty-message"
+                style="display:block;"
+            >
 
-            <span class="category">
-                Old
-            </span>
+                <div class="empty-title">
+                    🖤 Пока ничего нет
+                </div>
 
-            <h2>
-                Old яйца
-            </h2>
+                <div class="empty-text">
+                    Ожидайте, скоро появятся товары ✨
+                </div>
 
-            <div class="meta">
-                🥚 Пока ничего нет<br>
-                ⏳ Ожидайте, скоро появятся товары ✨
             </div>
 
         </article>
@@ -606,69 +717,55 @@ footer a{
             data-categories="eggs currentEggs"
         >
 
-            <div style="
-                height:230px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:80px;
-                background:#fff;
-                border-radius:18px;
-                margin-bottom:15px;
-            ">
-                🥚
-            </div>
+            <div
+                class="empty-message"
+                style="display:block;"
+            >
 
-            <span class="category">
-                Обычные
-            </span>
+                <div class="empty-title">
+                    🖤 Пока ничего нет
+                </div>
 
-            <h2>
-                Обычные яйца
-            </h2>
+                <div class="empty-text">
+                    Ожидайте, скоро появятся товары ✨
+                </div>
 
-            <div class="meta">
-                🥚 Пока ничего нет<br>
-                ⏳ Ожидайте, скоро появятся товары ✨
             </div>
 
         </article>
 
 
+        <!-- ========================= -->
         <!-- МАШИНЫ -->
+        <!-- ========================= -->
+
 
         <article
             class="card product"
             data-categories="cars"
         >
 
-            <div style="
-                height:230px;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                font-size:80px;
-                background:#fff;
-                border-radius:18px;
-                margin-bottom:15px;
-            ">
-                🚗
-            </div>
+            <div
+                class="empty-message"
+                style="display:block;"
+            >
 
-            <span class="category">
-                Машины
-            </span>
+                <div class="empty-title">
+                    🖤 Пока ничего нет
+                </div>
 
-            <h2>
-                Машины
-            </h2>
+                <div class="empty-text">
+                    Ожидайте, скоро появятся товары ✨
+                </div>
 
-            <div class="meta">
-                🚗 Пока ничего нет<br>
-                ⏳ Ожидайте, скоро появятся товары ✨
             </div>
 
         </article>
+
+
+        <!-- ========================= -->
+        <!-- ОДЕЖДА -->
+        <!-- ========================= -->
 
 
         <!-- TINY WINGS -->
@@ -696,8 +793,13 @@ footer a{
             </div>
 
             <div class="meta">
-                📦 В наличии: 1<br>
+
+                📦 В наличии: 1
+
+                <br>
+
                 🎮 Adopt Me
+
             </div>
 
             <button
@@ -739,9 +841,17 @@ footer a{
             </div>
 
             <div class="meta">
-                📦 В наличии: 30<br>
-                💬 За ценой пишите в ЛС<br>
+
+                📦 В наличии: 30
+
+                <br>
+
+                💬 За ценой пишите в ЛС
+
+                <br>
+
                 🎮 Adopt Me
+
             </div>
 
             <button
@@ -754,7 +864,7 @@ footer a{
         </article>
 
 
-        <!-- ПУСТАЯ КАТЕГОРИЯ -->
+        <!-- ОБЩЕЕ ПУСТОЕ СООБЩЕНИЕ -->
 
         <div
             class="empty-message"
@@ -771,6 +881,7 @@ footer a{
 
         </div>
 
+
     </div>
 
 </main>
@@ -778,7 +889,10 @@ footer a{
 
 <!-- ОКНО ПОКУПКИ -->
 
-<div class="modal" id="buyModal">
+<div
+    class="modal"
+    id="buyModal"
+>
 
     <div class="modal-box">
 
@@ -807,9 +921,12 @@ footer a{
         </div>
 
         <p style="color:#bbb;font-size:14px;">
-            Скопируйте название товара и отправьте
-            его в чат 💗
+
+            Скопируйте название товара
+            и отправьте его в чат 💗
+
         </p>
+
 
         <a
             class="modal-link"
@@ -819,6 +936,7 @@ footer a{
             🤖 SPAM BOT
         </a>
 
+
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -826,6 +944,7 @@ footer a{
         >
             💬 ЛС
         </a>
+
 
         <button
             class="close"
@@ -839,11 +958,14 @@ footer a{
 </div>
 
 
+<!-- FOOTER -->
+
 <footer>
 
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
+
 
     <div class="footer-links">
 
@@ -873,6 +995,7 @@ footer a{
         </a>
 
     </div>
+
 
     <div>
         Adopt Me • MM2
@@ -910,7 +1033,9 @@ function closeBuy(){
 
 function copyProduct(){
 
-    if(!currentProduct) return;
+    if(!currentProduct){
+        return;
+    }
 
     navigator.clipboard
         .writeText(currentProduct)
@@ -922,8 +1047,8 @@ function copyProduct(){
         .catch(function(){
 
             alert(
-                "Скопируй название вручную: " +
-                currentProduct
+                "Скопируй название вручную: "
+                + currentProduct
             );
 
         });
@@ -934,33 +1059,37 @@ function copyProduct(){
 
 document
     .getElementById("buyModal")
-    .addEventListener("click",function(event){
+    .addEventListener(
+        "click",
+        function(event){
 
-        if(event.target === this){
-            closeBuy();
+            if(event.target === this){
+                closeBuy();
+            }
+
         }
+    );
 
-    });
 
-
-/* ОСНОВНЫЕ КАТЕГОРИИ */
+/* ПОКАЗ ОСНОВНЫХ КАТЕГОРИЙ */
 
 function showMainCategory(category){
 
-    const groups = [
-        "petsCategories",
-        "eggsCategories",
-        "carsCategories",
-        "clothesCategories"
-    ];
+    document
+        .getElementById("petsCategories")
+        .classList.add("hidden");
 
-    groups.forEach(function(id){
+    document
+        .getElementById("eggsCategories")
+        .classList.add("hidden");
 
-        document
-            .getElementById(id)
-            .classList.add("hidden");
+    document
+        .getElementById("carsCategories")
+        .classList.add("hidden");
 
-    });
+    document
+        .getElementById("clothesCategories")
+        .classList.add("hidden");
 
 
     if(category === "pets"){
@@ -1012,7 +1141,7 @@ function showMainCategory(category){
 }
 
 
-/* ФИЛЬТРЫ */
+/* ФИЛЬТР */
 
 function filterProducts(category){
 
@@ -1039,7 +1168,7 @@ function filterProducts(category){
             categories.includes(category)
         ){
 
-            product.style.display = "block";
+            product.style.display = "";
 
             found = true;
 
@@ -1071,7 +1200,24 @@ function filterProducts(category){
     }
 
 
-    if(found){
+    /*
+       Если категория пустая,
+       показываем одно большое
+       прямоугольное окошко.
+    */
+
+    if(
+        category === "cars" ||
+        category === "eggs" ||
+        category === "oldEggs" ||
+        category === "currentEggs"
+    ){
+
+        emptyMessage.style.display = "block";
+
+    }
+
+    else if(found){
 
         emptyMessage.style.display = "none";
 
@@ -1086,7 +1232,7 @@ function filterProducts(category){
 }
 
 
-/* СТАРТОВОЕ СОСТОЯНИЕ */
+/* ПРИ ОТКРЫТИИ */
 
 showMainCategory("all");
 
