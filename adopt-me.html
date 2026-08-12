@@ -8,12 +8,11 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
     margin:0;
     font-family:Arial,sans-serif;
     background:#080808;
-    color:white;
+    color:#fff;
 }
 
 .top-bar{
@@ -26,58 +25,19 @@ body{
 }
 
 .top-bar a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-weight:700;
-    margin:0 8px;
+    margin:0 9px;
     font-size:14px;
 }
 
 .top-bar a:hover{color:#111}
 
-.categories{
-    position:sticky;
-    top:47px;
-    z-index:90;
-    display:flex;
-    justify-content:center;
-    gap:9px;
-    flex-wrap:wrap;
-    padding:12px 10px;
-    background:#111;
-    border-bottom:2px solid #ff4fa3;
-}
-
-.categories button{
-    border:none;
-    padding:9px 13px;
-    border-radius:20px;
-    background:#ff4fa3;
-    color:white;
-    font-weight:bold;
-    font-size:13px;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.categories button:hover{
-    background:white;
-    color:#ff4fa3;
-    transform:translateY(-2px);
-}
-
 .page{
     max-width:1100px;
     margin:auto;
     padding:40px 18px;
-}
-
-.back{
-    display:inline-block;
-    color:#ff65ad;
-    text-decoration:none;
-    font-weight:bold;
-    margin-bottom:20px;
 }
 
 .page-title{
@@ -89,7 +49,61 @@ body{
 .page-subtitle{
     text-align:center;
     color:#ccc;
-    margin-bottom:35px;
+    margin-bottom:30px;
+}
+
+.back{
+    display:inline-block;
+    color:#ff65ad;
+    text-decoration:none;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:30px;
+    margin:35px 0 20px;
+    color:#ff65ad;
+}
+
+.main-categories{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:25px 0 30px;
+}
+
+.main-categories button,
+.categories button{
+    border:none;
+    padding:10px 16px;
+    border-radius:22px;
+    background:#ff4fa3;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:14px;
+}
+
+.main-categories button:hover,
+.categories button:hover{
+    background:#fff;
+    color:#ff4fa3;
+}
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    flex-wrap:wrap;
+    padding:12px 10px;
+    background:#111;
+    border-bottom:2px solid #ff4fa3;
+    position:sticky;
+    top:47px;
+    z-index:90;
 }
 
 .grid{
@@ -113,7 +127,7 @@ body{
     width:100%;
     height:230px;
     object-fit:contain;
-    background:white;
+    background:#fff;
     border-radius:18px;
     margin-bottom:15px;
 }
@@ -149,7 +163,7 @@ body{
 .buy{
     border:none;
     background:#ff4fa3;
-    color:white;
+    color:#fff;
     padding:13px 30px;
     border-radius:25px;
     font-size:16px;
@@ -178,45 +192,27 @@ body{
 
 .empty-text{
     color:#aaa;
-    font-size:15px;
 }
 
-/* КАК КУПИТЬ */
-
-.buy-info{
+.info-box{
     background:#111;
-    border:2px solid #ff4fa3;
-    border-radius:25px;
-    padding:30px 22px;
-    margin:45px auto 10px;
-    max-width:800px;
+    border:1px solid #333;
+    border-radius:24px;
+    padding:28px;
+    line-height:1.7;
+    margin-top:25px;
 }
 
-.buy-info h2{
-    text-align:center;
+.info-box h2{
     color:#ff65ad;
-    margin-top:0;
 }
-
-.buy-step{
-    background:#181818;
-    border-radius:18px;
-    padding:16px;
-    margin:12px 0;
-    color:#ddd;
-    line-height:1.5;
-}
-
-.buy-step strong{color:#ff9ac8}
-
-/* ОКНО ПОКУПКИ */
 
 .modal{
     display:none;
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:200;
+    background:rgba(0,0,0,.78);
+    z-index:300;
     align-items:center;
     justify-content:center;
     padding:20px;
@@ -225,7 +221,7 @@ body{
 .modal.open{display:flex}
 
 .modal-box{
-    width:min(420px,100%);
+    width:min(430px,100%);
     background:#111;
     border:2px solid #ff4fa3;
     border-radius:25px;
@@ -233,30 +229,24 @@ body{
     text-align:center;
 }
 
-.modal-box h3{
-    margin-top:0;
-    font-size:25px;
-}
-
 .copy-box{
     background:#222;
     border:1px solid #444;
     border-radius:15px;
-    padding:12px;
+    padding:14px;
     margin:18px 0;
-    word-break:break-word;
 }
 
 .copy-name{
+    display:block;
     color:#ff65ad;
     font-weight:bold;
-    display:block;
     margin-bottom:10px;
 }
 
 .copy-button{
     border:none;
-    background:white;
+    background:#fff;
     color:#111;
     padding:9px 16px;
     border-radius:18px;
@@ -267,7 +257,7 @@ body{
 .modal-link{
     display:block;
     background:#ff4fa3;
-    color:white;
+    color:#fff;
     text-decoration:none;
     padding:14px;
     border-radius:24px;
@@ -276,7 +266,7 @@ body{
 }
 
 .modal-link.secondary{
-    background:white;
+    background:#fff;
     color:#111;
 }
 
@@ -295,6 +285,7 @@ footer{
     padding:35px 18px;
     text-align:center;
     color:#ddd;
+    margin-top:40px;
 }
 
 footer a{
@@ -307,8 +298,9 @@ footer a{
     line-height:2;
 }
 
-@media(max-width:700px){
+.hidden{display:none!important}
 
+@media(max-width:700px){
     .top-bar a{
         font-size:12px;
         margin:0 4px;
@@ -317,7 +309,6 @@ footer a{
     .categories{
         top:43px;
         gap:6px;
-        padding:10px 7px;
     }
 
     .categories button{
@@ -355,194 +346,243 @@ footer a{
     <a href="catalog.html">Каталог</a>
     <a href="proofs.html">Пруфы</a>
     <a href="index.html#rules">Правила</a>
-    <a href="#how-to-buy">Как купить?</a>
+    <a href="#" onclick="openHowTo();return false;">Как купить</a>
 </nav>
-
-<div class="categories">
-
-    <button onclick="filterProducts('all')">Все</button>
-    <button onclick="filterProducts('large')">Крупные</button>
-    <button onclick="filterProducts('small')">Мелкие</button>
-    <button onclick="filterProducts('fly')">Fly</button>
-    <button onclick="filterProducts('ride')">Ride</button>
-    <button onclick="filterProducts('flyride')">Fly Ride</button>
-    <button onclick="filterProducts('neon')">Neon</button>
-    <button onclick="filterProducts('mega')">Mega</button>
-
-</div>
 
 <main class="page">
 
-<a class="back" href="catalog.html">← Назад в каталог</a>
+    <a class="back" href="catalog.html">← Назад в каталог</a>
 
-<h1 class="page-title">🐾 Adopt Me</h1>
+    <h1 class="page-title">🐾 Adopt Me</h1>
 
-<p class="page-subtitle">
-    Питомцы • Яйца • Машины • Одежда 💗
-</p>
+    <p class="page-subtitle">
+        Питомцы • Яйца • Машины • Одежда 💗
+    </p>
 
-<div class="grid" id="productGrid">
+    <div class="main-categories">
+        <button onclick="showSection('pets')">🐾 Питомцы</button>
+        <button onclick="showSection('eggs')">🥚 Яйца</button>
+        <button onclick="showSection('cars')">🚗 Машины</button>
+        <button onclick="showSection('clothes')">👗 Одежда</button>
+    </div>
 
-    <!-- AFRICAN WILD DOG -->
+    <!-- ПИТОМЦЫ -->
 
-    <article class="card product" data-categories="large flyride">
+    <section id="pets">
 
-        <img
-            src="african-wild-dog.jpeg"
-            alt="African Wild Dog"
-        >
+        <h2 class="section-title">🐾 Питомцы</h2>
 
-        <span class="category">Крупные питомцы</span>
-        <span class="category">Fly Ride</span>
+        <div class="categories">
 
-        <h2>African Wild Dog</h2>
+            <button onclick="filterProducts('all')">Все</button>
+            <button onclick="filterProducts('large')">Крупные</button>
+            <button onclick="filterProducts('small')">Мелкие</button>
+            <button onclick="filterProducts('fly')">Fly</button>
+            <button onclick="filterProducts('ride')">Ride</button>
+            <button onclick="filterProducts('flyride')">Fly Ride</button>
+            <button onclick="filterProducts('neon')">Neon</button>
+            <button onclick="filterProducts('mega')">Mega</button>
 
-        <div class="price">1700 грн</div>
-
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 Adopt Me
         </div>
 
-        <button class="buy"
-            onclick="openBuy('African Wild Dog')">
-            КУПИТЬ
+        <div class="grid" id="petGrid">
+
+            <article class="card product" data-categories="large flyride">
+
+                <img src="African-wild-dog.webp" alt="African Wild Dog">
+
+                <span class="category">Крупные питомцы</span>
+                <span class="category">Fly Ride</span>
+
+                <h2>African Wild Dog</h2>
+
+                <div class="price">1700 грн</div>
+
+                <div class="meta">
+                    📦 В наличии: 1<br>
+                    🎮 Adopt Me
+                </div>
+
+                <button class="buy" onclick="openBuy('African Wild Dog')">
+                    КУПИТЬ
+                </button>
+
+            </article>
+
+            <article class="card product" data-categories="large neon ride">
+
+                <img src="tree-kangaroo.webp" alt="Tree Kangaroo">
+
+                <span class="category">Крупные питомцы</span>
+                <span class="category">Neon</span>
+                <span class="category">Ride</span>
+
+                <h2>Tree Kangaroo</h2>
+
+                <div class="price">150 грн</div>
+
+                <div class="meta">
+                    📦 В наличии: 1<br>
+                    🎮 Adopt Me
+                </div>
+
+                <button class="buy" onclick="openBuy('Tree Kangaroo')">
+                    КУПИТЬ
+                </button>
+
+            </article>
+
+            <div class="empty-message" id="emptyPets">
+                <div class="empty-title">🖤 Пока ничего нет</div>
+                <div class="empty-text">Скоро здесь появятся товары ✨</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ЯЙЦА -->
+
+    <section id="eggs" class="hidden">
+
+        <h2 class="section-title">🥚 Яйца</h2>
+
+        <div class="categories">
+            <button onclick="filterEggs('all')">Все</button>
+            <button onclick="filterEggs('old')">Old</button>
+        </div>
+
+        <div class="grid">
+
+            <article class="card egg product-egg" data-categories="old">
+
+                <div style="font-size:90px;padding:55px 0;">🥚</div>
+
+                <span class="category">Old</span>
+
+                <h2>Old Egg</h2>
+
+                <div class="price">Цена скоро</div>
+
+                <div class="meta">
+                    📦 Пока нет в наличии<br>
+                    🎮 Adopt Me
+                </div>
+
+            </article>
+
+            <div class="empty-message" id="emptyEggs">
+                <div class="empty-title">🖤 Пока ничего нет</div>
+                <div class="empty-text">Скоро здесь появятся товары ✨</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- МАШИНЫ -->
+
+    <section id="cars" class="hidden">
+
+        <h2 class="section-title">🚗 Машины</h2>
+
+        <div class="grid">
+
+            <div class="empty-message" style="display:block;">
+                <div class="empty-title">🖤 Пока ничего нет</div>
+                <div class="empty-text">Скоро здесь появятся машины ✨</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ОДЕЖДА -->
+
+    <section id="clothes" class="hidden">
+
+        <h2 class="section-title">👗 Одежда</h2>
+
+        <div class="categories">
+
+            <button onclick="filterClothes('all')">Все</button>
+            <button onclick="filterClothes('large')">Крупная</button>
+            <button onclick="filterClothes('small')">Мелкая</button>
+
+        </div>
+
+        <div class="grid">
+
+            <article class="card clothing" data-categories="large">
+
+                <div style="font-size:90px;padding:55px 0;">👗</div>
+
+                <span class="category">Крупная</span>
+
+                <h2>tiny wings</h2>
+
+                <div class="price">170 грн</div>
+
+                <div class="meta">
+                    📦 В наличии: 1<br>
+                    🎮 Adopt Me
+                </div>
+
+                <button class="buy" onclick="openBuy('tiny wings')">
+                    КУПИТЬ
+                </button>
+
+            </article>
+
+            <div class="empty-message" id="emptyClothes">
+                <div class="empty-title">🖤 Пока ничего нет</div>
+                <div class="empty-text">Скоро здесь появятся товары ✨</div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!-- КАК КУПИТЬ -->
+
+<div class="modal" id="howModal">
+
+    <div class="modal-box">
+
+        <h2 style="color:#ff65ad;">💗 Как купить?</h2>
+
+        <p>
+            1️⃣ Выберите нужный товар.<br><br>
+            2️⃣ Нажмите <b>«КУПИТЬ»</b>.<br><br>
+            3️⃣ Скопируйте название товара.<br><br>
+            4️⃣ Отправьте его мне в ЛС или через спам-бот.
+        </p>
+
+        <a class="modal-link" href="https://t.me/lil1ta0spambot" target="_blank">
+            🤖 SPAM BOT
+        </a>
+
+        <a class="modal-link secondary" href="https://t.me/lil1ta0" target="_blank">
+            💬 ЛС
+        </a>
+
+        <button class="close" onclick="closeHowTo()">
+            Закрыть
         </button>
-
-    </article>
-
-
-    <!-- TREE KANGAROO -->
-
-    <article class="card product" data-categories="large neon ride">
-
-        <img
-            src="tree-kangaroo.jpeg"
-            alt="Tree Kangaroo"
-        >
-
-        <span class="category">Крупные питомцы</span>
-        <span class="category">Neon</span>
-        <span class="category">Ride</span>
-
-        <h2>Tree Kangaroo</h2>
-
-        <div class="price">150 грн</div>
-
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 Adopt Me
-        </div>
-
-        <button class="buy"
-            onclick="openBuy('Tree Kangaroo')">
-            КУПИТЬ
-        </button>
-
-    </article>
-
-
-    <!-- TINY WINGS -->
-
-    <article class="card product" data-categories="large">
-
-        <div style="
-            height:230px;
-            background:white;
-            border-radius:18px;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            color:#aaa;
-            font-weight:bold;
-        ">
-            👗 Tiny Wings
-        </div>
-
-        <span class="category">Крупная одежда</span>
-
-        <h2>Tiny Wings</h2>
-
-        <div class="price">170 грн</div>
-
-        <div class="meta">
-            📦 В наличии: 1<br>
-            🎮 Adopt Me
-        </div>
-
-        <button class="buy"
-            onclick="openBuy('Tiny Wings')">
-            КУПИТЬ
-        </button>
-
-    </article>
-
-
-    <!-- EMPTY -->
-
-    <div class="empty-message" id="emptyMessage">
-
-        <div class="empty-title">
-            🖤 Пока ничего нет
-        </div>
-
-        <div class="empty-text">
-            Скоро здесь появятся товары ✨
-        </div>
 
     </div>
 
 </div>
 
-
-<!-- КАК КУПИТЬ -->
-
-<section class="buy-info" id="how-to-buy">
-
-    <h2>🛒 Как купить?</h2>
-
-    <div class="buy-step">
-        <strong>1. Выбери товар 💗</strong><br>
-        Открой каталог и найди нужный предмет.
-    </div>
-
-    <div class="buy-step">
-        <strong>2. Нажми «КУПИТЬ» 🛍️</strong><br>
-        Откроется окошко со способом связи.
-    </div>
-
-    <div class="buy-step">
-        <strong>3. Скопируй название 📋</strong><br>
-        Нажми «Скопировать» и вставь название товара в наш чат.
-    </div>
-
-    <div class="buy-step">
-        <strong>4. Напиши мне 💬</strong><br>
-        Можно написать в ЛС или воспользоваться спам-ботом.
-    </div>
-
-    <div class="buy-step">
-        <strong>5. Оплата 💳</strong><br>
-        Оплата производится только в гривнах.
-    </div>
-
-    <div class="buy-step">
-        <strong>6. Сделка ✨</strong><br>
-        После подтверждения оплаты проводим сделку и передаём товар.
-    </div>
-
-</section>
-
-</main>
-
-
-<!-- ОКНО ПОКУПКИ -->
+<!-- ПОКУПКА -->
 
 <div class="modal" id="buyModal">
 
     <div class="modal-box">
 
-        <h3>💗 Как связаться?</h3>
+        <h2 style="color:#ff65ad;">💗 Как связаться?</h2>
 
         <p>Вы хотите купить:</p>
 
@@ -557,20 +597,15 @@ footer a{
         </div>
 
         <p style="color:#bbb;font-size:14px;">
-            Скопируй название и вставь его в чат,
-            чтобы я быстрее поняла, какой товар
-            ты хочешь купить 💗
+            Можете скопировать название и вставить его в чат,
+            чтобы я быстрее поняла, какой товар вы хотите купить 💗
         </p>
 
-        <a class="modal-link"
-           href="https://t.me/lil1ta0spambot"
-           target="_blank">
+        <a class="modal-link" href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 SPAM BOT
         </a>
 
-        <a class="modal-link secondary"
-           href="https://t.me/lil1ta0"
-           target="_blank">
+        <a class="modal-link secondary" href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
@@ -582,28 +617,17 @@ footer a{
 
 </div>
 
-
 <footer>
 
     <div>🐈 <strong>Lillit Shop</strong> 🐾</div>
 
     <div class="footer-links">
 
-        <a href="https://t.me/lil1ta0" target="_blank">
-            💬 ЛС
-        </a>
-
+        <a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a>
         ·
-
-        <a href="https://t.me/lil1ta0spambot" target="_blank">
-            🤖 Спам-бот
-        </a>
-
+        <a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a>
         ·
-
-        <a href="https://t.me/lillitsho" target="_blank">
-            📢 Telegram-канал
-        </a>
+        <a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
 
     </div>
 
@@ -611,96 +635,35 @@ footer a{
 
 </footer>
 
-
 <script>
 
 let currentProduct = "";
 
+function showSection(section){
 
-/* ПОКУПКА */
+    document.getElementById("pets").classList.add("hidden");
+    document.getElementById("eggs").classList.add("hidden");
+    document.getElementById("cars").classList.add("hidden");
+    document.getElementById("clothes").classList.add("hidden");
 
-function openBuy(name){
+    document.getElementById(section).classList.remove("hidden");
 
-    currentProduct = name;
-
-    document.getElementById("buyText").textContent = name;
-
-    document.getElementById("buyModal").classList.add("open");
 }
-
-
-function closeBuy(){
-
-    document.getElementById("buyModal").classList.remove("open");
-}
-
-
-/* КОПИРОВАНИЕ */
-
-function copyProduct(){
-
-    if(!currentProduct) return;
-
-    if(navigator.clipboard){
-
-        navigator.clipboard.writeText(currentProduct)
-        .then(function(){
-
-            alert("Название товара скопировано 💗");
-
-        })
-        .catch(function(){
-
-            alert("Скопируй название вручную: " + currentProduct);
-
-        });
-
-    }else{
-
-        alert("Скопируй название вручную: " + currentProduct);
-
-    }
-}
-
-
-/* ЗАКРЫТИЕ ПО ФОНУ */
-
-document.getElementById("buyModal").addEventListener(
-    "click",
-    function(event){
-
-        if(event.target === this){
-            closeBuy();
-        }
-
-    }
-);
-
-
-/* ФИЛЬТРЫ */
 
 function filterProducts(category){
 
-    const products =
-        document.querySelectorAll(".product");
-
-    const emptyMessage =
-        document.getElementById("emptyMessage");
+    const products = document.querySelectorAll("#petGrid .product");
+    const empty = document.getElementById("emptyPets");
 
     let found = false;
 
     products.forEach(function(product){
 
-        const categories =
-            product.dataset.categories.split(" ");
+        const cats = product.dataset.categories.split(" ");
 
-        if(
-            category === "all" ||
-            categories.includes(category)
-        ){
+        if(category === "all" || cats.includes(category)){
 
             product.style.display = "";
-
             found = true;
 
         }else{
@@ -711,10 +674,123 @@ function filterProducts(category){
 
     });
 
-    emptyMessage.style.display =
-        found ? "none" : "block";
+    empty.style.display = found ? "none" : "block";
 }
 
+function filterEggs(category){
+
+    const products = document.querySelectorAll(".product-egg");
+    const empty = document.getElementById("emptyEggs");
+
+    let found = false;
+
+    products.forEach(function(product){
+
+        const cats = product.dataset.categories.split(" ");
+
+        if(category === "all" || cats.includes(category)){
+
+            product.style.display = "";
+            found = true;
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    empty.style.display = found ? "none" : "block";
+}
+
+function filterClothes(category){
+
+    const products = document.querySelectorAll(".clothing");
+    const empty = document.getElementById("emptyClothes");
+
+    let found = false;
+
+    products.forEach(function(product){
+
+        const cats = product.dataset.categories.split(" ");
+
+        if(category === "all" || cats.includes(category)){
+
+            product.style.display = "";
+            found = true;
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    empty.style.display = found ? "none" : "block";
+}
+
+function openBuy(name){
+
+    currentProduct = name;
+
+    document.getElementById("buyText").textContent = name;
+
+    document.getElementById("buyModal").classList.add("open");
+}
+
+function closeBuy(){
+
+    document.getElementById("buyModal").classList.remove("open");
+
+}
+
+function copyProduct(){
+
+    if(!currentProduct) return;
+
+    navigator.clipboard.writeText(currentProduct)
+    .then(function(){
+
+        alert("Название товара скопировано 💗");
+
+    })
+    .catch(function(){
+
+        alert("Скопируй название вручную: " + currentProduct);
+
+    });
+
+}
+
+function openHowTo(){
+
+    document.getElementById("howModal").classList.add("open");
+
+}
+
+function closeHowTo(){
+
+    document.getElementById("howModal").classList.remove("open");
+
+}
+
+document.getElementById("buyModal").addEventListener("click",function(e){
+
+    if(e.target === this){
+        closeBuy();
+    }
+
+});
+
+document.getElementById("howModal").addEventListener("click",function(e){
+
+    if(e.target === this){
+        closeHowTo();
+    }
+
+});
 
 filterProducts("all");
 
