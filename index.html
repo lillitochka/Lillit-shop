@@ -3,94 +3,651 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🐈 Lillit Shop 🐾</title>
+
+<title>🐾 Lillit Shop</title>
+
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
-.top-bar{background:#ff4fa3;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:20}
-.top-bar a{color:#fff;text-decoration:none;font-weight:700;margin:0 9px;font-size:14px}
-.top-bar a:hover{color:#111}
-.page{max-width:1100px;margin:auto;padding:45px 18px}
-.page-title{text-align:center;font-size:40px;margin:10px 0 10px}
-.page-subtitle{text-align:center;color:#ccc;margin:0 auto 35px;line-height:1.5}
-.back{display:inline-block;color:#ff65ad;text-decoration:none;font-weight:700;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.card{background:#111;border:1px solid #333;border-radius:24px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
-.card:hover{border-color:#ff4fa3}
-.card img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:18px;margin-bottom:15px}
-.card h2{font-size:25px;margin:5px 0 10px}
-.price{font-size:23px;font-weight:800;color:#ff65ad}
-.meta{color:#ddd;line-height:1.6;margin:10px 0 18px}
-.buy{display:inline-block;border:0;background:#ff4fa3;color:#fff;padding:13px 30px;border-radius:25px;font-size:16px;font-weight:800;cursor:pointer}
-.buy:hover{transform:scale(1.04)}
-.category{display:inline-block;padding:7px 12px;border-radius:20px;background:#242424;color:#ff9ac8;font-size:13px;font-weight:700;margin-bottom:10px}
-.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
-.game-card{display:block;background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:40px 25px;text-align:center;text-decoration:none;color:#fff}
-.game-card h2{font-size:30px;margin:0 0 10px}
-.game-card p{color:#ccc;line-height:1.5}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
-.modal.open{display:flex}
-.modal-box{width:min(420px,100%);background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:28px;text-align:center}
-.modal-box h3{margin-top:0;font-size:25px}
-.modal-link{display:block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px;border-radius:24px;margin:12px 0;font-weight:800}
-.modal-link.secondary{background:#fff;color:#111}
-.close{background:none;border:0;color:#aaa;font-size:15px;margin-top:8px;cursor:pointer}
-footer{background:#050505;border-top:1px solid #222;padding:35px 18px;text-align:center;color:#ddd}
-footer a{color:#ff65ad;text-decoration:none}
-.footer-links{margin:15px 0;line-height:2}
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#080808;
+    color:white;
+}
+
+/* ===== ВЕРХНЕЕ МЕНЮ ===== */
+
+.top-bar{
+    background:#ff4fa3;
+    padding:14px 10px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.top-bar a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    margin:0 9px;
+    font-size:14px;
+}
+
+.top-bar a:hover{
+    color:#111;
+}
+
+/* ===== СТРАНИЦА ===== */
+
+.page{
+    max-width:1100px;
+    margin:auto;
+    padding:45px 18px;
+}
+
+.hero{
+    text-align:center;
+    padding:35px 10px 45px;
+}
+
+.hero h1{
+    font-size:46px;
+    margin:0 0 12px;
+}
+
+.hero p{
+    color:#ccc;
+    font-size:17px;
+    line-height:1.6;
+    max-width:650px;
+    margin:auto;
+}
+
+.pink{
+    color:#ff65ad;
+}
+
+/* ===== ИГРЫ ===== */
+
+.game-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:25px;
+    margin-top:25px;
+}
+
+.game-card{
+    display:block;
+    background:#111;
+    border:2px solid #ff4fa3;
+    border-radius:26px;
+    padding:40px 25px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    transition:.2s;
+}
+
+.game-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 35px rgba(255,79,163,.2);
+}
+
+.game-card .emoji{
+    font-size:55px;
+    margin-bottom:12px;
+}
+
+.game-card h2{
+    font-size:30px;
+    margin:5px 0 10px;
+}
+
+.game-card p{
+    color:#ccc;
+    line-height:1.5;
+    margin:0;
+}
+
+/* ===== БЛОКИ ===== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:18px;
+    margin-top:35px;
+}
+
+.info-card{
+    background:#111;
+    border:1px solid #333;
+    border-radius:22px;
+    padding:25px 18px;
+    text-align:center;
+}
+
+.info-card h3{
+    color:#ff65ad;
+    margin-top:0;
+}
+
+.info-card p{
+    color:#bbb;
+    line-height:1.5;
+}
+
+/* ===== КАК КУПИТЬ ===== */
+
+.buy-section{
+    margin-top:40px;
+    background:#111;
+    border:2px solid #ff4fa3;
+    border-radius:25px;
+    padding:30px 20px;
+    text-align:center;
+}
+
+.buy-section h2{
+    margin-top:0;
+    font-size:30px;
+}
+
+.steps{
+    max-width:650px;
+    margin:20px auto 0;
+    text-align:left;
+}
+
+.step{
+    background:#191919;
+    border-radius:18px;
+    padding:16px;
+    margin:10px 0;
+    color:#ddd;
+}
+
+.step strong{
+    color:#ff65ad;
+}
+
+/* ===== КНОПКА КУПИТЬ ===== */
+
+.buy-button{
+    border:0;
+    background:#ff4fa3;
+    color:white;
+    padding:14px 32px;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.buy-button:hover{
+    transform:scale(1.04);
+}
+
+/* ===== МОДАЛЬНОЕ ОКНО ===== */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.78);
+    z-index:300;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.open{
+    display:flex;
+}
+
+.modal-box{
+    width:min(430px,100%);
+    background:#111;
+    border:2px solid #ff4fa3;
+    border-radius:25px;
+    padding:28px;
+    text-align:center;
+}
+
+.modal-box h3{
+    margin-top:0;
+    font-size:26px;
+}
+
+.modal-box p{
+    color:#bbb;
+    line-height:1.5;
+}
+
+.modal-link{
+    display:block;
+    background:#ff4fa3;
+    color:white;
+    text-decoration:none;
+    padding:14px;
+    border-radius:24px;
+    margin:12px 0;
+    font-weight:800;
+}
+
+.modal-link.secondary{
+    background:white;
+    color:#111;
+}
+
+.close{
+    border:0;
+    background:none;
+    color:#aaa;
+    cursor:pointer;
+    margin-top:8px;
+    font-size:15px;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#050505;
+    border-top:1px solid #222;
+    padding:35px 18px;
+    text-align:center;
+    color:#ddd;
+    margin-top:45px;
+}
+
+footer a{
+    color:#ff65ad;
+    text-decoration:none;
+}
+
+.footer-links{
+    margin:15px 0;
+    line-height:2;
+}
+
+/* ===== ТЕЛЕФОН ===== */
+
 @media(max-width:700px){
- .top-bar a{font-size:12px;margin:0 4px}
- .page{padding:30px 13px}
- .page-title{font-size:31px}
- .grid,.game-grid{grid-template-columns:1fr}
- .card img{height:210px}
- .card{padding:16px}
+
+    .top-bar a{
+        font-size:12px;
+        margin:0 4px;
+    }
+
+    .page{
+        padding:30px 13px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .game-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .game-card{
+        padding:32px 20px;
+    }
 }
 </style>
 </head>
+
 <body>
+
+<!-- ===== МЕНЮ ===== -->
+
 <nav class="top-bar">
-<a href="index.html">Главная</a>
-<a href="catalog.html">Каталог</a>
-<a href="proofs.html">Пруфы</a>
-<a href="index.html#rules">Правила</a>
+
+    <a href="index.html">
+        Главная
+    </a>
+
+    <a href="catalog.html">
+        Каталог
+    </a>
+
+    <a href="proofs.html">
+        Пруфы
+    </a>
+
+    <a href="index.html#rules">
+        Правила
+    </a>
+
+    <a href="javascript:void(0)" onclick="openBuy()">
+        💗 Купить
+    </a>
+
 </nav>
 
-<section style="min-height:620px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:55px 18px;background:radial-gradient(circle at top,#321326,#080808 60%)">
-<h1 style="font-size:42px;margin:0 0 20px">Добро пожаловать! 🌸</h1>
-<div style="font-size:48px;font-weight:800">🐈 Lillit Shop 🐾</div>
-<p style="font-size:20px;color:#ddd">Товары для Adopt Me и MM2</p>
-<div style="background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:18px 25px;margin-top:10px">
-<div style="font-size:27px;font-weight:800;color:#ff65ad">💎 300 пруфов</div>
-<div style="color:#ccc;margin-top:7px">Подтверждённые успешные сделки</div>
+
+<main class="page">
+
+    <!-- ===== ГЛАВНАЯ ===== -->
+
+    <section class="hero">
+
+        <h1>
+            🐾 <span class="pink">Lillit Shop</span>
+        </h1>
+
+        <p>
+            Добро пожаловать в мой магазин 💗
+            Здесь можно найти товары из
+            <b>Adopt Me</b> и <b>MM2</b>.
+        </p>
+
+    </section>
+
+
+    <!-- ===== ИГРЫ ===== -->
+
+    <section>
+
+        <div class="game-grid">
+
+            <a class="game-card" href="adopt-me.html">
+
+                <div class="emoji">
+                    🐾
+                </div>
+
+                <h2>
+                    Adopt Me
+                </h2>
+
+                <p>
+                    Питомцы • Яйца • Машины • Одежда
+                </p>
+
+            </a>
+
+
+            <a class="game-card" href="mm2.html">
+
+                <div class="emoji">
+                    🔪
+                </div>
+
+                <h2>
+                    MM2
+                </h2>
+
+                <p>
+                    Ножи • Пистолеты • Сеты
+                </p>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ИНФОРМАЦИЯ ===== -->
+
+    <section class="info-grid">
+
+        <div class="info-card">
+
+            <h3>
+                💗 Честно
+            </h3>
+
+            <p>
+                Все сделки проводятся
+                аккуратно и с подтверждениями.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                📸 Пруфы
+            </h3>
+
+            <p>
+                У меня есть отзывы
+                и подтверждения сделок.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                🛍️ Каталог
+            </h3>
+
+            <p>
+                Выбирай игру и смотри,
+                что сейчас есть в наличии.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== ПРАВИЛА ===== -->
+
+    <section class="buy-section" id="rules">
+
+        <h2>
+            📜 Правила
+        </h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <strong>1.</strong>
+                Оплата только в гривнах.
+            </div>
+
+            <div class="step">
+                <strong>2.</strong>
+                Перед покупкой уточняйте наличие товара.
+            </div>
+
+            <div class="step">
+                <strong>3.</strong>
+                Не отправляйте оплату неизвестным людям.
+            </div>
+
+            <div class="step">
+                <strong>4.</strong>
+                Если нужна гарантия — используем
+                проверенного гаранта.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===== КАК КУПИТЬ ===== -->
+
+    <section class="buy-section">
+
+        <h2>
+            🛍️ Как купить?
+        </h2>
+
+        <div class="steps">
+
+            <div class="step">
+                <strong>1.</strong>
+                Открой каталог и выбери нужный товар.
+            </div>
+
+            <div class="step">
+                <strong>2.</strong>
+                Нажми кнопку <b>«КУПИТЬ»</b>.
+            </div>
+
+            <div class="step">
+                <strong>3.</strong>
+                Напиши мне в ЛС или через SPAM BOT.
+            </div>
+
+            <div class="step">
+                <strong>4.</strong>
+                Укажи название товара и договорись
+                о сделке 💗
+            </div>
+
+        </div>
+
+        <button class="buy-button" onclick="openBuy()">
+            💗 ХОЧУ КУПИТЬ
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- ===== ОКНО ПОКУПКИ ===== -->
+
+<div class="modal" id="buyModal">
+
+    <div class="modal-box">
+
+        <h3>
+            💗 Как связаться?
+        </h3>
+
+        <p>
+            Выберите удобный способ связи:
+        </p>
+
+        <a
+            class="modal-link"
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 SPAM BOT
+        </a>
+
+        <a
+            class="modal-link secondary"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
+
+        <button
+            class="close"
+            onclick="closeBuy()"
+        >
+            Закрыть
+        </button>
+
+    </div>
+
 </div>
-<p style="color:#ddd">💗 Безопасные сделки</p>
-<a href="catalog.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:15px 38px;border-radius:30px;font-weight:800;margin-top:12px">🛍️ ОТКРЫТЬ КАТАЛОГ</a>
-</section>
-<section style="background:#fff;color:#111;text-align:center;padding:60px 20px">
-<h2 style="font-size:32px">✨ Lillit Shop</h2>
-<p style="font-size:18px">Здесь ты найдёшь товары по Adopt Me и MM2 💗</p>
-<a href="proofs.html" style="display:inline-block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px 30px;border-radius:28px;font-weight:800">💎 ПОСМОТРЕТЬ ВСЕ ПРУФЫ</a>
-</section>
-<section id="rules" style="background:#ff4fa3;padding:60px 20px;text-align:center">
-<h2>📋 Правила</h2>
-<div style="max-width:700px;margin:auto;background:#111;color:#fff;border-radius:25px;padding:25px;line-height:1.6">
-<p>💳 Оплата только в гривнах.</p>
-<p>⚠️ Перед оплатой обязательно проверяйте реквизиты.</p>
-<p>💗 Все спорные моменты лучше решить до оплаты.</p>
-<p>🤝 По необходимости используем проверенных гарантов.</p>
-</div>
-</section>
+
+
+<!-- ===== FOOTER ===== -->
 
 <footer>
-<div>🐈 <strong>Lillit Shop</strong> 🐾</div>
-<div class="footer-links">
-<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a> ·
-<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a> ·
-<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
-</div>
-<div>Adopt Me • MM2</div>
+
+    <div>
+        🐈 <strong>Lillit Shop</strong> 🐾
+    </div>
+
+    <div class="footer-links">
+
+        <a
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
+
+        ·
+
+        <a
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 Спам-бот
+        </a>
+
+        ·
+
+        <a
+            href="https://t.me/lillitsho"
+            target="_blank"
+        >
+            📢 Telegram-канал
+        </a>
+
+    </div>
+
+    <div>
+        Adopt Me • MM2
+    </div>
+
 </footer>
+
+
+<script>
+
+function openBuy(){
+
+    document
+        .getElementById("buyModal")
+        .classList.add("open");
+
+}
+
+function closeBuy(){
+
+    document
+        .getElementById("buyModal")
+        .classList.remove("open");
+
+}
+
+
+/* закрытие при нажатии вне окна */
+
+document
+    .getElementById("buyModal")
+    .addEventListener("click",function(event){
+
+        if(event.target === this){
+
+            closeBuy();
+
+        }
+
+    });
+
+</script>
+
 </body>
 </html>
