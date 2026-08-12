@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔪 Lillit Shop — MM2</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:#080808;color:#fff}
+.top-bar{background:#ff4fa3;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:20}
+.top-bar a{color:#fff;text-decoration:none;font-weight:700;margin:0 9px;font-size:14px}
+.top-bar a:hover{color:#111}
+.page{max-width:1100px;margin:auto;padding:45px 18px}
+.page-title{text-align:center;font-size:40px;margin:10px 0 10px}
+.page-subtitle{text-align:center;color:#ccc;margin:0 auto 35px;line-height:1.5}
+.back{display:inline-block;color:#ff65ad;text-decoration:none;font-weight:700;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.card{background:#111;border:1px solid #333;border-radius:24px;padding:20px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.card:hover{border-color:#ff4fa3}
+.card img{width:100%;height:230px;object-fit:contain;background:#fff;border-radius:18px;margin-bottom:15px}
+.card h2{font-size:25px;margin:5px 0 10px}
+.price{font-size:23px;font-weight:800;color:#ff65ad}
+.meta{color:#ddd;line-height:1.6;margin:10px 0 18px}
+.buy{display:inline-block;border:0;background:#ff4fa3;color:#fff;padding:13px 30px;border-radius:25px;font-size:16px;font-weight:800;cursor:pointer}
+.buy:hover{transform:scale(1.04)}
+.category{display:inline-block;padding:7px 12px;border-radius:20px;background:#242424;color:#ff9ac8;font-size:13px;font-weight:700;margin-bottom:10px}
+.game-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:30px}
+.game-card{display:block;background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:40px 25px;text-align:center;text-decoration:none;color:#fff}
+.game-card h2{font-size:30px;margin:0 0 10px}
+.game-card p{color:#ccc;line-height:1.5}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:50;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.modal-box{width:min(420px,100%);background:#111;border:2px solid #ff4fa3;border-radius:25px;padding:28px;text-align:center}
+.modal-box h3{margin-top:0;font-size:25px}
+.modal-link{display:block;background:#ff4fa3;color:#fff;text-decoration:none;padding:14px;border-radius:24px;margin:12px 0;font-weight:800}
+.modal-link.secondary{background:#fff;color:#111}
+.close{background:none;border:0;color:#aaa;font-size:15px;margin-top:8px;cursor:pointer}
+footer{background:#050505;border-top:1px solid #222;padding:35px 18px;text-align:center;color:#ddd}
+footer a{color:#ff65ad;text-decoration:none}
+.footer-links{margin:15px 0;line-height:2}
+@media(max-width:700px){
+.top-bar a{font-size:12px;margin:0 4px}
+.page{padding:30px 13px}
+.page-title{font-size:31px}
+.grid,.game-grid{grid-template-columns:1fr}
+.card img{height:210px}
+.card{padding:16px}
+}
+</style>
+</head>
+<body>
+<nav class="top-bar">
+<a href="index.html">Главная</a>
+<a href="catalog.html">Каталог</a>
+<a href="proofs.html">Пруфы</a>
+<a href="index.html#rules">Правила</a>
+</nav>
+
+<div style="background:#111;border-bottom:1px solid #222;padding:12px 10px;text-align:center;">
+  <div style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;">
+    <a href="#mm2-pistols" style="color:#ff9ac8;text-decoration:none;font-weight:700;background:#242424;padding:8px 13px;border-radius:18px;">Пистолеты</a>
+    <a href="#mm2-knives" style="color:#ff9ac8;text-decoration:none;font-weight:700;background:#242424;padding:8px 13px;border-radius:18px;">Ножи</a>
+    <a href="#mm2-sets" style="color:#ff9ac8;text-decoration:none;font-weight:700;background:#242424;padding:8px 13px;border-radius:18px;">Сеты</a>
+    <a href="#common" style="color:#ff9ac8;text-decoration:none;font-weight:700;background:#242424;padding:8px 13px;border-radius:18px;">Common</a>
+  </div>
+</div>
+
+<main class="page">
+<a class="back" href="catalog.html">← Назад в каталог</a>
+<h1 class="page-title">🔪 MM2</h1>
+<p class="page-subtitle">Пистолеты • Ножи 🖤</p>
+
+<div class="grid" id="mm2-pistols">
+
+<article class="card">
+<img src="shark.webp" alt="Shark">
+<span class="category">Пистолеты</span>
+<h2>Shark</h2>
+<div class="price">25 грн</div>
+<div class="meta">📦 В наличии: 1<br>🎮 MM2</div>
+<button class="buy" onclick="openBuy('Shark')">КУПИТЬ</button>
+</article>
+
+<article class="card">
+<img src="darkbringer.webp" alt="Darkbringer">
+<span class="category">Пистолеты</span>
+<h2>Darkbringer</h2>
+<div class="price">45 грн</div>
+<div class="meta">📦 В наличии: 1<br>🎮 MM2</div>
+<button class="buy" onclick="openBuy('Darkbringer')">КУПИТЬ</button>
+</article>
+
+<article class="card" id="mm2-knives">
+<img src="heartblade.webp" alt="Heartblade">
+<span class="category">Ножи</span>
+<h2>Heartblade</h2>
+<div class="price">75 грн</div>
+<div class="meta">📦 В наличии: 1<br>🎮 MM2</div>
+<button class="buy" onclick="openBuy('Heartblade')">КУПИТЬ</button>
+</article>
+
+</div>
+
+<!-- COMMON -->
+<section style="margin-top:55px;">
+<div style="text-align:center;margin-bottom:25px;">
+<h2 style="font-size:32px;margin:0 0 8px;color:#ff65ad;">Common</h2>
+<p style="margin:0;color:#ff9ac8;font-weight:700;">Покупка от 25 грн</p>
+</div>
+
+<div class="grid">
+
+<article class="card">
+<img src="blue.webp" alt="Blue">
+<span class="category">Common</span>
+<h2>Blue</h2>
+<div class="price">1 грн</div>
+<div class="meta">📦 В наличии: 1<br>🎮 MM2</div>
+<button class="buy" onclick="openBuy('Blue')">КУПИТЬ</button>
+</article>
+
+<article class="card">
+<img src="tourist.webp" alt="Tourist">
+<span class="category">Common</span>
+<h2>Tourist</h2>
+<div class="price">1 грн</div>
+<div class="meta">📦 В наличии: 1<br>🎮 MM2</div>
+<button class="buy" onclick="openBuy('Tourist')">КУПИТЬ</button>
+</article>
+
+</div>
+</section>
+</main>
+
+<div class="modal" id="buyModal">
+<div class="modal-box">
+<h3>💗 Как связаться?</h3>
+<p id="buyText">Выбери удобный способ:</p>
+<a class="modal-link" href="https://t.me/lil1ta0spambot" target="_blank">🤖 SPAM BOT</a>
+<a class="modal-link secondary" href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a>
+<button class="close" onclick="closeBuy()">Закрыть</button>
+</div>
+</div>
+
+<script>
+function openBuy(name){
+document.getElementById('buyText').textContent='Покупка: '+name+' — выбери способ связи:';
+document.getElementById('buyModal').classList.add('open')
+}
+function closeBuy(){
+document.getElementById('buyModal').classList.remove('open')
+}
+document.getElementById('buyModal').addEventListener('click',function(e){
+if(e.target===this)closeBuy()
+})
+</script>
+
+<footer>
+<div>🐈 <strong>Lillit Shop</strong> 🐾</div>
+<div class="footer-links">
+<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a> ·
+<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a> ·
+<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
+</div>
+<div>Adopt Me • MM2</div>
+</footer>
+
+</body>
+</html>
