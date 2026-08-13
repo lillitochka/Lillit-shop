@@ -19,8 +19,6 @@ body {
     color: white;
 }
 
-/* ===== ГЛАВНОЕ МЕНЮ ===== */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
@@ -41,8 +39,6 @@ body {
 .top-bar a:hover {
     color: #111;
 }
-
-/* ===== МЕНЮ MM2 ===== */
 
 .mm2-menu {
     background: #111;
@@ -74,8 +70,6 @@ body {
     color: white;
 }
 
-/* ===== СТРАНИЦА ===== */
-
 .page {
     max-width: 1100px;
     margin: auto;
@@ -101,8 +95,6 @@ body {
     color: #ccc;
     margin-bottom: 35px;
 }
-
-/* ===== ТОВАРЫ ===== */
 
 .products {
     display: grid;
@@ -204,8 +196,6 @@ body {
     transform: scale(1.04);
 }
 
-/* ===== ОКНО ПОКУПКИ ===== */
-
 .modal {
     display: none;
 
@@ -283,8 +273,6 @@ body {
     cursor: pointer;
 }
 
-/* ===== FOOTER ===== */
-
 footer {
     background: #050505;
 
@@ -308,8 +296,6 @@ footer a {
     margin: 15px 0;
     line-height: 2;
 }
-
-/* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 700px) {
 
@@ -343,11 +329,7 @@ footer a {
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
 
 <nav class="top-bar">
 
@@ -378,8 +360,6 @@ footer a {
 </nav>
 
 
-<!-- ===== МЕНЮ MM2 ===== -->
-
 <nav class="mm2-menu">
 
     <a href="mm2-pistols.html">
@@ -398,21 +378,22 @@ footer a {
         Common
     </a>
 
+    <a href="mm2-chroma.html">
+        Хрома
+    </a>
+
 </nav>
 
 
 <main class="page">
 
-
 <a class="back" href="mm2.html">
     ← Назад в MM2
 </a>
 
-
 <h1 class="page-title">
     🗡️ Ножи
 </h1>
-
 
 <p class="page-subtitle">
     MM2 • Ножи
@@ -464,13 +445,52 @@ footer a {
     </article>
 
 
-</div>
+    <!-- ===== ETERNAL ===== -->
 
+    <article class="product">
+
+        <img
+            class="product-image"
+            src="eternal.webp"
+            alt="Eternal"
+        >
+
+        <span class="category">
+            Нож
+        </span>
+
+        <h2>
+            Eternal
+        </h2>
+
+        <div class="price">
+            7 грн
+        </div>
+
+        <div class="stock">
+
+            📦 В наличии: 1
+
+            <br>
+
+            🎮 MM2
+
+        </div>
+
+        <button
+            class="buy-button"
+            onclick="openBuy('Eternal')"
+        >
+            КУПИТЬ
+        </button>
+
+    </article>
+
+
+</div>
 
 </main>
 
-
-<!-- ===== ОКНО ПОКУПКИ ===== -->
 
 <div
     class="modal"
@@ -487,7 +507,6 @@ footer a {
             Выбери удобный способ:
         </p>
 
-
         <a
             class="modal-link"
             href="https://t.me/lil1ta0spambot"
@@ -496,7 +515,6 @@ footer a {
             🤖 SPAM BOT
         </a>
 
-
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -504,7 +522,6 @@ footer a {
         >
             💬 ЛС
         </a>
-
 
         <button
             class="close"
@@ -559,14 +576,11 @@ document
 </script>
 
 
-<!-- ===== FOOTER ===== -->
-
 <footer>
 
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
-
 
     <div class="footer-links">
 
@@ -597,13 +611,11 @@ document
 
     </div>
 
-
     <div>
         Adopt Me • MM2
     </div>
 
 </footer>
-
 
 </body>
 </html>
