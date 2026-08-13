@@ -47,30 +47,21 @@ body {
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
-
     padding: 12px 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
     flex-wrap: wrap;
 }
 
 .mm2-menu a {
     text-decoration: none;
-
     color: #ff9ac8;
-
     background: #242424;
-
     padding: 9px 16px;
-
     border-radius: 20px;
-
     font-size: 14px;
-
     font-weight: 700;
 }
 
@@ -83,37 +74,27 @@ body {
 
 .page {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 45px 18px;
 }
 
 .back {
     display: inline-block;
-
     color: #ff65ad;
-
     text-decoration: none;
-
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
 .page-title {
     text-align: center;
-
     font-size: 40px;
-
     margin: 10px 0;
 }
 
 .page-subtitle {
     text-align: center;
-
     color: #ccc;
-
     margin-bottom: 40px;
 }
 
@@ -121,75 +102,53 @@ body {
 
 .categories {
     display: grid;
-
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
-
     gap: 22px;
 }
 
 .category-card {
     display: block;
-
     background: #111;
-
     border: 1px solid #333;
-
     border-radius: 25px;
-
     padding: 35px 25px;
-
     text-align: center;
-
     text-decoration: none;
-
     color: white;
-
     transition: 0.2s;
-
     min-height: 190px;
-
     display: flex;
-
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
 }
 
 .category-card:hover {
     border-color: #ff4fa3;
-
     transform: translateY(-4px);
-
     box-shadow:
         0 10px 35px rgba(255,79,163,.15);
 }
 
 .category-icon {
     font-size: 55px;
-
     margin-bottom: 15px;
 }
 
 .category-card h2 {
     margin: 0 0 10px;
-
     font-size: 27px;
 }
 
 .category-card p {
     margin: 0;
-
     color: #aaa;
-
     font-size: 15px;
 }
 
 .category-card .pink {
     color: #ff65ad;
-
     font-weight: 700;
 }
 
@@ -197,27 +156,20 @@ body {
 
 footer {
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
 
 footer a {
     color: #ff65ad;
-
     text-decoration: none;
 }
 
 .footer-links {
     margin: 15px 0;
-
     line-height: 2;
 }
 
@@ -227,7 +179,6 @@ footer a {
 
     .top-bar a {
         font-size: 12px;
-
         margin: 0 4px;
     }
 
@@ -286,6 +237,7 @@ footer a {
 <!-- ===== МЕНЮ MM2 ===== -->
 
 <nav class="mm2-menu">
+
     <a href="mm2-pistols.html">
         Пистолеты
     </a>
@@ -298,8 +250,12 @@ footer a {
         Сет
     </a>
 
-    <a href="mm2.html#common">
+    <a href="mm2-common.html">
         Common
+    </a>
+
+    <a href="mm2-chroma.html">
+        Хрома
     </a>
 
 </nav>
@@ -413,6 +369,30 @@ footer a {
 
         <p>
             Посмотреть Common
+        </p>
+
+    </a>
+
+
+    <!-- ХРОМА -->
+
+    <a
+        class="category-card"
+        href="mm2-chroma.html"
+    >
+
+        <div class="category-icon">
+            ✨
+        </div>
+
+        <h2>
+            Хрома
+        </h2>
+
+        <p>
+            <span class="pink">
+                Посмотреть Хрома
+            </span>
         </p>
 
     </a>
