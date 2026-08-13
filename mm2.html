@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>🔪 Lillit Shop — MM2</title>
+<title>Lillit Shop — MM2</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -15,460 +13,337 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+    background: #fff0f7;
+    color: #333;
 }
 
-/* ===== ГЛАВНОЕ МЕНЮ ===== */
-
-.top-bar {
-    background: #ff4fa3;
-    padding: 14px 10px;
+header {
+    background: linear-gradient(135deg, #ff7fbd, #ffb6dc);
+    color: white;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 20;
+    padding: 25px 15px;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, .25);
 }
 
-.top-bar a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    margin: 0 9px;
-    font-size: 14px;
+header h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
-.top-bar a:hover {
-    color: #111;
+header p {
+    margin: 7px 0 0;
+    opacity: .95;
 }
 
-/* ===== МЕНЮ MM2 ===== */
-
-.mm2-menu {
-    background: #111;
-    border-bottom: 1px solid #292929;
-
-    padding: 12px 10px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.mm2-menu a {
-    text-decoration: none;
-
-    color: #ff9ac8;
-
-    background: #242424;
-
-    padding: 9px 16px;
-
-    border-radius: 20px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-.mm2-menu a:hover {
-    background: #ff4fa3;
-    color: white;
-}
-
-/* ===== СТРАНИЦА ===== */
-
-.page {
+.container {
     max-width: 1100px;
-
     margin: auto;
-
-    padding: 45px 18px;
+    padding: 25px 15px;
 }
 
 .back {
     display: inline-block;
-
-    color: #ff65ad;
-
+    margin-bottom: 20px;
+    padding: 10px 17px;
+    border-radius: 14px;
+    background: white;
+    color: #ff4fa8;
     text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 3px 12px rgba(255, 105, 180, .15);
+}
 
-    font-weight: 700;
-
+h2 {
+    text-align: center;
+    color: #ff4fa8;
     margin-bottom: 25px;
 }
 
-.page-title {
-    text-align: center;
-
-    font-size: 40px;
-
-    margin: 10px 0;
-}
-
-.page-subtitle {
-    text-align: center;
-
-    color: #ccc;
-
-    margin-bottom: 40px;
-}
-
-/* ===== КАТЕГОРИИ ===== */
-
 .categories {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.category-card {
-    display: block;
-
-    background: #111;
-
-    border: 1px solid #333;
-
-    border-radius: 25px;
-
-    padding: 35px 25px;
-
+.category {
+    background: white;
+    border: 2px solid #ffd1e8;
+    border-radius: 20px;
+    padding: 20px 10px;
     text-align: center;
+    cursor: pointer;
+    transition: .2s;
+    font-weight: bold;
+    color: #ff4fa8;
+}
 
-    text-decoration: none;
+.category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 105, 180, .2);
+}
 
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border-radius: 22px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(255, 105, 180, .12);
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 15px;
+    background: #fff7fb;
+}
+
+.product h3 {
+    margin: 12px 0 7px;
+    color: #ff4fa8;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.stock {
+    color: #777;
+    margin: 6px 0 12px;
+}
+
+.buy {
+    display: inline-block;
+    background: #ff66b3;
     color: white;
-
-    transition: 0.2s;
-
-    min-height: 190px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-}
-
-.category-card:hover {
-    border-color: #ff4fa3;
-
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 35px rgba(255,79,163,.15);
-}
-
-.category-icon {
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-.category-card h2 {
-    margin: 0 0 10px;
-
-    font-size: 27px;
-}
-
-.category-card p {
-    margin: 0;
-
-    color: #aaa;
-
-    font-size: 15px;
-}
-
-.category-card .pink {
-    color: #ff65ad;
-
-    font-weight: 700;
-}
-
-/* ===== FOOTER ===== */
-
-footer {
-    background: #050505;
-
-    border-top: 1px solid #222;
-
-    padding: 35px 18px;
-
-    text-align: center;
-
-    color: #ddd;
-
-    margin-top: 45px;
-}
-
-footer a {
-    color: #ff65ad;
-
+    padding: 10px 20px;
+    border-radius: 13px;
     text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
-.footer-links {
-    margin: 15px 0;
-
-    line-height: 2;
+.buy:hover {
+    background: #ff4fa8;
 }
 
-/* ===== ТЕЛЕФОН ===== */
-
-@media (max-width: 700px) {
-
-    .top-bar a {
-        font-size: 12px;
-
-        margin: 0 4px;
-    }
-
-    .page {
-        padding: 30px 13px;
-    }
-
-    .page-title {
-        font-size: 31px;
-    }
-
-    .categories {
-        grid-template-columns: 1fr;
-    }
-
+.hidden {
+    display: none;
 }
 
+.empty {
+    text-align: center;
+    background: white;
+    padding: 35px 20px;
+    border-radius: 20px;
+    color: #999;
+}
+
+.chroma-title {
+    background: linear-gradient(
+        90deg,
+        #ff4fa8,
+        #9b6cff,
+        #45c8ff,
+        #55d68a,
+        #ffd34d,
+        #ff4fa8
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 </style>
 </head>
 
-
 <body>
 
+<header>
+    <h1>🎀 Lillit Shop</h1>
+    <p>MM2 • честно • красиво • безопасно</p>
+</header>
 
-<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
+<div class="container">
 
-<nav class="top-bar">
+<a href="#" class="back" onclick="showMain(); return false;">← Назад</a>
 
-    <a href="index.html">
-        Главная
-    </a>
+<div id="main">
 
-    <a href="catalog.html">
-        Каталог
-    </a>
+    <h2>🔪 MM2 — Главный каталог</h2>
 
-    <a href="proofs.html">
-        Пруфы
-    </a>
-
-    <a href="index.html#rules">
-        Правила
-    </a>
-
-    <a href="zakaz.html">
-        На заказ
-    </a>
-
-    <a href="buy.html">
-        Купить
-    </a>
-
-</nav>
-
-
-<!-- ===== МЕНЮ MM2 ===== -->
-
-<nav class="mm2-menu">
-    <a href="mm2-pistols.html">
-        Пистолеты
-    </a>
-
-    <a href="mm2-knives.html">
-        Ножи
-    </a>
-
-    <a href="mm2-sets.html">
-        Сет
-    </a>
-
-    <a href="mm2.html#common">
-        Common
-    </a>
-
-</nav>
-
-
-<main class="page">
-
-
-<a class="back" href="catalog.html">
-    ← Назад в каталог
-</a>
-
-
-<h1 class="page-title">
-    🔪 MM2
-</h1>
-
-
-<p class="page-subtitle">
-    Выберите категорию товаров
-</p>
-
-
-<!-- ===== ВСЕ КАТЕГОРИИ ===== -->
-
-<div class="categories">
-
-
-    <!-- ПИСТОЛЕТЫ -->
-
-    <a
-        class="category-card"
-        href="mm2-pistols.html"
-    >
-
-        <div class="category-icon">
-            🔫
+    <div class="categories">
+        <div class="category" onclick="openCategory('guns')">
+            🔫 Пистолеты
         </div>
 
-        <h2>
-            Пистолеты
-        </h2>
-
-        <p>
-            Посмотреть пистолеты
-        </p>
-
-    </a>
-
-
-    <!-- НОЖИ -->
-
-    <a
-        class="category-card"
-        href="mm2-knives.html"
-    >
-
-        <div class="category-icon">
-            🗡️
+        <div class="category" onclick="openCategory('knives')">
+            🔪 Ножи
         </div>
 
-        <h2>
-            Ножи
-        </h2>
-
-        <p>
-            Посмотреть ножи
-        </p>
-
-    </a>
-
-
-    <!-- СЕТЫ -->
-
-    <a
-        class="category-card"
-        href="mm2-sets.html"
-    >
-
-        <div class="category-icon">
-            📦
+        <div class="category" onclick="openCategory('sets')">
+            🎁 Сеты
         </div>
 
-        <h2>
-            Сеты
-        </h2>
-
-        <p>
-            <span class="pink">
-                Пока ничего нет
-            </span>
-        </p>
-
-    </a>
-
-
-    <!-- COMMON -->
-
-    <a
-        class="category-card"
-        href="mm2-common.html"
-    >
-
-        <div class="category-icon">
-            🖤
+        <div class="category" onclick="openCategory('common')">
+            💗 Common
         </div>
 
-        <h2>
-            Common
-        </h2>
-
-        <p>
-            Посмотреть Common
-        </p>
-
-    </a>
-
+        <div class="category" onclick="openCategory('chroma')">
+            ✨ <span class="chroma-title">Хрома</span>
+        </div>
+    </div>
 
 </div>
 
 
-</main>
+<!-- ПИСТОЛЕТЫ -->
+<div id="guns" class="hidden">
 
+    <h2>🔫 Пистолеты</h2>
 
-<!-- ===== FOOTER ===== -->
+    <div class="products">
 
-<footer>
+        <div class="product">
+            <img src="american.webp" alt="American">
+            <h3>American</h3>
+            <div class="price">9 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
 
-    <div>
-        🐈 <strong>Lillit Shop</strong> 🐾
-    </div>
-
-
-    <div class="footer-links">
-
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
-            💬 ЛС
-        </a>
-
-        ·
-
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
-            🤖 Спам-бот
-        </a>
-
-        ·
-
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
-            📢 Telegram-канал
-        </a>
+        <div class="product">
+            <img src="dark-bringer.webp" alt="Dark Bringer">
+            <h3>Dark Bringer</h3>
+            <div class="stock">В наличии: 2</div>
+            <button class="buy">Купить</button>
+        </div>
 
     </div>
+</div>
 
 
-    <div>
-        Adopt Me • MM2
+<!-- НОЖИ -->
+<div id="knives" class="hidden">
+
+    <h2>🔪 Ножи</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="eternal.webp" alt="Eternal">
+            <h3>Eternal</h3>
+            <div class="price">7 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- СЕТЫ -->
+<div id="sets" class="hidden">
+
+    <h2>🎁 Сеты</h2>
+
+    <div class="empty">
+        Пока товаров нет 💗
     </div>
 
-</footer>
+</div>
 
+
+<!-- COMMON -->
+<div id="common" class="hidden">
+
+    <h2>💗 Common</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="bunnys.webp" alt="Bunnys">
+            <h3>Bunnys</h3>
+            <div class="price">15 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
+
+        <div class="product">
+            <img src="broken.webp" alt="Broken">
+            <h3>Broken</h3>
+            <div class="price">15 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ХРОМА -->
+<div id="chroma" class="hidden">
+
+    <h2 class="chroma-title">✨ Хрома</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="chroma-shark.webp" alt="Chroma Shark">
+            <h3 class="chroma-title">Chroma Shark</h3>
+            <div class="price">50 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
+
+        <div class="product">
+            <img src="chroma-cookie-cane.webp" alt="Chroma Cookie Cane">
+            <h3 class="chroma-title">Chroma Cookie Cane</h3>
+            <div class="price">45 грн</div>
+            <div class="stock">В наличии: 1</div>
+            <button class="buy">Купить</button>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<script>
+function hideAll() {
+    document.getElementById("main").classList.add("hidden");
+    document.getElementById("guns").classList.add("hidden");
+    document.getElementById("knives").classList.add("hidden");
+    document.getElementById("sets").classList.add("hidden");
+    document.getElementById("common").classList.add("hidden");
+    document.getElementById("chroma").classList.add("hidden");
+}
+
+function openCategory(category) {
+    hideAll();
+    document.getElementById(category).classList.remove("hidden");
+}
+
+function showMain() {
+    hideAll();
+    document.getElementById("main").classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
