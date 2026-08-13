@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>🖤 Lillit Shop — MM2 Common</title>
 
-<styl.all-common {
-    grid-column: 1 / -1;
-}e>
+
+<style>
 
 * {
     box-sizing: border-box;
 }
+
 
 body {
     margin: 0;
@@ -20,6 +25,7 @@ body {
     background: #080808;
     color: white;
 }
+
 
 /* ===== ГЛАВНОЕ МЕНЮ ===== */
 
@@ -43,6 +49,7 @@ body {
 .top-bar a:hover {
     color: #111;
 }
+
 
 /* ===== МЕНЮ MM2 ===== */
 
@@ -76,6 +83,7 @@ body {
     color: white;
 }
 
+
 /* ===== СТРАНИЦА ===== */
 
 .page {
@@ -104,6 +112,7 @@ body {
     margin-bottom: 35px;
 }
 
+
 /* ===== COMMON ===== */
 
 .common-info {
@@ -123,6 +132,7 @@ body {
     margin: 0;
 }
 
+
 /* ===== ТОВАРЫ ===== */
 
 .products {
@@ -130,6 +140,9 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
+
+
+/* ===== ОБЫЧНАЯ КАРТОЧКА ===== */
 
 .product {
     background: #111;
@@ -139,7 +152,8 @@ body {
 
     text-align: center;
 
-    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.25);
 
     transition: 0.2s;
 }
@@ -148,6 +162,16 @@ body {
     border-color: #ff4fa3;
     transform: translateY(-2px);
 }
+
+
+/* ===== БОЛЬШАЯ КАРТОЧКА COMMON ===== */
+
+.all-common {
+    grid-column: 1 / -1;
+}
+
+
+/* ===== ФОТО ===== */
 
 .product-image {
     width: 100%;
@@ -162,10 +186,16 @@ body {
     margin-bottom: 15px;
 }
 
+
+/* ===== НАЗВАНИЕ ===== */
+
 .product h2 {
     font-size: 25px;
     margin: 5px 0 10px;
 }
+
+
+/* ===== КАТЕГОРИЯ ===== */
 
 .category {
     display: inline-block;
@@ -185,6 +215,9 @@ body {
     margin-bottom: 10px;
 }
 
+
+/* ===== ЦЕНА ===== */
+
 .price {
     font-size: 23px;
     font-weight: 800;
@@ -192,11 +225,17 @@ body {
     margin: 10px 0;
 }
 
+
+/* ===== НАЛИЧИЕ ===== */
+
 .stock {
     color: #ddd;
     line-height: 1.6;
     margin: 10px 0 18px;
 }
+
+
+/* ===== КНОПКА ===== */
 
 .buy-button {
     display: inline-block;
@@ -224,6 +263,7 @@ body {
     background: #ff65ad;
     transform: scale(1.04);
 }
+
 
 /* ===== ОКНО ПОКУПКИ ===== */
 
@@ -304,6 +344,7 @@ body {
     cursor: pointer;
 }
 
+
 /* ===== FOOTER ===== */
 
 footer {
@@ -329,6 +370,7 @@ footer a {
     margin: 15px 0;
     line-height: 2;
 }
+
 
 /* ===== ТЕЛЕФОН ===== */
 
@@ -362,9 +404,12 @@ footer a {
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
 
@@ -393,9 +438,11 @@ footer a {
     <a href="buy.html">
         Купить
     </a>
-<a href="akcii.html">
-    🎁 Акции / Конкурсы
-</a>
+
+    <a href="akcii.html">
+        🎁 Акции / Конкурсы
+    </a>
+
 </nav>
 
 
@@ -428,13 +475,19 @@ footer a {
 
 <main class="page">
 
-<a class="back" href="mm2.html">
+
+<a
+    class="back"
+    href="mm2.html"
+>
     ← Назад в MM2
 </a>
+
 
 <h1 class="page-title">
     🖤 Common
 </h1>
+
 
 <p class="page-subtitle">
     MM2 • Common
@@ -455,7 +508,9 @@ footer a {
 
 
 <div class="products">
-<!-- ===== COMMON ===== -->
+
+
+<!-- ===== ВСЕ COMMON ===== -->
 
 <article class="product all-common">
 
@@ -500,172 +555,175 @@ footer a {
 
 </article>
 
-    <!-- ===== BLUE ===== -->
 
-    <article class="product">
+<!-- ===== BLUE ===== -->
 
-        <img
-            class="product-image"
-            src="blue.webp"
-            alt="Blue"
-        >
+<article class="product">
 
-        <span class="category">
-            Common
-        </span>
+    <img
+        class="product-image"
+        src="blue.webp"
+        alt="Blue"
+    >
 
-        <h2>
-            blue
-        </h2>
+    <span class="category">
+        Common
+    </span>
 
-        <div class="price">
-            1 грн
-        </div>
+    <h2>
+        blue
+    </h2>
 
-        <div class="stock">
+    <div class="price">
+        1 грн
+    </div>
 
-            📦 В наличии: 1
+    <div class="stock">
 
-            <br>
+        📦 В наличии: 1
 
-            🎮 MM2
+        <br>
 
-        </div>
+        🎮 MM2
 
-        <button
-            class="buy-button"
-            onclick="openBuy('blue')"
-        >
-            КУПИТЬ
-        </button>
+    </div>
 
-    </article>
+    <button
+        class="buy-button"
+        onclick="openBuy('blue')"
+    >
+        КУПИТЬ
+    </button>
 
-
-    <!-- ===== TOURIST ===== -->
-
-    <article class="product">
-
-        <img
-            class="product-image"
-            src="tourist.webp"
-            alt="Tourist"
-        >
-
-        <span class="category">
-            Common
-        </span>
-
-        <h2>
-            tourist
-        </h2>
-
-        <div class="price">
-            1 грн
-        </div>
-
-        <div class="stock">
-
-            📦 В наличии: 1
-
-            <br>
-
-            🎮 MM2
-
-        </div>
-
-        <button
-            class="buy-button"
-            onclick="openBuy('tourist')"
-        >
-            КУПИТЬ
-        </button>
-
-    </article>
+</article>
 
 
-    <!-- ===== BUNNYS ===== -->
+<!-- ===== TOURIST ===== -->
 
-    <article class="product">
+<article class="product">
 
-        <img
-            class="product-image"
-            src="bunnys.webp"
-            alt="bunnys"
-        >
+    <img
+        class="product-image"
+        src="tourist.webp"
+        alt="Tourist"
+    >
 
-        <span class="category">
-            Common
-        </span>
+    <span class="category">
+        Common
+    </span>
 
-        <h2>
-            bunnys
-        </h2>
+    <h2>
+        tourist
+    </h2>
 
-        <div class="price">
-            15 грн
-        </div>
+    <div class="price">
+        1 грн
+    </div>
 
-        <div class="stock">
+    <div class="stock">
 
-            📦 В наличии: 1
+        📦 В наличии: 1
 
-            <br>
+        <br>
 
-            🎮 MM2
+        🎮 MM2
 
-        </div>
+    </div>
 
-        <button
-            class="buy-button"
-            onclick="openBuy('bunnys')"
-        >
-            КУПИТЬ
-        </button>
+    <button
+        class="buy-button"
+        onclick="openBuy('tourist')"
+    >
+        КУПИТЬ
+    </button>
 
-    </article>
+</article>
 
 
-    <!-- ===== BROKEN ===== -->
+<!-- ===== BUNNYS ===== -->
 
-    <article class="product">
+<article class="product">
 
-        <img
-            class="product-image"
-            src="broken.webp"
-            alt="broken"
-        >
+    <img
+        class="product-image"
+        src="bunnys.webp"
+        alt="bunnys"
+    >
 
-        <span class="category">
-            Common
-        </span>
+    <span class="category">
+        Common
+    </span>
 
-        <h2>
-            broken
-        </h2>
+    <h2>
+        bunnys
+    </h2>
 
-        <div class="price">
-            15 грн
-        </div>
+    <div class="price">
+        15 грн
+    </div>
 
-        <div class="stock">
+    <div class="stock">
 
-            📦 В наличии: 1
+        📦 В наличии: 1
 
-            <br>
+        <br>
 
-            🎮 MM2
+        🎮 MM2
 
-        </div>
+    </div>
 
-        <button
-            class="buy-button"
-            onclick="openBuy('broken')"
-        >
-            КУПИТЬ
-        </button>
+    <button
+        class="buy-button"
+        onclick="openBuy('bunnys')"
+    >
+        КУПИТЬ
+    </button>
 
-    </article>
+</article>
+
+
+<!-- ===== BROKEN ===== -->
+
+<article class="product">
+
+    <img
+        class="product-image"
+        src="broken.webp"
+        alt="broken"
+    >
+
+    <span class="category">
+        Common
+    </span>
+
+    <h2>
+        broken
+    </h2>
+
+    <div class="price">
+        15 грн
+    </div>
+
+    <div class="stock">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 MM2
+
+    </div>
+
+    <button
+        class="buy-button"
+        onclick="openBuy('broken')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
+
 <!-- ===== STRAWBERRIES KNIFE ===== -->
 
 <article class="product">
@@ -749,6 +807,7 @@ footer a {
 
 </article>
 
+
 </div>
 
 </main>
@@ -771,6 +830,7 @@ footer a {
             Выбери удобный способ:
         </p>
 
+
         <a
             class="modal-link"
             href="https://t.me/lil1ta0spambot"
@@ -779,6 +839,7 @@ footer a {
             🤖 SPAM BOT
         </a>
 
+
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -786,6 +847,7 @@ footer a {
         >
             💬 ЛС
         </a>
+
 
         <button
             class="close"
@@ -814,6 +876,7 @@ function openBuy(name) {
         .add("open");
 }
 
+
 function closeBuy() {
 
     document
@@ -821,6 +884,7 @@ function closeBuy() {
         .classList
         .remove("open");
 }
+
 
 document
     .getElementById("buyModal")
@@ -845,6 +909,7 @@ document
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
+
 
     <div class="footer-links">
 
@@ -875,11 +940,13 @@ document
 
     </div>
 
+
     <div>
         Adopt Me • MM2
     </div>
 
 </footer>
+
 
 </body>
 </html>
