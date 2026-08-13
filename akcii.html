@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🎁 Lillit Shop — Акции и конкурсы</title>
+<title>🎁 Lillit Shop — Акции / Конкурсы</title>
 
 <style>
 
@@ -56,9 +53,9 @@ body {
 ========================= */
 
 .page {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
-    padding: 45px 18px;
+    padding: 40px 18px;
 }
 
 .back {
@@ -78,86 +75,103 @@ body {
 .page-subtitle {
     text-align: center;
     color: #ccc;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 /* =========================
-   ДВЕ ЯЧЕЙКИ
+   ВКЛАДКИ
 ========================= */
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
-.info-card {
-    background: #111;
-    border: 1px solid #333;
+.tab-button {
+    border: 1px solid #ff4fa3;
+    background: #171717;
+    color: white;
+    padding: 12px 25px;
     border-radius: 25px;
-    padding: 35px 20px;
-    text-align: center;
+    font-size: 15px;
+    font-weight: 800;
     cursor: pointer;
     transition: .2s;
 }
 
-.info-card:hover {
-    border-color: #ff4fa3;
-    transform: translateY(-3px);
+.tab-button:hover {
+    background: #ff4fa3;
+    transform: translateY(-2px);
 }
 
-.info-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
+.tab-button.active {
+    background: #ff4fa3;
 }
 
-.info-card h2 {
-    margin: 5px 0 10px;
-    font-size: 27px;
+/* =========================
+   КОНТЕНТ
+========================= */
+
+.tab-content {
+    display: none;
 }
 
-.info-card p {
-    color: #aaa;
-    margin: 0;
+.tab-content.active {
+    display: block;
 }
+
 /* =========================
    АКЦИЯ
 ========================= */
 
 .sale-item {
-    margin-top: 20px;
-    padding: 22px;
-    background: #181818;
-    border: 1px solid #ff4fa3;
-    border-radius: 20px;
+    background: #111;
+    border: 2px solid #ff4fa3;
+    border-radius: 25px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,.3);
 }
 
 .sale-title {
-    color: #ff9ac8;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 800;
-    margin-bottom: 10px;
+    color: #ff9ac8;
+    margin-bottom: 15px;
 }
 
 .old-price {
     color: #888;
+    font-size: 20px;
     text-decoration: line-through;
-    font-size: 17px;
+    margin-bottom: 5px;
 }
 
 .new-price {
     color: #ff65ad;
-    font-size: 30px;
+    font-size: 32px;
     font-weight: 900;
-    margin: 5px 0;
+    margin-bottom: 12px;
 }
 
 .sale-text {
     color: #ddd;
-    margin: 10px 0 18px;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.sale-date {
+    color: #ff9ac8;
+    font-weight: 800;
+    margin-bottom: 20px;
 }
 
 .sale-button {
+    display: inline-block;
     border: none;
     background: #ff4fa3;
     color: white;
@@ -166,13 +180,40 @@ body {
     font-size: 16px;
     font-weight: 800;
     cursor: pointer;
+    transition: .2s;
 }
 
 .sale-button:hover {
+    background: #ff65ad;
     transform: scale(1.04);
 }
+
 /* =========================
-   ОКНО
+   КОНКУРСЫ
+========================= */
+
+.empty {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 25px;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.empty-title {
+    color: #ff65ad;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.empty-text {
+    color: #aaa;
+    font-size: 15px;
+}
+
+/* =========================
+   ОКНО ПОКУПКИ
 ========================= */
 
 .modal {
@@ -191,40 +232,42 @@ body {
 }
 
 .modal-box {
-    width: min(430px, 100%);
+    width: min(420px, 100%);
     background: #111;
     border: 2px solid #ff4fa3;
     border-radius: 25px;
-    padding: 30px 22px;
+    padding: 28px;
     text-align: center;
 }
 
-.modal-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
+.modal-box h3 {
+    margin-top: 0;
+    font-size: 25px;
 }
 
-.modal-box h2 {
-    margin: 5px 0 15px;
-    font-size: 27px;
+.modal-link {
+    display: block;
+    background: #ff4fa3;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 24px;
+    margin: 12px 0;
+    font-weight: 800;
 }
 
-.modal-box p {
-    color: #aaa;
-    font-size: 17px;
-    line-height: 1.6;
+.modal-link.secondary {
+    background: white;
+    color: #111;
 }
 
 .close {
+    background: none;
     border: none;
-    background: #ff4fa3;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 22px;
-    font-weight: 800;
+    color: #aaa;
     font-size: 15px;
+    margin-top: 8px;
     cursor: pointer;
-    margin-top: 12px;
 }
 
 /* =========================
@@ -269,23 +312,16 @@ footer a {
         font-size: 31px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .info-card {
-        padding: 30px 18px;
+    .sale-title {
+        font-size: 24px;
     }
 
 }
 
 </style>
-
 </head>
 
-
 <body>
-
 
 <!-- =========================
      ВЕРХНЕЕ МЕНЮ
@@ -324,160 +360,158 @@ footer a {
 </nav>
 
 
-<!-- =========================
-     СТРАНИЦА
-========================= -->
-
 <main class="page">
 
-
-<a
-    class="back"
-    href="index.html"
->
-    ← Назад
-</a>
-
-
-<h1 class="page-title">
-    🎁 Акции и конкурсы
-</h1>
-
-
-<p class="page-subtitle">
-    Следи за новостями Lillit Shop 💗
-</p>
-
-
-<!-- =========================
-     КАРТОЧКИ
-========================= -->
-
-<div class="cards">
-
-
-    <div
-        class="info-card"
-        onclick="openInfo('sale')"
+    <a
+        class="back"
+        href="index.html"
     >
+        ← Назад
+    </a>
 
-        <div class="info-icon">
-            🎀
-        </div>
 
-        <h2>
-            Акции
-        </h2>
+    <h1 class="page-title">
+        🎁 Акции / Конкурсы
+    </h1>
 
-        <p>
-            Нажми, чтобы посмотреть
-        </p>
+
+    <p class="page-subtitle">
+        Самые выгодные предложения Lillit Shop 💗
+    </p>
+
+
+    <!-- =========================
+         КНОПКИ
+    ========================= -->
+
+    <div class="tabs">
+
+        <button
+            class="tab-button active"
+            onclick="showTab('sales', this)"
+        >
+            🛍️ Акции
+        </button>
+
+        <button
+            class="tab-button"
+            onclick="showTab('contests', this)"
+        >
+            🏆 Конкурсы
+        </button>
 
     </div>
 
 
+    <!-- =========================
+         АКЦИИ
+    ========================= -->
+
     <div
-        class="info-card"
-        onclick="openInfo('contest')"
+        id="sales"
+        class="tab-content active"
     >
 
-        <div class="info-icon">
-            🏆
+        <div class="sale-item">
+
+            <div class="sale-title">
+                🐰 Bunnys + Broken
+            </div>
+
+            <div class="old-price">
+                30 грн
+            </div>
+
+            <div class="new-price">
+                21 грн
+            </div>
+
+            <div class="sale-text">
+                💗 Вместе всего за 21 грн!
+                <br>
+                🎮 Акция на MM2
+            </div>
+
+            <div class="sale-date">
+                ⏰ Акция действует до 16.08.2026
+            </div>
+
+            <button
+                class="sale-button"
+                onclick="openBuy('Bunnys + Broken — акция 21 грн')"
+            >
+                КУПИТЬ
+            </button>
+
         </div>
-
-        <h2>
-            Конкурсы
-        </h2>
-
-        <p>
-            Нажми, чтобы посмотреть
-        </p>
 
     </div>
 
 
-</div>
+    <!-- =========================
+         КОНКУРСЫ
+    ========================= -->
 
+    <div
+        id="contests"
+        class="tab-content"
+    >
+
+        <div class="empty">
+
+            <div class="empty-title">
+                🖤 Конкурсов пока нету
+            </div>
+
+            <div class="empty-text">
+                Следите за обновлениями ✨
+            </div>
+
+        </div>
+
+    </div>
 
 </main>
 
 
 <!-- =========================
-     ОКНО АКЦИЙ
-========================= -->
-
-<div class="sale-item">
-
-    <div class="sale-title">
-        🎀 АКЦИЯ — MM2
-    </div>
-
-    <div class="sale-title">
-        🐰 Bunnys + Broken
-    </div>
-
-    <div class="old-price">
-        30 грн
-    </div>
-
-    <div class="new-price">
-        21 грн
-    </div>
-
-    <div class="sale-text">
-        💗 Вместе всего за 21 грн!
-        <br><br>
-        ⏰ Акция действует 3 дня — до 16.08.2026!
-    </div>
-
-    <button
-        class="sale-button"
-        onclick="openBuy('Bunnys + Broken — акция 21 грн')"
-    >
-        КУПИТЬ
-    </button>
-
-</div>
-        </p>
-
-        <button
-            class="close"
-            onclick="closeInfo('saleModal')"
-        >
-            Закрыть
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     ОКНО КОНКУРСОВ
+     ОКНО ПОКУПКИ
 ========================= -->
 
 <div
     class="modal"
-    id="contestModal"
+    id="buyModal"
 >
 
     <div class="modal-box">
 
-        <div class="modal-icon">
-            🏆
-        </div>
+        <h3>
+            💗 Как связаться?
+        </h3>
 
-        <h2>
-            Конкурсы
-        </h2>
-
-        <p>
-            Конкурсов пока что нету 💗
+        <p id="buyText">
+            Выбери удобный способ:
         </p>
+
+        <a
+            class="modal-link"
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 SPAM BOT
+        </a>
+
+        <a
+            class="modal-link secondary"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
 
         <button
             class="close"
-            onclick="closeInfo('contestModal')"
+            onclick="closeBuy()"
         >
             Закрыть
         </button>
@@ -496,7 +530,6 @@ footer a {
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
-
 
     <div class="footer-links">
 
@@ -527,7 +560,6 @@ footer a {
 
     </div>
 
-
     <div>
         Adopt Me • MM2
     </div>
@@ -538,85 +570,88 @@ footer a {
 <script>
 
 /* =========================
-   ОТКРЫТИЕ
+   ПЕРЕКЛЮЧЕНИЕ АКЦИИ / КОНКУРСЫ
 ========================= */
 
-function openInfo(type) {
+function showTab(tabName, button) {
 
-    if (type === "sale") {
+    document
+        .querySelectorAll(".tab-content")
+        .forEach(function(tab) {
 
-        document
-            .getElementById("saleModal")
-            .classList
-            .add("open");
+            tab.classList.remove("active");
 
-    }
+        });
 
-    if (type === "contest") {
 
-        document
-            .getElementById("contestModal")
-            .classList
-            .add("open");
+    document
+        .querySelectorAll(".tab-button")
+        .forEach(function(btn) {
 
-    }
+            btn.classList.remove("active");
+
+        });
+
+
+    document
+        .getElementById(tabName)
+        .classList.add("active");
+
+
+    button.classList.add("active");
 
 }
 
 
 /* =========================
-   ЗАКРЫТИЕ
+   ПОКУПКА
 ========================= */
+
 function openBuy(name) {
 
     document
-        .getElementById("saleModal")
+        .getElementById("buyText")
+        .textContent =
+        "Покупка: " +
+        name +
+        " — выбери способ связи:";
+
+    document
+        .getElementById("buyModal")
         .classList
         .add("open");
 
 }
-function closeInfo(id) {
+
+
+function closeBuy() {
 
     document
-        .getElementById(id)
+        .getElementById("buyModal")
         .classList
         .remove("open");
 
 }
 
 
-/* =========================
-   КЛИК ПО ФОНУ
-========================= */
+/* КЛИК ВНЕ ОКНА */
 
 document
-    .getElementById("saleModal")
-    .addEventListener("click", function(event) {
+    .getElementById("buyModal")
+    .addEventListener(
+        "click",
+        function(event) {
 
-        if (event.target === this) {
+            if (event.target === this) {
 
-            closeInfo("saleModal");
+                closeBuy();
 
-        }
-
-    });
-
-
-document
-    .getElementById("contestModal")
-    .addEventListener("click", function(event) {
-
-        if (event.target === this) {
-
-            closeInfo("contestModal");
+            }
 
         }
-
-    });
+    );
 
 </script>
 
-
 </body>
-
 </html>
