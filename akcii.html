@@ -120,7 +120,57 @@ body {
     color: #aaa;
     margin: 0;
 }
+/* =========================
+   АКЦИЯ
+========================= */
 
+.sale-item {
+    margin-top: 20px;
+    padding: 22px;
+    background: #181818;
+    border: 1px solid #ff4fa3;
+    border-radius: 20px;
+}
+
+.sale-title {
+    color: #ff9ac8;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.old-price {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 17px;
+}
+
+.new-price {
+    color: #ff65ad;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 5px 0;
+}
+
+.sale-text {
+    color: #ddd;
+    margin: 10px 0 18px;
+}
+
+.sale-button {
+    border: none;
+    background: #ff4fa3;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.sale-button:hover {
+    transform: scale(1.04);
+}
 /* =========================
    ОКНО
 ========================= */
@@ -372,7 +422,32 @@ footer a {
         </h2>
 
         <p>
-            Акций пока что нету 💗
+            <div class="sale-item">
+
+    <div class="sale-title">
+        🐰 Bunnys + Broken
+    </div>
+
+    <div class="old-price">
+        30 грн
+    </div>
+
+    <div class="new-price">
+        21 грн
+    </div>
+
+    <div class="sale-text">
+        💗 Вместе всего за 21 грн!
+    </div>
+
+    <button
+        class="sale-button"
+        onclick="openBuy('Bunnys + Broken — акция 21 грн')"
+    >
+        КУПИТЬ
+    </button>
+
+            </div>
         </p>
 
         <button
