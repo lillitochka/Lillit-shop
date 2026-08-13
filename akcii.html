@@ -124,6 +124,45 @@ body {
 }
 
 /* =========================
+   СЛАЙДЕР АКЦИЙ
+========================= */
+
+.sale-slider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.slider-arrow {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #ff4fa3;
+    background: #171717;
+    color: #ff9ac8;
+
+    border-radius: 50%;
+
+    font-size: 26px;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.slider-arrow:hover {
+    background: #ff4fa3;
+    color: white;
+    transform: scale(1.06);
+}
+
+.sale-wrapper {
+    flex: 1;
+}
+
+/* =========================
    АКЦИЯ
 ========================= */
 
@@ -316,6 +355,17 @@ footer a {
         font-size: 24px;
     }
 
+    .sale-slider {
+        gap: 6px;
+    }
+
+    .slider-arrow {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+        font-size: 22px;
+    }
+
 }
 
 </style>
@@ -412,35 +462,119 @@ footer a {
         class="tab-content active"
     >
 
-        <div class="sale-item">
+        <div class="sale-slider">
 
-            <div class="sale-title">
-                🐰 Bunnys + Broken
-            </div>
-
-            <div class="old-price">
-                30 грн
-            </div>
-
-            <div class="new-price">
-                21 грн
-            </div>
-
-            <div class="sale-text">
-                💗 Вместе всего за 21 грн!
-                <br>
-                🎮 Акция на MM2
-            </div>
-
-            <div class="sale-date">
-                ⏰ Акция действует до 16.08.2026
-            </div>
+            <!-- СТРЕЛКА НАЗАД -->
 
             <button
-                class="sale-button"
-                onclick="openBuy('Bunnys + Broken — акция 21 грн')"
+                class="slider-arrow"
+                onclick="changeSale(-1)"
+                aria-label="Предыдущая акция"
             >
-                КУПИТЬ
+                ‹
+            </button>
+
+
+            <!-- АКЦИЯ -->
+
+            <div class="sale-wrapper">
+
+
+                <!-- ===== АКЦИЯ 1 ===== -->
+
+                <div
+                    class="sale-slide"
+                    id="sale1"
+                >
+
+                    <div class="sale-item">
+
+                        <div class="sale-title">
+                            🐰 Bunnys + Broken
+                        </div>
+
+                        <div class="old-price">
+                            30 грн
+                        </div>
+
+                        <div class="new-price">
+                            21 грн
+                        </div>
+
+                        <div class="sale-text">
+                            💗 Вместе всего за 21 грн!
+                            <br>
+                            🎮 Акция на MM2
+                        </div>
+
+                        <div class="sale-date">
+                            ⏰ Акция действует до 16.08.2026
+                        </div>
+
+                        <button
+                            class="sale-button"
+                            onclick="openBuy('Bunnys + Broken — акция 21 грн')"
+                        >
+                            КУПИТЬ
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ===== АКЦИЯ 2 ===== -->
+
+                <div
+                    class="sale-slide"
+                    id="sale2"
+                    style="display: none;"
+                >
+
+                    <div class="sale-item">
+
+                        <div class="sale-title">
+                            🐕 African Wild Dog
+                        </div>
+
+                        <div class="new-price">
+                            🎁 Ride Potion
+                        </div>
+
+                        <div class="sale-text">
+                            💗 Купи 1 African Wild Dog —
+                            <br>
+                            получи 1 Ride Potion в подарок!
+                            <br>
+                            🎮 Акция на Adopt Me
+                        </div>
+
+                        <div class="sale-date">
+                            ⏰ Акция действует до 17.08.2026
+                        </div>
+
+                        <button
+                            class="sale-button"
+                            onclick="openBuy('African Wild Dog — Ride Potion в подарок')"
+                        >
+                            КУПИТЬ
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- СТРЕЛКА ВПЕРЁД -->
+
+            <button
+                class="slider-arrow"
+                onclick="changeSale(1)"
+                aria-label="Следующая акция"
+            >
+                ›
             </button>
 
         </div>
@@ -568,6 +702,40 @@ footer a {
 
 
 <script>
+
+/* =========================
+   ПЕРЕКЛЮЧЕНИЕ АКЦИЙ
+========================= */
+
+let currentSale = 1;
+
+function changeSale(direction) {
+
+    const totalSales = 2;
+
+    currentSale += direction;
+
+    if (currentSale < 1) {
+        currentSale = totalSales;
+    }
+
+    if (currentSale > totalSales) {
+        currentSale = 1;
+    }
+
+    document
+        .querySelectorAll(".sale-slide")
+        .forEach(function(slide) {
+
+            slide.style.display = "none";
+
+        });
+
+    document
+        .getElementById("sale" + currentSale)
+        .style.display = "block";
+}
+
 
 /* =========================
    ПЕРЕКЛЮЧЕНИЕ АКЦИИ / КОНКУРСЫ
