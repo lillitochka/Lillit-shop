@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -23,7 +19,7 @@ body {
     color: white;
 }
 
-/* ===== ВЕРХНЕЕ МЕНЮ ===== */
+/* ===== ГЛАВНОЕ МЕНЮ ===== */
 
 .top-bar {
     background: #ff4fa3;
@@ -51,6 +47,7 @@ body {
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
+
     padding: 12px 10px;
 
     display: flex;
@@ -63,6 +60,7 @@ body {
 
 .mm2-menu a {
     text-decoration: none;
+
     color: #ff9ac8;
 
     background: #242424;
@@ -72,9 +70,8 @@ body {
     border-radius: 20px;
 
     font-size: 14px;
-    font-weight: 700;
 
-    transition: 0.2s;
+    font-weight: 700;
 }
 
 .mm2-menu a:hover {
@@ -86,6 +83,7 @@ body {
 
 .page {
     max-width: 1100px;
+
     margin: auto;
 
     padding: 45px 18px;
@@ -116,36 +114,12 @@ body {
 
     color: #ccc;
 
-    margin: 0 auto 35px;
+    margin-bottom: 40px;
 }
 
-/* ===== COMMON ===== */
+/* ===== КАТЕГОРИИ ===== */
 
-.common-info {
-    text-align: center;
-
-    margin-bottom: 28px;
-}
-
-.common-info h2 {
-    color: #ff65ad;
-
-    font-size: 32px;
-
-    margin: 0 0 8px;
-}
-
-.common-info p {
-    color: #ff9ac8;
-
-    font-weight: 700;
-
-    margin: 0;
-}
-
-/* ===== ТОВАРЫ ===== */
-
-.products {
+.categories {
     display: grid;
 
     grid-template-columns:
@@ -154,194 +128,69 @@ body {
     gap: 22px;
 }
 
-.product {
+.category-card {
+    display: block;
+
     background: #111;
 
     border: 1px solid #333;
 
-    border-radius: 24px;
+    border-radius: 25px;
 
-    padding: 20px;
+    padding: 35px 25px;
 
     text-align: center;
 
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
+    text-decoration: none;
+
+    color: white;
 
     transition: 0.2s;
+
+    min-height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
-.product:hover {
+.category-card:hover {
     border-color: #ff4fa3;
-    transform: translateY(-2px);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 35px rgba(255,79,163,.15);
 }
 
-.product-image {
-    width: 100%;
-
-    height: 230px;
-
-    object-fit: contain;
-
-    background: white;
-
-    border-radius: 18px;
+.category-icon {
+    font-size: 55px;
 
     margin-bottom: 15px;
 }
 
-.product h3 {
-    font-size: 25px;
+.category-card h2 {
+    margin: 0 0 10px;
 
-    margin: 5px 0 10px;
+    font-size: 27px;
 }
 
-.category {
-    display: inline-block;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    background: #242424;
-
-    color: #ff9ac8;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    margin-bottom: 10px;
-}
-
-.price {
-    font-size: 23px;
-
-    font-weight: 800;
-
-    color: #ff65ad;
-
-    margin: 10px 0;
-}
-
-.stock {
-    color: #ddd;
-
-    line-height: 1.6;
-
-    margin: 10px 0 18px;
-}
-
-.buy-button {
-    display: inline-block;
-
-    border: none;
-
-    background: #ff4fa3;
-
-    color: white;
-
-    padding: 13px 30px;
-
-    border-radius: 25px;
-
-    font-size: 16px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    text-decoration: none;
-
-    transition: 0.2s;
-}
-
-.buy-button:hover {
-    background: #ff65ad;
-
-    transform: scale(1.04);
-}
-
-/* ===== ОКНО ПОКУПКИ ===== */
-
-.modal {
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.75);
-
-    z-index: 50;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.modal.open {
-    display: flex;
-}
-
-.modal-box {
-    width: min(420px,100%);
-
-    background: #111;
-
-    border: 2px solid #ff4fa3;
-
-    border-radius: 25px;
-
-    padding: 28px;
-
-    text-align: center;
-}
-
-.modal-box h3 {
-    margin-top: 0;
-
-    font-size: 25px;
-}
-
-.modal-link {
-    display: block;
-
-    background: #ff4fa3;
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 14px;
-
-    border-radius: 24px;
-
-    margin: 12px 0;
-
-    font-weight: 800;
-}
-
-.modal-link.secondary {
-    background: white;
-
-    color: #111;
-}
-
-.close {
-    background: none;
-
-    border: none;
+.category-card p {
+    margin: 0;
 
     color: #aaa;
 
     font-size: 15px;
+}
 
-    margin-top: 8px;
+.category-card .pink {
+    color: #ff65ad;
 
-    cursor: pointer;
+    font-weight: 700;
 }
 
 /* ===== FOOTER ===== */
@@ -356,6 +205,8 @@ footer {
     text-align: center;
 
     color: #ddd;
+
+    margin-top: 45px;
 }
 
 footer a {
@@ -388,16 +239,8 @@ footer a {
         font-size: 31px;
     }
 
-    .products {
+    .categories {
         grid-template-columns: 1fr;
-    }
-
-    .product {
-        padding: 16px;
-    }
-
-    .product-image {
-        height: 210px;
     }
 
 }
@@ -409,7 +252,7 @@ footer a {
 <body>
 
 
-<!-- ===== ГЛАВНОЕ МЕНЮ САЙТА ===== -->
+<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
 
 <nav class="top-bar">
 
@@ -448,7 +291,7 @@ footer a {
         Сеты
     </a>
 
-    <a href="#common">
+    <a href="mm2.html#common">
         Common
     </a>
 
@@ -469,214 +312,109 @@ footer a {
 
 
 <p class="page-subtitle">
-    Common 🖤
+    Выберите категорию товаров
 </p>
 
 
-<!-- ===== COMMON ===== -->
+<!-- ===== ВСЕ КАТЕГОРИИ ===== -->
 
-<section id="common">
+<div class="categories">
 
 
-    <div class="common-info">
+    <!-- ПИСТОЛЕТЫ -->
+
+    <a
+        class="category-card"
+        href="mm2-pistols.html"
+    >
+
+        <div class="category-icon">
+            🔫
+        </div>
+
+        <h2>
+            Пистолеты
+        </h2>
+
+        <p>
+            Посмотреть пистолеты
+        </p>
+
+    </a>
+
+
+    <!-- НОЖИ -->
+
+    <a
+        class="category-card"
+        href="mm2-knives.html"
+    >
+
+        <div class="category-icon">
+            🗡️
+        </div>
+
+        <h2>
+            Ножи
+        </h2>
+
+        <p>
+            Посмотреть ножи
+        </p>
+
+    </a>
+
+
+    <!-- СЕТЫ -->
+
+    <a
+        class="category-card"
+        href="mm2-sets.html"
+    >
+
+        <div class="category-icon">
+            📦
+        </div>
+
+        <h2>
+            Сеты
+        </h2>
+
+        <p>
+            <span class="pink">
+                Пока ничего нет
+            </span>
+        </p>
+
+    </a>
+
+
+    <!-- COMMON -->
+
+    <a
+        class="category-card"
+        href="mm2-common.html"
+    >
+
+        <div class="category-icon">
+            🖤
+        </div>
 
         <h2>
             Common
         </h2>
 
         <p>
-            Покупка от 25 грн
+            Посмотреть Common
         </p>
 
-    </div>
+    </a>
 
-
-    <div class="products">
-
-
-        <!-- BLUE -->
-
-        <article class="product">
-
-            <img
-                class="product-image"
-                src="blue.webp"
-                alt="Blue"
-            >
-
-            <span class="category">
-                Common
-            </span>
-
-            <h3>
-                Blue
-            </h3>
-
-            <div class="price">
-                1 грн
-            </div>
-
-            <div class="stock">
-
-                📦 В наличии: 1
-
-                <br>
-
-                🎮 MM2
-
-            </div>
-
-            <button
-                class="buy-button"
-                onclick="openBuy('Blue')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
-
-
-
-        <!-- TOURIST -->
-
-        <article class="product">
-
-            <img
-                class="product-image"
-                src="tourist.webp"
-                alt="Tourist"
-            >
-
-            <span class="category">
-                Common
-            </span>
-
-            <h3>
-                Tourist
-            </h3>
-
-            <div class="price">
-                1 грн
-            </div>
-
-            <div class="stock">
-
-                📦 В наличии: 1
-
-                <br>
-
-                🎮 MM2
-
-            </div>
-
-            <button
-                class="buy-button"
-                onclick="openBuy('Tourist')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-</main>
-
-
-<!-- ===== ОКНО ПОКУПКИ ===== -->
-
-<div
-    class="modal"
-    id="buyModal"
->
-
-    <div class="modal-box">
-
-        <h3>
-            💗 Как связаться?
-        </h3>
-
-        <p id="buyText">
-            Выбери удобный способ:
-        </p>
-
-
-        <a
-            class="modal-link"
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
-            🤖 SPAM BOT
-        </a>
-
-
-        <a
-            class="modal-link secondary"
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
-            💬 ЛС
-        </a>
-
-
-        <button
-            class="close"
-            onclick="closeBuy()"
-        >
-            Закрыть
-        </button>
-
-    </div>
 
 </div>
 
 
-<script>
-
-function openBuy(name) {
-
-    document.getElementById("buyText").textContent =
-        "Покупка: " +
-        name +
-        " — выбери способ связи:";
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .add("open");
-}
-
-
-function closeBuy() {
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .remove("open");
-}
-
-
-document
-    .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-
-                closeBuy();
-
-            }
-
-        }
-    );
-
-</script>
+</main>
 
 
 <!-- ===== FOOTER ===== -->
