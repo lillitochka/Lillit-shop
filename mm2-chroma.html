@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>✨ Lillit Shop — Хрома</title>
 
 <style>
 
+/* ===== ОСНОВА ===== */
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -19,12 +31,14 @@ body {
     color: white;
 }
 
+
 /* ===== ГЛАВНОЕ МЕНЮ ===== */
 
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
     text-align: center;
+
     position: sticky;
     top: 0;
     z-index: 20;
@@ -33,8 +47,11 @@ body {
 .top-bar a {
     color: white;
     text-decoration: none;
+
     font-weight: 700;
+
     margin: 0 9px;
+
     font-size: 14px;
 }
 
@@ -42,19 +59,23 @@ body {
     color: #111;
 }
 
+
 /* ===== МЕНЮ MM2 ===== */
 
 .mm2-menu {
     background: #111;
+
     border-bottom: 1px solid #292929;
 
     padding: 12px 10px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
     gap: 10px;
+
     flex-wrap: wrap;
 }
 
@@ -72,12 +93,15 @@ body {
     font-size: 14px;
 
     font-weight: 700;
+
+    transition: 0.2s;
 }
 
 .mm2-menu a:hover {
     background: #ff4fa3;
     color: white;
 }
+
 
 /* ===== СТРАНИЦА ===== */
 
@@ -117,9 +141,11 @@ body {
     margin-bottom: 40px;
 }
 
+
 /* ===== РАДУЖНЫЙ ЗАГОЛОВОК ===== */
 
 .chroma-title {
+
     background: linear-gradient(
         90deg,
         #ff4fa3,
@@ -133,6 +159,7 @@ body {
     background-size: 300% 300%;
 
     -webkit-background-clip: text;
+
     -webkit-text-fill-color: transparent;
 
     animation: rainbow 4s linear infinite;
@@ -154,9 +181,11 @@ body {
 
 }
 
+
 /* ===== ТОВАРЫ ===== */
 
 .products {
+
     display: grid;
 
     grid-template-columns:
@@ -166,6 +195,7 @@ body {
 }
 
 .product {
+
     background: #111;
 
     border: 1px solid #333;
@@ -183,12 +213,14 @@ body {
 }
 
 .product:hover {
+
     border-color: #ff4fa3;
 
     transform: translateY(-2px);
 }
 
 .product-image {
+
     width: 100%;
 
     height: 230px;
@@ -203,12 +235,14 @@ body {
 }
 
 .product h2 {
+
     font-size: 25px;
 
     margin: 5px 0 10px;
 }
 
 .category {
+
     display: inline-block;
 
     padding: 7px 12px;
@@ -227,6 +261,7 @@ body {
 }
 
 .price {
+
     font-size: 23px;
 
     font-weight: 800;
@@ -237,6 +272,7 @@ body {
 }
 
 .stock {
+
     color: #ddd;
 
     line-height: 1.6;
@@ -244,7 +280,11 @@ body {
     margin: 10px 0 18px;
 }
 
+
+/* ===== КНОПКА ===== */
+
 .buy-button {
+
     display: inline-block;
 
     border: none;
@@ -267,14 +307,17 @@ body {
 }
 
 .buy-button:hover {
+
     background: #ff65ad;
 
     transform: scale(1.04);
 }
 
+
 /* ===== ОКНО ПОКУПКИ ===== */
 
 .modal {
+
     display: none;
 
     position: fixed;
@@ -297,6 +340,7 @@ body {
 }
 
 .modal-box {
+
     width: min(420px,100%);
 
     background: #111;
@@ -311,12 +355,14 @@ body {
 }
 
 .modal-box h3 {
+
     margin-top: 0;
 
     font-size: 25px;
 }
 
 .modal-link {
+
     display: block;
 
     background: #ff4fa3;
@@ -335,12 +381,14 @@ body {
 }
 
 .modal-link.secondary {
+
     background: white;
 
     color: #111;
 }
 
 .close {
+
     background: none;
 
     border: none;
@@ -354,9 +402,11 @@ body {
     cursor: pointer;
 }
 
+
 /* ===== FOOTER ===== */
 
 footer {
+
     background: #050505;
 
     border-top: 1px solid #222;
@@ -371,50 +421,60 @@ footer {
 }
 
 footer a {
+
     color: #ff65ad;
 
     text-decoration: none;
 }
 
 .footer-links {
+
     margin: 15px 0;
 
     line-height: 2;
 }
+
 
 /* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 700px) {
 
     .top-bar a {
+
         font-size: 12px;
 
         margin: 0 4px;
     }
 
     .page {
+
         padding: 30px 13px;
     }
 
     .page-title {
+
         font-size: 31px;
     }
 
     .products {
+
         grid-template-columns: 1fr;
     }
 
     .product {
+
         padding: 16px;
     }
 
     .product-image {
+
         height: 210px;
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -448,9 +508,11 @@ footer a {
     <a href="buy.html">
         Купить
     </a>
-<a href="akcii.html">
-    🎁 Акции / Конкурсы
-</a>
+
+    <a href="akcii.html">
+        🎁 Акции / Конкурсы
+    </a>
+
 </nav>
 
 
@@ -484,111 +546,72 @@ footer a {
 <main class="page">
 
 
-<a class="back" href="mm2.html">
-    ← Назад в MM2
-</a>
+    <a
+        class="back"
+        href="mm2.html"
+    >
+        ← Назад в MM2
+    </a>
 
 
-<h1 class="page-title chroma-title">
-    ✨ Хрома
-</h1>
+    <h1 class="page-title chroma-title">
+        ✨ Хрома
+    </h1>
 
 
-<p class="page-subtitle">
-    Каталог хром
-</p>
+    <p class="page-subtitle">
+        Каталог хром
+    </p>
 
 
-<!-- ===== ТОВАРЫ ===== -->
+    <!-- ===== ТОВАРЫ ===== -->
 
-<div class="products">
-
-
-    <!-- ===== CHROMA SHARK ===== -->
-
-    <article class="product">
-
-        <img
-            class="product-image"
-            src="chroma-shark.webp"
-            alt="chroma Shark"
-        >
-
-        <span class="category">
-            Хрома
-        </span>
-
-        <h2>
-            chroma Shark
-        </h2>
-
-        <div class="price">
-            50 грн
-        </div>
-
-        <div class="stock">
-
-            📦 В наличии: 1
-
-            <br>
-
-            🎮 MM2
-
-        </div>
-
-        <button
-            class="buy-button"
-            onclick="openBuy('chroma Shark')"
-        >
-            КУПИТЬ
-        </button>
-
-    </article>
+    <div class="products">
 
 
-    <!-- ===== CHROMA COOKIE CANE ===== -->
+        <!-- ===== CHROMA COOKIE CANE ===== -->
 
-    <article class="product">
+        <article class="product">
 
-        <img
-            class="product-image"
-            src="chroma-cookie-cane.webp"
-            alt="chroma Cookie Cane"
-        >
+            <img
+                class="product-image"
+                src="chroma-cookie-cane.webp"
+                alt="Chroma Cookie Cane"
+            >
 
-        <span class="category">
-            Хрома
-        </span>
+            <span class="category">
+                Хрома
+            </span>
 
-        <h2>
-            chroma Cookie Cane
-        </h2>
+            <h2>
+                Chroma Cookie Cane
+            </h2>
 
-        <div class="price">
-            45 грн
-        </div>
+            <div class="price">
+                45 грн
+            </div>
 
-        <div class="stock">
+            <div class="stock">
 
-            📦 В наличии: 1
+                📦 В наличии: 1
 
-            <br>
+                <br>
 
-            🎮 MM2
+                🎮 MM2
 
-        </div>
+            </div>
 
-        <button
-            class="buy-button"
-            onclick="openBuy('chroma Cookie Cane')"
-        >
-            КУПИТЬ
-        </button>
+            <button
+                class="buy-button"
+                onclick="openBuy('Chroma Cookie Cane')"
+            >
+                КУПИТЬ
+            </button>
 
-    </article>
+        </article>
 
 
-</div>
+    </div>
 
 
 </main>
@@ -644,9 +667,12 @@ footer a {
 
 <script>
 
+
 function openBuy(name) {
 
-    document.getElementById("buyText").textContent =
+    document
+        .getElementById("buyText")
+        .textContent =
         "Покупка: " +
         name +
         " — выбери способ связи:";
@@ -674,11 +700,14 @@ document
         function(event) {
 
             if (event.target === this) {
+
                 closeBuy();
+
             }
 
         }
     );
+
 
 </script>
 
@@ -730,4 +759,5 @@ document
 
 
 </body>
+
 </html>
