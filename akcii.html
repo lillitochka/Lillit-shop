@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🎁 Lillit Shop — Акции и конкурсы</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+/* =========================
+   ВЕРХНЕЕ МЕНЮ
+========================= */
+
+.top-bar {
+    background: #ff4fa3;
+    padding: 14px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 9px;
+    font-size: 14px;
+}
+
+.top-bar a:hover {
+    color: #111;
+}
+
+/* =========================
+   СТРАНИЦА
+========================= */
+
+.page {
+    max-width: 1000px;
+    margin: auto;
+    padding: 45px 18px;
+}
+
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   ДВЕ ЯЧЕЙКИ
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.info-card {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 25px;
+    padding: 35px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.info-card:hover {
+    border-color: #ff4fa3;
+    transform: translateY(-3px);
+}
+
+.info-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.info-card h2 {
+    margin: 5px 0 10px;
+    font-size: 27px;
+}
+
+.info-card p {
+    color: #aaa;
+    margin: 0;
+}
+
+/* =========================
+   ОКНО
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-box {
+    width: min(430px, 100%);
+    background: #111;
+    border: 2px solid #ff4fa3;
+    border-radius: 25px;
+    padding: 30px 22px;
+    text-align: center;
+}
+
+.modal-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.modal-box h2 {
+    margin: 5px 0 15px;
+    font-size: 27px;
+}
+
+.modal-box p {
+    color: #aaa;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.close {
+    border: none;
+    background: #ff4fa3;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 22px;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 35px 18px;
+    text-align: center;
+    color: #ddd;
+    margin-top: 45px;
+}
+
+footer a {
+    color: #ff65ad;
+    text-decoration: none;
+}
+
+.footer-links {
+    margin: 15px 0;
+    line-height: 2;
+}
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media (max-width: 700px) {
+
+    .top-bar a {
+        font-size: 12px;
+        margin: 0 4px;
+    }
+
+    .page {
+        padding: 30px 13px;
+    }
+
+    .page-title {
+        font-size: 31px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .info-card {
+        padding: 30px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     ВЕРХНЕЕ МЕНЮ
+========================= -->
+
+<nav class="top-bar">
+
+    <a href="index.html">
+        Главная
+    </a>
+
+    <a href="catalog.html">
+        Каталог
+    </a>
+
+    <a href="proofs.html">
+        Пруфы
+    </a>
+
+    <a href="index.html#rules">
+        Правила
+    </a>
+
+    <a href="zakaz.html">
+        На заказ
+    </a>
+
+    <a href="buy.html">
+        Купить
+    </a>
+
+    <a href="akcii.html">
+        🎁 Акции / Конкурсы
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     СТРАНИЦА
+========================= -->
+
+<main class="page">
+
+
+<a
+    class="back"
+    href="index.html"
+>
+    ← Назад
+</a>
+
+
+<h1 class="page-title">
+    🎁 Акции и конкурсы
+</h1>
+
+
+<p class="page-subtitle">
+    Следи за новостями Lillit Shop 💗
+</p>
+
+
+<!-- =========================
+     КАРТОЧКИ
+========================= -->
+
+<div class="cards">
+
+
+    <div
+        class="info-card"
+        onclick="openInfo('sale')"
+    >
+
+        <div class="info-icon">
+            🎀
+        </div>
+
+        <h2>
+            Акции
+        </h2>
+
+        <p>
+            Нажми, чтобы посмотреть
+        </p>
+
+    </div>
+
+
+    <div
+        class="info-card"
+        onclick="openInfo('contest')"
+    >
+
+        <div class="info-icon">
+            🏆
+        </div>
+
+        <h2>
+            Конкурсы
+        </h2>
+
+        <p>
+            Нажми, чтобы посмотреть
+        </p>
+
+    </div>
+
+
+</div>
+
+
+</main>
+
+
+<!-- =========================
+     ОКНО АКЦИЙ
+========================= -->
+
+<div
+    class="modal"
+    id="saleModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            🎀
+        </div>
+
+        <h2>
+            Акции
+        </h2>
+
+        <p>
+            Акций пока что нету 💗
+        </p>
+
+        <button
+            class="close"
+            onclick="closeInfo('saleModal')"
+        >
+            Закрыть
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ОКНО КОНКУРСОВ
+========================= -->
+
+<div
+    class="modal"
+    id="contestModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-icon">
+            🏆
+        </div>
+
+        <h2>
+            Конкурсы
+        </h2>
+
+        <p>
+            Конкурсов пока что нету 💗
+        </p>
+
+        <button
+            class="close"
+            onclick="closeInfo('contestModal')"
+        >
+            Закрыть
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div>
+        🐈 <strong>Lillit Shop</strong> 🐾
+    </div>
+
+
+    <div class="footer-links">
+
+        <a
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
+
+        ·
+
+        <a
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 Спам-бот
+        </a>
+
+        ·
+
+        <a
+            href="https://t.me/lillitsho"
+            target="_blank"
+        >
+            📢 Telegram-канал
+        </a>
+
+    </div>
+
+
+    <div>
+        Adopt Me • MM2
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   ОТКРЫТИЕ
+========================= */
+
+function openInfo(type) {
+
+    if (type === "sale") {
+
+        document
+            .getElementById("saleModal")
+            .classList
+            .add("open");
+
+    }
+
+    if (type === "contest") {
+
+        document
+            .getElementById("contestModal")
+            .classList
+            .add("open");
+
+    }
+
+}
+
+
+/* =========================
+   ЗАКРЫТИЕ
+========================= */
+
+function closeInfo(id) {
+
+    document
+        .getElementById(id)
+        .classList
+        .remove("open");
+
+}
+
+
+/* =========================
+   КЛИК ПО ФОНУ
+========================= */
+
+document
+    .getElementById("saleModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            closeInfo("saleModal");
+
+        }
+
+    });
+
+
+document
+    .getElementById("contestModal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+
+            closeInfo("contestModal");
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
