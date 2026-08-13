@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✨ Lillit Shop — Хрома</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+.top-bar {
+    background: #ff4fa3;
+    padding: 14px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 9px;
+    font-size: 14px;
+}
+
+.mm2-menu {
+    background: #111;
+    border-bottom: 1px solid #292929;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.mm2-menu a {
+    text-decoration: none;
+    color: #ff9ac8;
+    background: #242424;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 18px;
+}
+
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.empty {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 25px;
+    padding: 45px 20px;
+    text-align: center;
+    color: #aaa;
+}
+
+.chroma-title {
+    background: linear-gradient(
+        90deg,
+        #ff4fa3,
+        #8c7bff,
+        #49c9ff,
+        #65e69b,
+        #ffe15c,
+        #ff4fa3
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow 4s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 35px 18px;
+    text-align: center;
+    color: #ddd;
+    margin-top: 45px;
+}
+
+footer a {
+    color: #ff65ad;
+    text-decoration: none;
+}
+
+.footer-links {
+    margin: 15px 0;
+    line-height: 2;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="top-bar">
+
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="proofs.html">Пруфы</a>
+    <a href="index.html#rules">Правила</a>
+    <a href="zakaz.html">На заказ</a>
+    <a href="buy.html">Купить</a>
+
+</nav>
+
+<nav class="mm2-menu">
+
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сет</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
+
+</nav>
+
+<main class="page">
+
+    <a class="back" href="mm2.html">
+        ← Назад в MM2
+    </a>
+
+    <h1 class="page-title chroma-title">
+        ✨ Хрома
+    </h1>
+
+    <p class="page-subtitle">
+        Каталог хром
+    </p>
+
+    <div class="empty">
+        Пока товаров нет 💗
+    </div>
+
+</main>
+
+<footer>
+
+    <div>
+        🐈 <strong>Lillit Shop</strong> 🐾
+    </div>
+
+    <div class="footer-links">
+
+        <a href="https://t.me/lil1ta0" target="_blank">
+            💬 ЛС
+        </a>
+
+        ·
+
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
+            🤖 Спам-бот
+        </a>
+
+        ·
+
+        <a href="https://t.me/lillitsho" target="_blank">
+            📢 Telegram-канал
+        </a>
+
+    </div>
+
+    <div>
+        Adopt Me • MM2
+    </div>
+
+</footer>
+
+</body>
+</html>
