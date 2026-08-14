@@ -56,52 +56,35 @@ body {
 ========================= */
 
 .main-categories {
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 9px;
     flex-wrap: wrap;
-
     padding: 12px 10px;
-
     background: #111;
-
     border-bottom: 1px solid #ff4fa3;
 }
 
 .main-categories button,
 .pet-filters button,
 .clothes-filters button {
-
     border: 1px solid #ff4fa3;
-
     padding: 9px 14px;
-
     border-radius: 20px;
-
     background: #171717;
-
     color: white;
-
     font-weight: bold;
-
     font-size: 13px;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .main-categories button:hover,
 .pet-filters button:hover,
 .clothes-filters button:hover {
-
     background: #ff4fa3;
-
     color: white;
-
     transform: translateY(-2px);
 }
 
@@ -112,20 +95,13 @@ body {
 
 .pet-filters,
 .clothes-filters {
-
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     gap: 9px;
-
     flex-wrap: wrap;
-
     padding: 12px 10px;
-
     background: #111;
-
     border-bottom: 2px solid #ff4fa3;
 }
 
@@ -139,42 +115,28 @@ body {
 ========================= */
 
 .page {
-
     max-width: 1100px;
-
     margin: auto;
-
     padding: 40px 18px;
 }
 
 .back {
-
     display: inline-block;
-
     color: #ff65ad;
-
     text-decoration: none;
-
     font-weight: bold;
-
     margin-bottom: 20px;
 }
 
 .page-title {
-
     text-align: center;
-
     font-size: 40px;
-
     margin: 10px 0;
 }
 
 .page-subtitle {
-
     text-align: center;
-
     color: #ccc;
-
     margin-bottom: 35px;
 }
 
@@ -184,25 +146,15 @@ body {
 ========================= */
 
 .notice {
-
     max-width: 700px;
-
     margin: 0 auto 25px;
-
     padding: 15px 18px;
-
     background: #111;
-
     border: 1px solid #ff4fa3;
-
     border-radius: 20px;
-
     text-align: center;
-
     color: #ff9ac8;
-
     font-weight: bold;
-
     line-height: 1.6;
 }
 
@@ -212,124 +164,77 @@ body {
 ========================= */
 
 .grid {
-
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
 
 .card {
-
     background: #111;
-
     border: 1px solid #333;
-
     border-radius: 24px;
-
     padding: 20px;
-
     text-align: center;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
-
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
     transition: .2s;
 }
 
 .card:hover {
-
     border-color: #ff4fa3;
-
     transform: translateY(-2px);
 }
 
 .card img {
-
     width: 100%;
-
     height: 230px;
-
     object-fit: contain;
-
     background: white;
-
     border-radius: 18px;
-
     margin-bottom: 15px;
 }
 
 .card h2 {
-
     font-size: 25px;
-
     margin: 5px 0 10px;
 }
 
 .price {
-
     font-size: 23px;
-
     font-weight: 800;
-
     color: #ff65ad;
 }
 
 .meta {
-
     color: #ddd;
-
     line-height: 1.7;
-
     margin: 10px 0 18px;
 }
 
 .category {
-
     display: inline-block;
-
     padding: 7px 12px;
-
     border-radius: 20px;
-
     background: #242424;
-
     color: #ff9ac8;
-
     font-size: 13px;
-
     font-weight: bold;
-
     margin: 4px;
 }
 
 .buy {
-
     border: none;
-
     background: #ff4fa3;
-
     color: white;
-
     padding: 13px 30px;
-
     border-radius: 25px;
-
     font-size: 16px;
-
     font-weight: 800;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .buy:hover {
-
     transform: scale(1.04);
-
     background: #ff65ad;
 }
 
@@ -339,11 +244,8 @@ body {
 ========================= */
 
 .zoom-text {
-
     color: #aaa;
-
     font-size: 13px;
-
     margin: -5px 0 15px;
 }
 
@@ -353,37 +255,24 @@ body {
 ========================= */
 
 .empty-message {
-
     width: 100%;
-
     grid-column: 1 / -1;
-
     text-align: center;
-
     padding: 65px 20px;
-
     background: #111;
-
     border: 1px solid #333;
-
     border-radius: 24px;
 }
 
 .empty-title {
-
     color: #ff65ad;
-
     font-size: 24px;
-
     font-weight: bold;
-
     margin-bottom: 10px;
 }
 
 .empty-text {
-
     color: #aaa;
-
     font-size: 15px;
 }
 
@@ -393,132 +282,82 @@ body {
 ========================= */
 
 .modal {
-
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.75);
-
     z-index: 200;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
 }
 
 .modal.open {
-
     display: flex;
 }
 
 .modal-box {
-
     width: min(420px,100%);
-
     background: #111;
-
     border: 2px solid #ff4fa3;
-
     border-radius: 25px;
-
     padding: 28px;
-
     text-align: center;
 }
 
 .modal-box h3 {
-
     margin-top: 0;
-
     font-size: 25px;
 }
 
 .copy-box {
-
     background: #222;
-
     border: 1px solid #444;
-
     border-radius: 15px;
-
     padding: 12px;
-
     margin: 18px 0;
-
     word-break: break-word;
 }
 
 .copy-name {
-
     color: #ff65ad;
-
     font-weight: bold;
-
     display: block;
-
     margin-bottom: 10px;
 }
 
 .copy-button {
-
     border: none;
-
     background: white;
-
     color: #111;
-
     padding: 9px 16px;
-
     border-radius: 18px;
-
     font-weight: bold;
-
     cursor: pointer;
 }
 
 .modal-link {
-
     display: block;
-
     background: #ff4fa3;
-
     color: white;
-
     text-decoration: none;
-
     padding: 14px;
-
     border-radius: 24px;
-
     margin: 12px 0;
-
     font-weight: 800;
 }
 
 .modal-link.secondary {
-
     background: white;
-
     color: #111;
 }
 
 .close {
-
     background: none;
-
     border: none;
-
     color: #aaa;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     cursor: pointer;
 }
 
@@ -528,31 +367,21 @@ body {
 ========================= */
 
 footer {
-
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
 
 footer a {
-
     color: #ff65ad;
-
     text-decoration: none;
 }
 
 .footer-links {
-
     margin: 15px 0;
-
     line-height: 2;
 }
 
@@ -564,50 +393,39 @@ footer a {
 @media (max-width: 700px) {
 
     .top-bar a {
-
         font-size: 12px;
-
         margin: 0 4px;
     }
 
     .main-categories {
-
         gap: 6px;
-
         padding: 10px 7px;
     }
 
     .main-categories button,
     .pet-filters button,
     .clothes-filters button {
-
         padding: 8px 10px;
-
         font-size: 12px;
     }
 
     .page {
-
         padding: 30px 13px;
     }
 
     .page-title {
-
         font-size: 31px;
     }
 
     .grid {
-
         grid-template-columns: 1fr;
     }
 
     .card {
-
         padding: 16px;
     }
 
     .card img {
-
         height: 210px;
     }
 }
@@ -649,9 +467,10 @@ footer a {
     <a href="buy.html">
         Купить
     </a>
-<a href="akcii.html">
-    🎁 Акции / Конкурсы
-</a>    
+
+    <a href="akcii.html">
+        🎁 Акции / Конкурсы
+    </a>
 
 </nav>
 
@@ -755,7 +574,6 @@ footer a {
 
 <main class="page">
 
-
 <a
     class="back"
     href="catalog.html"
@@ -796,7 +614,11 @@ footer a {
     class="grid"
     id="productGrid"
 >
-<!-- МЕЛКИЕ ПИТОМЦЫ -->
+
+
+<!-- =========================
+     МЕЛКИЕ ПИТОМЦЫ
+========================= -->
 
 <article
     class="card product pet-product"
@@ -821,6 +643,7 @@ footer a {
     </div>
 
     <div class="meta">
+
         📦 В наличии: 19
 
         <br>
@@ -830,6 +653,7 @@ footer a {
         <br>
 
         🎮 Adopt Me
+
     </div>
 
     <button
@@ -841,12 +665,10 @@ footer a {
 
 </article>
 
-<!-- ==================================================
-     ПИТОМЦЫ
-================================================== -->
 
-
-<!-- AFRICAN WILD DOG -->
+<!-- =========================
+     AFRICAN WILD DOG
+========================= -->
 
 <article
     class="card product pet-product"
@@ -894,7 +716,9 @@ footer a {
 </article>
 
 
-<!-- TREE KANGAROO -->
+<!-- =========================
+     TREE KANGAROO
+========================= -->
 
 <article
     class="card product pet-product"
@@ -944,106 +768,116 @@ footer a {
     </button>
 
 </article>
+
+
+<!-- =========================
+     HALLOWEEN GOLDEN MUMMY CAT
+========================= -->
+
+<article
+    class="card product pet-product"
+    data-categories="pets large ride"
+>
+
+    <img
+        src="halloween-golden-mummy-cat.webp"
+        alt="Halloween Golden Mummy Cat"
+    >
+
+    <span class="category">
+        Крупные питомцы
+    </span>
+
+    <span class="category">
+        Ride
+    </span>
+
+    <h2>
+        Halloween Golden Mummy Cat
+    </h2>
+
+    <div class="price">
+        20 грн
+    </div>
+
+    <div class="meta">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 Adopt Me
+
+    </div>
+
+    <button
+        class="buy"
+        onclick="openBuy('Halloween Golden Mummy Cat')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
+
+<!-- =========================
+     BLUE BETTA FISH
+========================= -->
+
+<article
+    class="card product pet-product"
+    data-categories="pets large ride"
+>
+
+    <img
+        src="blue-betta-fish.webp"
+        alt="Blue Betta Fish"
+    >
+
+    <span class="category">
+        Крупные питомцы
+    </span>
+
+    <span class="category">
+        Ride
+    </span>
+
+    <h2>
+        Blue Betta Fish
+    </h2>
+
+    <div class="price">
+        20 грн
+    </div>
+
+    <div class="meta">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 Adopt Me
+
+    </div>
+
+    <button
+        class="buy"
+        onclick="openBuy('Blue Betta Fish')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
+
+<!-- =========================
+     ORANGE GUINEA PIG
+========================= -->
+
 <article
     class="card product pet-product"
     data-categories="pets large"
 >
-<!-- ===== HALLOWEEN GOLDEN MUMMY CAT ===== -->
-
-<article
-    class="card product pet-product"
-    data-categories="pets large ride"
->
-
-```
-<img
-    src="halloween-golden-mummy-cat.webp"
-    alt="Halloween Golden Mummy Cat"
->
-
-<span class="category">
-    Крупные питомцы
-</span>
-
-<span class="category">
-    Ride
-</span>
-
-<h2>
-    Halloween Golden Mummy Cat
-</h2>
-
-<div class="price">
-    20 грн
-</div>
-
-<div class="meta">
-
-    📦 В наличии: 1
-
-    <br>
-
-    🎮 Adopt Me
-
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Halloween Golden Mummy Cat')"
->
-    КУПИТЬ
-</button>
-```
-
-</article>
-<!-- ===== BLUE BETTA FISH ===== -->
-
-<article
-    class="card product pet-product"
-    data-categories="pets large ride"
->
-
-```
-<img
-    src="blue-betta-fish.webp"
-    alt="Blue Betta Fish"
->
-
-<span class="category">
-    Крупные питомцы
-</span>
-
-<span class="category">
-    Ride
-</span>
-
-<h2>
-    Blue Betta Fish
-</h2>
-
-<div class="price">
-    20 грн
-</div>
-
-<div class="meta">
-
-    📦 В наличии: 1
-
-    <br>
-
-    🎮 Adopt Me
-
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Blue Betta Fish')"
->
-    КУПИТЬ
-</button>
-```
-
-</article>
 
     <img
         src="orange-guinea-pig.webp"
@@ -1081,9 +915,10 @@ footer a {
 
 </article>
 
-<!-- ==================================================
+
+<!-- =========================
      ЯЙЦА
-================================================== -->
+========================= -->
 
 <article
     class="card product egg-product"
@@ -1131,9 +966,9 @@ footer a {
 </article>
 
 
-<!-- ==================================================
+<!-- =========================
      КРУПНАЯ ОДЕЖДА
-================================================== -->
+========================= -->
 
 <article
     class="card product clothes-product"
@@ -1177,9 +1012,9 @@ footer a {
 </article>
 
 
-<!-- ==================================================
+<!-- =========================
      МЕЛКАЯ ОДЕЖДА
-================================================== -->
+========================= -->
 
 <article
     class="card product clothes-product"
@@ -1231,9 +1066,9 @@ footer a {
 </article>
 
 
-<!-- ==================================================
+<!-- =========================
      ПУСТОЕ ОКНО
-================================================== -->
+========================= -->
 
 <div
     class="empty-message hidden"
@@ -1298,7 +1133,6 @@ footer a {
 
         </p>
 
-
         <a
             class="modal-link"
             href="https://t.me/lil1ta0spambot"
@@ -1307,7 +1141,6 @@ footer a {
             🤖 SPAM BOT
         </a>
 
-
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -1315,7 +1148,6 @@ footer a {
         >
             💬 ЛС
         </a>
-
 
         <button
             class="close"
@@ -1507,12 +1339,10 @@ function showCategory(category) {
 
     hideAllProducts();
 
-
     document
         .getElementById("petFilters")
         .classList
         .add("hidden");
-
 
     document
         .getElementById("clothesFilters")
@@ -1528,7 +1358,6 @@ function showCategory(category) {
             .getElementById("petFilters")
             .classList
             .remove("hidden");
-
 
         document
             .querySelectorAll(".pet-product")
@@ -1595,12 +1424,10 @@ function showCategory(category) {
             .classList
             .remove("hidden");
 
-
         document
             .getElementById("clothesNotice")
             .classList
             .remove("hidden");
-
 
         document
             .querySelectorAll(".clothes-product")
@@ -1624,24 +1451,19 @@ function filterPets(category) {
 
     hideAllProducts();
 
-
     document
         .getElementById("petFilters")
         .classList
         .remove("hidden");
 
-
     let found = false;
-
 
     document
         .querySelectorAll(".pet-product")
         .forEach(function(product) {
 
             const categories =
-                product.dataset.categories
-                .split(" ");
-
+                product.dataset.categories.split(" ");
 
             if (
                 category === "pets" ||
@@ -1677,27 +1499,22 @@ function filterClothes(category) {
 
     hideAllProducts();
 
-
     document
         .getElementById("clothesFilters")
         .classList
         .remove("hidden");
-
 
     document
         .getElementById("clothesNotice")
         .classList
         .remove("hidden");
 
-
     document
         .querySelectorAll(".clothes-product")
         .forEach(function(product) {
 
             const categories =
-                product.dataset.categories
-                .split(" ");
-
+                product.dataset.categories.split(" ");
 
             if (
                 category === "clothes" ||
