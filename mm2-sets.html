@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -47,7 +48,6 @@ body {
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
-
     padding: 12px 10px;
 
     display: flex;
@@ -60,18 +60,16 @@ body {
 
 .mm2-menu a {
     text-decoration: none;
-
     color: #ff9ac8;
-
     background: #242424;
 
     padding: 9px 16px;
-
     border-radius: 20px;
 
     font-size: 14px;
-
     font-weight: 700;
+
+    transition: 0.2s;
 }
 
 .mm2-menu a:hover {
@@ -83,95 +81,209 @@ body {
 
 .page {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 45px 18px;
 }
 
 .back {
     display: inline-block;
-
     color: #ff65ad;
-
     text-decoration: none;
-
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
 .page-title {
     text-align: center;
-
     font-size: 40px;
-
     margin: 10px 0;
 }
 
 .page-subtitle {
     text-align: center;
-
     color: #ccc;
-
     margin-bottom: 35px;
 }
 
-/* ===== БЛОК "НЕТ ТОВАРА" ===== */
+/* ===== ТОВАРЫ ===== */
 
-.empty-box {
-    width: 100%;
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
 
-    min-height: 260px;
-
+.product {
     background: #111;
-
     border: 1px solid #333;
-
-    border-radius: 25px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
+    border-radius: 24px;
+    padding: 20px;
 
     text-align: center;
 
-    padding: 35px 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
 
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
+    transition: 0.2s;
 }
 
-.empty-icon {
-    font-size: 48px;
+.product:hover {
+    border-color: #ff4fa3;
+    transform: translateY(-2px);
+}
+
+.product-image {
+    width: 100%;
+    height: 230px;
+
+    object-fit: contain;
+
+    background: white;
+
+    border-radius: 18px;
 
     margin-bottom: 15px;
 }
 
-.empty-box h2 {
-    margin: 0 0 12px;
-
-    font-size: 27px;
+.product h2 {
+    font-size: 25px;
+    margin: 5px 0 10px;
 }
 
-.empty-box p {
-    margin: 0;
+.category {
+    display: inline-block;
 
-    color: #aaa;
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #242424;
+
+    color: #ff9ac8;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 23px;
+    font-weight: 800;
+    color: #ff65ad;
+    margin: 10px 0;
+}
+
+.stock {
+    color: #ddd;
+    line-height: 1.6;
+    margin: 10px 0 18px;
+}
+
+.buy-button {
+    display: inline-block;
+
+    border: none;
+
+    background: #ff4fa3;
+
+    color: white;
+
+    padding: 13px 30px;
+
+    border-radius: 25px;
 
     font-size: 16px;
 
-    line-height: 1.6;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-.empty-box .pink {
-    color: #ff65ad;
+.buy-button:hover {
+    background: #ff65ad;
+    transform: scale(1.04);
+}
 
-    font-weight: 700;
+/* ===== ОКНО ПОКУПКИ ===== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.75);
+
+    z-index: 50;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-box {
+    width: min(420px,100%);
+
+    background: #111;
+
+    border: 2px solid #ff4fa3;
+
+    border-radius: 25px;
+
+    padding: 28px;
+
+    text-align: center;
+}
+
+.modal-box h3 {
+    margin-top: 0;
+    font-size: 25px;
+}
+
+.modal-link {
+    display: block;
+
+    background: #ff4fa3;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 14px;
+
+    border-radius: 24px;
+
+    margin: 12px 0;
+
+    font-weight: 800;
+}
+
+.modal-link.secondary {
+    background: white;
+    color: #111;
+}
+
+.close {
+    background: none;
+    border: none;
+
+    color: #aaa;
+
+    font-size: 15px;
+
+    margin-top: 8px;
+
+    cursor: pointer;
 }
 
 /* ===== FOOTER ===== */
@@ -192,13 +304,11 @@ footer {
 
 footer a {
     color: #ff65ad;
-
     text-decoration: none;
 }
 
 .footer-links {
     margin: 15px 0;
-
     line-height: 2;
 }
 
@@ -208,7 +318,6 @@ footer a {
 
     .top-bar a {
         font-size: 12px;
-
         margin: 0 4px;
     }
 
@@ -220,14 +329,24 @@ footer a {
         font-size: 31px;
     }
 
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product {
+        padding: 16px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+
 }
 
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
 
@@ -256,9 +375,11 @@ footer a {
     <a href="buy.html">
         Купить
     </a>
-<a href="akcii.html">
-    🎁 Акции / Конкурсы
-</a>
+
+    <a href="akcii.html">
+        🎁 Акции / Конкурсы
+    </a>
+
 </nav>
 
 
@@ -282,11 +403,14 @@ footer a {
         Common
     </a>
 
+    <a href="mm2-chroma.html">
+        Хрома
+    </a>
+
 </nav>
 
 
 <main class="page">
-
 
 <a class="back" href="mm2.html">
     ← Назад в MM2
@@ -303,26 +427,140 @@ footer a {
 </p>
 
 
-<!-- ===== НИЧЕГО НЕТ ===== -->
+<div class="products">
 
-<div class="empty-box">
 
-    <div class="empty-icon">
-        🖤
-    </div>
+<!-- ===== SWEET SET ===== -->
+
+<article class="product">
+
+    <img
+        class="product-image"
+        src="sweet.webp"
+        alt="Sweet Set"
+    >
+
+    <span class="category">
+        Сет
+    </span>
 
     <h2>
-        Пока ничего нет
+        Sweet Set
     </h2>
 
-    <p>
-        Ожидайте — скоро появятся товары
-    </p>
+    <div class="price">
+        380 грн
+    </div>
+
+    <div class="stock">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 MM2
+
+    </div>
+
+    <button
+        class="buy-button"
+        onclick="openBuy('Sweet Set')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
+
+</div>
+
+</main>
+
+
+<!-- ===== ОКНО ПОКУПКИ ===== -->
+
+<div
+    class="modal"
+    id="buyModal"
+>
+
+    <div class="modal-box">
+
+        <h3>
+            💗 Как связаться?
+        </h3>
+
+        <p id="buyText">
+            Выбери удобный способ:
+        </p>
+
+        <a
+            class="modal-link"
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 SPAM BOT
+        </a>
+
+        <a
+            class="modal-link secondary"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
+
+        <button
+            class="close"
+            onclick="closeBuy()"
+        >
+            Закрыть
+        </button>
+
+    </div>
 
 </div>
 
 
-</main>
+<script>
+
+function openBuy(name) {
+
+    document.getElementById("buyText").textContent =
+        "Покупка: " +
+        name +
+        " — выбери способ связи:";
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .add("open");
+}
+
+
+function closeBuy() {
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .remove("open");
+}
+
+
+document
+    .getElementById("buyModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+                closeBuy();
+            }
+
+        }
+    );
+
+</script>
 
 
 <!-- ===== FOOTER ===== -->
@@ -332,7 +570,6 @@ footer a {
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
-
 
     <div class="footer-links">
 
@@ -363,13 +600,13 @@ footer a {
 
     </div>
 
-
     <div>
         Adopt Me • MM2
     </div>
 
 </footer>
 
-
 </body>
 </html>
+```
+
