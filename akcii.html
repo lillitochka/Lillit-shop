@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -124,7 +126,7 @@ body {
 }
 
 /* =========================
-   СЛАЙДЕР АКЦИЙ
+   СЛАЙДЕР
 ========================= */
 
 .sale-slider {
@@ -148,7 +150,6 @@ body {
     font-weight: 900;
 
     cursor: pointer;
-
     transition: .2s;
 }
 
@@ -160,6 +161,7 @@ body {
 
 .sale-wrapper {
     flex: 1;
+    min-width: 0;
 }
 
 /* =========================
@@ -180,13 +182,6 @@ body {
     font-weight: 800;
     color: #ff9ac8;
     margin-bottom: 15px;
-}
-
-.old-price {
-    color: #888;
-    font-size: 20px;
-    text-decoration: line-through;
-    margin-bottom: 5px;
 }
 
 .new-price {
@@ -351,24 +346,6 @@ footer a {
         font-size: 31px;
     }
 
-    .sale-title {
-        font-size: 24px;
-    }
-
-    .sale-slider {
-        gap: 6px;
-    }
-
-    .slider-arrow {
-        flex: 0 0 40px;
-        width: 40px;
-        height: 40px;
-        font-size: 22px;
-    }
-
-}
-@media (max-width: 700px) {
-
     .sale-slider {
         display: flex;
         width: 100%;
@@ -419,6 +396,7 @@ footer a {
     }
 
 }
+
 </style>
 </head>
 
@@ -526,60 +504,13 @@ footer a {
             </button>
 
 
-            <!-- АКЦИЯ -->
+            <!-- ЕДИНСТВЕННАЯ АКЦИЯ -->
 
             <div class="sale-wrapper">
-
-
-                <!-- ===== АКЦИЯ 1 ===== -->
 
                 <div
                     class="sale-slide"
                     id="sale1"
-                >
-
-                    <div class="sale-item">
-
-                        <div class="sale-title">
-                            🐰 Bunnys + Broken
-                        </div>
-
-                        <div class="old-price">
-                            30 грн
-                        </div>
-
-                        <div class="new-price">
-                            21 грн
-                        </div>
-
-                        <div class="sale-text">
-                            💗 Вместе всего за 21 грн!
-                            <br>
-                            🎮 Акция на MM2
-                        </div>
-
-                        <div class="sale-date">
-                            ⏰ Акция действует до 16.08.2026
-                        </div>
-
-                        <button
-                            class="sale-button"
-                            onclick="openBuy('Bunnys + Broken — акция 21 грн')"
-                        >
-                            КУПИТЬ
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ===== АКЦИЯ 2 ===== -->
-
-                <div
-                    class="sale-slide"
-                    id="sale2"
-                    style="display: none;"
                 >
 
                     <div class="sale-item">
@@ -755,24 +686,17 @@ footer a {
 <script>
 
 /* =========================
-   ПЕРЕКЛЮЧЕНИЕ АКЦИЙ
+   ПЕРЕКЛЮЧЕНИЕ АКЦИИ
 ========================= */
 
 let currentSale = 1;
 
 function changeSale(direction) {
 
-    const totalSales = 2;
+    /* Сейчас акция только одна,
+       поэтому стрелки оставляют её на месте */
 
-    currentSale += direction;
-
-    if (currentSale < 1) {
-        currentSale = totalSales;
-    }
-
-    if (currentSale > totalSales) {
-        currentSale = 1;
-    }
+    currentSale = 1;
 
     document
         .querySelectorAll(".sale-slide")
@@ -783,7 +707,7 @@ function changeSale(direction) {
         });
 
     document
-        .getElementById("sale" + currentSale)
+        .getElementById("sale1")
         .style.display = "block";
 }
 
@@ -802,7 +726,6 @@ function showTab(tabName, button) {
 
         });
 
-
     document
         .querySelectorAll(".tab-button")
         .forEach(function(btn) {
@@ -811,11 +734,10 @@ function showTab(tabName, button) {
 
         });
 
-
     document
         .getElementById(tabName)
-        .classList.add("active");
-
+        .classList
+        .add("active");
 
     button.classList.add("active");
 
@@ -853,7 +775,9 @@ function closeBuy() {
 }
 
 
-/* КЛИК ВНЕ ОКНА */
+/* =========================
+   КЛИК ВНЕ ОКНА
+========================= */
 
 document
     .getElementById("buyModal")
@@ -874,3 +798,5 @@ document
 
 </body>
 </html>
+```
+
