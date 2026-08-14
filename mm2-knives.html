@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -44,11 +45,9 @@ body {
     background: #111;
     border-bottom: 1px solid #292929;
     padding: 12px 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -57,10 +56,8 @@ body {
     text-decoration: none;
     color: #ff9ac8;
     background: #242424;
-
     padding: 9px 16px;
     border-radius: 20px;
-
     font-size: 14px;
     font-weight: 700;
 }
@@ -107,11 +104,8 @@ body {
     border: 1px solid #333;
     border-radius: 24px;
     padding: 20px;
-
     text-align: center;
-
     box-shadow: 0 8px 30px rgba(0,0,0,.25);
-
     transition: 0.2s;
 }
 
@@ -123,13 +117,9 @@ body {
 .product-image {
     width: 100%;
     height: 230px;
-
     object-fit: contain;
-
     background: white;
-
     border-radius: 18px;
-
     margin-bottom: 15px;
 }
 
@@ -140,19 +130,12 @@ body {
 
 .category {
     display: inline-block;
-
     padding: 7px 12px;
-
     border-radius: 20px;
-
     background: #242424;
-
     color: #ff9ac8;
-
     font-size: 13px;
-
     font-weight: 700;
-
     margin-bottom: 10px;
 }
 
@@ -171,23 +154,14 @@ body {
 
 .buy-button {
     display: inline-block;
-
     border: none;
-
     background: #ff4fa3;
-
     color: white;
-
     padding: 13px 30px;
-
     border-radius: 25px;
-
     font-size: 16px;
-
     font-weight: 800;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
@@ -198,19 +172,12 @@ body {
 
 .modal {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.75);
-
     z-index: 50;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
 }
 
@@ -220,15 +187,10 @@ body {
 
 .modal-box {
     width: min(420px,100%);
-
     background: #111;
-
     border: 2px solid #ff4fa3;
-
     border-radius: 25px;
-
     padding: 28px;
-
     text-align: center;
 }
 
@@ -239,19 +201,12 @@ body {
 
 .modal-link {
     display: block;
-
     background: #ff4fa3;
-
     color: white;
-
     text-decoration: none;
-
     padding: 14px;
-
     border-radius: 24px;
-
     margin: 12px 0;
-
     font-weight: 800;
 }
 
@@ -263,27 +218,18 @@ body {
 .close {
     background: none;
     border: none;
-
     color: #aaa;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     cursor: pointer;
 }
 
 footer {
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
 
@@ -333,60 +279,28 @@ footer a {
 
 <nav class="top-bar">
 
-    <a href="index.html">
-        Главная
-    </a>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="proofs.html">Пруфы</a>
+    <a href="index.html#rules">Правила</a>
+    <a href="zakaz.html">На заказ</a>
+    <a href="buy.html">Купить</a>
 
-    <a href="catalog.html">
-        Каталог
-    </a>
-
-    <a href="proofs.html">
-        Пруфы
-    </a>
-
-    <a href="index.html#rules">
-        Правила
-    </a>
-
-    <a href="zakaz.html">
-        На заказ
-    </a>
-
-    <a href="buy.html">
-        Купить
-    </a>
     <a href="akcii.html">
-    🎁 Акции / Конкурсы
+        🎁 Акции / Конкурсы
     </a>
 
 </nav>
-
 
 <nav class="mm2-menu">
 
-    <a href="mm2-pistols.html">
-        Пистолеты
-    </a>
-
-    <a href="mm2-knives.html">
-        Ножи
-    </a>
-
-    <a href="mm2-sets.html">
-        Сеты
-    </a>
-
-    <a href="mm2-common.html">
-        Common
-    </a>
-
-    <a href="mm2-chroma.html">
-        Хрома
-    </a>
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сеты</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
 
 </nav>
-
 
 <main class="page">
 
@@ -402,138 +316,35 @@ footer a {
     MM2 • Ножи
 </p>
 
-
 <div class="products">
 
+    <div class="empty" style="
+        grid-column: 1 / -1;
+        background: #111;
+        border: 1px solid #333;
+        border-radius: 24px;
+        padding: 55px 20px;
+        text-align: center;
+    ">
 
-<!-- ===== CANDLEFLAME ===== -->
+        <div style="
+            color: #ff65ad;
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        ">
+            🖤 Ножей пока нет в наличии
+        </div>
 
-<article class="product">
+        <div style="color: #aaa; font-size: 15px;">
+            Следите за обновлениями ✨
+        </div>
 
-    <img
-        class="product-image"
-        src="candleflame.webp"
-        alt="Candleflame"
-    >
-
-    <span class="category">
-        Нож
-    </span>
-
-    <h2>
-        Candleflame
-    </h2>
-
-    <div class="price">
-        40 грн
     </div>
-
-    <div class="stock">
-        📦 В наличии: 1
-
-        <br>
-
-        🎮 MM2
-    </div>
-
-    <button
-        class="buy-button"
-        onclick="openBuy('Candleflame')"
-    >
-        КУПИТЬ
-    </button>
-
-</article>
-
 
 </div>
 
 </main>
-
-
-<div
-    class="modal"
-    id="buyModal"
->
-
-    <div class="modal-box">
-
-        <h3>
-            💗 Как связаться?
-        </h3>
-
-        <p id="buyText">
-            Выбери удобный способ:
-        </p>
-
-        <a
-            class="modal-link"
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
-            🤖 SPAM BOT
-        </a>
-
-        <a
-            class="modal-link secondary"
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
-            💬 ЛС
-        </a>
-
-        <button
-            class="close"
-            onclick="closeBuy()"
-        >
-            Закрыть
-        </button>
-
-    </div>
-
-</div>
-
-
-<script>
-
-function openBuy(name) {
-
-    document.getElementById("buyText").textContent =
-        "Покупка: " +
-        name +
-        " — выбери способ связи:";
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .add("open");
-}
-
-
-function closeBuy() {
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .remove("open");
-}
-
-
-document
-    .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-                closeBuy();
-            }
-
-        }
-    );
-
-</script>
-
 
 <footer>
 
@@ -543,28 +354,19 @@ document
 
     <div class="footer-links">
 
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
+        <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
 
@@ -578,3 +380,4 @@ document
 
 </body>
 </html>
+```
