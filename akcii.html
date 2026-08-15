@@ -50,6 +50,7 @@ body {
     color: #111;
 }
 
+
 /* =========================
    СТРАНИЦА
 ========================= */
@@ -79,6 +80,7 @@ body {
     color: #ccc;
     margin-bottom: 35px;
 }
+
 
 /* =========================
    ВКЛАДКИ
@@ -113,6 +115,7 @@ body {
     background: #ff4fa3;
 }
 
+
 /* =========================
    КОНТЕНТ
 ========================= */
@@ -124,6 +127,7 @@ body {
 .tab-content.active {
     display: block;
 }
+
 
 /* =========================
    СЛАЙДЕР
@@ -164,6 +168,7 @@ body {
     min-width: 0;
 }
 
+
 /* =========================
    АКЦИЯ
 ========================= */
@@ -174,7 +179,25 @@ body {
     border-radius: 25px;
     padding: 28px 20px;
     text-align: center;
-    box-shadow: 0 8px 30px rgba(0,0,0,.3);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.3);
+
+    animation: saleAppear .25s ease;
+}
+
+@keyframes saleAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
 }
 
 .sale-title {
@@ -189,6 +212,13 @@ body {
     font-size: 32px;
     font-weight: 900;
     margin-bottom: 12px;
+}
+
+.old-price {
+    color: #777;
+    font-size: 20px;
+    text-decoration: line-through;
+    margin-bottom: 3px;
 }
 
 .sale-text {
@@ -209,11 +239,16 @@ body {
     border: none;
     background: #ff4fa3;
     color: white;
+
     padding: 13px 30px;
+
     border-radius: 25px;
+
     font-size: 16px;
     font-weight: 800;
+
     cursor: pointer;
+
     transition: .2s;
 }
 
@@ -221,6 +256,7 @@ body {
     background: #ff65ad;
     transform: scale(1.04);
 }
+
 
 /* =========================
    КОНКУРСЫ
@@ -230,7 +266,9 @@ body {
     background: #111;
     border: 1px solid #333;
     border-radius: 25px;
+
     padding: 55px 20px;
+
     text-align: center;
 }
 
@@ -246,18 +284,24 @@ body {
     font-size: 15px;
 }
 
+
 /* =========================
    ОКНО ПОКУПКИ
 ========================= */
 
 .modal {
     display: none;
+
     position: fixed;
     inset: 0;
+
     background: rgba(0,0,0,.75);
+
     z-index: 200;
+
     align-items: center;
     justify-content: center;
+
     padding: 20px;
 }
 
@@ -267,10 +311,15 @@ body {
 
 .modal-box {
     width: min(420px, 100%);
+
     background: #111;
+
     border: 2px solid #ff4fa3;
+
     border-radius: 25px;
+
     padding: 28px;
+
     text-align: center;
 }
 
@@ -281,12 +330,19 @@ body {
 
 .modal-link {
     display: block;
+
     background: #ff4fa3;
+
     color: white;
+
     text-decoration: none;
+
     padding: 14px;
+
     border-radius: 24px;
+
     margin: 12px 0;
+
     font-weight: 800;
 }
 
@@ -297,12 +353,18 @@ body {
 
 .close {
     background: none;
+
     border: none;
+
     color: #aaa;
+
     font-size: 15px;
+
     margin-top: 8px;
+
     cursor: pointer;
 }
+
 
 /* =========================
    FOOTER
@@ -310,10 +372,15 @@ body {
 
 footer {
     background: #050505;
+
     border-top: 1px solid #222;
+
     padding: 35px 18px;
+
     text-align: center;
+
     color: #ddd;
+
     margin-top: 45px;
 }
 
@@ -326,6 +393,7 @@ footer a {
     margin: 15px 0;
     line-height: 2;
 }
+
 
 /* =========================
    ТЕЛЕФОН
@@ -349,8 +417,10 @@ footer a {
     .sale-slider {
         display: flex;
         width: 100%;
+
         align-items: center;
         justify-content: space-between;
+
         gap: 5px;
     }
 
@@ -362,10 +432,12 @@ footer a {
 
     .slider-arrow {
         display: flex;
+
         align-items: center;
         justify-content: center;
 
         flex: 0 0 42px;
+
         width: 42px;
         height: 42px;
 
@@ -395,12 +467,18 @@ footer a {
         font-size: 27px;
     }
 
+    .old-price {
+        font-size: 18px;
+    }
+
 }
 
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =========================
      ВЕРХНЕЕ МЕНЮ
@@ -441,6 +519,7 @@ footer a {
 
 <main class="page">
 
+
     <a
         class="back"
         href="index.html"
@@ -472,6 +551,7 @@ footer a {
             🛍️ Акции
         </button>
 
+
         <button
             class="tab-button"
             onclick="showTab('contests', this)"
@@ -493,6 +573,7 @@ footer a {
 
         <div class="sale-slider">
 
+
             <!-- СТРЕЛКА НАЗАД -->
 
             <button
@@ -504,9 +585,12 @@ footer a {
             </button>
 
 
-            <!-- ЕДИНСТВЕННАЯ АКЦИЯ -->
+            <!-- =========================
+                 АКЦИЯ 1
+            ========================= -->
 
             <div class="sale-wrapper">
+
 
                 <div
                     class="sale-slide"
@@ -519,21 +603,31 @@ footer a {
                             🐕 African Wild Dog
                         </div>
 
+
                         <div class="new-price">
                             🎁 Ride Potion
                         </div>
 
+
                         <div class="sale-text">
+
                             💗 Купи 1 African Wild Dog —
+
                             <br>
+
                             получи 1 Ride Potion в подарок!
+
                             <br>
+
                             🎮 Акция на Adopt Me
+
                         </div>
+
 
                         <div class="sale-date">
                             ⏰ Акция действует до 17.08.2026
                         </div>
+
 
                         <button
                             class="sale-button"
@@ -545,6 +639,66 @@ footer a {
                     </div>
 
                 </div>
+
+
+                <!-- =========================
+                     АКЦИЯ 2
+                ========================= -->
+
+                <div
+                    class="sale-slide"
+                    id="sale2"
+                    style="display:none;"
+                >
+
+                    <div class="sale-item">
+
+                        <div class="sale-title">
+                            🍭 Sweet Set
+                        </div>
+
+
+                        <div class="old-price">
+                            380 грн
+                        </div>
+
+
+                        <div class="new-price">
+                            💗 350 грн
+                        </div>
+
+
+                        <div class="sale-text">
+
+                            🎁 Специальная скидка на Sweet Set!
+
+                            <br>
+
+                            💕 Было 380 грн — стало 350 грн
+
+                            <br>
+
+                            🎮 Акция на MM2
+
+                        </div>
+
+
+                        <div class="sale-date">
+                            ⏰ Только сегодня — 15.08.2026
+                        </div>
+
+
+                        <button
+                            class="sale-button"
+                            onclick="openBuy('Sweet Set — 350 грн')"
+                        >
+                            КУПИТЬ
+                        </button>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -558,6 +712,7 @@ footer a {
             >
                 ›
             </button>
+
 
         </div>
 
@@ -601,13 +756,16 @@ footer a {
 
     <div class="modal-box">
 
+
         <h3>
             💗 Как связаться?
         </h3>
 
+
         <p id="buyText">
             Выбери удобный способ:
         </p>
+
 
         <a
             class="modal-link"
@@ -617,6 +775,7 @@ footer a {
             🤖 SPAM BOT
         </a>
 
+
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -625,12 +784,14 @@ footer a {
             💬 ЛС
         </a>
 
+
         <button
             class="close"
             onclick="closeBuy()"
         >
             Закрыть
         </button>
+
 
     </div>
 
@@ -643,11 +804,14 @@ footer a {
 
 <footer>
 
+
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
 
+
     <div class="footer-links">
+
 
         <a
             href="https://t.me/lil1ta0"
@@ -656,7 +820,9 @@ footer a {
             💬 ЛС
         </a>
 
+
         ·
+
 
         <a
             href="https://t.me/lil1ta0spambot"
@@ -665,7 +831,9 @@ footer a {
             🤖 Спам-бот
         </a>
 
+
         ·
+
 
         <a
             href="https://t.me/lillitsho"
@@ -674,29 +842,41 @@ footer a {
             📢 Telegram-канал
         </a>
 
+
     </div>
+
 
     <div>
         Adopt Me • MM2
     </div>
+
 
 </footer>
 
 
 <script>
 
+
 /* =========================
-   ПЕРЕКЛЮЧЕНИЕ АКЦИИ
+   ПЕРЕКЛЮЧЕНИЕ АКЦИЙ
 ========================= */
 
 let currentSale = 1;
 
 function changeSale(direction) {
 
-    /* Сейчас акция только одна,
-       поэтому стрелки оставляют её на месте */
+    currentSale += direction;
 
-    currentSale = 1;
+
+    if (currentSale > 2) {
+        currentSale = 1;
+    }
+
+
+    if (currentSale < 1) {
+        currentSale = 2;
+    }
+
 
     document
         .querySelectorAll(".sale-slide")
@@ -706,14 +886,16 @@ function changeSale(direction) {
 
         });
 
+
     document
-        .getElementById("sale1")
+        .getElementById("sale" + currentSale)
         .style.display = "block";
+
 }
 
 
 /* =========================
-   ПЕРЕКЛЮЧЕНИЕ АКЦИИ / КОНКУРСЫ
+   ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
 ========================= */
 
 function showTab(tabName, button) {
@@ -726,6 +908,7 @@ function showTab(tabName, button) {
 
         });
 
+
     document
         .querySelectorAll(".tab-button")
         .forEach(function(btn) {
@@ -734,10 +917,12 @@ function showTab(tabName, button) {
 
         });
 
+
     document
         .getElementById(tabName)
         .classList
         .add("active");
+
 
     button.classList.add("active");
 
@@ -756,6 +941,7 @@ function openBuy(name) {
         "Покупка: " +
         name +
         " — выбери способ связи:";
+
 
     document
         .getElementById("buyModal")
@@ -795,6 +981,7 @@ document
     );
 
 </script>
+
 
 </body>
 </html>
