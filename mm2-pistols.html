@@ -1,4 +1,4 @@
-````html
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -24,8 +24,6 @@ body {
     color: white;
 }
 
-/* ===== ГЛАВНОЕ МЕНЮ ===== */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
@@ -47,17 +45,13 @@ body {
     color: #111;
 }
 
-/* ===== МЕНЮ MM2 ===== */
-
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
     padding: 12px 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -65,16 +59,11 @@ body {
 .mm2-menu a {
     text-decoration: none;
     color: #ff9ac8;
-
     background: #242424;
-
     padding: 9px 16px;
-
     border-radius: 20px;
-
     font-size: 14px;
     font-weight: 700;
-
     transition: 0.2s;
 }
 
@@ -82,8 +71,6 @@ body {
     background: #ff4fa3;
     color: white;
 }
-
-/* ===== СТРАНИЦА ===== */
 
 .page {
     max-width: 1100px;
@@ -111,8 +98,6 @@ body {
     margin: 0 auto 35px;
 }
 
-/* ===== ТОВАРЫ ===== */
-
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -123,13 +108,9 @@ body {
     background: #111;
     border: 1px solid #333;
     border-radius: 24px;
-
     padding: 20px;
-
     text-align: center;
-
     box-shadow: 0 8px 30px rgba(0,0,0,.25);
-
     transition: 0.2s;
 }
 
@@ -141,13 +122,9 @@ body {
 .product-image {
     width: 100%;
     height: 230px;
-
     object-fit: contain;
-
     background: white;
-
     border-radius: 18px;
-
     margin-bottom: 15px;
 }
 
@@ -158,59 +135,38 @@ body {
 
 .category {
     display: inline-block;
-
     padding: 7px 12px;
-
     border-radius: 20px;
-
     background: #242424;
-
     color: #ff9ac8;
-
     font-size: 13px;
-
     font-weight: 700;
-
     margin-bottom: 10px;
 }
 
 .price {
     font-size: 23px;
-
     font-weight: 800;
-
     color: #ff65ad;
-
     margin: 10px 0;
 }
 
 .stock {
     color: #ddd;
-
     line-height: 1.6;
-
     margin: 10px 0 18px;
 }
 
 .buy-button {
     display: inline-block;
-
     border: none;
-
     background: #ff4fa3;
-
     color: white;
-
     padding: 13px 30px;
-
     border-radius: 25px;
-
     font-size: 16px;
-
     font-weight: 800;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
@@ -219,23 +175,14 @@ body {
     transform: scale(1.04);
 }
 
-/* ===== ОКНО ПОКУПКИ ===== */
-
 .modal {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.75);
-
     z-index: 50;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
 }
 
@@ -245,15 +192,10 @@ body {
 
 .modal-box {
     width: min(420px,100%);
-
     background: #111;
-
     border: 2px solid #ff4fa3;
-
     border-radius: 25px;
-
     padding: 28px;
-
     text-align: center;
 }
 
@@ -264,19 +206,12 @@ body {
 
 .modal-link {
     display: block;
-
     background: #ff4fa3;
-
     color: white;
-
     text-decoration: none;
-
     padding: 14px;
-
     border-radius: 24px;
-
     margin: 12px 0;
-
     font-weight: 800;
 }
 
@@ -287,29 +222,18 @@ body {
 
 .close {
     background: none;
-
     border: none;
-
     color: #aaa;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     cursor: pointer;
 }
 
-/* ===== FOOTER ===== */
-
 footer {
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
 }
 
@@ -322,8 +246,6 @@ footer a {
     margin: 15px 0;
     line-height: 2;
 }
-
-/* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 700px) {
 
@@ -359,20 +281,13 @@ footer a {
 
 <body>
 
-<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
-
 <nav class="top-bar">
 
     <a href="index.html">Главная</a>
-
     <a href="catalog.html">Каталог</a>
-
     <a href="proofs.html">Пруфы</a>
-
     <a href="index.html#rules">Правила</a>
-
     <a href="zakaz.html">На заказ</a>
-
     <a href="buy.html">Купить</a>
 
     <a href="akcii.html">
@@ -381,33 +296,15 @@ footer a {
 
 </nav>
 
-
-<!-- ===== МЕНЮ MM2 ===== -->
-
 <nav class="mm2-menu">
 
-    <a href="mm2-pistols.html">
-        Пистолеты
-    </a>
-
-    <a href="mm2-knives.html">
-        Ножи
-    </a>
-
-    <a href="mm2-sets.html">
-        Сеты
-    </a>
-
-    <a href="mm2-common.html">
-        Common
-    </a>
-
-    <a href="mm2-chroma.html">
-        Хрома
-    </a>
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сеты</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
 
 </nav>
-
 
 <main class="page">
 
@@ -423,9 +320,7 @@ footer a {
     MM2 • Пистолеты
 </p>
 
-
 <div class="products">
-
 
     <!-- ===== DARK BRINGER ===== -->
 
@@ -450,13 +345,9 @@ footer a {
         </div>
 
         <div class="stock">
-
             📦 В наличии: 1
-
             <br>
-
             🎮 MM2
-
         </div>
 
         <button
@@ -492,13 +383,9 @@ footer a {
         </div>
 
         <div class="stock">
-
             📦 В наличии: 1
-
             <br>
-
             🎮 MM2
-
         </div>
 
         <button
@@ -510,6 +397,43 @@ footer a {
 
     </article>
 
+
+    <!-- ===== AMERILASER ===== -->
+
+    <article class="product">
+
+        <img
+            class="product-image"
+            src="amerilaser.webp"
+            alt="Amerilaser"
+        >
+
+        <span class="category">
+            Пистолет
+        </span>
+
+        <h2>
+            Amerilaser
+        </h2>
+
+        <div class="price">
+            30 грн
+        </div>
+
+        <div class="stock">
+            📦 В наличии: 1
+            <br>
+            🎮 MM2
+        </div>
+
+        <button
+            class="buy-button"
+            onclick="openBuy('Amerilaser')"
+        >
+            КУПИТЬ
+        </button>
+
+    </article>
 
 </div>
 
@@ -576,7 +500,6 @@ function openBuy(name) {
         .add("open");
 }
 
-
 function closeBuy() {
 
     document
@@ -584,7 +507,6 @@ function closeBuy() {
         .classList
         .remove("open");
 }
-
 
 document
     .getElementById("buyModal")
@@ -601,8 +523,6 @@ document
 
 </script>
 
-
-<!-- ===== FOOTER ===== -->
 
 <footer>
 
@@ -648,5 +568,4 @@ document
 </body>
 </html>
 ```
-
 
