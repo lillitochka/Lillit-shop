@@ -1,34 +1,25 @@
-```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>🎁 Lillit Shop — Акции / Конкурсы</title>
-
 <style>
-
 * {
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #080808;
     color: white;
 }
-
 /* =========================
    ВЕРХНЕЕ МЕНЮ
 ========================= */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
@@ -37,7 +28,6 @@ body {
     top: 0;
     z-index: 100;
 }
-
 .top-bar a {
     color: white;
     text-decoration: none;
@@ -45,22 +35,17 @@ body {
     margin: 0 9px;
     font-size: 14px;
 }
-
 .top-bar a:hover {
     color: #111;
 }
-
-
 /* =========================
    СТРАНИЦА
 ========================= */
-
 .page {
     max-width: 900px;
     margin: auto;
     padding: 40px 18px;
 }
-
 .back {
     display: inline-block;
     color: #ff65ad;
@@ -68,24 +53,19 @@ body {
     font-weight: 700;
     margin-bottom: 25px;
 }
-
 .page-title {
     text-align: center;
     font-size: 40px;
     margin: 10px 0;
 }
-
 .page-subtitle {
     text-align: center;
     color: #ccc;
     margin-bottom: 35px;
 }
-
-
 /* =========================
    ВКЛАДКИ
 ========================= */
-
 .tabs {
     display: flex;
     justify-content: center;
@@ -93,7 +73,6 @@ body {
     flex-wrap: wrap;
     margin-bottom: 30px;
 }
-
 .tab-button {
     border: 1px solid #ff4fa3;
     background: #171717;
@@ -105,477 +84,332 @@ body {
     cursor: pointer;
     transition: .2s;
 }
-
 .tab-button:hover {
     background: #ff4fa3;
     transform: translateY(-2px);
 }
-
 .tab-button.active {
     background: #ff4fa3;
 }
-
-
 /* =========================
    КОНТЕНТ
 ========================= */
-
 .tab-content {
     display: none;
 }
-
 .tab-content.active {
     display: block;
 }
-
-
 /* =========================
    СЛАЙДЕР
 ========================= */
-
 .sale-slider {
     display: flex;
     align-items: center;
     gap: 12px;
 }
-
 .slider-arrow {
     flex: 0 0 48px;
     width: 48px;
     height: 48px;
-
     border: 1px solid #ff4fa3;
     background: #171717;
     color: #ff9ac8;
-
     border-radius: 50%;
-
     font-size: 26px;
     font-weight: 900;
-
     cursor: pointer;
     transition: .2s;
 }
-
 .slider-arrow:hover {
     background: #ff4fa3;
     color: white;
     transform: scale(1.06);
 }
-
 .sale-wrapper {
     flex: 1;
     min-width: 0;
 }
-
-
 /* =========================
    АКЦИЯ
 ========================= */
-
 .sale-item {
     background: #111;
     border: 2px solid #ff4fa3;
     border-radius: 25px;
     padding: 28px 20px;
     text-align: center;
-
     box-shadow:
         0 8px 30px rgba(0,0,0,.3);
-
     animation: saleAppear .25s ease;
 }
-
 @keyframes saleAppear {
-
     from {
         opacity: 0;
         transform: scale(.98);
     }
-
     to {
         opacity: 1;
         transform: scale(1);
     }
-
 }
-
 .sale-title {
     font-size: 28px;
     font-weight: 800;
     color: #ff9ac8;
     margin-bottom: 15px;
 }
-
 .new-price {
     color: #ff65ad;
     font-size: 32px;
     font-weight: 900;
     margin-bottom: 12px;
 }
-
 .old-price {
     color: #777;
     font-size: 20px;
     text-decoration: line-through;
     margin-bottom: 3px;
 }
-
 .sale-text {
     color: #ddd;
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 15px;
 }
-
 .sale-date {
     color: #ff9ac8;
     font-weight: 800;
     margin-bottom: 20px;
 }
-
 .sale-button {
     display: inline-block;
     border: none;
     background: #ff4fa3;
     color: white;
-
     padding: 13px 30px;
-
     border-radius: 25px;
-
     font-size: 16px;
     font-weight: 800;
-
     cursor: pointer;
-
     transition: .2s;
 }
-
 .sale-button:hover {
     background: #ff65ad;
     transform: scale(1.04);
 }
-
-
 /* =========================
    КОНКУРСЫ
 ========================= */
-
 .empty {
     background: #111;
     border: 1px solid #333;
     border-radius: 25px;
-
     padding: 55px 20px;
-
     text-align: center;
 }
-
 .empty-title {
     color: #ff65ad;
     font-size: 25px;
     font-weight: 800;
     margin-bottom: 10px;
 }
-
 .empty-text {
     color: #aaa;
     font-size: 15px;
 }
-
-
 /* =========================
    ОКНО ПОКУПКИ
 ========================= */
-
 .modal {
     display: none;
-
     position: fixed;
     inset: 0;
-
     background: rgba(0,0,0,.75);
-
     z-index: 200;
-
     align-items: center;
     justify-content: center;
-
     padding: 20px;
 }
-
 .modal.open {
     display: flex;
 }
-
 .modal-box {
     width: min(420px, 100%);
-
     background: #111;
-
     border: 2px solid #ff4fa3;
-
     border-radius: 25px;
-
     padding: 28px;
-
     text-align: center;
 }
-
 .modal-box h3 {
     margin-top: 0;
     font-size: 25px;
 }
-
 .modal-link {
     display: block;
-
     background: #ff4fa3;
-
     color: white;
-
     text-decoration: none;
-
     padding: 14px;
-
     border-radius: 24px;
-
     margin: 12px 0;
-
     font-weight: 800;
 }
-
 .modal-link.secondary {
     background: white;
     color: #111;
 }
-
 .close {
     background: none;
-
     border: none;
-
     color: #aaa;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     cursor: pointer;
 }
-
-
 /* =========================
    FOOTER
 ========================= */
-
 footer {
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
-
 footer a {
     color: #ff65ad;
     text-decoration: none;
 }
-
 .footer-links {
     margin: 15px 0;
     line-height: 2;
 }
-
-
 /* =========================
    ТЕЛЕФОН
 ========================= */
-
 @media (max-width: 700px) {
-
     .top-bar a {
         font-size: 12px;
         margin: 0 4px;
     }
-
     .page {
         padding: 30px 13px;
     }
-
     .page-title {
         font-size: 31px;
     }
-
     .sale-slider {
         display: flex;
         width: 100%;
-
         align-items: center;
         justify-content: space-between;
-
         gap: 5px;
     }
-
     .sale-wrapper {
         width: 100%;
         min-width: 0;
         flex: 1;
     }
-
     .slider-arrow {
         display: flex;
-
         align-items: center;
         justify-content: center;
-
         flex: 0 0 42px;
-
         width: 42px;
         height: 42px;
-
         padding: 0;
-
         font-size: 25px;
         line-height: 1;
-
         position: relative;
         z-index: 5;
     }
-
     .sale-item {
         width: 100%;
         padding: 25px 14px;
     }
-
     .sale-title {
         font-size: 23px;
     }
-
     .sale-text {
         font-size: 15px;
     }
-
     .new-price {
         font-size: 27px;
     }
-
     .old-price {
         font-size: 18px;
     }
-
 }
-
 </style>
 </head>
-
-
 <body>
-
-
 <!-- =========================
      ВЕРХНЕЕ МЕНЮ
 ========================= -->
-
 <nav class="top-bar">
-
     <a href="index.html">
         Главная
     </a>
-
     <a href="catalog.html">
         Каталог
     </a>
-
     <a href="proofs.html">
         Пруфы
     </a>
-
     <a href="index.html#rules">
         Правила
     </a>
-
     <a href="zakaz.html">
         На заказ
     </a>
-
     <a href="buy.html">
         Купить
     </a>
-
     <a href="akcii.html">
         🎁 Акции / Конкурсы
     </a>
-
 </nav>
-
-
 <main class="page">
-
-
     <a
         class="back"
         href="index.html"
     >
         ← Назад
     </a>
-
-
     <h1 class="page-title">
         🎁 Акции / Конкурсы
     </h1>
-
-
     <p class="page-subtitle">
         Самые выгодные предложения Lillit Shop 💗
     </p>
-
-
     <!-- =========================
          КНОПКИ
     ========================= -->
-
     <div class="tabs">
-
         <button
             class="tab-button active"
             onclick="showTab('sales', this)"
         >
             🛍️ Акции
         </button>
-
-
         <button
             class="tab-button"
             onclick="showTab('contests', this)"
         >
             🏆 Конкурсы
         </button>
-
     </div>
-
-
     <!-- =========================
          АКЦИИ
     ========================= -->
-
     <div
         id="sales"
         class="tab-content active"
     >
-
         <div class="sale-slider">
-
-
-            <!-- СТРЕЛКА НАЗАД -->
-
             <button
                 class="slider-arrow"
                 onclick="changeSale(-1)"
@@ -583,128 +417,76 @@ footer a {
             >
                 ‹
             </button>
-
-
             <!-- =========================
                  АКЦИЯ 1
             ========================= -->
-
             <div class="sale-wrapper">
-
-
                 <div
                     class="sale-slide"
                     id="sale1"
                 >
-
                     <div class="sale-item">
-
                         <div class="sale-title">
                             🐕 African Wild Dog
                         </div>
-
-
                         <div class="new-price">
                             🎁 Ride Potion
                         </div>
-
-
                         <div class="sale-text">
-
                             💗 Купи 1 African Wild Dog —
-
                             <br>
-
                             получи 1 Ride Potion в подарок!
-
                             <br>
-
                             🎮 Акция на Adopt Me
-
                         </div>
-
-
                         <div class="sale-date">
                             ⏰ Акция действует до 17.08.2026
                         </div>
-
-
                         <button
                             class="sale-button"
                             onclick="openBuy('African Wild Dog — Ride Potion в подарок')"
                         >
                             КУПИТЬ
                         </button>
-
                     </div>
-
                 </div>
-
-
                 <!-- =========================
                      АКЦИЯ 2
                 ========================= -->
-
                 <div
                     class="sale-slide"
                     id="sale2"
                     style="display:none;"
                 >
-
                     <div class="sale-item">
-
                         <div class="sale-title">
                             🍭 Sweet Set
                         </div>
-
-
                         <div class="old-price">
                             380 грн
                         </div>
-
-
                         <div class="new-price">
                             💗 350 грн
                         </div>
-
-
                         <div class="sale-text">
-
                             🎁 Специальная скидка на Sweet Set!
-
                             <br>
-
                             💕 Было 380 грн — стало 350 грн
-
                             <br>
-
                             🎮 Акция на MM2
-
                         </div>
-
-
                         <div class="sale-date">
-                            ⏰ Только сегодня — 15.08.2026
+                            ⏰ Только сегодня — 16.08.2026
                         </div>
-
-
                         <button
                             class="sale-button"
                             onclick="openBuy('Sweet Set — 350 грн')"
                         >
                             КУПИТЬ
                         </button>
-
                     </div>
-
                 </div>
-
-
             </div>
-
-
-            <!-- СТРЕЛКА ВПЕРЁД -->
-
             <button
                 class="slider-arrow"
                 onclick="changeSale(1)"
@@ -712,61 +494,39 @@ footer a {
             >
                 ›
             </button>
-
-
         </div>
-
     </div>
-
-
     <!-- =========================
          КОНКУРСЫ
     ========================= -->
-
     <div
         id="contests"
         class="tab-content"
     >
-
         <div class="empty">
-
             <div class="empty-title">
                 🖤 Конкурсов пока нету
             </div>
-
             <div class="empty-text">
                 Следите за обновлениями ✨
             </div>
-
         </div>
-
     </div>
-
 </main>
-
-
 <!-- =========================
      ОКНО ПОКУПКИ
 ========================= -->
-
 <div
     class="modal"
     id="buyModal"
 >
-
     <div class="modal-box">
-
-
         <h3>
             💗 Как связаться?
         </h3>
-
-
         <p id="buyText">
             Выбери удобный способ:
         </p>
-
-
         <a
             class="modal-link"
             href="https://t.me/lil1ta0spambot"
@@ -774,8 +534,6 @@ footer a {
         >
             🤖 SPAM BOT
         </a>
-
-
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -783,207 +541,123 @@ footer a {
         >
             💬 ЛС
         </a>
-
-
         <button
             class="close"
             onclick="closeBuy()"
         >
             Закрыть
         </button>
-
-
     </div>
-
 </div>
-
-
 <!-- =========================
      FOOTER
 ========================= -->
-
 <footer>
-
-
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
-
-
     <div class="footer-links">
-
-
         <a
             href="https://t.me/lil1ta0"
             target="_blank"
         >
             💬 ЛС
         </a>
-
-
         ·
-
-
         <a
             href="https://t.me/lil1ta0spambot"
             target="_blank"
         >
             🤖 Спам-бот
         </a>
-
-
         ·
-
-
         <a
             href="https://t.me/lillitsho"
             target="_blank"
         >
             📢 Telegram-канал
         </a>
-
-
     </div>
-
-
     <div>
         Adopt Me • MM2
     </div>
-
-
 </footer>
-
-
 <script>
-
-
 /* =========================
    ПЕРЕКЛЮЧЕНИЕ АКЦИЙ
 ========================= */
-
 let currentSale = 1;
-
 function changeSale(direction) {
-
     currentSale += direction;
-
-
     if (currentSale > 2) {
         currentSale = 1;
     }
-
-
     if (currentSale < 1) {
         currentSale = 2;
     }
-
-
     document
         .querySelectorAll(".sale-slide")
         .forEach(function(slide) {
-
             slide.style.display = "none";
-
         });
-
-
     document
         .getElementById("sale" + currentSale)
         .style.display = "block";
-
 }
-
-
 /* =========================
    ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
 ========================= */
-
 function showTab(tabName, button) {
-
     document
         .querySelectorAll(".tab-content")
         .forEach(function(tab) {
-
             tab.classList.remove("active");
-
         });
-
-
     document
         .querySelectorAll(".tab-button")
         .forEach(function(btn) {
-
             btn.classList.remove("active");
-
         });
-
-
     document
         .getElementById(tabName)
         .classList
         .add("active");
-
-
     button.classList.add("active");
-
 }
-
-
 /* =========================
    ПОКУПКА
 ========================= */
-
 function openBuy(name) {
-
     document
         .getElementById("buyText")
         .textContent =
         "Покупка: " +
         name +
         " — выбери способ связи:";
-
-
     document
         .getElementById("buyModal")
         .classList
         .add("open");
-
 }
-
-
 function closeBuy() {
-
     document
         .getElementById("buyModal")
         .classList
         .remove("open");
-
 }
-
-
 /* =========================
    КЛИК ВНЕ ОКНА
 ========================= */
-
 document
     .getElementById("buyModal")
     .addEventListener(
         "click",
         function(event) {
-
             if (event.target === this) {
-
                 closeBuy();
-
             }
-
         }
     );
-
 </script>
-
-
 </body>
 </html>
-```
-
