@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -13,8 +14,6 @@
 <title>✨ Lillit Shop — Хрома</title>
 
 <style>
-
-/* ===== ОСНОВА ===== */
 
 * {
     box-sizing: border-box;
@@ -47,11 +46,8 @@ body {
 .top-bar a {
     color: white;
     text-decoration: none;
-
     font-weight: 700;
-
     margin: 0 9px;
-
     font-size: 14px;
 }
 
@@ -64,24 +60,20 @@ body {
 
 .mm2-menu {
     background: #111;
-
     border-bottom: 1px solid #292929;
 
     padding: 12px 10px;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
 
     gap: 10px;
-
     flex-wrap: wrap;
 }
 
 .mm2-menu a {
     text-decoration: none;
-
     color: #ff9ac8;
 
     background: #242424;
@@ -91,7 +83,6 @@ body {
     border-radius: 20px;
 
     font-size: 14px;
-
     font-weight: 700;
 
     transition: 0.2s;
@@ -107,9 +98,7 @@ body {
 
 .page {
     max-width: 1100px;
-
     margin: auto;
-
     padding: 45px 18px;
 }
 
@@ -117,7 +106,6 @@ body {
     display: inline-block;
 
     color: #ff65ad;
-
     text-decoration: none;
 
     font-weight: 700;
@@ -159,7 +147,6 @@ body {
     background-size: 300% 300%;
 
     -webkit-background-clip: text;
-
     -webkit-text-fill-color: transparent;
 
     animation: rainbow 4s linear infinite;
@@ -560,13 +547,97 @@ footer a {
 
 
     <p class="page-subtitle">
-        Каталог хром
+        Каталог хром 💫
     </p>
 
 
     <!-- ===== ТОВАРЫ ===== -->
 
     <div class="products">
+
+
+        <!-- ===== CHROMA SHARK ===== -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="chroma-shark.webp"
+                alt="Chroma Shark"
+            >
+
+            <span class="category">
+                Хрома
+            </span>
+
+            <h2>
+                Chroma Shark
+            </h2>
+
+            <div class="price">
+                50 грн
+            </div>
+
+            <div class="stock">
+
+                📦 В наличии: 1
+
+                <br>
+
+                🎮 MM2
+
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Chroma Shark')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- ===== CHROMA SWIRLY GUN ===== -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="chroma-swirly-gun.webp"
+                alt="Chroma Swirly Gun"
+            >
+
+            <span class="category">
+                Хрома
+            </span>
+
+            <h2>
+                Chroma Swirly Gun
+            </h2>
+
+            <div class="price">
+                50 грн
+            </div>
+
+            <div class="stock">
+
+                📦 В наличии: 1
+
+                <br>
+
+                🎮 MM2
+
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Chroma Swirly Gun')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
 
 
         <!-- ===== CHROMA COOKIE CANE ===== -->
@@ -667,7 +738,6 @@ footer a {
 
 <script>
 
-
 function openBuy(name) {
 
     document
@@ -707,7 +777,6 @@ document
 
         }
     );
-
 
 </script>
 
@@ -761,3 +830,5 @@ document
 </body>
 
 </html>
+```
+
