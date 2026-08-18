@@ -25,11 +25,6 @@ body {
     color: white;
 }
 
-
-/* =========================
-   ВЕРХНЕЕ МЕНЮ
-========================= */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
@@ -51,20 +46,13 @@ body {
     color: #111;
 }
 
-
-/* =========================
-   МЕНЮ MM2
-========================= */
-
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
     padding: 12px 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -72,16 +60,11 @@ body {
 .mm2-menu a {
     text-decoration: none;
     color: #ff9ac8;
-
     background: #242424;
-
     padding: 9px 16px;
-
     border-radius: 20px;
-
     font-size: 14px;
     font-weight: 700;
-
     transition: 0.2s;
 }
 
@@ -89,11 +72,6 @@ body {
     background: #ff4fa3;
     color: white;
 }
-
-
-/* =========================
-   СТРАНИЦА
-========================= */
 
 .page {
     max-width: 1100px;
@@ -103,199 +81,109 @@ body {
 
 .back {
     display: inline-block;
-
     color: #ff65ad;
-
     text-decoration: none;
-
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
 .page-title {
     text-align: center;
-
     font-size: 40px;
-
     margin: 10px 0;
 }
 
 .page-subtitle {
     text-align: center;
-
     color: #ccc;
-
     margin: 0 auto 35px;
 }
 
-
-/* =========================
-   ТОВАРЫ
-========================= */
-
 .products {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
 
 .product {
     background: #111;
-
     border: 1px solid #333;
-
     border-radius: 24px;
-
     padding: 20px;
-
     text-align: center;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
-
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
     transition: 0.2s;
 }
 
 .product:hover {
     border-color: #ff4fa3;
-
-    transform:
-        translateY(-2px);
+    transform: translateY(-2px);
 }
 
 .product-image {
     width: 100%;
-
     height: 230px;
-
     object-fit: contain;
-
     background: white;
-
     border-radius: 18px;
-
     margin-bottom: 15px;
 }
 
 .product h2 {
     font-size: 25px;
-
-    margin:
-        5px 0 10px;
+    margin: 5px 0 10px;
 }
-
-
-/* =========================
-   КАТЕГОРИЯ
-========================= */
 
 .category {
     display: inline-block;
-
     padding: 7px 12px;
-
     border-radius: 20px;
-
     background: #242424;
-
     color: #ff9ac8;
-
     font-size: 13px;
-
     font-weight: 700;
-
     margin-bottom: 10px;
 }
 
-
-/* =========================
-   ЦЕНА
-========================= */
-
 .price {
     font-size: 23px;
-
     font-weight: 800;
-
     color: #ff65ad;
-
     margin: 10px 0;
 }
 
-
-/* =========================
-   НАЛИЧИЕ
-========================= */
-
 .stock {
     color: #ddd;
-
     line-height: 1.6;
-
-    margin:
-        10px 0 18px;
+    margin: 10px 0 18px;
 }
-
-
-/* =========================
-   КНОПКА
-========================= */
 
 .buy-button {
     display: inline-block;
-
     border: none;
-
     background: #ff4fa3;
-
     color: white;
-
-    padding:
-        13px 30px;
-
+    padding: 13px 30px;
     border-radius: 25px;
-
     font-size: 16px;
-
     font-weight: 800;
-
     cursor: pointer;
-
     transition: 0.2s;
 }
 
 .buy-button:hover {
     background: #ff65ad;
-
-    transform:
-        scale(1.04);
+    transform: scale(1.04);
 }
-
-
-/* =========================
-   ОКНО ПОКУПКИ
-========================= */
 
 .modal {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
-    background:
-        rgba(0,0,0,.75);
-
+    background: rgba(0,0,0,.75);
     z-index: 50;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
 }
 
@@ -304,113 +192,72 @@ body {
 }
 
 .modal-box {
-    width:
-        min(420px,100%);
-
+    width: min(420px,100%);
     background: #111;
-
-    border:
-        2px solid #ff4fa3;
-
+    border: 2px solid #ff4fa3;
     border-radius: 25px;
-
     padding: 28px;
-
     text-align: center;
 }
 
 .modal-box h3 {
     margin-top: 0;
-
     font-size: 25px;
 }
 
 .modal-link {
     display: block;
-
     background: #ff4fa3;
-
     color: white;
-
     text-decoration: none;
-
     padding: 14px;
-
     border-radius: 24px;
-
     margin: 12px 0;
-
     font-weight: 800;
 }
 
 .modal-link.secondary {
     background: white;
-
     color: #111;
 }
 
 .close {
     background: none;
-
     border: none;
-
     color: #aaa;
-
     font-size: 15px;
-
     margin-top: 8px;
-
     cursor: pointer;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     background: #050505;
-
-    border-top:
-        1px solid #222;
-
+    border-top: 1px solid #222;
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
 
 footer a {
     color: #ff65ad;
-
     text-decoration: none;
 }
 
 .footer-links {
     margin: 15px 0;
-
     line-height: 2;
 }
-
-
-/* =========================
-   ТЕЛЕФОН
-========================= */
 
 @media (max-width: 700px) {
 
     .top-bar a {
         font-size: 12px;
-
         margin: 0 4px;
     }
 
     .page {
-        padding:
-            30px 13px;
+        padding: 30px 13px;
     }
 
     .page-title {
@@ -435,111 +282,47 @@ footer a {
 
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     ВЕРХНЕЕ МЕНЮ
-========================= -->
 
 <nav class="top-bar">
 
-    <a href="index.html">
-        Главная
-    </a>
-
-    <a href="catalog.html">
-        Каталог
-    </a>
-
-    <a href="proofs.html">
-        Пруфы
-    </a>
-
-    <a href="index.html#rules">
-        Правила
-    </a>
-
-    <a href="zakaz.html">
-        На заказ
-    </a>
-
-    <a href="buy.html">
-        Купить
-    </a>
-
-    <a href="akcii.html">
-        🎁 Акции / Конкурсы
-    </a>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="proofs.html">Пруфы</a>
+    <a href="index.html#rules">Правила</a>
+    <a href="zakaz.html">На заказ</a>
+    <a href="buy.html">Купить</a>
+    <a href="akcii.html">🎁 Акции / Конкурсы</a>
 
 </nav>
-
-
-<!-- =========================
-     МЕНЮ MM2
-========================= -->
 
 <nav class="mm2-menu">
 
-    <a href="mm2-pistols.html">
-        Пистолеты
-    </a>
-
-    <a href="mm2-knives.html">
-        Ножи
-    </a>
-
-    <a href="mm2-sets.html">
-        Сеты
-    </a>
-
-    <a href="mm2-common.html">
-        Common
-    </a>
-
-    <a href="mm2-chroma.html">
-        Хрома
-    </a>
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сеты</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
 
 </nav>
 
-
-<!-- =========================
-     СТРАНИЦА
-========================= -->
-
 <main class="page">
 
-
-    <a
-        class="back"
-        href="mm2.html"
-    >
+    <a class="back" href="mm2.html">
         ← Назад в MM2
     </a>
-
 
     <h1 class="page-title">
         🗡️ Ножи
     </h1>
 
-
     <p class="page-subtitle">
         MM2 • Ножи
     </p>
 
-
-    <!-- =========================
-         ТОВАРЫ
-    ========================= -->
-
     <div class="products">
 
-
-        <!-- =========================
-             SWIRLY AXE
-        ========================= -->
+        <!-- SWIRLY AXE -->
 
         <article class="product">
 
@@ -562,13 +345,9 @@ footer a {
             </div>
 
             <div class="stock">
-
                 📦 В наличии: 1
-
                 <br>
-
                 🎮 MM2
-
             </div>
 
             <button
@@ -581,20 +360,86 @@ footer a {
         </article>
 
 
-    </div>
+        <!-- ETERNAL III -->
 
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="eternal.webp"
+                alt="Eternal |||"
+            >
+
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                Eternal |||
+            </h2>
+
+            <div class="price">
+                15 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Eternal |||')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- FLAMES -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="flames.webp"
+                alt="Flames"
+            >
+
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                Flames
+            </h2>
+
+            <div class="price">
+                15 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Flames')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+    </div>
 
 </main>
 
-
-<!-- =========================
-     ОКНО ПОКУПКИ
-========================= -->
-
-<div
-    class="modal"
-    id="buyModal"
->
+<div class="modal" id="buyModal">
 
     <div class="modal-box">
 
@@ -606,7 +451,6 @@ footer a {
             Выбери удобный способ:
         </p>
 
-
         <a
             class="modal-link"
             href="https://t.me/lil1ta0spambot"
@@ -615,7 +459,6 @@ footer a {
             🤖 SPAM BOT
         </a>
 
-
         <a
             class="modal-link secondary"
             href="https://t.me/lil1ta0"
@@ -623,7 +466,6 @@ footer a {
         >
             💬 ЛС
         </a>
-
 
         <button
             class="close"
@@ -636,54 +478,37 @@ footer a {
 
 </div>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
     <div>
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
 
-
     <div class="footer-links">
 
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
+        <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
 
     </div>
-
 
     <div>
         Adopt Me • MM2
     </div>
 
 </footer>
-
 
 <script>
 
@@ -702,7 +527,6 @@ function openBuy(name) {
         .add("open");
 }
 
-
 function closeBuy() {
 
     document
@@ -711,7 +535,6 @@ function closeBuy() {
         .remove("open");
 }
 
-
 document
     .getElementById("buyModal")
     .addEventListener(
@@ -719,9 +542,7 @@ document
         function(event) {
 
             if (event.target === this) {
-
                 closeBuy();
-
             }
 
         }
@@ -729,9 +550,5 @@ document
 
 </script>
 
-
 </body>
-
 </html>
-```
-
