@@ -24,9 +24,6 @@ body {
     color: white;
 }
 
-
-/* ===== ГЛАВНОЕ МЕНЮ ===== */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
@@ -47,9 +44,6 @@ body {
 .top-bar a:hover {
     color: #111;
 }
-
-
-/* ===== МЕНЮ MM2 ===== */
 
 .mm2-menu {
     background: #111;
@@ -81,9 +75,6 @@ body {
     color: white;
 }
 
-
-/* ===== СТРАНИЦА ===== */
-
 .page {
     max-width: 1100px;
     margin: auto;
@@ -110,9 +101,6 @@ body {
     margin-bottom: 35px;
 }
 
-
-/* ===== COMMON ===== */
-
 .common-info {
     text-align: center;
     margin-bottom: 30px;
@@ -130,17 +118,11 @@ body {
     margin: 0;
 }
 
-
-/* ===== ТОВАРЫ ===== */
-
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 22px;
 }
-
-
-/* ===== ОБЫЧНАЯ КАРТОЧКА ===== */
 
 .product {
     background: #111;
@@ -161,16 +143,6 @@ body {
     transform: translateY(-2px);
 }
 
-
-/* ===== БОЛЬШАЯ КАРТОЧКА COMMON ===== */
-
-.all-common {
-    grid-column: 1 / -1;
-}
-
-
-/* ===== ФОТО ===== */
-
 .product-image {
     width: 100%;
     height: 230px;
@@ -184,16 +156,10 @@ body {
     margin-bottom: 15px;
 }
 
-
-/* ===== НАЗВАНИЕ ===== */
-
 .product h2 {
     font-size: 25px;
     margin: 5px 0 10px;
 }
-
-
-/* ===== КАТЕГОРИЯ ===== */
 
 .category {
     display: inline-block;
@@ -213,9 +179,6 @@ body {
     margin-bottom: 10px;
 }
 
-
-/* ===== ЦЕНА ===== */
-
 .price {
     font-size: 23px;
     font-weight: 800;
@@ -223,17 +186,11 @@ body {
     margin: 10px 0;
 }
 
-
-/* ===== НАЛИЧИЕ ===== */
-
 .stock {
     color: #ddd;
     line-height: 1.6;
     margin: 10px 0 18px;
 }
-
-
-/* ===== КНОПКА ===== */
 
 .buy-button {
     display: inline-block;
@@ -261,9 +218,6 @@ body {
     background: #ff65ad;
     transform: scale(1.04);
 }
-
-
-/* ===== ОКНО ПОКУПКИ ===== */
 
 .modal {
     display: none;
@@ -342,9 +296,6 @@ body {
     cursor: pointer;
 }
 
-
-/* ===== FOOTER ===== */
-
 footer {
     background: #050505;
 
@@ -368,9 +319,6 @@ footer a {
     margin: 15px 0;
     line-height: 2;
 }
-
-
-/* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 700px) {
 
@@ -408,8 +356,6 @@ footer a {
 <body>
 
 
-<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
-
 <nav class="top-bar">
 
     <a href="index.html">
@@ -443,8 +389,6 @@ footer a {
 </nav>
 
 
-<!-- ===== МЕНЮ MM2 ===== -->
-
 <nav class="mm2-menu">
 
     <a href="mm2-pistols.html">
@@ -471,7 +415,6 @@ footer a {
 
 
 <main class="page">
-
 
 <a
     class="back"
@@ -507,14 +450,14 @@ footer a {
 <div class="products">
 
 
-<!-- ===== БОЛЬШАЯ КАРТОЧКА COMMON ===== -->
+<!-- ===== SPARKLE6 ===== -->
 
-<article class="product all-common">
+<article class="product">
 
     <img
         class="product-image"
-        src="commons.webp"
-        alt="Common"
+        src="sparkle6.webp"
+        alt="Sparkle6"
     >
 
     <span class="category">
@@ -522,16 +465,16 @@ footer a {
     </span>
 
     <h2>
-        Common
+        Sparkle6
     </h2>
 
     <div class="price">
-        Цена зависит от товара
+        12 грн
     </div>
 
     <div class="stock">
 
-        📦 В наличии: несколько
+        📦 В наличии: 1
 
         <br>
 
@@ -541,12 +484,97 @@ footer a {
 
     <button
         class="buy-button"
-        onclick="openBuy('Common')"
+        onclick="openBuy('Sparkle6')"
     >
         КУПИТЬ
     </button>
 
 </article>
+
+
+<!-- ===== PRISM ===== -->
+
+<article class="product">
+
+    <img
+        class="product-image"
+        src="prism.webp"
+        alt="Prism"
+    >
+
+    <span class="category">
+        Common
+    </span>
+
+    <h2>
+        Prism
+    </h2>
+
+    <div class="price">
+        12 грн
+    </div>
+
+    <div class="stock">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 MM2
+
+    </div>
+
+    <button
+        class="buy-button"
+        onclick="openBuy('Prism')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
+
+<!-- ===== PAWS ===== -->
+
+<article class="product">
+
+    <img
+        class="product-image"
+        src="paws.webp"
+        alt="Paws"
+    >
+
+    <span class="category">
+        Common
+    </span>
+
+    <h2>
+        Paws
+    </h2>
+
+    <div class="price">
+        5 грн
+    </div>
+
+    <div class="stock">
+
+        📦 В наличии: 1
+
+        <br>
+
+        🎮 MM2
+
+    </div>
+
+    <button
+        class="buy-button"
+        onclick="openBuy('Paws')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
 
 <!-- ===== TOURIST ===== -->
 
@@ -555,7 +583,7 @@ footer a {
     <img
         class="product-image"
         src="tourist.webp"
-        alt="Tourist"
+        alt="tourist"
     >
 
     <span class="category">
@@ -679,8 +707,6 @@ footer a {
 </main>
 
 
-<!-- ===== ОКНО ПОКУПКИ ===== -->
-
 <div
     class="modal"
     id="buyModal"
@@ -724,49 +750,6 @@ footer a {
 </div>
 
 
-<script>
-
-function openBuy(name) {
-
-    document.getElementById("buyText").textContent =
-        "Покупка: " +
-        name +
-        " — выбери способ связи:";
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .add("open");
-}
-
-
-function closeBuy() {
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .remove("open");
-}
-
-
-document
-    .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-                closeBuy();
-            }
-
-        }
-    );
-
-</script>
-
-
-<!-- ===== FOOTER ===== -->
-
 <footer>
 
     <div>
@@ -809,6 +792,48 @@ document
 </footer>
 
 
+<script>
+
+function openBuy(name) {
+
+    document
+        .getElementById("buyText")
+        .textContent =
+        "Покупка: " +
+        name +
+        " — выбери способ связи:";
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .add("open");
+}
+
+
+function closeBuy() {
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .remove("open");
+}
+
+
+document
+    .getElementById("buyModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+                closeBuy();
+            }
+
+        }
+    );
+
+</script>
+
+
 </body>
 </html>
-```
