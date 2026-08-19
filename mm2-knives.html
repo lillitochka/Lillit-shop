@@ -321,42 +321,84 @@ footer a {
     </p>
 
     <div class="products">
-<!-- BEACHY -->
 
-<article class="product">
 
-    <img
-        class="product-image"
-        src="beachy.webp"
-        alt="Beachy"
-    >
+        <!-- BEACHY -->
 
-    <span class="category">
-        Нож
-    </span>
+        <article class="product">
 
-    <h2>
-        Beachy
-    </h2>
+            <img
+                class="product-image"
+                src="beachy.webp"
+                alt="Beachy"
+            >
 
-    <div class="price">
-        150 грн
-    </div>
+            <span class="category">
+                Нож
+            </span>
 
-    <div class="stock">
-        📦 В наличии: 2
-        <br>
-        🎮 MM2
-    </div>
+            <h2>
+                Beachy
+            </h2>
 
-    <button
-        class="buy-button"
-        onclick="openBuy('Beachy')"
-    >
-        КУПИТЬ
-    </button>
+            <div class="price">
+                150 грн
+            </div>
 
-</article>
+            <div class="stock">
+                📦 В наличии: 2
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Beachy')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- BAT -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="bat.webp"
+                alt="Bat"
+            >
+
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                Bat
+            </h2>
+
+            <div class="price">
+                100 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Bat')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
         <!-- SWIRLY AXE -->
 
         <article class="product">
@@ -395,7 +437,7 @@ footer a {
         </article>
 
 
-        <!-- ETERNAL III -->
+        <!-- ETERNAL ||| -->
 
         <article class="product">
 
@@ -470,9 +512,87 @@ footer a {
 
         </article>
 
+
+        <!-- GINGERBLADE -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="gingerblade.webp"
+                alt="gingerblade"
+            >
+
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                gingerblade
+            </h2>
+
+            <div class="price">
+                13 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('gingerblade')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+        <!-- FROSTSABER -->
+
+        <article class="product">
+
+            <img
+                class="product-image"
+                src="frostsaber.webp"
+                alt="FrostSaber"
+            >
+
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                FrostSaber
+            </h2>
+
+            <div class="price">
+                10 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('FrostSaber')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
     </div>
 
 </main>
+
 
 <div class="modal" id="buyModal">
 
@@ -513,6 +633,7 @@ footer a {
 
 </div>
 
+
 <footer>
 
     <div>
@@ -545,6 +666,7 @@ footer a {
 
 </footer>
 
+
 <script>
 
 function openBuy(name) {
@@ -562,6 +684,7 @@ function openBuy(name) {
         .add("open");
 }
 
+
 function closeBuy() {
 
     document
@@ -569,6 +692,7 @@ function closeBuy() {
         .classList
         .remove("open");
 }
+
 
 document
     .getElementById("buyModal")
