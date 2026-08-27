@@ -50,11 +50,9 @@ body {
     background: #111;
     border-bottom: 1px solid #292929;
     padding: 12px 10px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     gap: 10px;
     flex-wrap: wrap;
 }
@@ -63,13 +61,10 @@ body {
     text-decoration: none;
     color: #ff9ac8;
     background: #242424;
-
     padding: 9px 16px;
     border-radius: 20px;
-
     font-size: 14px;
     font-weight: 700;
-
     transition: 0.2s;
 }
 
@@ -327,122 +322,125 @@ footer a {
 
     <div class="products">
 
-        <!-- AMERILASER -->
 
-        <article class="product">
+<!-- HARVESTER -->
 
-            <img
-                class="product-image"
-                src="amerilaser.webp"
-                alt="Amerilaser"
-            >
+<article class="product">
 
-            <span class="category">
-                Пистолет
-            </span>
+    <img
+        class="product-image"
+        src="harvester.webp"
+        alt="Harvester"
+    >
 
-            <h2>
-                Amerilaser
-            </h2>
+    <span class="category">
+        Пистолет
+    </span>
 
-            <div class="price">
-                30 грн
-            </div>
+    <h2>
+        Harvester
+    </h2>
 
-            <div class="stock">
-                📦 В наличии: 1
-                <br>
-                🎮 MM2
-            </div>
+    <div class="price">
+        250 грн
+    </div>
 
-            <button
-                class="buy-button"
-                onclick="openBuy('Amerilaser')"
-            >
-                КУПИТЬ
-            </button>
+    <div class="stock">
+        📦 В наличии: 1
+        <br>
+        🎮 MM2
+    </div>
 
-        </article>
+    <button
+        class="buy-button"
+        onclick="openBuy('Harvester')"
+    >
+        КУПИТЬ
+    </button>
 
-
-        <!-- SHARK -->
-
-        <article class="product">
-
-            <img
-                class="product-image"
-                src="shark.webp"
-                alt="Shark"
-            >
-
-            <span class="category">
-                Пистолет
-            </span>
-
-            <h2>
-                Shark
-            </h2>
-
-            <div class="price">
-                35 грн
-            </div>
-
-            <div class="stock">
-                📦 В наличии: 1
-                <br>
-                🎮 MM2
-            </div>
-
-            <button
-                class="buy-button"
-                onclick="openBuy('Shark')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
+</article>
 
 
-        <!-- HALLOWGUN -->
+<!-- SHARK -->
 
-        <article class="product">
+<article class="product">
 
-            <img
-                class="product-image"
-                src="hallowgun.webp"
-                alt="Hallowgun"
-            >
+    <img
+        class="product-image"
+        src="shark.webp"
+        alt="Shark"
+    >
 
-            <span class="category">
-                Пистолет
-            </span>
+    <span class="category">
+        Пистолет
+    </span>
 
-            <h2>
-                Hallowgun
-            </h2>
+    <h2>
+        Shark
+    </h2>
 
-            <div class="price">
-                35 грн
-            </div>
+    <div class="price">
+        35 грн
+    </div>
 
-            <div class="stock">
-                📦 В наличии: 1
-                <br>
-                🎮 MM2
-            </div>
+    <div class="stock">
+        📦 В наличии: 1
+        <br>
+        🎮 MM2
+    </div>
 
-            <button
-                class="buy-button"
-                onclick="openBuy('Hallowgun')"
-            >
-                КУПИТЬ
-            </button>
+    <button
+        class="buy-button"
+        onclick="openBuy('Shark')"
+    >
+        КУПИТЬ
+    </button>
 
-        </article>
+</article>
+
+
+<!-- HALLOWGUN -->
+
+<article class="product">
+
+    <img
+        class="product-image"
+        src="hallowgun.webp"
+        alt="Hallowgun"
+    >
+
+    <span class="category">
+        Пистолет
+    </span>
+
+    <h2>
+        Hallowgun
+    </h2>
+
+    <div class="price">
+        35 грн
+    </div>
+
+    <div class="stock">
+        📦 В наличии: 1
+        <br>
+        🎮 MM2
+    </div>
+
+    <button
+        class="buy-button"
+        onclick="openBuy('Hallowgun')"
+    >
+        КУПИТЬ
+    </button>
+
+</article>
+
 
     </div>
 
 </main>
+
 
 <div class="modal" id="buyModal">
 
@@ -483,6 +481,7 @@ footer a {
 
 </div>
 
+
 <footer>
 
     <div>
@@ -515,6 +514,7 @@ footer a {
 
 </footer>
 
+
 <script>
 
 function openBuy(name) {
@@ -532,6 +532,7 @@ function openBuy(name) {
         .add("open");
 }
 
+
 function closeBuy() {
 
     document
@@ -539,6 +540,7 @@ function closeBuy() {
         .classList
         .remove("open");
 }
+
 
 document
     .getElementById("buyModal")
