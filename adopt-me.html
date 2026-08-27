@@ -1,13 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>🐾 Lillit Shop — Adopt Me</title>
 
 <style>
+
 *{box-sizing:border-box}
+
 html{scroll-behavior:smooth}
 
 body{
@@ -34,7 +39,9 @@ body{
     font-size:14px;
 }
 
-.top-bar a:hover{color:#111}
+.top-bar a:hover{
+    color:#111;
+}
 
 .main-categories,
 .pet-filters,
@@ -362,7 +369,9 @@ footer a{
         height:210px;
     }
 }
+
 </style>
+
 </head>
 
 <body>
@@ -379,6 +388,7 @@ footer a{
 
 </nav>
 
+
 <div class="main-categories">
 
 <button onclick="showCategory('all')">Все</button>
@@ -388,6 +398,7 @@ footer a{
 <button onclick="showCategory('clothes')">👗 Одежда</button>
 
 </div>
+
 
 <div class="pet-filters" id="petFilters">
 
@@ -402,6 +413,7 @@ footer a{
 
 </div>
 
+
 <div class="clothes-filters hidden" id="clothesFilters">
 
 <button onclick="filterClothes('clothes')">Вся одежда</button>
@@ -410,15 +422,21 @@ footer a{
 
 </div>
 
+
 <main class="page">
 
-<a class="back" href="catalog.html">← Назад в каталог</a>
+<a class="back" href="catalog.html">
+← Назад в каталог
+</a>
 
-<h1 class="page-title">🐾 Adopt Me</h1>
+<h1 class="page-title">
+🐾 Adopt Me
+</h1>
 
 <p class="page-subtitle">
 Питомцы • Яйца • Машины • Одежда 💗
 </p>
+
 
 <div class="notice hidden" id="clothesNotice">
 
@@ -430,23 +448,37 @@ footer a{
 
 </div>
 
+
 <div class="grid" id="productGrid">
-    
+
+
 <!-- =========================
-     5. TREE KANGAROO — 150
+     TREE KANGAROO — 150
 ========================= -->
 
 <article class="card product pet-product" data-categories="pets large neon ride">
 
 <img src="tree-kangaroo.jpeg" alt="Tree Kangaroo">
 
-<span class="category">Крупные питомцы</span>
-<span class="category">Neon</span>
-<span class="category">Ride</span>
+<span class="category">
+Крупные питомцы
+</span>
 
-<h2>Tree Kangaroo</h2>
+<span class="category">
+Neon
+</span>
 
-<div class="price">150 грн</div>
+<span class="category">
+Ride
+</span>
+
+<h2>
+Tree Kangaroo
+</h2>
+
+<div class="price">
+150 грн
+</div>
 
 <div class="meta">
 📦 В наличии: 1
@@ -459,27 +491,33 @@ footer a{
 </button>
 
 </article>
+
+
 <!-- =========================
-     RIVER OTTER — 20
+     KID GOAT — 20
 ========================= -->
 
-<article class="card product pet-product" data-categories="pets mega">
+<article class="card product pet-product" data-categories="pets neon ride">
 
 <img
-    src="river-otter.webp"
-    alt="River Otter"
+    src="kid-goat.webp"
+    alt="Kid Goat"
 >
 
 <span class="category">
-    Mega
+Neon
+</span>
+
+<span class="category">
+Ride
 </span>
 
 <h2>
-    River Otter
+Kid Goat
 </h2>
 
 <div class="price">
-    20 грн
+20 грн
 </div>
 
 <div class="meta">
@@ -490,58 +528,156 @@ footer a{
 
 <button
     class="buy"
-    onclick="openBuy('River Otter Mega')"
+    onclick="openBuy('Kid Goat')"
 >
 КУПИТЬ
 </button>
 
 </article>
 
+
 <!-- =========================
-     8. BLUE BETTA FISH — 20
+     ORANGE GUINEA PIG — 170
+========================= -->
+
+<article class="card product pet-product" data-categories="pets large">
+
+<img
+    src="orange-guinea-pig.webp"
+    alt="Orange Guinea Pig"
+>
+
+<span class="category">
+Крупные питомцы
+</span>
+
+<h2>
+Orange Guinea Pig
+</h2>
+
+<div class="price">
+170 грн
+</div>
+
+<div class="meta">
+📦 В наличии: 1
+<br>
+🎮 Adopt Me
+</div>
+
+<button
+    class="buy"
+    onclick="openBuy('Orange Guinea Pig')"
+>
+КУПИТЬ
+</button>
+
+</article>
+
+
+<!-- =========================
+     CHIHUAHUA — 30
+========================= -->
+
+<article class="card product pet-product" data-categories="pets large">
+
+<img
+    src="chihuahua.webp"
+    alt="Chihuahua"
+>
+
+<span class="category">
+Крупные питомцы
+</span>
+
+<h2>
+Chihuahua
+</h2>
+
+<div class="price">
+30 грн
+</div>
+
+<div class="meta">
+📦 В наличии: 1
+<br>
+🎮 Adopt Me
+</div>
+
+<button
+    class="buy"
+    onclick="openBuy('Chihuahua')"
+>
+КУПИТЬ
+</button>
+
+</article>
+
+
+<!-- =========================
+     SUSHI PENGUIN — 30
+========================= -->
+
+<article class="card product pet-product" data-categories="pets large">
+
+<img
+    src="sushi-penguin.webp"
+    alt="Sushi Penguin"
+>
+
+<span class="category">
+Крупные питомцы
+</span>
+
+<h2>
+Sushi Penguin
+</h2>
+
+<div class="price">
+30 грн
+</div>
+
+<div class="meta">
+📦 В наличии: 1
+<br>
+🎮 Adopt Me
+</div>
+
+<button
+    class="buy"
+    onclick="openBuy('Sushi Penguin')"
+>
+КУПИТЬ
+</button>
+
+</article>
+
+
+<!-- =========================
+     BLUE BETTA FISH — 20
 ========================= -->
 
 <article class="card product pet-product" data-categories="pets large ride">
 
-<img src="blue-betta-fish.webp" alt="Blue Betta Fish">
-
-<span class="category">Крупные питомцы</span>
-<span class="category">Ride</span>
-
-<h2>Blue Betta Fish</h2>
-
-<div class="price">20 грн</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button class="buy" onclick="openBuy('Blue Betta Fish')">
-КУПИТЬ
-</button>
-
-</article>
-<!-- RIDE POTION -->
-
-<article class="card product pet-product" data-categories="pets">
-
 <img
-    src="ride-potion.webp"
-    alt="Ride Potion"
+    src="blue-betta-fish.webp"
+    alt="Blue Betta Fish"
 >
 
 <span class="category">
-    Питомцы
+Крупные питомцы
+</span>
+
+<span class="category">
+Ride
 </span>
 
 <h2>
-    Ride Potion
+Blue Betta Fish
 </h2>
 
 <div class="price">
-    20 грн
+20 грн
 </div>
 
 <div class="meta">
@@ -552,26 +688,36 @@ footer a{
 
 <button
     class="buy"
-    onclick="openBuy('Ride Potion')"
+    onclick="openBuy('Blue Betta Fish')"
 >
 КУПИТЬ
 </button>
 
 </article>
 
+
 <!-- =========================
-     9. МЕЛКИЕ ПИТОМЦЫ — 1–35
+     МЕЛКИЕ ПИТОМЦЫ — 1–35
 ========================= -->
 
 <article class="card product pet-product" data-categories="pets small">
 
-<img src="melkie.webp" alt="Мелкие питомцы">
+<img
+    src="melkie.webp"
+    alt="Мелкие питомцы"
+>
 
-<span class="category">Мелкие питомцы</span>
+<span class="category">
+Мелкие питомцы
+</span>
 
-<h2>Мелкие питомцы</h2>
+<h2>
+Мелкие питомцы
+</h2>
 
-<div class="price">1–35 грн</div>
+<div class="price">
+1–35 грн
+</div>
 
 <div class="meta">
 📦 В наличии: 19
@@ -581,7 +727,10 @@ footer a{
 🎮 Adopt Me
 </div>
 
-<button class="buy" onclick="openBuy('Мелкие питомцы')">
+<button
+    class="buy"
+    onclick="openBuy('Мелкие питомцы')"
+>
 КУПИТЬ
 </button>
 
@@ -594,13 +743,22 @@ footer a{
 
 <article class="card product egg-product" data-categories="eggs">
 
-<img src="eggs.webp" alt="Яйца">
+<img
+    src="eggs.webp"
+    alt="Яйца"
+>
 
-<span class="category">Яйца</span>
+<span class="category">
+Яйца
+</span>
 
-<h2>Яйца</h2>
+<h2>
+Яйца
+</h2>
 
-<div class="price">1–10 грн</div>
+<div class="price">
+1–10 грн
+</div>
 
 <div class="meta">
 📦 В наличии: 10
@@ -610,7 +768,10 @@ footer a{
 🎮 Adopt Me
 </div>
 
-<button class="buy" onclick="openBuy('Яйца')">
+<button
+    class="buy"
+    onclick="openBuy('Яйца')"
+>
 КУПИТЬ
 </button>
 
@@ -623,13 +784,22 @@ footer a{
 
 <article class="card product clothes-product" data-categories="clothes largeClothes">
 
-<img src="tiny-wings.webp" alt="Tiny Wings">
+<img
+    src="tiny-wings.webp"
+    alt="Tiny Wings"
+>
 
-<span class="category">Крупная одежда</span>
+<span class="category">
+Крупная одежда
+</span>
 
-<h2>Tiny Wings</h2>
+<h2>
+Tiny Wings
+</h2>
 
-<div class="price">170 грн</div>
+<div class="price">
+170 грн
+</div>
 
 <div class="meta">
 📦 В наличии: 1
@@ -637,7 +807,10 @@ footer a{
 🎮 Adopt Me
 </div>
 
-<button class="buy" onclick="openBuy('Tiny Wings')">
+<button
+    class="buy"
+    onclick="openBuy('Tiny Wings')"
+>
 КУПИТЬ
 </button>
 
@@ -650,17 +823,26 @@ footer a{
 
 <article class="card product clothes-product" data-categories="clothes smallClothes">
 
-<img src="small-clothes.webp" alt="Одежда">
+<img
+    src="small-clothes.webp"
+    alt="Одежда"
+>
 
 <div class="zoom-text">
 🔍 Увеличьте, чтобы рассмотреть одежду
 </div>
 
-<span class="category">Мелкая одежда</span>
+<span class="category">
+Мелкая одежда
+</span>
 
-<h2>Одежда</h2>
+<h2>
+Одежда
+</h2>
 
-<div class="price">1–15 грн</div>
+<div class="price">
+1–15 грн
+</div>
 
 <div class="meta">
 📦 В наличии: 30
@@ -670,7 +852,10 @@ footer a{
 🎮 Adopt Me
 </div>
 
-<button class="buy" onclick="openBuy('Одежда')">
+<button
+    class="buy"
+    onclick="openBuy('Одежда')"
+>
 КУПИТЬ
 </button>
 
@@ -702,15 +887,25 @@ footer a{
 
 <div class="modal-box">
 
-<h3>💗 Как связаться?</h3>
+<h3>
+💗 Как связаться?
+</h3>
 
-<p>Вы хотите купить:</p>
+<p>
+Вы хотите купить:
+</p>
 
 <div class="copy-box">
 
-<span class="copy-name" id="buyText"></span>
+<span
+    class="copy-name"
+    id="buyText"
+></span>
 
-<button class="copy-button" onclick="copyProduct()">
+<button
+    class="copy-button"
+    onclick="copyProduct()"
+>
 📋 СКОПИРОВАТЬ
 </button>
 
@@ -720,19 +915,26 @@ footer a{
 Скопируйте название товара и отправьте его в чат 💗
 </p>
 
-<a class="modal-link"
-href="https://t.me/lil1ta0spambot"
-target="_blank">
+<a
+    class="modal-link"
+    href="https://t.me/lil1ta0spambot"
+    target="_blank"
+>
 🤖 SPAM BOT
 </a>
 
-<a class="modal-link secondary"
-href="https://t.me/lil1ta0"
-target="_blank">
+<a
+    class="modal-link secondary"
+    href="https://t.me/lil1ta0"
+    target="_blank"
+>
 💬 ЛС
 </a>
 
-<button class="close" onclick="closeBuy()">
+<button
+    class="close"
+    onclick="closeBuy()"
+>
 Закрыть
 </button>
 
@@ -749,11 +951,21 @@ target="_blank">
 
 <div class="footer-links">
 
-<a href="https://t.me/lil1ta0" target="_blank">💬 ЛС</a>
+<a href="https://t.me/lil1ta0" target="_blank">
+💬 ЛС
+</a>
+
 ·
-<a href="https://t.me/lil1ta0spambot" target="_blank">🤖 Спам-бот</a>
+
+<a href="https://t.me/lil1ta0spambot" target="_blank">
+🤖 Спам-бот
+</a>
+
 ·
-<a href="https://t.me/lillitsho" target="_blank">📢 Telegram-канал</a>
+
+<a href="https://t.me/lillitsho" target="_blank">
+📢 Telegram-канал
+</a>
 
 </div>
 
@@ -778,22 +990,26 @@ document.getElementById("buyModal").classList.add("open");
 
 }
 
+
 function closeBuy(){
 
 document.getElementById("buyModal").classList.remove("open");
 
 }
 
+
 function copyProduct(){
 
 if(!currentProduct)return;
 
 navigator.clipboard.writeText(currentProduct)
+
 .then(function(){
 
 alert("Название товара скопировано 💗");
 
 })
+
 .catch(function(){
 
 alert("Скопируй название вручную: " + currentProduct);
@@ -802,7 +1018,10 @@ alert("Скопируй название вручную: " + currentProduct);
 
 }
 
-document.getElementById("buyModal").addEventListener("click",function(event){
+
+document.getElementById("buyModal").addEventListener(
+"click",
+function(event){
 
 if(event.target === this){
 closeBuy();
@@ -826,6 +1045,7 @@ item.style.display="none";
 });
 
 document.getElementById("emptyMessage").classList.add("hidden");
+
 document.getElementById("clothesNotice").classList.add("hidden");
 
 }
@@ -836,6 +1056,7 @@ function showCategory(category){
 hideAllProducts();
 
 document.getElementById("petFilters").classList.add("hidden");
+
 document.getElementById("clothesFilters").classList.add("hidden");
 
 
@@ -915,6 +1136,7 @@ const categories=product.dataset.categories.split(" ");
 if(category==="pets" || categories.includes(category)){
 
 product.style.display="";
+
 found=true;
 
 }
@@ -935,6 +1157,7 @@ function filterClothes(category){
 hideAllProducts();
 
 document.getElementById("clothesFilters").classList.remove("hidden");
+
 document.getElementById("clothesNotice").classList.remove("hidden");
 
 document.querySelectorAll(".clothes-product").forEach(function(product){
@@ -957,4 +1180,5 @@ showCategory("all");
 </script>
 
 </body>
+
 </html>
