@@ -4,13 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>✨ Lillit Shop — Хрома</title>
+<title>✨ Lillit Shop — MM2 Хрома</title>
 
 <style>
 
@@ -29,14 +25,10 @@ body {
     color: white;
 }
 
-
-/* ===== ГЛАВНОЕ МЕНЮ ===== */
-
 .top-bar {
     background: #ff4fa3;
     padding: 14px 10px;
     text-align: center;
-
     position: sticky;
     top: 0;
     z-index: 20;
@@ -54,13 +46,9 @@ body {
     color: #111;
 }
 
-
-/* ===== МЕНЮ MM2 ===== */
-
 .mm2-menu {
     background: #111;
     border-bottom: 1px solid #292929;
-
     padding: 12px 10px;
 
     display: flex;
@@ -74,11 +62,9 @@ body {
 .mm2-menu a {
     text-decoration: none;
     color: #ff9ac8;
-
     background: #242424;
 
     padding: 9px 16px;
-
     border-radius: 20px;
 
     font-size: 14px;
@@ -92,9 +78,6 @@ body {
     color: white;
 }
 
-
-/* ===== СТРАНИЦА ===== */
-
 .page {
     max-width: 1100px;
     margin: auto;
@@ -103,358 +86,84 @@ body {
 
 .back {
     display: inline-block;
-
     color: #ff65ad;
     text-decoration: none;
-
     font-weight: 700;
-
     margin-bottom: 25px;
 }
 
 .page-title {
     text-align: center;
-
     font-size: 40px;
-
     margin: 10px 0;
 }
 
 .page-subtitle {
     text-align: center;
-
     color: #ccc;
-
-    margin-bottom: 40px;
+    margin: 0 auto 35px;
 }
 
-
-/* ===== РАДУЖНЫЙ ЗАГОЛОВОК ===== */
-
-.chroma-title {
-
-    background: linear-gradient(
-        90deg,
-        #ff4fa3,
-        #8c7bff,
-        #49c9ff,
-        #65e69b,
-        #ffe15c,
-        #ff4fa3
-    );
-
-    background-size: 300% 300%;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    animation: rainbow 4s linear infinite;
-}
-
-@keyframes rainbow {
-
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-
-}
-
-
-/* ===== ТОВАРЫ ===== */
-
-.products {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 22px;
-}
-
-.product {
-
-    background: #111;
-
-    border: 1px solid #333;
-
-    border-radius: 24px;
-
-    padding: 20px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 30px rgba(0,0,0,.25);
-
-    transition: 0.2s;
-}
-
-.product:hover {
-
-    border-color: #ff4fa3;
-
-    transform: translateY(-2px);
-}
-
-.product-image {
-
+.empty-message {
     width: 100%;
-
-    height: 230px;
-
-    object-fit: contain;
-
-    background: white;
-
-    border-radius: 18px;
-
-    margin-bottom: 15px;
-}
-
-.product h2 {
-
-    font-size: 25px;
-
-    margin: 5px 0 10px;
-}
-
-.category {
-
-    display: inline-block;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    background: #242424;
-
-    color: #ff9ac8;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    margin-bottom: 10px;
-}
-
-.price {
-
-    font-size: 23px;
-
-    font-weight: 800;
-
-    color: #ff65ad;
-
-    margin: 10px 0;
-}
-
-.stock {
-
-    color: #ddd;
-
-    line-height: 1.6;
-
-    margin: 10px 0 18px;
-}
-
-
-/* ===== КНОПКА ===== */
-
-.buy-button {
-
-    display: inline-block;
-
-    border: none;
-
-    background: #ff4fa3;
-
-    color: white;
-
-    padding: 13px 30px;
-
-    border-radius: 25px;
-
-    font-size: 16px;
-
-    font-weight: 800;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.buy-button:hover {
-
-    background: #ff65ad;
-
-    transform: scale(1.04);
-}
-
-
-/* ===== ОКНО ПОКУПКИ ===== */
-
-.modal {
-
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.75);
-
-    z-index: 50;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-}
-
-.modal.open {
-    display: flex;
-}
-
-.modal-box {
-
-    width: min(420px,100%);
-
-    background: #111;
-
-    border: 2px solid #ff4fa3;
-
-    border-radius: 25px;
-
-    padding: 28px;
+    max-width: 800px;
+    margin: 0 auto;
 
     text-align: center;
-}
 
-.modal-box h3 {
+    padding: 70px 20px;
 
-    margin-top: 0;
-
-    font-size: 25px;
-}
-
-.modal-link {
-
-    display: block;
-
-    background: #ff4fa3;
-
-    color: white;
-
-    text-decoration: none;
-
-    padding: 14px;
-
+    background: #111;
+    border: 1px solid #333;
     border-radius: 24px;
 
-    margin: 12px 0;
-
-    font-weight: 800;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
 }
 
-.modal-link.secondary {
-
-    background: white;
-
-    color: #111;
+.empty-title {
+    color: #ff65ad;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
 }
 
-.close {
-
-    background: none;
-
-    border: none;
-
+.empty-text {
     color: #aaa;
-
-    font-size: 15px;
-
-    margin-top: 8px;
-
-    cursor: pointer;
+    font-size: 16px;
 }
-
-
-/* ===== FOOTER ===== */
 
 footer {
-
     background: #050505;
-
     border-top: 1px solid #222;
-
     padding: 35px 18px;
-
     text-align: center;
-
     color: #ddd;
-
     margin-top: 45px;
 }
 
 footer a {
-
     color: #ff65ad;
-
     text-decoration: none;
 }
 
 .footer-links {
-
     margin: 15px 0;
-
     line-height: 2;
 }
-
-
-/* ===== ТЕЛЕФОН ===== */
 
 @media (max-width: 700px) {
 
     .top-bar a {
-
         font-size: 12px;
-
         margin: 0 4px;
     }
 
     .page {
-
         padding: 30px 13px;
     }
 
     .page-title {
-
         font-size: 31px;
-    }
-
-    .products {
-
-        grid-template-columns: 1fr;
-    }
-
-    .product {
-
-        padding: 16px;
-    }
-
-    .product-image {
-
-        height: 210px;
     }
 
 }
@@ -463,240 +172,61 @@ footer a {
 
 </head>
 
-
 <body>
-
-
-<!-- ===== ГЛАВНОЕ МЕНЮ ===== -->
 
 <nav class="top-bar">
 
-    <a href="index.html">
-        Главная
-    </a>
-
-    <a href="catalog.html">
-        Каталог
-    </a>
-
-    <a href="proofs.html">
-        Пруфы
-    </a>
-
-    <a href="index.html#rules">
-        Правила
-    </a>
-
-    <a href="zakaz.html">
-        На заказ
-    </a>
-
-    <a href="buy.html">
-        Купить
-    </a>
-
-    <a href="akcii.html">
-        🎁 Акции / Конкурсы
-    </a>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="proofs.html">Пруфы</a>
+    <a href="index.html#rules">Правила</a>
+    <a href="zakaz.html">На заказ</a>
+    <a href="buy.html">Купить</a>
+    <a href="akcii.html">🎁 Акции / Конкурсы</a>
 
 </nav>
 
 
-<!-- ===== МЕНЮ MM2 ===== -->
-
 <nav class="mm2-menu">
 
-    <a href="mm2-pistols.html">
-        Пистолеты
-    </a>
-
-    <a href="mm2-knives.html">
-        Ножи
-    </a>
-
-    <a href="mm2-sets.html">
-        Сеты
-    </a>
-
-    <a href="mm2-common.html">
-        Common
-    </a>
-
-    <a href="mm2-chroma.html">
-        Хрома
-    </a>
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сеты</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
 
 </nav>
 
 
 <main class="page">
 
-
-    <a
-        class="back"
-        href="mm2.html"
-    >
+    <a class="back" href="mm2.html">
         ← Назад в MM2
     </a>
 
-
-    <h1 class="page-title chroma-title">
+    <h1 class="page-title">
         ✨ Хрома
     </h1>
 
-
     <p class="page-subtitle">
-        Каталог хром 💫
+        MM2 • Хрома
     </p>
 
 
-    <!-- ===== ТОВАРЫ ===== -->
+    <div class="empty-message">
 
-    <div class="products">
+        <div class="empty-title">
+            🖤 Пока ничего нет
+        </div>
 
-
-        <!-- ===== CHROMA SHARK ===== -->
-
-        <article class="product">
-
-            <img
-                class="product-image"
-                src="chroma-shark.webp"
-                alt="Chroma Shark"
-            >
-
-            <span class="category">
-                Хрома
-            </span>
-
-            <h2>
-                Chroma Shark
-            </h2>
-
-            <div class="price">
-                50 грн
-            </div>
-
-            <div class="stock">
-
-                📦 В наличии: 1
-
-                <br>
-
-                🎮 MM2
-
-            </div>
-
-            <button
-                class="buy-button"
-                onclick="openBuy('Chroma Shark')"
-            >
-                КУПИТЬ
-            </button>
-
-        </article>
-
+        <div class="empty-text">
+            Ожидайте, скоро появятся товары ✨
+        </div>
 
     </div>
-
 
 </main>
 
-
-<!-- ===== ОКНО ПОКУПКИ ===== -->
-
-<div
-    class="modal"
-    id="buyModal"
->
-
-    <div class="modal-box">
-
-        <h3>
-            💗 Как связаться?
-        </h3>
-
-        <p id="buyText">
-            Выбери удобный способ:
-        </p>
-
-
-        <a
-            class="modal-link"
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
-            🤖 SPAM BOT
-        </a>
-
-
-        <a
-            class="modal-link secondary"
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
-            💬 ЛС
-        </a>
-
-
-        <button
-            class="close"
-            onclick="closeBuy()"
-        >
-            Закрыть
-        </button>
-
-    </div>
-
-</div>
-
-
-<script>
-
-function openBuy(name) {
-
-    document
-        .getElementById("buyText")
-        .textContent =
-        "Покупка: " +
-        name +
-        " — выбери способ связи:";
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .add("open");
-}
-
-
-function closeBuy() {
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .remove("open");
-}
-
-
-document
-    .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-
-                closeBuy();
-
-            }
-
-        }
-    );
-
-</script>
-
-
-<!-- ===== FOOTER ===== -->
 
 <footer>
 
@@ -704,36 +234,25 @@ document
         🐈 <strong>Lillit Shop</strong> 🐾
     </div>
 
-
     <div class="footer-links">
 
-        <a
-            href="https://t.me/lil1ta0"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0" target="_blank">
             💬 ЛС
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lil1ta0spambot"
-            target="_blank"
-        >
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
             🤖 Спам-бот
         </a>
 
         ·
 
-        <a
-            href="https://t.me/lillitsho"
-            target="_blank"
-        >
+        <a href="https://t.me/lillitsho" target="_blank">
             📢 Telegram-канал
         </a>
 
     </div>
-
 
     <div>
         Adopt Me • MM2
@@ -741,9 +260,5 @@ document
 
 </footer>
 
-
 </body>
-
 </html>
-```
-
