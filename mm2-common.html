@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>🖤 Lillit Shop — MM2 Common</title>
 
@@ -64,6 +61,7 @@ body {
     border-radius: 20px;
     font-size: 14px;
     font-weight: 700;
+    transition: 0.2s;
 }
 
 .mm2-menu a:hover {
@@ -97,23 +95,6 @@ body {
     margin-bottom: 35px;
 }
 
-.common-info {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.common-info h2 {
-    color: #ff65ad;
-    font-size: 32px;
-    margin: 0 0 8px;
-}
-
-.common-info p {
-    color: #ff9ac8;
-    font-weight: 700;
-    margin: 0;
-}
-
 .products {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -133,10 +114,6 @@ body {
 .product:hover {
     border-color: #ff4fa3;
     transform: translateY(-2px);
-}
-
-.all-common {
-    grid-column: 1 / -1;
 }
 
 .product-image {
@@ -348,72 +325,17 @@ footer a {
 </p>
 
 
-<div class="common-info">
-
-    <h2>
-        Common
-    </h2>
-
-    <p>
-        Покупка от 25 грн
-    </p>
-
-</div>
-
-
 <div class="products">
 
 
-<!-- ===== БОЛЬШАЯ КАРТОЧКА COMMON ===== -->
-
-<article class="product all-common">
-
-    <img
-        class="product-image"
-        src="commons.webp"
-        alt="Common"
-    >
-
-    <span class="category">
-        Common
-    </span>
-
-    <h2>
-        Common
-    </h2>
-
-    <div class="price">
-        Цена зависит от товара
-    </div>
-
-    <div class="stock">
-
-        📦 В наличии: несколько
-
-        <br>
-
-        🎮 MM2
-
-    </div>
-
-    <button
-        class="buy-button"
-        onclick="openBuy('Common')"
-    >
-        КУПИТЬ
-    </button>
-
-</article>
-
-
-<!-- ===== CUPID — 10 ===== -->
+<!-- ===== SPARKLE4 ===== -->
 
 <article class="product">
 
     <img
         class="product-image"
-        src="cupid.webp"
-        alt="Cupid"
+        src="sparkle4.webp"
+        alt="sparkle4"
     >
 
     <span class="category">
@@ -421,11 +343,11 @@ footer a {
     </span>
 
     <h2>
-        Cupid
+        sparkle4
     </h2>
 
     <div class="price">
-        10 грн
+        30 грн
     </div>
 
     <div class="stock">
@@ -440,7 +362,7 @@ footer a {
 
     <button
         class="buy-button"
-        onclick="openBuy('Cupid')"
+        onclick="openBuy('sparkle4')"
     >
         КУПИТЬ
     </button>
@@ -448,91 +370,7 @@ footer a {
 </article>
 
 
-<!-- ===== BUTTERFLIES — 5 ===== -->
-
-<article class="product">
-
-    <img
-        class="product-image"
-        src="butterflies.webp"
-        alt="Butterflies"
-    >
-
-    <span class="category">
-        Common
-    </span>
-
-    <h2>
-        Butterflies
-    </h2>
-
-    <div class="price">
-        5 грн
-    </div>
-
-    <div class="stock">
-
-        📦 В наличии: 1
-
-        <br>
-
-        🎮 MM2
-
-    </div>
-
-    <button
-        class="buy-button"
-        onclick="openBuy('Butterflies')"
-    >
-        КУПИТЬ
-    </button>
-
-</article>
-
-
-<!-- ===== HEART — 5 ===== -->
-
-<article class="product">
-
-    <img
-        class="product-image"
-        src="heart.webp"
-        alt="Heart"
-    >
-
-    <span class="category">
-        Common
-    </span>
-
-    <h2>
-        Heart
-    </h2>
-
-    <div class="price">
-        5 грн
-    </div>
-
-    <div class="stock">
-
-        📦 В наличии: 1
-
-        <br>
-
-        🎮 MM2
-
-    </div>
-
-    <button
-        class="buy-button"
-        onclick="openBuy('Heart')"
-    >
-        КУПИТЬ
-    </button>
-
-</article>
-
-
-<!-- ===== TOURIST — 1 ===== -->
+<!-- ===== TOURIST ===== -->
 
 <article class="product">
 
@@ -574,7 +412,7 @@ footer a {
 </article>
 
 
-<!-- ===== STRAWBERRIES KNIFE — 1 ===== -->
+<!-- ===== STRAWBERRIES KNIFE ===== -->
 
 <article class="product">
 
@@ -616,7 +454,7 @@ footer a {
 </article>
 
 
-<!-- ===== STRAWBERRIES GUN — 1 ===== -->
+<!-- ===== STRAWBERRIES GUN ===== -->
 
 <article class="product">
 
@@ -706,47 +544,6 @@ footer a {
 </div>
 
 
-<script>
-
-function openBuy(name) {
-
-    document.getElementById("buyText").textContent =
-        "Покупка: " +
-        name +
-        " — выбери способ связи:";
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .add("open");
-}
-
-
-function closeBuy() {
-
-    document
-        .getElementById("buyModal")
-        .classList
-        .remove("open");
-}
-
-
-document
-    .getElementById("buyModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-                closeBuy();
-            }
-
-        }
-    );
-
-</script>
-
-
 <footer>
 
     <div>
@@ -789,6 +586,48 @@ document
 </footer>
 
 
+<script>
+
+function openBuy(name) {
+
+    document
+        .getElementById("buyText")
+        .textContent =
+        "Покупка: " +
+        name +
+        " — выбери способ связи:";
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .add("open");
+}
+
+
+function closeBuy() {
+
+    document
+        .getElementById("buyModal")
+        .classList
+        .remove("open");
+}
+
+
+document
+    .getElementById("buyModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+                closeBuy();
+            }
+
+        }
+    );
+
+</script>
+
+
 </body>
 </html>
-```
