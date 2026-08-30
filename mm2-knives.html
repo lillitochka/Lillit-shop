@@ -1,373 +1,281 @@
+```html
 <!DOCTYPE html>
-
 <html lang="ru">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🐾 Lillit Shop — Adopt Me</title>
+<title>🗡️ Lillit Shop — MM2 Ножи</title>
 
 <style>
 
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#080808;
-    color:white;
+* {
+    box-sizing: border-box;
 }
 
-.top-bar{
-    background:#ff4fa3;
-    padding:14px 10px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:100;
+html {
+    scroll-behavior: smooth;
 }
 
-.top-bar a{
-    color:white;
-    text-decoration:none;
-    font-weight:700;
-    margin:0 9px;
-    font-size:14px;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
 }
 
-.top-bar a:hover{
-    color:#111;
+.top-bar {
+    background: #ff4fa3;
+    padding: 14px 10px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
 
-.main-categories,
-.pet-filters,
-.clothes-filters{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:9px;
-    flex-wrap:wrap;
-    padding:12px 10px;
-    background:#111;
+.top-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0 9px;
+    font-size: 14px;
 }
 
-.main-categories{
-    border-bottom:1px solid #ff4fa3;
+.top-bar a:hover {
+    color: #111;
 }
 
-.pet-filters,
-.clothes-filters{
-    border-bottom:2px solid #ff4fa3;
+.mm2-menu {
+    background: #111;
+    border-bottom: 1px solid #292929;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.main-categories button,
-.pet-filters button,
-.clothes-filters button{
-    border:1px solid #ff4fa3;
-    padding:9px 14px;
-    border-radius:20px;
-    background:#171717;
-    color:white;
-    font-weight:bold;
-    font-size:13px;
-    cursor:pointer;
-    transition:.2s;
+.mm2-menu a {
+    text-decoration: none;
+    color: #ff9ac8;
+    background: #242424;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s;
 }
 
-.main-categories button:hover,
-.pet-filters button:hover,
-.clothes-filters button:hover{
-    background:#ff4fa3;
-    transform:translateY(-2px);
+.mm2-menu a:hover {
+    background: #ff4fa3;
+    color: white;
 }
 
-.hidden{
-    display:none!important;
+.page {
+    max-width: 1100px;
+    margin: auto;
+    padding: 45px 18px;
 }
 
-.page{
-    max-width:1100px;
-    margin:auto;
-    padding:40px 18px;
+.back {
+    display: inline-block;
+    color: #ff65ad;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
 
-.back{
-    display:inline-block;
-    color:#ff65ad;
-    text-decoration:none;
-    font-weight:bold;
-    margin-bottom:20px;
+.page-title {
+    text-align: center;
+    font-size: 40px;
+    margin: 10px 0;
 }
 
-.page-title{
-    text-align:center;
-    font-size:40px;
-    margin:10px 0;
+.page-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin: 0 auto 35px;
 }
 
-.page-subtitle{
-    text-align:center;
-    color:#ccc;
-    margin-bottom:35px;
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
 }
 
-.notice{
-    max-width:700px;
-    margin:0 auto 25px;
-    padding:15px 18px;
-    background:#111;
-    border:1px solid #ff4fa3;
-    border-radius:20px;
-    text-align:center;
-    color:#ff9ac8;
-    font-weight:bold;
-    line-height:1.6;
+.product {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 24px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,.25);
+    transition: 0.2s;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:22px;
+.product:hover {
+    border-color: #ff4fa3;
+    transform: translateY(-2px);
 }
 
-.card{
-    background:#111;
-    border:1px solid #333;
-    border-radius:24px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 8px 30px rgba(0,0,0,.25);
-    transition:.2s;
+.product-image {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 15px;
 }
 
-.card:hover{
-    border-color:#ff4fa3;
-    transform:translateY(-2px);
+.product h2 {
+    font-size: 25px;
+    margin: 5px 0 10px;
 }
 
-.card img{
-    width:100%;
-    height:230px;
-    object-fit:contain;
-    background:white;
-    border-radius:18px;
-    margin-bottom:15px;
+.category {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #242424;
+    color: #ff9ac8;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.card h2{
-    font-size:25px;
-    margin:5px 0 10px;
+.price {
+    font-size: 23px;
+    font-weight: 800;
+    color: #ff65ad;
+    margin: 10px 0;
 }
 
-.price{
-    font-size:23px;
-    font-weight:800;
-    color:#ff65ad;
+.stock {
+    color: #ddd;
+    line-height: 1.6;
+    margin: 10px 0 18px;
 }
 
-.meta{
-    color:#ddd;
-    line-height:1.7;
-    margin:10px 0 18px;
+.buy-button {
+    display: inline-block;
+    border: none;
+    background: #ff4fa3;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.category{
-    display:inline-block;
-    padding:7px 12px;
-    border-radius:20px;
-    background:#242424;
-    color:#ff9ac8;
-    font-size:13px;
-    font-weight:bold;
-    margin:4px;
+.buy-button:hover {
+    background: #ff65ad;
+    transform: scale(1.04);
 }
 
-.buy{
-    border:none;
-    background:#ff4fa3;
-    color:white;
-    padding:13px 30px;
-    border-radius:25px;
-    font-size:16px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.2s;
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.75);
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.buy:hover{
-    transform:scale(1.04);
-    background:#ff65ad;
+.modal.open {
+    display: flex;
 }
 
-.zoom-text{
-    color:#aaa;
-    font-size:13px;
-    margin:-5px 0 15px;
+.modal-box {
+    width: min(420px,100%);
+    background: #111;
+    border: 2px solid #ff4fa3;
+    border-radius: 25px;
+    padding: 28px;
+    text-align: center;
 }
 
-.empty-message{
-    width:100%;
-    grid-column:1/-1;
-    text-align:center;
-    padding:65px 20px;
-    background:#111;
-    border:1px solid #333;
-    border-radius:24px;
+.modal-box h3 {
+    margin-top: 0;
+    font-size: 25px;
 }
 
-.empty-title{
-    color:#ff65ad;
-    font-size:24px;
-    font-weight:bold;
-    margin-bottom:10px;
+.modal-link {
+    display: block;
+    background: #ff4fa3;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 24px;
+    margin: 12px 0;
+    font-weight: 800;
 }
 
-.empty-text{
-    color:#aaa;
-    font-size:15px;
+.modal-link.secondary {
+    background: white;
+    color: #111;
 }
 
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:200;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+.close {
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 15px;
+    margin-top: 8px;
+    cursor: pointer;
 }
 
-.modal.open{
-    display:flex;
+footer {
+    background: #050505;
+    border-top: 1px solid #222;
+    padding: 35px 18px;
+    text-align: center;
+    color: #ddd;
+    margin-top: 45px;
 }
 
-.modal-box{
-    width:min(420px,100%);
-    background:#111;
-    border:2px solid #ff4fa3;
-    border-radius:25px;
-    padding:28px;
-    text-align:center;
+footer a {
+    color: #ff65ad;
+    text-decoration: none;
 }
 
-.modal-box h3{
-    margin-top:0;
-    font-size:25px;
+.footer-links {
+    margin: 15px 0;
+    line-height: 2;
 }
 
-.copy-box{
-    background:#222;
-    border:1px solid #444;
-    border-radius:15px;
-    padding:12px;
-    margin:18px 0;
-    word-break:break-word;
-}
+@media (max-width: 700px) {
 
-.copy-name{
-    color:#ff65ad;
-    font-weight:bold;
-    display:block;
-    margin-bottom:10px;
-}
-
-.copy-button{
-    border:none;
-    background:white;
-    color:#111;
-    padding:9px 16px;
-    border-radius:18px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.modal-link{
-    display:block;
-    background:#ff4fa3;
-    color:white;
-    text-decoration:none;
-    padding:14px;
-    border-radius:24px;
-    margin:12px 0;
-    font-weight:800;
-}
-
-.modal-link.secondary{
-    background:white;
-    color:#111;
-}
-
-.close{
-    background:none;
-    border:none;
-    color:#aaa;
-    font-size:15px;
-    margin-top:8px;
-    cursor:pointer;
-}
-
-footer{
-    background:#050505;
-    border-top:1px solid #222;
-    padding:35px 18px;
-    text-align:center;
-    color:#ddd;
-    margin-top:45px;
-}
-
-footer a{
-    color:#ff65ad;
-    text-decoration:none;
-}
-
-.footer-links{
-    margin:15px 0;
-    line-height:2;
-}
-
-@media(max-width:700px){
-
-    .top-bar a{
-        font-size:12px;
-        margin:0 4px;
+    .top-bar a {
+        font-size: 12px;
+        margin: 0 4px;
     }
 
-    .main-categories{
-        gap:6px;
-        padding:10px 7px;
+    .page {
+        padding: 30px 13px;
     }
 
-    .main-categories button,
-    .pet-filters button,
-    .clothes-filters button{
-        padding:8px 10px;
-        font-size:12px;
+    .page-title {
+        font-size: 31px;
     }
 
-    .page{
-        padding:30px 13px;
+    .products {
+        grid-template-columns: 1fr;
     }
 
-    .page-title{
-        font-size:31px;
+    .product {
+        padding: 16px;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .product-image {
+        height: 210px;
     }
 
-    .card{
-        padding:16px;
-    }
-
-    .card img{
-        height:210px;
-    }
 }
 
 </style>
@@ -378,766 +286,276 @@ footer a{
 
 <nav class="top-bar">
 
-<a href="index.html">Главная</a>
-<a href="catalog.html">Каталог</a>
-<a href="proofs.html">Пруфы</a>
-<a href="index.html#rules">Правила</a>
-<a href="zakaz.html">На заказ</a>
-<a href="buy.html">Купить</a>
-<a href="akcii.html">🎁 Акции / Конкурсы</a>
+    <a href="index.html">Главная</a>
+    <a href="catalog.html">Каталог</a>
+    <a href="proofs.html">Пруфы</a>
+    <a href="index.html#rules">Правила</a>
+    <a href="zakaz.html">На заказ</a>
+    <a href="buy.html">Купить</a>
+    <a href="akcii.html">🎁 Акции / Конкурсы</a>
 
 </nav>
 
+<nav class="mm2-menu">
 
-<div class="main-categories">
+    <a href="mm2-pistols.html">Пистолеты</a>
+    <a href="mm2-knives.html">Ножи</a>
+    <a href="mm2-sets.html">Сеты</a>
+    <a href="mm2-common.html">Common</a>
+    <a href="mm2-chroma.html">Хрома</a>
 
-<button onclick="showCategory('all')">Все</button>
-<button onclick="showCategory('pets')">🐾 Питомцы</button>
-<button onclick="showCategory('eggs')">🥚 Яйца</button>
-<button onclick="showCategory('cars')">🚗 Машины</button>
-<button onclick="showCategory('clothes')">👗 Одежда</button>
-
-</div>
-
-
-<div class="pet-filters" id="petFilters">
-
-<button onclick="filterPets('pets')">Все</button>
-<button onclick="filterPets('large')">Крупные</button>
-<button onclick="filterPets('small')">Мелкие</button>
-<button onclick="filterPets('fly')">Fly</button>
-<button onclick="filterPets('ride')">Ride</button>
-<button onclick="filterPets('flyride')">Fly Ride</button>
-<button onclick="filterPets('neon')">Neon</button>
-<button onclick="filterPets('mega')">Mega</button>
-
-</div>
-
-
-<div class="clothes-filters hidden" id="clothesFilters">
-
-<button onclick="filterClothes('clothes')">Вся одежда</button>
-<button onclick="filterClothes('largeClothes')">Крупная</button>
-<button onclick="filterClothes('smallClothes')">Мелкая</button>
-
-</div>
-
+</nav>
 
 <main class="page">
 
-<a class="back" href="catalog.html">
-← Назад в каталог
-</a>
+    <a class="back" href="mm2.html">
+        ← Назад в MM2
+    </a>
 
-<h1 class="page-title">
-🐾 Adopt Me
-</h1>
+    <h1 class="page-title">
+        🗡️ Ножи
+    </h1>
 
-<p class="page-subtitle">
-Питомцы • Яйца • Машины • Одежда 💗
-</p>
+    <p class="page-subtitle">
+        MM2 • Ножи
+    </p>
 
+    <div class="products">
 
-<div class="notice hidden" id="clothesNotice">
 
-💗 Покупка от 25 грн
-<br>
-💬 За точной ценой пишите в ЛС
-<br>
-⚠️ Некоторые товары уже закончились, поэтому обязательно уточняйте наличие в ЛС!
+        <!-- HEART WAND — 450 -->
 
-</div>
+        <article class="product">
 
+            <img
+                class="product-image"
+                src="heart-wand.webp"
+                alt="Heart Wand"
+            >
 
-<div class="grid" id="productGrid">
+            <span class="category">
+                Нож
+            </span>
 
+            <h2>
+                Heart Wand
+            </h2>
 
-<!-- =========================
-     ORANGE GUINEA PIG — 170
-========================= -->
+            <div class="price">
+                450 грн
+            </div>
 
-<article class="card product pet-product" data-categories="pets large">
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
 
-<img
-    src="orange-guinea-pig.webp"
-    alt="Orange Guinea Pig"
->
+            <button
+                class="buy-button"
+                onclick="openBuy('Heart Wand')"
+            >
+                КУПИТЬ
+            </button>
 
-<span class="category">
-Крупные питомцы
-</span>
+        </article>
 
-<h2>
-Orange Guinea Pig
-</h2>
+        <!-- BATTLE AXE — 30 -->
 
-<div class="price">
-170 грн
-</div>
+        <article class="product">
 
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
+            <img
+                class="product-image"
+                src="battle-axe.webp"
+                alt="Battle Axe"
+            >
 
-<button
-    class="buy"
-    onclick="openBuy('Orange Guinea Pig')"
->
-КУПИТЬ
-</button>
+            <span class="category">
+                Нож
+            </span>
 
-</article>
+            <h2>
+                Battle Axe
+            </h2>
 
+            <div class="price">
+                30 грн
+            </div>
 
-<!-- =========================
-     TREE KANGAROO — 150
-========================= -->
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
 
-<article class="card product pet-product" data-categories="pets large neon ride">
+            <button
+                class="buy-button"
+                onclick="openBuy('Battle Axe')"
+            >
+                КУПИТЬ
+            </button>
 
-<img
-    src="tree-kangaroo.jpeg"
-    alt="Tree Kangaroo"
->
+        </article>
 
-<span class="category">
-Крупные питомцы
-</span>
 
-<span class="category">
-Neon
-</span>
+        <!-- BONEBLADE — 15 -->
 
-<span class="category">
-Ride
-</span>
+        <article class="product">
 
-<h2>
-Tree Kangaroo
-</h2>
+            <img
+                class="product-image"
+                src="boneblade.webp"
+                alt="Boneblade"
+            >
 
-<div class="price">
-150 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Tree Kangaroo')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     SHEEP — 95
-========================= -->
-
-<article class="card product pet-product" data-categories="pets large">
-
-<img
-    src="sheep.webp"
-    alt="Sheep"
->
-
-<span class="category">
-Крупные питомцы
-</span>
-
-<h2>
-Sheep
-</h2>
-
-<div class="price">
-95 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Sheep')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     SAKURA SPIRIT — 75
-========================= -->
-
-<article class="card product pet-product" data-categories="pets large">
-
-<img
-    src="sakura-spirit.webp"
-    alt="Sakura Spirit"
->
-
-<span class="category">
-Крупные питомцы
-</span>
-
-<h2>
-Sakura Spirit
-</h2>
-
-<div class="price">
-75 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Sakura Spirit')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     CHIHUAHUA — 30
-========================= -->
-
-<article class="card product pet-product" data-categories="pets large">
-
-<img
-    src="chihuahua.webp"
-    alt="Chihuahua"
->
-
-<span class="category">
-Крупные питомцы
-</span>
-
-<h2>
-Chihuahua
-</h2>
-
-<div class="price">
-30 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Chihuahua')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     SUSHI PENGUIN — 30
-========================= -->
-
-<article class="card product pet-product" data-categories="pets large">
-
-<img
-    src="sushi-penguin.webp"
-    alt="Sushi Penguin"
->
-
-<span class="category">
-Крупные питомцы
-</span>
-
-<h2>
-Sushi Penguin
-</h2>
-
-<div class="price">
-30 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Sushi Penguin')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     ЯЙЦА
-========================= -->
-
-<article class="card product egg-product" data-categories="eggs">
-
-<img
-    src="eggs.webp"
-    alt="Яйца"
->
-
-<span class="category">
-Яйца
-</span>
-
-<h2>
-Яйца
-</h2>
-
-<div class="price">
-1–10 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 10
-<br>
-💬 За ценой пишите в ЛС
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Яйца')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     TINY WINGS
-========================= -->
-
-<article class="card product clothes-product" data-categories="clothes largeClothes">
-
-<img
-    src="tiny-wings.webp"
-    alt="Tiny Wings"
->
-
-<span class="category">
-Крупная одежда
-</span>
-
-<h2>
-Tiny Wings
-</h2>
-
-<div class="price">
-170 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 1
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Tiny Wings')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<!-- =========================
-     МЕЛКАЯ ОДЕЖДА
-========================= -->
-
-<article class="card product clothes-product" data-categories="clothes smallClothes">
-
-<img
-    src="small-clothes.webp"
-    alt="Одежда"
->
-
-<div class="zoom-text">
-🔍 Увеличьте, чтобы рассмотреть одежду
-</div>
-
-<span class="category">
-Мелкая одежда
-</span>
-
-<h2>
-Одежда
-</h2>
-
-<div class="price">
-1–15 грн
-</div>
-
-<div class="meta">
-📦 В наличии: 30
-<br>
-💬 За ценой пишите в ЛС
-<br>
-🎮 Adopt Me
-</div>
-
-<button
-    class="buy"
-    onclick="openBuy('Одежда')"
->
-КУПИТЬ
-</button>
-
-</article>
-
-
-<div class="empty-message hidden" id="emptyMessage">
-
-<div class="empty-title">
-🖤 Пока ничего нет
-</div>
-
-<div class="empty-text">
-Ожидайте, скоро появятся товары ✨
-</div>
-
-</div>
-
-</div>
+            <span class="category">
+                Нож
+            </span>
+
+            <h2>
+                Boneblade
+            </h2>
+
+            <div class="price">
+                15 грн
+            </div>
+
+            <div class="stock">
+                📦 В наличии: 1
+                <br>
+                🎮 MM2
+            </div>
+
+            <button
+                class="buy-button"
+                onclick="openBuy('Boneblade')"
+            >
+                КУПИТЬ
+            </button>
+
+        </article>
+
+
+    </div>
 
 </main>
 
 
-<!-- =========================
-     ОКНО ПОКУПКИ
-========================= -->
-
 <div class="modal" id="buyModal">
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<h3>
-💗 Как связаться?
-</h3>
+        <h3>
+            💗 Как связаться?
+        </h3>
 
-<p>
-Вы хотите купить:
-</p>
+        <p id="buyText">
+            Выбери удобный способ:
+        </p>
 
-<div class="copy-box">
+        <a
+            class="modal-link"
+            href="https://t.me/lil1ta0spambot"
+            target="_blank"
+        >
+            🤖 SPAM BOT
+        </a>
 
-<span
-    class="copy-name"
-    id="buyText"
-></span>
+        <a
+            class="modal-link secondary"
+            href="https://t.me/lil1ta0"
+            target="_blank"
+        >
+            💬 ЛС
+        </a>
 
-<button
-    class="copy-button"
-    onclick="copyProduct()"
->
-📋 СКОПИРОВАТЬ
-</button>
+        <button
+            class="close"
+            onclick="closeBuy()"
+        >
+            Закрыть
+        </button>
 
-</div>
-
-<p style="color:#bbb;font-size:14px;">
-Скопируйте название товара и отправьте его в чат 💗
-</p>
-
-<a
-    class="modal-link"
-    href="https://t.me/lil1ta0spambot"
-    target="_blank"
->
-🤖 SPAM BOT
-</a>
-
-<a
-    class="modal-link secondary"
-    href="https://t.me/lil1ta0"
-    target="_blank"
->
-💬 ЛС
-</a>
-
-<button
-    class="close"
-    onclick="closeBuy()"
->
-Закрыть
-</button>
-
-</div>
+    </div>
 
 </div>
 
 
 <footer>
 
-<div>
-🐈 <strong>Lillit Shop</strong> 🐾
-</div>
+    <div>
+        🐈 <strong>Lillit Shop</strong> 🐾
+    </div>
 
-<div class="footer-links">
+    <div class="footer-links">
 
-<a href="https://t.me/lil1ta0" target="_blank">
-💬 ЛС
-</a>
+        <a href="https://t.me/lil1ta0" target="_blank">
+            💬 ЛС
+        </a>
 
-·
+        ·
 
-<a href="https://t.me/lil1ta0spambot" target="_blank">
-🤖 Спам-бот
-</a>
+        <a href="https://t.me/lil1ta0spambot" target="_blank">
+            🤖 Спам-бот
+        </a>
 
-·
+        ·
 
-<a href="https://t.me/lillitsho" target="_blank">
-📢 Telegram-канал
-</a>
+        <a href="https://t.me/lillitsho" target="_blank">
+            📢 Telegram-канал
+        </a>
 
-</div>
+    </div>
 
-<div>
-Adopt Me • MM2
-</div>
+    <div>
+        Adopt Me • MM2
+    </div>
 
 </footer>
 
 
 <script>
 
-let currentProduct = "";
+function openBuy(name) {
 
-function openBuy(name){
+    document
+        .getElementById("buyText")
+        .textContent =
+        "Покупка: " +
+        name +
+        " — выбери способ связи:";
 
-currentProduct = name;
-
-document.getElementById("buyText").textContent = name;
-
-document.getElementById("buyModal").classList.add("open");
-
+    document
+        .getElementById("buyModal")
+        .classList
+        .add("open");
 }
 
 
-function closeBuy(){
+function closeBuy() {
 
-document.getElementById("buyModal").classList.remove("open");
-
+    document
+        .getElementById("buyModal")
+        .classList
+        .remove("open");
 }
 
 
-function copyProduct(){
-
-if(!currentProduct)return;
-
-navigator.clipboard.writeText(currentProduct)
-
-.then(function(){
-
-alert("Название товара скопировано 💗");
-
-})
-
-.catch(function(){
-
-alert("Скопируй название вручную: " + currentProduct);
-
-});
-
-}
-
-
-document.getElementById("buyModal").addEventListener(
-"click",
-function(event){
-
-if(event.target === this){
-closeBuy();
-}
-
-});
-
-
-function hideAllProducts(){
-
-document.querySelectorAll(".pet-product").forEach(function(item){
-item.style.display="none";
-});
-
-document.querySelectorAll(".egg-product").forEach(function(item){
-item.style.display="none";
-});
-
-document.querySelectorAll(".clothes-product").forEach(function(item){
-item.style.display="none";
-});
-
-document.getElementById("emptyMessage").classList.add("hidden");
-
-document.getElementById("clothesNotice").classList.add("hidden");
-
-}
-
-
-function showCategory(category){
-
-hideAllProducts();
-
-document.getElementById("petFilters").classList.add("hidden");
-
-document.getElementById("clothesFilters").classList.add("hidden");
-
-
-if(category==="all"){
-
-document.getElementById("petFilters").classList.remove("hidden");
-
-document.querySelectorAll(".pet-product").forEach(function(item){
-item.style.display="";
-});
-
-return;
-
-}
-
-
-if(category==="pets"){
-
-document.getElementById("petFilters").classList.remove("hidden");
-
-filterPets("pets");
-
-return;
-
-}
-
-
-if(category==="eggs"){
-
-document.querySelectorAll(".egg-product").forEach(function(item){
-item.style.display="";
-});
-
-return;
-
-}
-
-
-if(category==="cars"){
-
-document.getElementById("emptyMessage").classList.remove("hidden");
-
-return;
-
-}
-
-
-if(category==="clothes"){
-
-document.getElementById("clothesFilters").classList.remove("hidden");
-
-document.getElementById("clothesNotice").classList.remove("hidden");
-
-document.querySelectorAll(".clothes-product").forEach(function(item){
-item.style.display="";
-});
-
-return;
-
-}
-
-}
-
-
-function filterPets(category){
-
-hideAllProducts();
-
-document.getElementById("petFilters").classList.remove("hidden");
-
-let found=false;
-
-document.querySelectorAll(".pet-product").forEach(function(product){
-
-const categories=product.dataset.categories.split(" ");
-
-if(category==="pets" || categories.includes(category)){
-
-product.style.display="";
-
-found=true;
-
-}
-
-});
-
-if(!found){
-
-document.getElementById("emptyMessage").classList.remove("hidden");
-
-}
-
-}
-
-
-function filterClothes(category){
-
-hideAllProducts();
-
-document.getElementById("clothesFilters").classList.remove("hidden");
-
-document.getElementById("clothesNotice").classList.remove("hidden");
-
-document.querySelectorAll(".clothes-product").forEach(function(product){
-
-const categories=product.dataset.categories.split(" ");
-
-if(category==="clothes" || categories.includes(category)){
-
-product.style.display="";
-
-}
-
-});
-
-}
-
-
-showCategory("all");
+document
+    .getElementById("buyModal")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (event.target === this) {
+                closeBuy();
+            }
+
+        }
+    );
 
 </script>
 
 </body>
-
 </html>
 ```
-
